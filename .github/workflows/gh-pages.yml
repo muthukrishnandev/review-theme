@@ -1,4 +1,4 @@
-name: Hugo Build Publish
+name: Publish Hugo Site
 
 on:
   push:
@@ -17,11 +17,15 @@ jobs:
         run: sudo apt install curl jq
       - name: Install Hugo
         run: |
+          # uncomment to get the latest version or set a specific version
           HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
+          # HUGO_VERSION="v0.70.0"
+
           mkdir tmp/ && cd tmp/
           curl -sSL https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/hugo_extended_${HUGO_VERSION: -6}_Linux-64bit.tar.gz | tar -xvzf-
           sudo mv hugo /usr/local/bin/
           cd .. && rm -rf tmp/
+
           hugo version
       - name: Clean Site
         run: |
@@ -31,7 +35,8 @@ jobs:
       - name: Build Site
         run: |
           cd exampleSite
-          HUGO_THEME="movie-hugo-theme" hugo -v --themesDir ../.. -d ../site_docs
+          HUGO_THEME="movie-hugo-theme"
+          hugo -v --themesDir ../.. -d ../site_docs
       - name: Deploy Build
         run: |
           git config user.name "${GITHUB_ACTOR}"
