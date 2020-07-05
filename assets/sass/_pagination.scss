@@ -1,0 +1,28 @@
+.pagination {
+  position: relative;
+  margin-top: 2em;
+}
+
+.pagination:before, .pagination:after {
+  content: '';
+  display: table;
+}
+
+.pagination:after {
+  clear: both;
+}
+
+.pagination .previous,
+.pagination .next {
+  @extend .black-button;
+}
+
+.pagination .previous {
+  // @include relative-font-size(1.20);
+  float: left;
+}
+
+.pagination .next {
+  // @include relative-font-size(1.20);
+  float: right;
+}

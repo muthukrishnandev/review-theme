@@ -1,0 +1,16 @@
+{{ define "main" }}
+	<div class="container-list-taxonomy">
+		{{ if eq .Type "tags" }}
+			<h1 class="tag-title">{{ .Title }}</h1>
+		{{ else }}
+			<h1 class="page-heading">{{ .Title }}</h1>
+		{{ end }}
+		{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+		<div class="posts">
+			{{ range $paginator.Pages }}
+				{{ partial "post-item.html" . }}
+			{{ end }}
+		</div>
+		{{ partial "pagination.html" . }}
+	</div>
+{{ end }}

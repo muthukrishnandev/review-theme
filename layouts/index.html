@@ -1,0 +1,77 @@
+{{ define "main" }}
+<div class="container-page-home">
+	<h1>Recent Reviews</h1>
+	<div class="container-list-posts">
+		<ul class="controls" tabindex="0">
+	        <button class="prev" data-controls="prev" tabindex="-1"><</button>
+	        <button class="next" data-controls="next" tabindex="-1">></button>
+	    </ul>
+		{{ $posts := where .Site.RegularPages "Type" "in" "movies" }}
+		<div class="movies">
+			{{ range $posts.ByTitle }}
+				{{ partial "movie-image-item.html" . }}
+			{{ end }}
+		</div>
+	</div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+
+<style>
+
+.controls {
+	position: absolute;
+	right: 0;
+	left: 0;
+	transform: translateY(-45%);
+	z-index: 1;
+	top: 45%;
+	margin: auto;
+	justify-content: space-between;
+	display: flex;
+	/*width: 100%;*/
+}
+.controls > button {
+	width: 40px;
+	height: 40px;
+	font-size: 13.3333px;
+	border-radius: 50%;
+	border: none;
+	box-shadow: 1px 4px 10px 0 rgba(42, 44, 50, .16);
+	background-color: #fff;
+	color: #757a84;
+	cursor: pointer;
+
+	font-weight: 900;
+	font-size: 24px;
+}
+.controls .next {
+	position:  absolute;
+	right: 0;
+}
+.container-list-posts {
+	position: relative;
+	text-align:  center;
+}
+.container-list-posts .tns-outer {
+  width: 98%;
+    display: inline-block;
+}
+
+</style>
+
+<script>
+var slider = tns({
+    container: '.container-list-posts .movies',
+    controlsContainer: '.container-list-posts .controls',
+    arrows: true,
+    items: 4,
+    slideBy: 1,
+    loop: false,
+    autoplay: false,
+    nav: false,
+  });
+</script>
+
+{{ end }}

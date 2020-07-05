@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.Info.Description }}{{ end }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<!-- Open Graph Protocol http://ogp.me/ -->
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+<meta property="og:image" content="{{ if .Params.image }}{{.Site.BaseURL}}/images/{{.Params.image}}{{ else }}{{.Site.BaseURL}}/images/site-logo.png{{ end }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.Info.Description }}{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+<!-- theme css -->
+{{ $sassTemplate := resources.Get "sass/main.scss" }}
+{{ $mainStyleFile := $sassTemplate | resources.ExecuteAsTemplate "main.scss" .  }}
+{{ $mainStyle := $mainStyleFile | resources.ToCSS }}
+{{ $cssFiles := slice $mainStyle }}
+
+<!-- Plugins -->
+{{ $pluginStyle := resources.Get "third_party/tiny-slider/tiny-slider.css" }}
+{{ $cssFiles = $cssFiles | append $pluginStyle }}
+
+{{- range $stylePath := .Site.Params.Style.CSS -}}
+	{{ $customCss := resources.Get $stylePath }}
+	{{ $cssFiles = $cssFiles | append $customCss }}
+{{- end -}}
+
+{{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := $cssFiles | resources.Concat "temp.css" | resources.ToCSS $options }}
+{{ $secureStyle := $style | resources.Fingerprint "sha512" }}
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{ $secureStyle.Permalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
+
+{{ range $font := .Site.Params.Style.FontsLink }}
+<link href="{{ $font }}" rel="stylesheet">
+{{- end -}}
+
+<!-- Icons -->
+<link rel="shortcut icon" href="{{ (path.Join `favicons` .Site.Params.Favicon.Icon) | absURL }}">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ (path.Join `favicons` .Site.Params.Favicon.AppleTouch) | absURL }}">
+
+{{- $manifestTemplate := resources.Get "manifest-template.json" -}}
+{{- $json := $manifestTemplate | resources.ExecuteAsTemplate "manifest.json" . | }}
+<link rel="manifest" href="{{ $json.Permalink }}" />
+
+<!-- RSS -->
+{{ if .Site.Params.EnableRss }}
+<link href="{{ with .OutputFormats.Get `RSS` }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+{{- end }}
+<link rel="preconnect" href="{{ .Site.BaseURL }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ if .IsPage }}
+	{{if .NextInSection }}
+	<link rel="prefetch" href="{{.NextInSection.Permalink}}">
+	<link rel="prerender" href="{{.NextInSection.Permalink}}">
+	{{ end }}
+	{{if .PrevInSection }}
+	<link rel="prefetch" href="{{.PrevInSection.Permalink}}">
+	<link rel="prerender" href="{{.PrevInSection.Permalink}}">
+	{{ end }}
+{{ end }}

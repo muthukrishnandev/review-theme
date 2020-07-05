@@ -1,0 +1,37 @@
+<footer class="page-footer">
+    {{ if .Site.Params.Config.ShowFooterNav }}
+    <div class="footer-nav">
+        <ul class="footer-list">
+            {{ if .Site.Params.Config.ShowSocialFooterNav }}
+                {{ partial "social_icons.html" . }}
+            {{ else }}
+                {{ $current := . }}
+                {{ range .Site.Menus.footer }}
+                    <li class="nav-text"><a class="nav-link" href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+    <div class="footer-notice">
+        {{ if and (.Site.Params.Config.ShowLicense) (or (.Site.Params.Config.ShowLicenseInHome) (not (.IsHome))) }}
+            <div class="footer-license">{{ .Site.Params.Info.LicenseText }} 
+            {{ if .Site.Params.Info.LicenseName }}
+                <a rel="license" target="_blank" href="{{ .Site.Params.Info.LicenseURL }}">{{ .Site.Params.Info.LicenseName }}</a>
+            {{ end }}
+            </div>
+        {{ end }}
+        <div class="footer-copyright">
+            {{ if .Site.Params.Info.CopyrightText }}
+                {{ .Site.Params.Info.CopyrightText | htmlUnescape }}
+            {{ else }}
+                &copy; {{ dateFormat "2006" now }}
+                {{ if .Site.Params.Author.Website }}
+                    <a href="{{ .Site.Params.Author.Website }}">{{ .Site.Params.Author.Name }}</a>
+                {{ else }}
+                    {{ .Site.Params.Author.Name }}
+                {{ end }}
+            {{ end }}
+         </div>
+    </div>
+</footer>

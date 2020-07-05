@@ -1,0 +1,46 @@
+<header class="page-header">
+  <div class="clearfix">
+    {{ $isSiteLogoExists := false }}
+    {{ if and (.Site.Params.Config.ShowSiteLogo) (.Site.Params.Info.Logo) }}
+      {{ if fileExists (path.Join `static` `images` .Site.Params.Info.Logo) }}
+        {{ $isSiteLogoExists = true }}
+        <a href="{{ .Site.BaseURL }}" class="site-avatar">
+          <img src="{{ .Site.Params.Info.Logo | absURL }}" />
+        </a>
+      {{ end }}
+    {{ end }}
+
+    {{ if or (.Site.Params.Config.ShowSiteTitle) (not $isSiteLogoExists) }}
+      <div class="site-info">
+        <h1 class="site-name">
+          <a href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }}</a>
+        </h1>
+        {{ if .Site.Params.Config.ShowSiteSubtitle }}
+          <p class="site-description">{{ .Site.Params.Info.Subtitle }}</p>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    {{ if .Site.Params.Config.ShowHeaderNav }}
+      <nav class="header-nav">
+        {{ $current := . }}
+        {{ range .Site.Menus.header }}
+            {{ $active := or ($current.IsMenuCurrent "header" .) ($current.HasMenuCurrent "header" .) }}
+            {{ $active = or $active (eq .Name $current.Title) }}
+            {{ $active = or $active (and (eq (trim (path.Dir .URL) "/") $current.Section) (ne $current.Section "")) }}
+            <a class="nav-link {{ if $active }}active{{end}}" href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
+        <div class="dropdown">
+          <button class="dropdown-button">Tags</button>
+          <div class="dropdown-content">
+            <ul>
+            {{ range $taxTerm, $some  := .Site.Taxonomies }}
+                <li class=""><a href="{{ $taxTerm | absURL }}">{{ $taxTerm | title }}</a></li>
+            {{ end }}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    {{ end }}
+  </div>
+</header>

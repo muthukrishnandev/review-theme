@@ -1,0 +1,16 @@
+.tag-title {
+	@extend .page-heading;
+	@extend .tag;
+}
+
+.taxon-container {
+	margin: 0 $spacing-unit;
+}
+
+.taxon-list {
+	margin: $spacing-unit / 3;
+
+	> li {
+		@include relative-font-size(2);
+	}
+}

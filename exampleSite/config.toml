@@ -1,0 +1,165 @@
+baseURL = "https://muthukrishnandev.github.io/movie-hugo-theme"
+
+title = "movie review"
+
+languageCode = "en-us"
+summaryLength = 10
+enableEmoji = true
+Paginate = 3
+
+theme = "movie-hugo-theme"
+
+[Params.Info]
+  ShortTitle = "blog"
+  Subtitle = "my blog"
+  Description = "long description about site"
+  Logo = "logo.png" # store in static/images
+
+  # You can disable license in Params.Config
+  LicenseText = "This theme is licensed under " # This work is licensed under
+  LicenseName = "MIT License"
+  LicenseURL = "https://github.com/muthukrishnandev/movie-hugo-theme/blob/master/LICENSE.md"
+  # displayed as LicenseText + LicenseName(LicenseURL)
+
+  # custom text for copyright in footer
+  # default is (c) currentyear author.name (website)
+  # CopyrightText = "&copy; name. All Rights Reserved"
+
+[Params.Author]
+    name = "muthukrishnan"
+    about = "me"
+    avatar = "author.png" # store in static/images
+    website = "https://github.com/muthukrishnandev"
+
+[Params.Social]
+  Email = "Your Email ID"
+  Facebook = "Your Facebook ID"
+  Twitter = "Your Twitter ID"
+  Instagram = "Your Instagram ID"
+  Youtube = "Your Youtube ID"
+  Reddit = "Your Reddit ID"
+
+[Params.Style]
+  # Custom Css/Js/Fonts
+  # CSS = ["css/main.css"] # custom css, place .css files inside assets folder
+  # JS = ["js/main.js"] # custom js, place .js files inside assets folder
+  FontsLink = ["https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"] # only online fonts
+  FontsName = ["Open Sans"]
+
+[Params.Favicon]
+  # store favicons in static/favicons
+  icon = "favicon.ico" # favicon
+  icon16 = "favicon-16x16.png"
+  icon32 = "favicon-32x32.png"
+  icon192 = "android-chrome-192x192.png"
+  icon512 = "android-chrome-512x512.png"
+  appleTouch = "apple-touch-icon.png"
+
+[Params.Manifest]
+  themeColor = "#ffffff"
+  backgroundColor = "#ffffff"
+  display = "standalone"
+  orientation = "portrait"
+
+[Params.Config]
+  # header
+  ShowSiteLogo = false
+  ShowSiteTitle = true # if site logo is not present, title is displayed by default
+  ShowSiteSubtitle = false # available only if ShowSiteTitle is enabled
+ 
+  # navigation
+  ShowHeaderNav = true
+  ShowFooterNav = true # disables the footer, both social and navigation
+  
+  # home page
+  ShowSummaryInPostList = false
+  ShowStarredIcon = true
+  ShowAllStarredInHome = false # if enabled all the starred posts are showed in Home, paginate works excluding starred Posts
+  
+  # social icons
+  ShowSocialFooterNav = true # enable this to show social nav instead of navigations
+  ShowSocialIcons = true # enable this to show social icons instead of text
+  ShowColorIcons = true # enable this to colorful social icons
+  
+  # license
+  ShowLicense = true
+  ShowLicenseInHome = true
+  
+  # About page
+  ShowAuthorInfo = true
+
+[menu]
+  [[menu.header]]
+    identifier = "home"
+    name = "Home"
+    title = "home"
+    url = "/"
+    weight = 1
+  [[menu.header]]
+    identifier = "movies"
+    name = "Movies"
+    title = "Movies"
+    url = "/movies"
+    weight = 2
+  [[menu.header]]
+    identifier = "reviews"
+    name = "Reviews"
+    title = "reviews"
+    url = "/reviews"
+    weight = 3
+  [[menu.header]]
+    identifier = "top"
+    name = "Top"
+    title = "top"
+    url = "/top"
+    weight = 4
+  [[menu.header]]
+    identifier = "about"
+    name = "About"
+    title = "about"
+    url = "/about"
+    weight = 5
+
+  [[menu.footer]]
+    identifier = "home"
+    name = "Home"
+    title = "home"
+    url = "/"
+    weight = 1
+  [[menu.footer]]
+    identifier = "about"
+    name = "About"
+    title = "about"
+    url = "/about"
+    weight = 2
+
+# DO NOT EDIT BELOW!
+
+[taxonomies]
+  # default taxonomies are disabled
+  # category = "categories"
+  # tag = "tags"
+
+  # movie cast
+  actor = "actors"
+  director = "directors"
+  cinematographer = "cinematographers"
+  musicdirector = "musicdirectors"
+
+  # movie plot
+  genre = "genres"
+  plottag = "plottags"
+
+  # reviews
+  reviewtag = "reviewtags"
+
+[permalinks]
+  actor = "/actor/:title/"
+  tvshow = "/tv/:title/"
+  movie = "/movie/:title/"
+  review = "/review/:title/"
+  top = "/top/:title/"
+  genre = '/genre/:title'
+
+  reviewtag = "/tag/review/:title"
+  plottag = "/tag/plot/:title"

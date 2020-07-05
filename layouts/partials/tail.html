@@ -1,0 +1,15 @@
+<!-- theme js -->
+{{ $pluginScript := resources.Get "third_party/tiny-slider/tiny-slider.js" }}
+{{ $jsFiles := slice $pluginScript }}
+
+<!-- custom js -->
+{{- range $scriptPath := .Site.Params.Style.JS -}}
+	{{ $customJs := resources.Get $scriptPath }}
+	{{ $jsFiles = $jsFiles | append $customJs }}
+{{- end -}}
+
+{{ if gt (len $jsFiles) 0 }}
+	{{ $secureScript := $jsFiles | resources.Concat "js/script.js" }}
+	{{ $secureScript = $secureScript | resources.Minify | resources.Fingerprint "sha512" }}
+	<script type="text/javascript" src="{{ $secureScript.Permalink }}" integrity="{{ $secureScript.Data.Integrity }}"></script>
+{{ end }}

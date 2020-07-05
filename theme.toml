@@ -1,0 +1,12 @@
+name = "movie-theme"
+license = "MIT"
+licenselink = "https://github.com/muthukrishnandev/movie-hugo-theme/blob/master/LICENSE.md"
+description = "A minimal movie review theme"
+homepage = "https://github.com/muthukrishnandev/movie-hugo-theme"
+tags = ["minimal", "black white", "movie", "entertainment"]
+features = ["movie", "review"]
+min_version = "0.62.2"
+
+[author]
+    name = "muthukrishnandev"
+    homepage = "https://muthukrishnandev.github.io"

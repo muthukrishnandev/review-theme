@@ -1,0 +1,33 @@
+.movies {
+  .movie-image-list-item {
+    // display: inline-block;
+    padding: 5px 5px;
+
+    .movie-item-wrapper {
+      color: $grey-color-light;
+
+      a {
+        &:hover{
+          text-decoration: none;
+        }
+      }
+
+      .movie-title {
+        display: table;
+        font-weight: 400;
+      }
+
+      .movie-poster {
+        height: 250px;
+        width: 180px;
+        overflow: hidden;
+
+        &:hover{
+          filter: contrast(0.7);
+        }
+
+      }
+
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{{ define "main" }}
+	<div class="container-list-posts">
+		<h1 class="page-heading">{{ .Title }}</h1>
+		{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+		<div class="movies">
+			{{ range $paginator.Pages }}
+				{{ partial "movie-text-item.html" . }}
+			{{ end }}
+		</div>
+		{{ partial "pagination.html" . }}
+	</div>
+{{ end }}

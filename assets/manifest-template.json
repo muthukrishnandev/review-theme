@@ -1,0 +1,43 @@
+{
+    "name": "{{ .Site.Title }}",
+
+    {{- if .Site.Params.Info.ShortTitle }}
+    "short_name": "{{ .Site.Params.Info.ShortTitle }}",
+    {{ else }}
+    "short_name": "{{ .Site.Title }}",
+    {{ end -}}
+
+    "start_url": "{{ .Site.BaseURL }}",
+
+    "icons": [
+        {
+          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon) | absURL }}",
+          "sizes": "48x48",
+          "type": "image/x-icon"
+        },
+        {
+          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon16) | absURL }}",
+          "sizes": "16x16",
+          "type": "image/png"
+        },
+        {
+          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon32) | absURL }}",
+          "sizes": "32x32",
+          "type": "image/png"
+        },
+        {
+          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon192) | absURL }}",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon512) | absURL }}",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+    ],
+    "theme_color": "{{ .Site.Params.Manifest.ThemeColor }}",
+    "background_color": "{{ .Site.Params.Manifest.BackgroundColor }}",
+    "display": "{{ .Site.Params.Manifest.Display }}",
+    "orientation": "{{ .Site.Params.Manifest.Orientation }}"
+}

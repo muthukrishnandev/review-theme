@@ -1,0 +1,46 @@
+name: Hugo Build Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Install Tools
+        run: sudo apt install curl jq
+      - name: Install Hugo
+        run: |
+          HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
+          mkdir tmp/ && cd tmp/
+          curl -sSL https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/hugo_extended_${HUGO_VERSION: -6}_Linux-64bit.tar.gz | tar -xvzf-
+          sudo mv hugo /usr/local/bin/
+          cd .. && rm -rf tmp/
+          hugo version
+      - name: Clean Site
+        run: |
+          if [ -d "site_docs" ]; then
+            rm -rf site_docs/*
+          fi
+      - name: Build Site
+        run: |
+          cd exampleSite
+          HUGO_THEME="movie-hugo-theme" hugo -v --themesDir ../.. -d ../site_docs
+      - name: Deploy Build
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git fetch
+          git checkout gh-pages 2>/dev/null || git checkout -b gh-pages
+          git rm -r . --ignore-unmatch
+          mv site_docs/* .
+          rm -rf site_docs exampleSite
+          git add .
+          git commit -am "Deploy with ${GITHUB_WORKFLOW}"
+          git push --all -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git

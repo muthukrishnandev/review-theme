@@ -1,0 +1,49 @@
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}
+
+@mixin relative-font-size($number) {
+  font-size: $base-font-size * pow($base-ratio, $number - 1) !important;
+}
+
+@mixin relative-font-size-mobile($number) {
+  font-size: $base-font-size-mobile * pow($base-ratio, $number - 1) !important;
+}
+
+// Mobile breakpoints
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin container-width {
+  width: $header-width-max;
+  @include mobile {
+    width: 100%; 
+  }
+}
