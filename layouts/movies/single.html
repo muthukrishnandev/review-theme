@@ -2,13 +2,7 @@
 <div class="container-movie-single">
   <div class="movie">
   	{{ $metaParams := .Params.meta }}
-
     <h2>{{ $metaParams.Title }}</h2>
-
-    {{ $res := resources.Get .Params.Poster  }}
-    {{ $res = $res.Fit "180x240" }}
-    <img src="{{ $res.Permalink }}" />
-
     <div class="post-content inner-content">
       {{ .Content }}
     </div>
