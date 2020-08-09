@@ -114,10 +114,10 @@ theme = "movie-hugo-theme"
     url = "/editorials"
     weight = 4
   [[menu.header]]
-    name = "Tags"
-    identifier = "tags"
-    title = "tags"
-    url = "/tags"
+    name = "Discover"
+    identifier = "Discover"
+    title = "Discover"
+    url = "/discover"
     weight = 5
   [[menu.header]]
     name = "About"
@@ -125,14 +125,6 @@ theme = "movie-hugo-theme"
     title = "about"
     url = "/about"
     weight = 6
-
-  [[menu.header]]
-    parent = "tags"
-    name = "actors"
-    identifier = "actors"
-    title = "actors"
-    url = "/actors"
-    weight = 7
 
   [[menu.footer]]
     name = "Home"
@@ -152,7 +144,9 @@ theme = "movie-hugo-theme"
 [taxonomies]
   # default taxonomies are disabled
   # category = "categories"
-  # tag = "tags"
+
+  # enabled for editorials
+  tag = "tags"
 
   # movie cast
   actor = "actors"
@@ -168,12 +162,12 @@ theme = "movie-hugo-theme"
   reviewtag = "reviewtags"
 
 [permalinks]
-  actor = "/actor/:title/"
-  tvshow = "/tv/:title/"
-  movie = "/movie/:title/"
-  review = "/review/:title/"
-  top = "/top/:title/"
-  genre = '/genre/:title'
+  actors = "/actor/:title/"
+  tvshows = "/tv/:title/"
+  movies = "/movie/:title/"
+  reviews = "/review/:title/"
+  genres = '/genre/:title'
 
+  tags = "/tag/default/:title"
   reviewtag = "/tag/review/:title"
   plottag = "/tag/plot/:title"
