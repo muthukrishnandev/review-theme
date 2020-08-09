@@ -19,10 +19,6 @@
 {{ $mainStyle := $mainStyleFile | resources.ToCSS }}
 {{ $cssFiles := slice $mainStyle }}
 
-<!-- Plugins -->
-{{ $pluginStyle := resources.Get "third_party/tiny-slider/tiny-slider.css" }}
-{{ $cssFiles = $cssFiles | append $pluginStyle }}
-
 {{- range $stylePath := .Site.Params.Style.CSS -}}
 	{{ $customCss := resources.Get $stylePath }}
 	{{ $cssFiles = $cssFiles | append $customCss }}

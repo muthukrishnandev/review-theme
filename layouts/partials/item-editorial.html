@@ -1,0 +1,22 @@
+<div class="editorial-list-item">
+  <h2 class="editorial-title {{ if and (.Params.Starred) (.Site.Params.Config.ShowStarredIcon) }}starred{{ end }}">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h2>
+  <div class="editorial-meta">
+    <span class="editorial-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+
+    {{ if .Params.tags }}
+      <span class="editorial-tags">
+      {{ range .Params.tags }}
+        <a class="tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+      </span>
+    {{ end }}
+  </div>
+
+  {{ if .Site.Params.Config.ShowSummaryInPostList }}
+    <div class="editorial-summary">
+      {{ .Summary }}
+    </div>
+  {{ end }}
+</div>

@@ -51,6 +51,7 @@
   // @include relative-font-size(4);
 
   a {
+    color: $grey-color-darker;
     // font-weight: 700;
     &:hover {
       text-decoration: none;

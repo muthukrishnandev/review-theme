@@ -90,45 +90,59 @@ theme = "movie-hugo-theme"
 
 [menu]
   [[menu.header]]
-    identifier = "home"
     name = "Home"
+    identifier = "home"
     title = "home"
     url = "/"
     weight = 1
   [[menu.header]]
-    identifier = "movies"
-    name = "Movies"
-    title = "Movies"
-    url = "/movies"
-    weight = 2
-  [[menu.header]]
-    identifier = "reviews"
     name = "Reviews"
+    identifier = "reviews"
     title = "reviews"
     url = "/reviews"
     weight = 3
   [[menu.header]]
-    identifier = "top"
     name = "Top"
+    identifier = "top"
     title = "top"
     url = "/top"
+    weight = 2
+  [[menu.header]]
+    name = "Editorials"
+    identifier = "editorials"
+    title = "editorials"
+    url = "/editorials"
     weight = 4
   [[menu.header]]
-    identifier = "about"
+    name = "Tags"
+    identifier = "tags"
+    title = "tags"
+    url = "/tags"
+    weight = 5
+  [[menu.header]]
     name = "About"
+    identifier = "about"
     title = "about"
     url = "/about"
-    weight = 5
+    weight = 6
+
+  [[menu.header]]
+    parent = "tags"
+    name = "actors"
+    identifier = "actors"
+    title = "actors"
+    url = "/actors"
+    weight = 7
 
   [[menu.footer]]
-    identifier = "home"
     name = "Home"
+    identifier = "home"
     title = "home"
     url = "/"
     weight = 1
   [[menu.footer]]
-    identifier = "about"
     name = "About"
+    identifier = "about"
     title = "about"
     url = "/about"
     weight = 2

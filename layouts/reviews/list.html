@@ -4,7 +4,7 @@
 		{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
 		<div class="editorials">
 			{{ range $paginator.Pages }}
-				{{ partial "item-editorial.html" . }}
+				{{ partial "item-review.html" . }}
 			{{ end }}
 		</div>
 		{{ partial "pagination.html" . }}

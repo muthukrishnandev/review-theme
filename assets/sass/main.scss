@@ -36,10 +36,12 @@ $footer-height: 250px !default;
 $black: #000 !default;
 $white: #fff !default;
 $grey-color: #828282 !default;
+$grey-color-lightest: lighten($grey-color, 60%) !default;
 $grey-color-lighter: lighten($grey-color, 40%) !default;
 $grey-color-light: lighten($grey-color, 20%) !default;
 $grey-color-dark: darken($grey-color, 20%) !default;
 $grey-color-darker: darken($grey-color, 40%) !default;
+$grey-color-darkest: darken($grey-color, 60%) !default;
 
 $background-color: #fdfdfd !default;
 $text-color: #111 !default;
@@ -55,6 +57,8 @@ $header-width-max: $content-width - $spacing-unit;
 @import "header", "footer";
 @import "taxonomy";
 @import "pagination";
-@import "post_list", "post_single";
-@import "movie_list_poster";
+
+@import "post_list";
+@import "item_post";
+
 @import "page_home", "page_error", "page_about";

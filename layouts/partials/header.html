@@ -25,21 +25,12 @@
       <nav class="header-nav">
         {{ $current := . }}
         {{ range .Site.Menus.header }}
-            {{ $active := or ($current.IsMenuCurrent "header" .) ($current.HasMenuCurrent "header" .) }}
-            {{ $active = or $active (eq .Name $current.Title) }}
-            {{ $active = or $active (and (eq (trim (path.Dir .URL) "/") $current.Section) (ne $current.Section "")) }}
+            {{ $isInCurrentMenu := or ($current.IsMenuCurrent "header" .) ($current.HasMenuCurrent "header" .) }}
+            {{ $isURLMatch := and (eq (trim (path.Base .URL) "/") $current.Section) (ne $current.Section "") }}
+            {{ $isTitleMatch := eq .Name $current.Title }}
+            {{ $active := or $isInCurrentMenu $isURLMatch $isTitleMatch }}
             <a class="nav-link {{ if $active }}active{{end}}" href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a>
         {{ end }}
-        <div class="dropdown">
-          <button class="dropdown-button">Tags</button>
-          <div class="dropdown-content">
-            <ul>
-            {{ range $taxTerm, $some  := .Site.Taxonomies }}
-                <li class=""><a href="{{ $taxTerm | absURL }}">{{ $taxTerm | title }}</a></li>
-            {{ end }}
-            </ul>
-          </div>
-        </div>
       </nav>
     {{ end }}
   </div>

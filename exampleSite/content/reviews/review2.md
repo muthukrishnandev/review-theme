@@ -4,7 +4,12 @@ subtitle: "review subtitle"
 date: 2020-05-17T19:33:05+05:30
 draft: true
 
-movie: "movie1.md" # must be linked with a movie
+score: 20
+movie: "movie2.md" # must be linked with a movie
+
+reviewtags:
+    - reviewtag1
+    - reviewtag3
 ---
 
 # Review Title

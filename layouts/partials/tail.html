@@ -1,6 +1,5 @@
 <!-- theme js -->
-{{ $pluginScript := resources.Get "third_party/tiny-slider/tiny-slider.js" }}
-{{ $jsFiles := slice $pluginScript }}
+{{ $jsFiles := slice }}
 
 <!-- custom js -->
 {{- range $scriptPath := .Site.Params.Style.JS -}}
