@@ -152,7 +152,7 @@ theme = "movie-hugo-theme"
   actor = "actors"
   director = "directors"
   cinematographer = "cinematographers"
-  music_director = "musicdirectors"
+  music_director = "music_directors"
 
   # movie plot
   genre = "genres"

@@ -21,7 +21,7 @@
 				{{ $termSize := len $allTerms }}
 				{{ range $index, $tag := $allTerms }}
 				  {{ $tagName := . }}
-				  {{ $tagURL := (delimit (slice $taxoName $tag) "/") }}
+				  {{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
 				  {{ with $.Site.GetPage (printf "%s" $tagURL) }}
 				    <a class="movie-taxonomy-link" href="{{ .Permalink }}">{{ $tagName }}</a>
 				    {{- if lt $index (sub $termSize 1) -}}, {{ end }}
