@@ -34,7 +34,7 @@ cinematographers:
   - cinematographer1
   - cinematographer2
 
-musicdirectors:
+music_directors:
   - musicdirector1
   - musicdirector2
 
@@ -43,7 +43,7 @@ genres:
   - genre2
   - genre3
 
-plottags:
+plot_tags:
   - plottag1
   - plottag2
   - plottag3

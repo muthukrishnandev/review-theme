@@ -1,0 +1,21 @@
+
+.movie-card{
+	.movie-meta {
+		.movie-title, .movie-taxonomy-link {
+			margin: 0px !important;
+			padding: 0px !important;
+		}
+
+		.movie-tagline {
+			margin-bottom: 8px; 
+		}
+	}
+
+	.movie-poster-container {
+		.movie-poster {
+			max-height: 300px;
+			display:block;
+    		margin:auto;
+		}
+	}	
+}

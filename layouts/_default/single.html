@@ -1,12 +1,10 @@
 {{ define "main" }}
-<div class="container-default-single">
-  <div class="post">
-    <h2 class="post-title">
+<div class="page-container">
+    <h2 class="page-title">
       <a href="{{ .Permalink }}">{{ .Title }}</a>
     </h2>
-    <div class="post-content inner-content">
+    <div class="page-content">
       {{ .Content }}
     </div>
-  </div>
 </div>
 {{ end }}

@@ -46,19 +46,19 @@ $grey-color-darkest: darken($grey-color, 60%) !default;
 $background-color: #fdfdfd !default;
 $text-color: #111 !default;
 
-$inner-content-width-max: $content-width - (2.5 * $spacing-unit);
+$inner-content-width-max: $content-width - (2 * $spacing-unit);
 $header-width-max: $content-width - $spacing-unit;
 
 // Import partials.
 @import "reset";
 @import "variables";
+@import "flexboxgrid";
 @import "base", "layout", "icons";
 @import "navigation";
 @import "header", "footer";
 @import "taxonomy";
 @import "pagination";
 
-@import "post_list";
-@import "item_post";
-
-@import "page_home", "page_error", "page_about";
+@import "page", "movie_card";
+@import "page_list", "page_list_item";
+@import "page_error", "page_about";

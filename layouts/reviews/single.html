@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="page-container review">
+  <div class="page-content review">
+  	{{ .Content }}
+
+  	{{ $moviePage := .Site.GetPage (.Params.movie) }}
+	{{ partial "movie-card.html" $moviePage }}	
+  </div>
+</div>
+{{ end }}

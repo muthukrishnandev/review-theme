@@ -1,23 +1,17 @@
 {{ define "main" }}
-<div class="container-list-terms">
-	{{ if eq .Type "tags" }}
-		<h1 class="tag-title">{{ .Title }}</h1>
-	{{ else }}
-		<h1 class="page-heading">{{ .Title }}</h1>
-	{{ end }}
-	<div class="page-description inner-content">
+<div class="page-container terms">
+	<h1 class="page-heading terms {{ .Type }}">{{ .Title }}</h1>
+	<div class="page-description terms">
 		{{ .Content }}
 	</div>
-	<div class="taxon-container">
-		<ul class="taxon-list">
-		{{ $data := .Data }}
-		{{ range $key, $taxon := .Data.Terms.Alphabetical }}
-			<li>
-				<a href="{{ $taxon.Name | urlize }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
-				{{ .Page.Params.Description }}
-			</li>
-		{{ end }}
-		</ul>
-	</div>
+	<ul class="page-list terms">
+	{{ $data := .Data }}
+	{{ range $key, $taxon := .Data.Terms.Alphabetical }}
+		<li>
+			<a href="{{ $taxon.Name | urlize }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
+			{{ .Page.Params.Description }}
+		</li>
+	{{ end }}
+	</ul>
 </div>
 {{ end }}

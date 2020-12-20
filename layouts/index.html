@@ -1,26 +1,15 @@
 {{ define "main" }}
-<div class="container-page-home">
-	<div class="container-list-home">
-		{{ $editorials := (where .Site.RegularPages "Type" "in" "editorials") }}
-	    {{ $editorials := first 5 $editorials.ByDate.Reverse }}
-	    {{ if $editorials }}
-			<div class="home-tab list-editorials">
-				<h2>Recent Editorials</h2>
-				{{ range $editorials }}
-					{{ partial "item-editorial.html" . }}
-				{{ end }}
-			</div>
-	    {{ end }}
-	   	{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
-	   	{{ $reviews := first 5 $reviews.ByDate.Reverse }}
-	   	{{ if $reviews }}
-			<div class="home-tab list-reviews">
-				<h2>Recent Reviews</h2>
-				{{ range $reviews }}
-					{{ partial "item-review.html" . }}
-				{{ end }}
-			</div>
-	    {{ end }}
-	</div>
+<div class="page-container home">
+	{{ $editorials := (where .Site.RegularPages "Type" "in" "editorials") }}
+   	{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
+   	{{ $posts := union ($editorials) ($reviews) }}
+    {{ $posts = first 5 $posts.ByDate.Reverse }}
+    {{ if $posts }}
+		<div class="page-list home">
+		{{ range $posts }}
+			{{ partial "item-post.html" . }}
+		{{ end }}
+		</div>
+    {{ end }}
 </div>
 {{ end }}

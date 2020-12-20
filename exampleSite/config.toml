@@ -152,14 +152,14 @@ theme = "movie-hugo-theme"
   actor = "actors"
   director = "directors"
   cinematographer = "cinematographers"
-  musicdirector = "musicdirectors"
+  music_director = "musicdirectors"
 
   # movie plot
   genre = "genres"
-  plottag = "plottags"
+  plot_tag = "plot_tags"
 
   # reviews
-  reviewtag = "reviewtags"
+  review_tag = "review_tags"
 
 [permalinks]
   actors = "/actor/:title/"
@@ -167,7 +167,14 @@ theme = "movie-hugo-theme"
   movies = "/movie/:title/"
   reviews = "/review/:title/"
   genres = '/genre/:title'
+  directors = '/director/:title'
+  music_directors = '/musicdirector/:title'
+  cinematographers = '/cinematographer/:title'
 
-  tags = "/tag/default/:title"
-  reviewtag = "/tag/review/:title"
-  plottag = "/tag/plot/:title"
+  tags = "/tag/:title"
+  review_tags = "/reviewtag/:title"
+  plot_tags = "/plottag/:title"
+
+# [indexes]
+#   plot_tag = "plottags"
+#   # articles = “articles”

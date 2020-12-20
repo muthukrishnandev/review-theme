@@ -7,7 +7,7 @@ draft: true
 score: 80
 movie: "movie1.md" # must be linked with a movie
 
-reviewtags:
+review_tags:
     - reviewtag1
     - reviewtag2
     - reviewtag3

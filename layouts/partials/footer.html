@@ -3,7 +3,7 @@
     <div class="footer-nav">
         <ul class="footer-list">
             {{ if .Site.Params.Config.ShowSocialFooterNav }}
-                {{ partial "social_icons.html" . }}
+                {{ partial "social-icons.html" . }}
             {{ else }}
                 {{ $current := . }}
                 {{ range .Site.Menus.footer }}

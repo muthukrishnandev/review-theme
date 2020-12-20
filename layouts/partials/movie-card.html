@@ -1,0 +1,31 @@
+<div class="movie-card">
+	{{ $metaParams := .Params.meta }}
+	<div class="row">
+		<div class="col-md-4 movie-poster-container">
+			{{ $image := resources.Get .Params.poster }}
+			<img class="movie-poster" src="{{ $image.Permalink }}">
+		</div>
+		<div class="col-md-8 movie-meta">
+			<h2 class="movie-title">{{ $metaParams.title }}</h2>
+			<p class="movie-tagline">{{ $metaParams.tagline }}</p>
+			{{ $allTaxos := slice "actors" "music_directors" "cinematographers" "directors" "genres" "plot_tags"}}
+
+			{{ range $index, $taxoName := $allTaxos }}
+			<div class="movie-taxonomy {{ $taxoName }}">
+				<span class="movie-taxonomy-title">{{ partial "tag-title.html" $taxoName }}:</span>
+				{{ $allTerms := $.Param $taxoName}}
+				{{ $termSize := len $allTerms }}
+				{{ range $index, $tag := $allTerms }}
+				  {{ $tagName := . }}
+				  {{ $tagURL := (delimit (slice $taxoName $tag) "/") }}
+				  {{ with $.Site.GetPage (printf "%s" $tagURL) }}
+				    <a class="movie-taxonomy-link" href="{{ .Permalink }}">{{ $tagName }}</a>
+				    {{- if lt $index (sub $termSize 1) -}}, {{ end }}
+				  {{ end }}
+				{{ end }}
+			</div>
+			{{ end }}				
+		</div>
+		<div class="movie-links"></div>
+	</div>
+</div>
