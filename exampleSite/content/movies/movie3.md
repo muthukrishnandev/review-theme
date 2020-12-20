@@ -2,8 +2,11 @@
 title: "Movie3"
 date: 2020-05-17T18:27:46+05:30
 
-poster: "images/posters/poster.png" # place it in assets/images/posters
-review: "review-name.md"
+poster:  
+  remote: "https://example.com/sample.png" 
+  local: "poster.png" # place it inside in assets/images/posters
+
+review: "review1.md"
 
 meta:
   title: "movie title"

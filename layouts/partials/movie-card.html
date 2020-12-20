@@ -1,12 +1,26 @@
 <div class="movie-card">
 	{{ $metaParams := .Params.meta }}
-	<div class="row">
+	<div class="row">		
 		<div class="col-md-4 movie-poster-container">
-			{{ $image := resources.GetMatch .Params.poster }}
-			{{ if $image }}
-				<img class="movie-poster" src="{{ $image.Permalink }}">
+			{{ if not (isset .Params "poster") }}
+				{{ errorf "poster param not found for %s" .File }}
+			{{ end }}
+
+			{{ $posterLocal := .Params.poster.local }}
+			{{ $posterRemote := .Params.poster.remote }}
+
+			{{ if $posterLocal }}
+				{{ $filePath := path.Join "images" "posters" $posterLocal }}
+				{{ $posterRes := resources.GetMatch $filePath }}
+				{{ if $posterRes }}
+					<img class="movie-poster" src="{{ $posterRes.Permalink }}">
+				{{ else }}
+					{{ errorf "'%s' file not found for '%s'" .Params.poster .File }}
+				{{ end }}
+			{{ else if $posterRemote }}
+				<img class="movie-poster" src="{{ $posterRemote }}">
 			{{ else }}
-				{{ errorf "'%s' file not found for '%s'" .Params.poster .File }}
+				{{ errorf "poster param not found for %s" .File }}
 			{{ end }}
 		</div>
 		<div class="col-md-8 movie-meta">
@@ -28,7 +42,15 @@
 				  {{ end }}
 				{{ end }}
 			</div>
-			{{ end }}				
+			{{ end }}
+
+			<div class="movie-links">
+				<span class="movie-link-title">Links:</span>
+				<a target="_blank" href="{{ $metaParams.links.imdb }}">IMDb</a>, 
+				<a target="_blank" href="{{ $metaParams.links.rotten_tomatoes }}">RottenTomatoes</a>, 
+				<a target="_blank" href="{{ $metaParams.links.meta_critic }}">MetaCritic</a>, 
+				<a target="_blank" href="{{ $metaParams.links.wikipedia }}">Wikipedia</a>
+			</div>
 		</div>
 		<div class="movie-links"></div>
 	</div>
