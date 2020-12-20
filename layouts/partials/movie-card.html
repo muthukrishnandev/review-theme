@@ -2,8 +2,12 @@
 	{{ $metaParams := .Params.meta }}
 	<div class="row">
 		<div class="col-md-4 movie-poster-container">
-			{{ $image := resources.Get .Params.poster }}
-			<img class="movie-poster" src="{{ $image.Permalink }}">
+			{{ $image := resources.GetMatch .Params.poster }}
+			{{ if $image }}
+				<img class="movie-poster" src="{{ $image.Permalink }}">
+			{{ else }}
+				{{ errorf "'%s' file not found for '%s'" .Params.poster .File }}
+			{{ end }}
 		</div>
 		<div class="col-md-8 movie-meta">
 			<h2 class="movie-title">{{ $metaParams.title }}</h2>
