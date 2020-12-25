@@ -1,0 +1,42 @@
+.post-single {
+    .post-header {
+      margin-top: $spacing-unit * 1;
+      margin-bottom: $spacing-unit / 2;
+    }
+
+    .post-title {
+      font-weight: 900;
+      line-height: $very-small-line-height;
+    }
+
+    .post-content {
+      margin-bottom: $spacing-unit;
+    }
+
+    .post-meta {
+      color: $grey-color-dark;
+      margin: 10px 0px;
+
+
+      @include mobile {
+        text-align: left;
+      }
+      
+      .post-taxonomies {
+        color: $grey-color;
+        margin: 10px 0px;
+
+          float: right;
+        @include desktop {
+        }
+
+        @include mobile {
+          margin: 5px 0px;
+        }
+
+        a.tags {
+          margin-right: 5px;
+        }
+      }
+    }
+}

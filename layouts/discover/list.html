@@ -1,23 +1,21 @@
 {{ define "main" }}
-<div class="page-container tags">
-	<h1 class="page-heading tags">{{ .Title }}</h1>
-	<div class="page-description tags">
+<div class="page-container {{ .Type }}">
+	<h1 class="page-heading {{ .Type }}">{{ .Title }}</h1>
+	<div class="page-description {{ .Type }}">
       {{ .Content }}
     </div>
-    <div class="page-list tags">
+    <div class="page-content-wrapper {{ .Type }}">
         {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
             {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
             	{{ if $taxonomy }}
-	            	<h3>
-	            		<a href="{{ .Permalink }}">{{ partial "tag-title.html" $taxonomy_term }}</a>
-	            	</h3>
-	                <ul>
-	                    {{ range $key, $value := $taxonomy }}
-	                        <li>
-	                        	<a href="{{ $value.Page.Permalink }}">{{ $key }}</a>
-	                        </li>
-	                    {{ end }}
-	                </ul>
+	            	<h3><a href="{{ .Permalink }}">{{ partial "tag-title.html" $taxonomy_term }}</a></h3>
+    				<div class="post-list {{ .Type }}">
+		                <ul>
+		                    {{ range $key, $value := $taxonomy }}
+		                        <li><a href="{{ $value.Page.Permalink }}">{{ $key }}</a></li>
+		                    {{ end }}
+		                </ul>
+    				</div>
                 {{ end }}
             {{ end }}
         {{ end }}

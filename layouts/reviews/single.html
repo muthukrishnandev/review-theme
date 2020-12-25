@@ -1,10 +1,11 @@
 {{ define "main" }}
-<div class="page-container review">
-  <div class="page-content review">
-  	{{ .Content }}
-
+<div class="page-container {{ .Type }}">
+  <div class="page-content-wrapper {{ .Type }}">
   	{{ $moviePage := .Site.GetPage (.Params.movie) }}
-	{{ partial "movie-card.html" $moviePage }}	
+	{{ partial "movie-card.html" $moviePage }}
+	<div class="post-single {{ .Type }}">
+  		{{ .Content }}
+	</div>
   </div>
 </div>
 {{ end }}

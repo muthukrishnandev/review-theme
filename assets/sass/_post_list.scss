@@ -1,0 +1,66 @@
+.post-list {
+  .post-list-item{
+    .post-header {
+      margin-bottom: $spacing-unit / 2;
+    }
+
+    .post-title {
+      font-weight: 400;
+    }
+
+    .post-title.starred {
+        &:after{
+          display: table-cell;
+          content: "\2605";
+          font-size: 0.5em;
+          vertical-align: middle;
+        }
+    }
+
+    .post-summary {
+      margin-top: $spacing-unit / 4;
+      margin-bottom: $spacing-unit / 4;
+    }
+
+    .post-date {
+      color: $grey-color;
+      display:block;
+      position: relative; 
+      margin-top: -15px;
+      margin-left: 0px;
+
+      // @include relative-font-size(1.1);
+
+      @include mobile {
+        text-align: left;
+        margin-top: 0px;
+        margin-left: 10px;
+      }
+    }
+
+    .post-taxonomies {
+      color: $grey-color;
+      display: block;
+      position: relative;
+      text-align: right;
+      margin-top: -30px;
+      margin-left: 125px;
+      max-width: $inner-content-width-max;
+
+      // @include relative-font-size(1.1);
+
+      @include mobile {
+        display: block;
+        text-align: left;
+        margin-top: 0px;
+        margin-left: 10px;
+      }
+
+      a.post-taxonomy {
+        @extend .hash-tag;
+        color: $grey-color;
+        margin-right: 5px;
+      }
+    }
+  }
+}

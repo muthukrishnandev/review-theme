@@ -54,11 +54,7 @@ $header-width-max: $content-width - $spacing-unit;
 @import "variables";
 @import "flexboxgrid";
 @import "base", "layout", "icons";
-@import "navigation";
-@import "header", "footer";
-@import "taxonomy";
-@import "pagination";
-
-@import "page", "movie_card";
-@import "page_list", "page_list_item";
-@import "page_error", "page_about";
+@import "header", "footer", "navigation";
+@import "movie_card", "pagination";
+@import "page_base", "page_specific";
+@import "post_list", "post_single";

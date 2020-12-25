@@ -5,7 +5,7 @@
    	{{ $posts := union ($editorials) ($reviews) }}
     {{ $posts = first 5 $posts.ByDate.Reverse }}
     {{ if $posts }}
-		<div class="page-list home">
+		<div class="post-list home">
 		{{ range $posts }}
 			{{ partial "item-post.html" . }}
 		{{ end }}

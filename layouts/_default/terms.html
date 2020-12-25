@@ -1,17 +1,19 @@
 {{ define "main" }}
-<div class="page-container terms">
-	<h1 class="page-heading terms {{ .Type }}">{{ .Title }}</h1>
-	<div class="page-description terms">
+<div class="page-container {{ .Type }}">
+	<h1 class="page-heading {{ .Type }}">{{ .Title }}</h1>
+	<div class="page-description {{ .Type }}">
 		{{ .Content }}
 	</div>
-	<ul class="page-list terms">
-	{{ $data := .Data }}
-	{{ range $key, $taxon := .Data.Terms.Alphabetical }}
-		<li>
-			<a href="{{ $taxon.Name | urlize }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
-			{{ .Page.Params.Description }}
-		</li>
-	{{ end }}
-	</ul>
+	<div class="page-content-wrapper">
+		<ul class="post-list {{ .Type }}">
+		{{ $data := .Data }}
+		{{ range $key, $taxon := .Data.Terms.Alphabetical }}
+			<li>
+				<a href="{{ $taxon.Name | urlize }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
+				<p>{{ .Page.Params.Description }}</p>
+			</li>
+		{{ end }}
+		</ul>
+	</div>
 </div>
 {{ end }}

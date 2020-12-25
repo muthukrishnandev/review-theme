@@ -20,12 +20,7 @@ body {
 }
 
 .page-heading {
-  // @include relative-font-size(2.5);
   color: $grey-color-darker;
-
-  // @include mobile {
-  //   @include relative-font-size(2);
-  // }
 }
 
 .page-description {
@@ -53,23 +48,7 @@ body {
     padding-right: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;   
   }
-
-  // @include desktop {
-  //   > div {
-  //     width: $inner-content-width-max; 
-  //   }
-  // }
 }
-
-// .inner-content {
-  // word-wrap: break-word;
-  // max-width: $inner-content-width-max !important;
-  // width: 100% !important;
-  // p {
-  //   margin: 0;
-  //   padding: 0;
-  // }
-// }
 
 /*****
   Containers

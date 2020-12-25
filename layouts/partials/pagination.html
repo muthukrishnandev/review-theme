@@ -1,10 +1,10 @@
 {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-<div class="pagination">
-  {{ if .Paginator.HasPrev }}
-  	<a class="btn previous" href="{{ .Paginator.Prev.URL }}">Newer Posts</a>
-  {{ end }}
-  {{ if .Paginator.HasNext }}
-  	<a class="btn next" href="{{ .Paginator.Next.URL }}">Older Posts</a>
-  {{ end }}
-</div>
+	<div class="pagination">
+	  {{ if .Paginator.HasPrev }}
+	  	<a class="btn previous" href="{{ .Paginator.Prev.URL }}">Newer {{ .Type | title }}</a>
+	  {{ end }}
+	  {{ if .Paginator.HasNext }}
+	  	<a class="btn next" href="{{ .Paginator.Next.URL }}">Older {{ .Type | title }}</a>
+	  {{ end }}
+	</div>
 {{ end }}

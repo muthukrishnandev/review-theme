@@ -96,35 +96,41 @@ theme = "movie-hugo-theme"
     url = "/"
     weight = 1
   [[menu.header]]
-    name = "Reviews"
-    identifier = "reviews"
-    title = "reviews"
-    url = "/reviews"
-    weight = 3
-  [[menu.header]]
     name = "Top"
     identifier = "top"
     title = "top"
     url = "/top"
     weight = 2
   [[menu.header]]
+    name = "Discover"
+    identifier = "discover"
+    title = "discover"
+    url = "/discover"
+    weight = 3
+  [[menu.header]]
+    name = "Movies"
+    identifier = "Movies"
+    title = "Movies"
+    url = "/Movies"
+    weight = 4
+  [[menu.header]]
+    name = "Reviews"
+    identifier = "reviews"
+    title = "reviews"
+    url = "/reviews"
+    weight = 5
+  [[menu.header]]
     name = "Editorials"
     identifier = "editorials"
     title = "editorials"
     url = "/editorials"
-    weight = 4
-  [[menu.header]]
-    name = "Discover"
-    identifier = "Discover"
-    title = "Discover"
-    url = "/discover"
-    weight = 5
+    weight = 6
   [[menu.header]]
     name = "About"
     identifier = "about"
     title = "about"
     url = "/about"
-    weight = 6
+    weight = 7
 
   [[menu.footer]]
     name = "Home"

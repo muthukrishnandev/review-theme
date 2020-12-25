@@ -1,25 +1,27 @@
 {{ define "main" }}
-<div class="page-container top">
-	<h1 class="page-heading top">{{ .Title }}</h1>
-	<div class="page-description top">
+<div class="page-container {{ .Type }}">
+	<h1 class="page-heading {{ .Type }}">{{ .Title }}</h1>
+	<div class="page-description {{ .Type }}">
       {{ .Content }}
     </div>
 	{{ $reviews := ((where .Site.RegularPages "Type" "in" "reviews").ByParam "score").Reverse }}
 	{{ if $reviews }}
-		<div class="page-list top">
-			<table>
-			  <thead>
-			    <th>Movie</th>
-			    <th>Score</th>
-			  </thead>
-			  <tbody>
-				{{ range $reviews }}
-					<div class="top-item">
-						{{ partial "item-top.html" . }}
-					</div>
-				{{ end }}
-			  </tbody>
-			</table>
+		<div class="page-content-wrapper {{ .Type }}">
+			<div class="post-list {{ .Type }}">
+				<table>
+				  <thead>
+				    <th>Movie</th>
+				    <th>Score</th>
+				  </thead>
+				  <tbody>
+					{{ range $reviews }}
+						<div class="top-item">
+							{{ partial "item-top.html" . }}
+						</div>
+					{{ end }}
+				  </tbody>
+				</table>
+			</div>
 		</div>
 	{{ end }}
 </div>

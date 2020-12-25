@@ -2,13 +2,13 @@
 	<div class="page-container {{ .Type }}">
 		<h1 class="page-heading">{{ .Title }}</h1>
 		{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
-		<div class="page-content-wrapper {{ .Type }}">
+		<div class="page-content-wrapper">
 			<div class="post-list {{ .Type }}">
 				{{ range $paginator.Pages }}
 					{{ partial "item-post.html" . }}
 				{{ end }}
 			</div>
-		    {{ partial "pagination.html" . }}
+			{{ partial "pagination.html" . }}
 		</div>
 	</div>
 {{ end }}
