@@ -327,13 +327,6 @@ table {
   th,
   td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
-  }
-  th {
-    background-color: lighten($grey-color-lighter, 3%);
-    border: 1px solid darken($grey-color-lighter, 4%);
-    border-bottom-color: darken($grey-color-lighter, 12%);
-  }
-  td {
     border: 1px solid $grey-color-light;
   }
 }

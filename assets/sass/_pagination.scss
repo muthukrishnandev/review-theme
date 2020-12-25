@@ -1,28 +1,24 @@
-.pagination {
-  position: relative;
+.post-pagination {
   margin-top: 2em;
-}
 
-.pagination:before, .pagination:after {
-  content: '';
-  display: table;
-}
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
 
-.pagination:after {
-  clear: both;
-}
+  &:after {
+    clear: both;
+  }
 
-.pagination .previous,
-.pagination .next {
-  @extend .black-button;
-}
+  .previous, .next {
+    @extend .black-button;
+  }
 
-.pagination .previous {
-  // @include relative-font-size(1.20);
-  float: left;
-}
+  .previous {
+    float: left;
+  }
 
-.pagination .next {
-  // @include relative-font-size(1.20);
-  float: right;
+  .next {
+    float: right;
+  }
 }
