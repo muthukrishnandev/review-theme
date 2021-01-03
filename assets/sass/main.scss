@@ -42,6 +42,9 @@ $grey-color-light: lighten($grey-color, 20%) !default;
 $grey-color-dark: darken($grey-color, 20%) !default;
 $grey-color-darker: darken($grey-color, 40%) !default;
 $grey-color-darkest: darken($grey-color, 60%) !default;
+$link-color: #4472ca !default;
+$link-color-dark: darken($link-color, 40%) !default;
+$link-color-darker: darken($link-color, 60%) !default;
 
 $background-color: #fdfdfd !default;
 $text-color: #111 !default;
@@ -49,10 +52,12 @@ $text-color: #111 !default;
 $inner-content-width-max: $content-width - (2 * $spacing-unit);
 $header-width-max: $content-width - $spacing-unit;
 
+// Import third party
+@import "./third_party/bootstrap-grid";
+
 // Import partials.
 @import "reset";
-@import "variables";
-@import "flexboxgrid";
+@import "utils";
 @import "base", "layout", "icons";
 @import "header", "footer", "navigation";
 @import "movie_card", "pagination";

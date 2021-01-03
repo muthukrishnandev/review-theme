@@ -2,7 +2,7 @@
 <div class="page-container {{ .Type }}">
   <div class="page-content-wrapper {{ .Type }}">
   	{{ $moviePage := .Site.GetPage (.Params.movie) }}
-	{{ partial "movie-card.html" $moviePage }}
+	<a href="{{ $moviePage.Permalink }}">Go to movie page</a>
 	<div class="post-single {{ .Type }}">
   		{{ .Content }}
 	</div>

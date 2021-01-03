@@ -4,7 +4,9 @@
 	<div class="page-description {{ .Type }}">
       {{ .Content }}
     </div>
+    {{ $limit := .Site.Params.Meta.TopListCount }}
 	{{ $reviews := ((where .Site.RegularPages "Type" "in" "reviews").ByParam "score").Reverse }}
+	{{ $reviews = first $limit $reviews }}
 	{{ if $reviews }}
 		<div class="page-content-wrapper {{ .Type }}">
 			<div class="post-list {{ .Type }}">

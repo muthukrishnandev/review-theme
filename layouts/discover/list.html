@@ -8,7 +8,7 @@
         {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
             {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
             	{{ if $taxonomy }}
-	            	<h3><a href="{{ .Permalink }}">{{ partial "tag-title.html" $taxonomy_term }}</a></h3>
+	            	<h3><a class="dark-link" href="{{ .Permalink }}">{{ partial "tag-title.html" $taxonomy_term }}</a></h3>
     				<div class="post-list {{ .Type }}">
 		                <ul>
 		                    {{ range $key, $value := $taxonomy }}

@@ -166,19 +166,24 @@ h6 {
   * Links
   */
 a {
-  color: $grey-color-dark;
+  color: $link-color;
   letter-spacing: 1px;
 
   text-decoration: none;
 
   &:hover {
-    color: $black;
+    color: $link-color-dark;
     text-decoration: underline;
   }
 
   @include mobile {
-    color: $grey-color-darker;
+    color: $link-color-dark;
     margin: 0 5px;
+
+    &:hover {
+      color: $link-color-darker;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -329,6 +334,10 @@ table {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
     border: 1px solid $grey-color-light;
   }
+  th {
+    color: $black;
+    font-weight: 700;
+  }
 }
 
 // Specify the color of the selection
@@ -372,7 +381,7 @@ table {
   color: $grey-color;
 }
 
-.black-link {
+.dark-link {
   color: $text-color;
   text-decoration: none;
 
@@ -382,7 +391,7 @@ table {
   }
 }
 
-.black-button { 
+.dark-button { 
     color: $black;
     border: 1px solid $grey-color-darker;
     margin: 2px 2px;
@@ -404,4 +413,12 @@ table {
     &:before {
       content: "\0023"
     }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-strong {
+  font-weight: 700;
 }

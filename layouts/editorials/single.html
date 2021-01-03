@@ -7,17 +7,11 @@
           <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
           <div class="post-meta">
             <time class="dt-published" datetime="{{ .Date.Format `2006-01-02T15:04:05Z07:00` }}" itemprop="datePublished">{{ .Date.Format "Jan 2, 2006" }}</time>
-            {{ if .Site.Params.Author }}
-            &bull;
-            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-              <span class="p-author h-card" itemprop="name">{{ .Site.Params.Author.Name }}</span>
-            </span>
-            {{ end }}
           </div>
           {{ if .Params.tags }}
             <div class="post-tags">
             {{ range .Params.tags }}
-              <a class="tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+              <a class="hash-tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
             {{ end }}
             </div>
           {{ end }}
@@ -26,12 +20,12 @@
           {{ .Content }}
         </div>
       </article>
-      <div class="pagination">
-        {{ if .Prev }}
-          <a class="btn previous " href="{{ .Prev.Permalink }}">Prev Post</a>
+      <div class="post-pagination">
+        {{ if .PrevInSection }}
+          <a class="btn previous " href="{{ .PrevInSection.Permalink }}">&larr; {{ .PrevInSection.Title }}</a>
         {{ end }}
-        {{ if .Next }}
-          <a class="btn next " href="{{ .Next.Permalink}} ">Next Post</a>
+        {{ if .NextInSection }}
+          <a class="btn next " href="{{ .NextInSection.Permalink}} ">{{ .NextInSection.Title }} &rarr;</a>
         {{ end }}
       </div>
   </div>

@@ -36,7 +36,7 @@ jobs:
         run: |
           cd exampleSite
           HUGO_THEME="movie-hugo-theme"
-          hugo -v --themesDir ../.. -d ../site_docs
+          hugo -v --themesDir ../.. -d ../site_docs --minify
       - name: Deploy Build
         run: |
           git config user.name "${GITHUB_ACTOR}"

@@ -1,7 +1,7 @@
 <div class="movie-card">
 	{{ $metaParams := .Params.meta }}
 	<div class="row">		
-		<div class="col-md-4 movie-poster-container">
+		<div class="col-md-4 col-xs-12 movie-poster-container">
 			{{ if not (isset .Params "poster") }}
 				{{ errorf "poster param not found for %s" .File }}
 			{{ end }}
@@ -23,35 +23,41 @@
 				{{ errorf "poster param not found for %s" .File }}
 			{{ end }}
 		</div>
-		<div class="col-md-8 movie-meta">
+		<div class="col-md-8 col-xs-12 movie-meta">
 			<h2 class="movie-title">{{ $metaParams.title }}</h2>
 			<p class="movie-tagline">{{ $metaParams.tagline }}</p>
-			{{ $allTaxos := slice "actors" "music_directors" "cinematographers" "directors" "genres" "plot_tags"}}
-
-			{{ range $index, $taxoName := $allTaxos }}
-			<div class="movie-taxonomy {{ $taxoName }}">
-				<span class="movie-taxonomy-title">{{ partial "tag-title.html" $taxoName }}:</span>
-				{{ $allTerms := $.Param $taxoName}}
-				{{ $termSize := len $allTerms }}
-				{{ range $index, $tag := $allTerms }}
-				  {{ $tagName := . }}
-				  {{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
-				  {{ with $.Site.GetPage (printf "%s" $tagURL) }}
-				    <a class="movie-taxonomy-link" href="{{ .Permalink }}">{{ $tagName }}</a>
-				    {{- if lt $index (sub $termSize 1) -}}, {{ end }}
-				  {{ end }}
-				{{ end }}
-			</div>
-			{{ end }}
-
-			<div class="movie-links">
-				<span class="movie-link-title">Links:</span>
-				<a target="_blank" href="{{ $metaParams.links.imdb }}">IMDb</a>, 
-				<a target="_blank" href="{{ $metaParams.links.rotten_tomatoes }}">RottenTomatoes</a>, 
-				<a target="_blank" href="{{ $metaParams.links.meta_critic }}">MetaCritic</a>, 
-				<a target="_blank" href="{{ $metaParams.links.wikipedia }}">Wikipedia</a>
+			{{ partial "review-score.html" . }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-xs-12 movie-crew">
+			<h2>Cast &amp; Crew</h2>
+			<div class="movie-meta-container">
+				{{ $allTaxos := slice "actors" "directors" "music_directors" "cinematographers"}}
+				{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
 			</div>
 		</div>
-		<div class="movie-links"></div>
+		<div class="col-md-12 col-xs-12 movie-detail">
+			<h2>Movie Detail</h2>
+			<div class="movie-meta-container">
+				{{ $allTaxos := slice "genres" "plot_tags"}}
+				{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
+			</div>
+		</div>
+
+		<div class="col-md-12 col-xs-12 movie-external">
+			<h2>External Links</h2>
+			<div class="movie-meta-container">
+				<div class="movie-meta-row">
+					<div class="movie-meta-label clearfix">Links:</div>
+					<div class="movie-meta-data clearfix">
+						<a target="_blank" href="{{ $metaParams.links.imdb }}">IMDb</a>, 
+						<a target="_blank" href="{{ $metaParams.links.rotten_tomatoes }}">RottenTomatoes</a>, 
+						<a target="_blank" href="{{ $metaParams.links.meta_critic }}">MetaCritic</a>, 
+						<a target="_blank" href="{{ $metaParams.links.wikipedia }}">Wikipedia</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

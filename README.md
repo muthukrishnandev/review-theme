@@ -30,6 +30,15 @@ hugo server -t movie-hugo-theme
 
 For full configuration of theme refer [config.toml](https://github.com/muthukrishnandev/movie-hugo-theme/blob/master/exampleSite/config.toml)
 
+### Attribution
+	- [Picons Social](https://www.iconfinder.com/iconsets/picons-social) by Picons.me
+	- [Free Social Icons](https://www.iconfinder.com/iconsets/free-social-icons) by Neil Hainsworth
+	- [MiU Flat Social](https://www.iconfinder.com/iconsets/miu-flat-social) by Xinh Studio
+	- [Social Media](https://www.iconfinder.com/iconsets/social-media-2285) by Iconfinder
+	- [Pure CSS Percentage Circle](http://circle.firchow.net/)
+	- [FlexBoxGrid](https://github.com/kristoferjoseph/flexboxgrid)
+
+
 ### License
 
 This theme is open sourced under [MIT license](https://github.com/muthukrishnandev/movie-hugo-theme/blob/master/LICENSE.md).

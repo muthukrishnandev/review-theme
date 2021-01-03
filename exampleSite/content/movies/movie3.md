@@ -6,17 +6,15 @@ poster:
   remote: "https://example.com/sample.png" 
   local: "poster.png" # place it inside in assets/images/posters
 
-review: "review1.md"
-
 meta:
-  title: "movie title"
-  tagline: "movie tagline"
+  title: "movie title3"
+  tagline: "movie tagline3"
 
-  storyline: "story line"
+  storyline: "story line3"
 
   released_on: "2001-01-01"
   running_time: "time"
-  certificate: "U"
+  certificate: "A"
 
   links:
    imdb: "https://www.imdb.com/title/{ insert imdb_id here }"

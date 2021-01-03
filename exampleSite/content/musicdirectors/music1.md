@@ -3,7 +3,7 @@ title: "Music1"
 date: 2020-05-17T19:13:26+05:30
 draft: true
 
-image: "images/persons/person.png" # place it in assets/images/persons
+image: "person.png" # place it in assets/images/people
 
 meta:
   name: "music director name"

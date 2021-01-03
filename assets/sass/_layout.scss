@@ -17,56 +17,35 @@ body {
   max-width: $content-width;
   min-height: 100%;
   width: 100%;
-}
 
-.page-heading {
-  color: $grey-color-darker;
-}
-
-.page-description {
-  @include mobile {
-    padding: ($spacing-unit / 3) 5px;
-  }
-}
-
-.page-body {
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
-
- // padding: ($spacing-unit / 2) 0;
-  padding-bottom: $footer-height; // Important!
-
-  @extend %clearfix;
-
-  @include mobile {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width: calc(#{$content-width} - (#{$spacing-unit}));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;   
-  }
-}
-
-/*****
-  Containers
-*****/
-
-.container-page-home {
-  margin-top: $spacing-unit * 1.5;
-
-  @include mobile {
-    margin-top: $spacing-unit;
+  .page-heading {
+    color: $grey-color-darker;
   }
 
-}
+  .page-description {
+    @include mobile {
+      padding: ($spacing-unit / 3) 5px;
+    }
+  }
 
+  .page-body {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
 
-table {
-  th {
-    color: $black;
-    font-weight: 700;
+   // padding: ($spacing-unit / 2) 0;
+    padding-bottom: $footer-height; // Important!
+
+    @extend %clearfix;
+
+    @include mobile {
+      max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+      max-width: calc(#{$content-width} - (#{$spacing-unit}));
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: $spacing-unit / 2;
+      padding-left: $spacing-unit / 2;   
+    }
   }
 }

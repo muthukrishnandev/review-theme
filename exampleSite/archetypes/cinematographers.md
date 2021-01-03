@@ -3,7 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
 
-image: "images/persons/person.png" # place it in assets/images/persons
+image: "person.png" # place it in assets/images/people
 
 meta:
   name: "cinematographer name"

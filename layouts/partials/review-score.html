@@ -1,0 +1,40 @@
+{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
+{{ $reviews = (where $reviews ".Params.movie" .File.LogicalName )}}
+
+{{ if gt (len $reviews) 1 }}
+	errorf "more than one review?"
+{{ end }}
+
+{{ $review := index $reviews 0 }}
+
+{{ if $review }}
+	{{ $mainScore := $review.Params.score }}
+	<div class="review-summary">
+		<div class="review-consensus">
+			<div><span class="text-strong">Consensus:</span> {{ $review.Params.consensus }}</div>
+		</div>
+		<div class="rating-panel">
+			<div class="row justify-content-center">
+				<div class="col score-rating main-score text-center">
+					<div class="score-rating-data">{{ $mainScore }}%</div>
+					<div class="score-rating-label">{{ $.Site.Params.Meta.MainScore }}</div>
+				</div>
+
+				{{ $customScoreNames := $.Site.Params.Meta.CustomScores }}
+				{{ range $index, $score := $review.Params.custom_scores }}
+					<div class="col score-rating custom-score text-center">
+						<div class="score-rating-data">{{ $score }}%</div>
+						<div class="score-rating-label">{{ index $customScoreNames $index }}</div>
+					</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+{{ else }}
+	<div class="review-summary">
+		<div class="review-consensus">
+			<div><span class="text-strong">Consensus:</span> No consensus yet</div>
+		</div>
+	</div>
+{{ end }}
+ 

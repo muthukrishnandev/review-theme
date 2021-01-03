@@ -11,22 +11,27 @@
 <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.Info.Description }}{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 
-<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+<title>
+	{{ if .Title -}}
+		{{ .Title }} | 
+	{{ end -}}
+	{{- .Site.Title -}}
+</title>
 
 <!-- theme css -->
-{{ $sassTemplate := resources.Get "sass/main.scss" }}
+{{- $sassTemplate := resources.Get "sass/main.scss" }}
 {{ $mainStyleFile := $sassTemplate | resources.ExecuteAsTemplate "main.scss" .  }}
 {{ $mainStyle := $mainStyleFile | resources.ToCSS }}
-{{ $cssFiles := slice $mainStyle }}
+{{ $cssFiles := slice $mainStyle -}}
 
 {{- range $stylePath := .Site.Params.Style.CSS -}}
 	{{ $customCss := resources.Get $stylePath }}
 	{{ $cssFiles = $cssFiles | append $customCss }}
 {{- end -}}
 
-{{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{- $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $style := $cssFiles | resources.Concat "temp.css" | resources.ToCSS $options }}
-{{ $secureStyle := $style | resources.Fingerprint "sha512" }}
+{{ $secureStyle := $style | resources.Fingerprint "sha512" -}}
 
 <!-- CSS -->
 <link rel="stylesheet" href="{{ $secureStyle.Permalink }}" integrity="{{ $secureStyle.Data.Integrity }}">

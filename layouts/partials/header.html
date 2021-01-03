@@ -2,11 +2,14 @@
   <div class="clearfix">
     {{ $isSiteLogoExists := false }}
     {{ if and (.Site.Params.Config.ShowSiteLogo) (.Site.Params.Info.Logo) }}
-      {{ if fileExists (path.Join `static` `images` .Site.Params.Info.Logo) }}
+      {{ $logoFilePath := (path.Join `static` `images` .Site.Params.Info.Logo) }}
+      {{ if fileExists $logoFilePath }}
         {{ $isSiteLogoExists = true }}
         <a href="{{ .Site.BaseURL }}" class="site-avatar">
-          <img src="{{ .Site.Params.Info.Logo | absURL }}" />
+          <img src="{{ (path.Join `images` .Site.Params.Info.Logo) | absURL }}" />
         </a>
+      {{ else }}
+        {{ errorf "%s logo file not found" $logoFilePath }}
       {{ end }}
     {{ end }}
 

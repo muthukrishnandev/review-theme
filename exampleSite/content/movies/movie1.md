@@ -6,13 +6,11 @@ poster:
   remote: "https://example.com/sample.png" 
   <!-- local: "poster.png" # place it in assets/images/posters -->
 
-review: "review-name.md"
-
 meta:
-  title: "movie title"
-  tagline: "movie tagline"
+  title: "movie title1"
+  tagline: "movie tagline1"
 
-  storyline: "story line"
+  storyline: "story line1"
 
   released_on: "2001-01-01"
   running_time: "time"

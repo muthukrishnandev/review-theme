@@ -1,34 +1,28 @@
-.about-page {
-  .about-author {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+/***************
+  404 Page
+***************/
 
-    .author-avatar {
-      padding: 1px;
-      border: 1px solid $grey-color-light;
-      width: 10rem;
-      height: 10rem;
-      margin: 0 2rem 0 0;
+.page-container.error {
+  margin-top: $spacing-unit * 1.5;
+
+  .error-msg {
+      text-align: center;
+  }
+
+  .error-image {
+    text-align: center;
+    margin-top: $spacing-unit * 1.25;
+
+    @include mobile {
+      margin-top: $spacing-unit / 2;
     }
 
-    .author-info {
-      align-self: top;
-
-      .author-name {
-        margin-top: 1rem;
-        @include relative-font-size(3);
-      }
-
-      .author-description {
-        @include relative-font-size(1);
-        color: lighten($text-color, 20%);
-      }
+    img {
+      width: $content-width / 2;
     }
   }
 }
+
 
 // .social-media-list {
 //   margin-top: -1rem;
