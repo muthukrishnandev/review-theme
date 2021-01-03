@@ -3,13 +3,20 @@
 	{{ $editorials := (where .Site.RegularPages "Type" "in" "editorials") }}
    	{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
    	{{ $posts := union ($editorials) ($reviews) }}
-    {{ $posts = first 5 $posts.ByDate.Reverse }}
+
+	{{ $starred := where $posts "Params.starred" true }}
+	{{ $sorted := $posts.ByDate.Reverse }}
+  	{{ $sorted = union ($starred) ($sorted) }}
+
+	{{ $paginator := .Paginate $sorted }}
+
     {{ if $posts }}
 		<div class="post-list home">
-		{{ range $posts }}
-			{{ partial "item-post.html" . }}
+		{{ range $paginator.Pages }}
+		    {{ partial "item-post.html" . }}
 		{{ end }}
 		</div>
+		{{ partial "pagination.html" . }}
     {{ end }}
 </div>
 {{ end }}

@@ -19,6 +19,12 @@
 			margin-bottom: 8px; 
 		}
 
+		@include mobile {
+			.movie-title, .movie-tagline {
+				text-align: center;
+			}
+		}
+
 		.review-summary {
 			.rating-panel {
 				margin-top: 10px;
@@ -37,6 +43,12 @@
 	}
 
 	.movie-meta-container {
+
+		@include mobile {
+			margin-top: 8px;
+			margin-bottom: 8px;
+		}
+
 		.movie-meta-row {
 			display: table-row;
 		}

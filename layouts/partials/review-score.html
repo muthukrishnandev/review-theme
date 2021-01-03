@@ -29,8 +29,9 @@
 				{{ end }}
 			</div>
 		</div>
-		<div class="review-link text-center">
-			Read full review here <a href="{{ $review.Permalink }}">{{ $review.Title }}</a>
+		<div class="review-link">
+			<span class="text-strong">Full Review:</span>
+			<a href="{{ $review.Permalink }}">{{ $review.Title }}</a>
 		</div>
 	</div>
 {{ else }}

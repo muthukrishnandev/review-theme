@@ -5,7 +5,7 @@ title = "movie review"
 languageCode = "en-us"
 summaryLength = 10
 enableEmoji = true
-Paginate = 3
+Paginate = 5
 
 theme = "movie-hugo-theme"
 
@@ -16,7 +16,7 @@ theme = "movie-hugo-theme"
   Logo = "logo.png" # store in static/images
 
 [Params.Meta]
-  MainScore = "Review Name"
+  MainScore = "Main Score"
   CustomScores = ["Custom1", "Custom2"]
   TopListCount = 10
 
@@ -63,16 +63,11 @@ theme = "movie-hugo-theme"
   # home page
   ShowSummaryInPostList = false
   ShowStarredIcon = true
-  ShowAllStarredInHome = false # if enabled all the starred posts are showed in Home, paginate works excluding starred Posts
   
   # social icons
   ShowSocialFooterNav = true # enable this to show social nav instead of navigations
   ShowSocialIcons = true # enable this to show social icons instead of text
   ShowColorIcons = true # enable this to colorful social icons
-  
-  # license
-  ShowLicense = true
-  ShowLicenseInHome = true
 
 [menu]
   [[menu.header]]
@@ -169,4 +164,4 @@ theme = "movie-hugo-theme"
 
 # [indexes]
 #   plot_tag = "plottags"
-#   # articles = “articles”
+#   articles = “articles”
