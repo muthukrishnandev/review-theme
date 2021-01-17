@@ -1,0 +1,15 @@
+[build]
+base = "exampleSite"
+publish = "public"
+command = "hugo -v --minify --themesDir /opt/build/ --theme repo -d ./public -b $URL"
+
+[build.environment]
+	HUGO_VERSION = "0.74.3"
+	HUGO_ENV = "production"
+	HUGO_ENABLEGITINFO = "true"
+
+[context.deploy-preview]
+command = "hugo -v --minify --themesDir /opt/build/ --theme repo -d ./public -b $DEPLOY_PRIME_URL --buildFuture"
+
+[context.branch-deploy]
+command = "hugo -v --minify --themesDir /opt/build/ --theme repo -d ./public -b $DEPLOY_PRIME_URL --buildFuture"
