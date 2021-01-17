@@ -33,7 +33,7 @@ theme = "movie-hugo-theme"
   # Custom Css/Js/Fonts
   # CSS = ["css/main.css"] # place custom .css files inside assets folder
   # JS = ["js/main.js"] # place custom .js files inside assets folder
-  FontsLink = ["https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"] # only online fonts
+  FontsLink = ["https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"] # only online fonts
   FontsName = ["Open Sans"]
 
 [Params.Favicon]

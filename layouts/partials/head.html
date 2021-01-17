@@ -36,9 +36,14 @@
 <!-- CSS -->
 <link rel="stylesheet" href="{{ $secureStyle.Permalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
 
-{{ range $font := .Site.Params.Style.FontsLink }}
-<link href="{{ $font }}" rel="stylesheet">
-{{- end -}}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+{{ $fontLinks := .Site.Params.Style.FontsLink }}
+{{ if $fontLinks }}
+	{{ range $font := $fontLinks }}
+		<link rel="preload" as="style" href="{{ $font }}&display=swap" />
+		<link rel="stylesheet" href="{{ $font }}&display=swap" media="print" onload="this.media='all'" />
+	{{- end -}}
+{{ end }}
 
 <!-- Icons -->
 <link rel="shortcut icon" href="{{ (path.Join `favicons` .Site.Params.Favicon.Icon) | absURL }}">
