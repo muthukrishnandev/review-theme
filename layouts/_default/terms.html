@@ -6,12 +6,14 @@
 	</div>
 	<div class="page-content-wrapper">
 		<ul class="post-list {{ .Type }}">
-		{{ $data := .Data }}
-		{{ range $key, $taxon := .Data.Terms.Alphabetical }}
-			<li>
-				<a href="{{ $taxon.Page.Permalink }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
-				<p>{{ .Page.Params.Description }}</p>
-			</li>
+		{{ $data := .Data.Terms.Alphabetical }}
+		{{ if $data }}
+			{{ range $key, $taxon := $data }}
+				<li>
+					<a href="{{ $taxon.Page.Permalink }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
+					<p>{{ .Page.Params.Description }}</p>
+				</li>
+			{{ end }}
 		{{ end }}
 		</ul>
 	</div>
