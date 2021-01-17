@@ -9,7 +9,7 @@
 		{{ $data := .Data }}
 		{{ range $key, $taxon := .Data.Terms.Alphabetical }}
 			<li>
-				<a href="{{ $taxon.Name | urlize }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
+				<a href="{{ $taxon.Page.Permalink }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
 				<p>{{ .Page.Params.Description }}</p>
 			</li>
 		{{ end }}

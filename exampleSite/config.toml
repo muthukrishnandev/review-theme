@@ -19,6 +19,7 @@ theme = "movie-hugo-theme"
   MainScore = "Main Score"
   CustomScores = ["Custom1", "Custom2"]
   TopListCount = 10
+  DiscoverListCount = 5
 
 [Params.Social]
   Email = "Your Email ID"

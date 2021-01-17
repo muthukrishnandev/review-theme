@@ -30,8 +30,12 @@
 			</div>
 		</div>
 		<div class="review-link">
-			<span class="text-strong">Full Review:</span>
-			<a href="{{ $review.Permalink }}">{{ $review.Title }}</a>
+			<div class="mt-4">
+				<div class="d-inline-block text-strong">Full Review:</div>
+				<div class="d-inline-block">
+					<a class="pl-5" href="{{ $review.Permalink }}">{{ $review.Title }}</a>
+				</div>
+			</div>
 		</div>
 	</div>
 {{ else }}
