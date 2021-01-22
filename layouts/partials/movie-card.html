@@ -2,12 +2,12 @@
 	{{ $metaParams := .Params.meta }}
 	<div class="row">		
 		<div class="col-md-4 col-xs-12 movie-poster-container">
-			{{ if not (isset .Params "poster") }}
+			{{ if not (isset $metaParams "poster") }}
 				{{ errorf "poster param not found for %s" .File }}
 			{{ end }}
 
-			{{ $posterLocal := .Params.poster.local }}
-			{{ $posterRemote := .Params.poster.remote }}
+			{{ $posterLocal := $metaParams.poster.local }}
+			{{ $posterRemote := $metaParams.poster.remote }}
 
 			{{ if $posterLocal }}
 				{{ $filePath := path.Join "images" "posters" $posterLocal }}
@@ -33,14 +33,14 @@
 		<div class="col-md-12 col-xs-12 movie-crew">
 			<h2>Cast &amp; Crew</h2>
 			<div class="movie-meta-container">
-				{{ $allTaxos := slice "actors" "directors" "music_directors" "cinematographers"}}
+				{{ $allTaxos := slice "actors" "directors" "musicdirectors" "cinematographers"}}
 				{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
 			</div>
 		</div>
 		<div class="col-md-12 col-xs-12 movie-detail">
 			<h2>Movie Detail</h2>
 			<div class="movie-meta-container">
-				{{ $allTaxos := slice "genres" "plot_tags"}}
+				{{ $allTaxos := slice "genres" "plottags"}}
 				{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
 			</div>
 		</div>
@@ -49,12 +49,13 @@
 			<h2>External Links</h2>
 			<div class="movie-meta-container">
 				<div class="movie-meta-row">
-					<div class="movie-meta-label clearfix">Links:</div>
-					<div class="movie-meta-data clearfix">
-						<a target="_blank" href="{{ $metaParams.links.imdb }}">IMDb</a>, 
-						<a target="_blank" href="{{ $metaParams.links.rotten_tomatoes }}">RottenTomatoes</a>, 
-						<a target="_blank" href="{{ $metaParams.links.meta_critic }}">MetaCritic</a>, 
-						<a target="_blank" href="{{ $metaParams.links.wikipedia }}">Wikipedia</a>
+					<div class="movie-meta-data">
+						<ul>
+						<li><a target="_blank" href="{{ $metaParams.links.imdb }}">IMDb</a></li>
+						<li><a target="_blank" href="{{ $metaParams.links.rotten_tomatoes }}">RottenTomatoes</a></li>
+						<li><a target="_blank" href="{{ $metaParams.links.meta_critic }}">MetaCritic</a></li>
+						<li><a target="_blank" href="{{ $metaParams.links.wikipedia }}">Wikipedia</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>

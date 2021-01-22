@@ -36,7 +36,10 @@
 <!-- CSS -->
 <link rel="stylesheet" href="{{ $secureStyle.Permalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+{{ range $fontLink := .Site.Params.Style.FontsPreconnect }}
+<link rel="preconnect" href="{{ $fontLink }}" crossorigin />
+{{ end }}
+
 {{ $fontLinks := .Site.Params.Style.FontsLink }}
 {{ if $fontLinks }}
 	{{ range $font := $fontLinks }}

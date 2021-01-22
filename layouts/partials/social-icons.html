@@ -45,8 +45,8 @@
 
 {{ if .Site.Params.Social.Reddit }}
 	{{ if and (.Site.Params.Config.ShowSocialIcons) }}
-		<li class="social-icon"><a target="_blank" href="https://reddit.com/u/{{ .Site.Params.Social.Reddit }}"><i class="{{ $socialColor }} svg-icon reddit"></i></a></li>
+		<li class="social-icon"><a target="_blank" href="https://reddit.com/{{ .Site.Params.Social.Reddit }}"><i class="{{ $socialColor }} svg-icon reddit"></i></a></li>
 	{{ else }}
-		<li class="social-text"><a target="_blank" href="https://reddit.com/u/{{ .Site.Params.Social.Reddit }}">reddit</a></li>
+		<li class="social-text"><a target="_blank" href="https://reddit.com/{{ .Site.Params.Social.Reddit }}">reddit</a></li>
 	{{ end }}
 {{ end }}

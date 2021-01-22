@@ -2,7 +2,9 @@
 {{ $context := .context }}
 {{ range $index1, $taxoName := $allTaxos }}
 	<div class="movie-meta-row movie-taxonomies {{ $taxoName }}">
-		<div class="movie-meta-label clearfix">{{ partial "tag-title.html" $taxoName }}:</div>
+		{{ with $context.Site.GetPage (printf "/%s" $taxoName) }}
+			<div class="movie-meta-label clearfix">{{ .Title }}:</div>
+		{{ end }}
 		<div class="movie-meta-data clearfix">
 			{{ $allTerms := $context.Param $taxoName}}
 			{{ $termSize := len $allTerms }}

@@ -1,7 +1,6 @@
 ---
 title: "Editorial2"
 date: 2020-06-20T19:09:48+05:30
-draft: true
 tags:
     - tag1
     - tag5

@@ -10,7 +10,7 @@
 		{{ if $data }}
 			{{ range $key, $taxon := $data }}
 				<li>
-					<a href="{{ $taxon.Page.Permalink }}">{{ $taxon.Name }}</a> ({{ $taxon.Count }})
+					<a href="{{ $taxon.Page.Permalink }}">{{ $taxon.Page.Title }}</a> ({{ $taxon.Count }})
 					<p>{{ .Page.Params.Description }}</p>
 				</li>
 			{{ end }}

@@ -22,18 +22,19 @@ theme = "movie-hugo-theme"
   DiscoverListCount = 5
 
 [Params.Social]
-  Email = "Your Email ID"
-  Facebook = "Your Facebook ID"
-  Twitter = "Your Twitter ID"
-  Instagram = "Your Instagram ID"
-  Youtube = "Your Youtube ID"
-  Reddit = "Your Reddit ID"
+  Email = "Your_Email_ID"
+  Facebook = "Your_Facebook_ID"
+  Twitter = "Your_Twitter_ID"
+  Instagram = "Your_Instagram_ID"
+  Youtube = "Your_Youtube_ID"
+  Reddit = "u/Your_Reddit_ID"
 
 [Params.Style]
   # Custom Css/Js/Fonts
   # CSS = ["css/main.css"] # place custom .css files inside assets folder
   # JS = ["js/main.js"] # place custom .js files inside assets folder
   FontsLink = ["https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"] # only online fonts
+  FontsPreconnect = ["https://fonts.gstatic.com"]
   FontsName = ["Open Sans"]
 
 [Params.Favicon]
@@ -96,10 +97,10 @@ theme = "movie-hugo-theme"
     url = "/Movies"
     weight = 4
   [[menu.header]]
-    name = "Reviews"
-    identifier = "reviews"
-    title = "reviews"
-    url = "/reviews"
+    name = "TV Shows"
+    identifier = "TV Shows"
+    title = "TV Shows"
+    url = "/tvshows"
     weight = 5
   [[menu.header]]
     name = "Editorials"
@@ -140,28 +141,46 @@ theme = "movie-hugo-theme"
   actor = "actors"
   director = "directors"
   cinematographer = "cinematographers"
-  music_director = "music_directors"
+  music_director = "musicdirectors"
 
   # movie plot
   genre = "genres"
-  plot_tag = "plot_tags"
+  plottag = "plottags"
 
   # reviews
-  review_tag = "review_tags"
+  reviewtag = "reviewtags"
 
 [permalinks]
-  actors = "/actor/:title/"
-  tvshows = "/tv/:title/"
-  movies = "/movie/:title/"
-  reviews = "/review/:title/"
-  genres = '/genre/:title'
-  directors = '/director/:title'
-  music_directors = '/musicdirector/:title'
-  cinematographers = '/cinematographer/:title'
+  movies = "/movie/:slug/"
+  reviews = "/review/:slug/"
+  tvshows = "/tv/:slug/"
 
-  tags = "/tag/:title"
-  review_tags = "/reviewtag/:title"
-  plot_tags = "/plottag/:title"
+  actors = "/actor/:slug/"
+  directors = '/director/:slug/'
+  genres = '/genre/:slug/'
+  cinematographers = '/cinematographer/:slug/'
+  musicdirectors = '/musicdirector/:slug/'
+
+  tags = "/tag/:title/"
+  reviewtags = "/reviewtag/:title/"
+  plottags = "/plottag/:title/"
+
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "contentMeta"
+    target = "content"
+  [[module.mounts]]
+    source = "contentAuto"
+    target = "content"
+  [[module.mounts]]
+    source = "contentMisc"
+    target = "content"
+  [[module.mounts]]
+    source = "contentTaxos"
+    target = "content"
 
 # [indexes]
 #   plot_tag = "plottags"

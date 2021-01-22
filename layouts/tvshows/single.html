@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="page-container {{ .Type }}">
+	<div class="page-content-wrapper {{ .Type }}">
+	  {{ partial "movie-card.html" . }}
+	  <div class="post-single {{ .Type }}">
+	  	{{ .Content }}
+	  </div>
+	</div>
+</div>
+{{ end }}

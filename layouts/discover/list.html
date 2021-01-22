@@ -9,20 +9,20 @@
         {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
             {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
             	{{ if $taxonomy }}
-	            	<h3><a class="dark-link" href="{{ .Permalink }}">{{ partial "tag-title.html" $taxonomy_term }}</a></h3>
+	            	<h3><a class="dark-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
     				<div class="post-list {{ .Type }}">
 		                <ul>
                             {{ $count := 0 }}
                             {{ $isNeedLink := gt (len $taxonomy) $totalLimit }}
-		                    {{ range $key, $value := $taxonomy }}
+		                    {{ range $key, $value := $taxonomy.ByCount }}
                                 {{ $count = add $count 1 }}
                                 {{ if le $count $totalLimit }}
-		                          <li><a href="{{ $value.Page.Permalink }}">{{ $key }}</a></li>
+		                          <li><a href="{{ $value.Page.Permalink }}">{{ $value.Page.Title }}</a></li>
                                 {{ end}}
 		                    {{ end }}
                         </ul>
                         {{ if $isNeedLink }}
-                            <a class="ml-4 my-4" href="{{ .Permalink }}"> See All {{ $taxonomy_term }}</a>
+                            <a class="ml-4 my-4" href="{{ .Permalink }}"> See All {{ .Title }}</a>
                         {{ end }}
     				</div>
                 {{ end }}

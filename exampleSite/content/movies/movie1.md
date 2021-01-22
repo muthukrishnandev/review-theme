@@ -1,20 +1,21 @@
 ---
-title: "Movie1"
+title: "Movie 1"
 date: 2020-05-17T18:27:41+05:30
 
-poster:  
-  remote: "https://example.com/sample.png" 
-  <!-- local: "poster.png" # place it in assets/images/posters -->
-
 meta:
-  title: "movie title1"
-  tagline: "movie tagline1"
+  title: "movie title 1"
+  tagline: "movie tagline 1"
 
-  storyline: "story line1"
+  storyline: "story line 1"
 
   released_on: "2001-01-01"
-  running_time: "time"
+  running_time: 100 # in minutes
   certificate: "U"
+
+  trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE" 
+  poster:  
+    # remote: "https://example.com/sample.png" 
+    local: "poster.png" # place it in assets/images/posters
 
   links:
    imdb: "https://www.imdb.com/title/{ insert imdb_id here }"
@@ -35,7 +36,7 @@ cinematographers:
   - cinematographer1
   - cinematographer2
 
-music_directors:
+musicdirectors:
   - musicdirector1
   - musicdirector2
 
@@ -44,7 +45,7 @@ genres:
   - genre2
   - genre3
 
-plot_tags:
+plottags:
   - plottag1
   - plottag2
   - plottag3
