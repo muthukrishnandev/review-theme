@@ -6,28 +6,47 @@
     </div>
     <div class="page-content-wrapper {{ .Type }}">
         {{ $totalLimit := .Site.Params.Meta.DiscoverListCount }}
-        {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
-            {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
-            	{{ if $taxonomy }}
-	            	<h3><a class="dark-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
-    				<div class="post-list {{ .Type }}">
-		                <ul>
-                            {{ $count := 0 }}
-                            {{ $isNeedLink := gt (len $taxonomy) $totalLimit }}
-		                    {{ range $key, $value := $taxonomy.ByCount }}
-                                {{ $count = add $count 1 }}
-                                {{ if le $count $totalLimit }}
-		                          <li><a href="{{ $value.Page.Permalink }}">{{ $value.Page.Title }}</a></li>
-                                {{ end}}
-		                    {{ end }}
-                        </ul>
-                        {{ if $isNeedLink }}
-                            <a class="ml-4 my-4" href="{{ .Permalink }}"> See All {{ .Title }}</a>
-                        {{ end }}
-    				</div>
+
+        {{ $siteTaxos := .Site.Taxonomies }}
+        {{ $totalCount := len $siteTaxos }}
+        {{ $halfCount := div $totalCount 2 }}
+
+        <div class="row">
+            {{ $index := 0 }}
+            {{ range $taxonomyTerm, $taxonomy := $siteTaxos }}
+                {{ if eq $index 0}}
+                    <div class="col-md">
+                {{ else if (eq $index $totalCount) }}
+                    </div>
+                {{ else if (eq $index $halfCount) }}
+                    </div>
+                    <div class="col-md">
                 {{ end }}
+
+                {{ with $.Site.GetPage (printf "/%s" $taxonomyTerm) }}
+                	{{ if $taxonomy }}
+    	            	<h3><a class="dark-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        				<div class="post-list {{ .Type }}">
+    		                <ul>
+                                {{ $count := 0 }}
+                                {{ $isNeedLink := gt (len $taxonomy) $totalLimit }}
+    		                    {{ range $key, $value := $taxonomy.ByCount }}
+                                    {{ $count = add $count 1 }}
+                                    {{ if le $count $totalLimit }}
+    		                          <li><a href="{{ $value.Page.Permalink }}">{{ $value.Page.Title }}</a></li>
+                                    {{ end}}
+    		                    {{ end }}
+                            </ul>
+                            {{ if $isNeedLink }}
+                                <a class="ml-4 my-4" href="{{ .Permalink }}"> See All {{ .Title }}</a>
+                            {{ end }}
+        				</div>
+                    {{ end }}
+                {{ end }}
+                {{ $index = add $index 1 }}
+
             {{ end }}
-        {{ end }}
+        </div>
     </div>
 </div>
 {{ end }}
