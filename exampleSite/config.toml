@@ -6,6 +6,7 @@ languageCode = "en-us"
 summaryLength = 10
 enableEmoji = true
 Paginate = 5
+copyright = "&copy; {year} {name}. All rights reserved." # {year}, {name} supported
 
 theme = "movie-hugo-theme"
 
@@ -19,7 +20,7 @@ theme = "movie-hugo-theme"
   MainScore = "Main Score"
   CustomScores = ["Custom1", "Custom2"]
   TopListCount = 10
-  DiscoverListCount = 5
+  DiscoverListCount = 10
 
   # advanced configs
   CastCrewList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]

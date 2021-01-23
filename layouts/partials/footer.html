@@ -15,7 +15,9 @@
     {{ end }}
     <div class="footer-notice">
         <div class="footer-copyright">
-            &copy; {{ dateFormat "2006" now }} {{ .Site.Title }}. All rights reserved
+            {{ $copyText := replace .Site.Copyright "{year}" now.Year }}
+            {{ $copyText = replace $copyText "{name}" .Site.Title }}
+            {{ $copyText | markdownify }}
          </div>
     </div>
 </footer>
