@@ -30,6 +30,9 @@ theme = "movie-hugo-theme"
   
   TopList = ["movies", "tvshows"]
 
+[Params.Meta.DetailListLimit]
+  actors = 4 # no of actors to display in Cast & Crew
+
 [Params.Social]
   Email = "Your_Email_ID"
   Facebook = "Your_Facebook_ID"
@@ -151,6 +154,7 @@ theme = "movie-hugo-theme"
   director = "directors"
   cinematographer = "cinematographers"
   musicdirector = "musicdirectors"
+  writer = "writers"
 
   # movie/tvshow
   genre = "genres"
@@ -165,14 +169,15 @@ theme = "movie-hugo-theme"
   tvshows = "/tv/:slug/"
 
   actors = "/actor/:slug/"
+  writers = '/writer/:slug/'
   directors = '/director/:slug/'
-  genres = '/genre/:slug/'
-  cinematographers = '/cinematographer/:slug/'
   musicdirectors = '/musicdirector/:slug/'
+  cinematographers = '/cinematographer/:slug/'
 
   tags = "/tag/:slug/"
-  reviewtags = "/reviewtag/:slug/"
+  genres = '/genre/:slug/'
   plottags = "/plottag/:slug/"
+  reviewtags = "/reviewtag/:slug/"
 
 [module]
   [[module.mounts]]

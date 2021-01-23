@@ -9,12 +9,17 @@
 			{{ $allTerms := $context.Param $taxoName}}
 			{{ if $allTerms }}
 				{{ $termSize := len $allTerms }}
-				{{ range $index, $tag := $allTerms }}
+				{{ $limitSize := ((index $context.Site.Params.Meta.DetailListLimit $taxoName) | default $termSize) }}
+				{{ range $index, $tag := (first $limitSize $allTerms) }}
 				  {{ $tagName := . }}
-				  {{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
-				  {{ with $context.Site.GetPage (printf "%s" $tagURL) }}
-				    <a class="movie-taxonomy-link" href="{{ .Permalink }}">{{ $tagName }}</a>
-				    {{- if lt $index (sub $termSize 1) -}}, {{ end }}
+				  {{ $tagURL := (delimit (slice $taxoName ($tag | urlize)) "/") }}
+
+				  {{ $taxoPage := $context.Site.GetPage (printf "%s" $tagURL) }}
+				  {{ if $taxoPage  }}
+				    <a class="movie-taxonomy-link" href="{{ $taxoPage.Permalink }}">{{ $tagName }}</a>
+				    {{- if lt $index (sub $limitSize 1) -}}, {{ end }}
+				  {{ else }}
+				  	{{ warnf "%v taxonomy is not valid" $tagURL}}
 				  {{ end }}
 				{{ end }}
 			{{ else }}
