@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="page-container {{ .Type }}">
-    {{ $metaTypes := .Site.Params.TopList }}
+    {{ $metaTypes := .Site.Params.Meta.TopList }}
     {{ $limit := .Site.Params.Meta.TopListCount }}
 
     <div class="container">
