@@ -7,14 +7,22 @@
 		{{ end }}
 		<div class="movie-meta-data clearfix">
 			{{ $allTerms := $context.Param $taxoName}}
-			{{ $termSize := len $allTerms }}
-			{{ range $index, $tag := $allTerms }}
-			  {{ $tagName := . }}
-			  {{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
-			  {{ with $context.Site.GetPage (printf "%s" $tagURL) }}
-			    <a class="movie-taxonomy-link" href="{{ .Permalink }}">{{ $tagName }}</a>
-			    {{- if lt $index (sub $termSize 1) -}}, {{ end }}
-			  {{ end }}
+			{{ if $allTerms }}
+				{{ $termSize := len $allTerms }}
+				{{ range $index, $tag := $allTerms }}
+				  {{ $tagName := . }}
+				  {{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
+				  {{ with $context.Site.GetPage (printf "%s" $tagURL) }}
+				    <a class="movie-taxonomy-link" href="{{ .Permalink }}">{{ $tagName }}</a>
+				    {{- if lt $index (sub $termSize 1) -}}, {{ end }}
+				  {{ end }}
+				{{ end }}
+			{{ else }}
+				{{ if (in $context.Site.Params.Meta.OptionalList $taxoName) }}
+					Information Not Available
+				{{ else }}
+					{{ errorf "no terms for %v in %v" $taxoName $context.File }}
+				{{ end }}
 			{{ end }}
 		</div>
 	</div>

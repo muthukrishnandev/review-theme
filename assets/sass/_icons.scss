@@ -3,7 +3,7 @@
   height: 35px;
   display: inline-block;
   fill: currentColor;
-  padding: 5px 3px 2px 5px;
+  padding: 5px;
   vertical-align: text-bottom;
 
   background-repeat: no-repeat;
@@ -74,6 +74,12 @@
     }
     &:last-child:after{
       content: ""
+    }
+  }
+
+  @include desktop{
+    .social-icon{
+      padding: 0px 2px;
     }
   }
 }

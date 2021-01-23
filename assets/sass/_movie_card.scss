@@ -51,6 +51,7 @@
 
 		.movie-meta-row {
 			display: table-row;
+			min-width: 100%;
 		}
 
 		.movie-meta-data,
@@ -62,6 +63,10 @@
 
 		.movie-meta-label {
 			text-align: right;
+
+			@include desktop {
+				min-width: 250px;
+			}
 		}
 
 		.movie-meta-data {

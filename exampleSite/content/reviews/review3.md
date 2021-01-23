@@ -3,17 +3,19 @@ title: "Review3"
 subtitle: "review subtitle"
 date: 2020-05-17T19:33:08+05:30
 
-movie: "movie3.md" # must be linked with a movie
+meta_name: "tvshow1.md" # must be name of movie or post 
+meta_type: "tvshows" # or "movies"
 
 consensus: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 score: 99
 custom_scores:
-   - 50
-   - 60
-
-review_tags:
+   - 69
+   - 18
+   
+reviewtags:
     - reviewtag1
     - reviewtag4
+    - reviewtag3
 ---
 
 # Review Title

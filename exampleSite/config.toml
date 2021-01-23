@@ -21,6 +21,15 @@ theme = "movie-hugo-theme"
   TopListCount = 10
   DiscoverListCount = 5
 
+  # advanced configs
+  CastCrewList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]
+  MovieDetailList = ["genres", "plottags"]
+  # if any meta above is not defined for movies or tvshows
+  # meta in below list will be considered optional and will not throw error
+  OptionalList = ["cinematographers", "musicdirectors", "plottags"]
+  
+  TopList = ["movies", "tvshows"]
+
 [Params.Social]
   Email = "Your_Email_ID"
   Facebook = "Your_Facebook_ID"
@@ -141,9 +150,9 @@ theme = "movie-hugo-theme"
   actor = "actors"
   director = "directors"
   cinematographer = "cinematographers"
-  music_director = "musicdirectors"
+  musicdirector = "musicdirectors"
 
-  # movie plot
+  # movie/tvshow
   genre = "genres"
   plottag = "plottags"
 
@@ -161,9 +170,9 @@ theme = "movie-hugo-theme"
   cinematographers = '/cinematographer/:slug/'
   musicdirectors = '/musicdirector/:slug/'
 
-  tags = "/tag/:title/"
-  reviewtags = "/reviewtag/:title/"
-  plottags = "/plottag/:title/"
+  tags = "/tag/:slug/"
+  reviewtags = "/reviewtag/:slug/"
+  plottags = "/plottag/:slug/"
 
 [module]
   [[module.mounts]]

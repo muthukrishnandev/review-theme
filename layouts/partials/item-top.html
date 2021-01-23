@@ -1,11 +1,11 @@
-{{ $movie := .Site.GetPage .Params.movie }}
-{{ if not $movie }}
+{{ $metaTitle := .Site.GetPage .Params.meta_name }}
+{{ if not $metaTitle }}
     {{ errorf "%s movie meta is not found" .Params.movie }}
 {{ end }}
 
 <tr class="post-list-item {{ .Type }}">
   <td class="post-title {{ .Type }}">
-    <a href="{{ $movie.Permalink }}">{{ $movie.Title }}</a>
+    <a href="{{ $metaTitle.Permalink }}">{{ $metaTitle.Title }}</a>
   </td>
   <td class="top-score">{{ .Params.score }}</td>
 </tr>

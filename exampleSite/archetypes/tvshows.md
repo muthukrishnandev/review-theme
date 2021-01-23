@@ -53,7 +53,7 @@ musicdirectors:
   - music_director1
   - music_director2
 
-plot_tags:
+plottags:
   - plottag1
   - plottag2
   - plottag3

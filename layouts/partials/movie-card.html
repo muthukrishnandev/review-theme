@@ -33,32 +33,68 @@
 		<div class="col-md-12 col-xs-12 movie-crew">
 			<h2>Cast &amp; Crew</h2>
 			<div class="movie-meta-container">
-				{{ $allTaxos := slice "actors" "directors" "musicdirectors" "cinematographers"}}
+				{{ $allTaxos := .Site.Params.Meta.CastCrewList }}
 				{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
 			</div>
 		</div>
-		<div class="col-md-12 col-xs-12 movie-detail">
+		<div class="col-md-12 col-xs-12 movie-detail mb-2">
 			<h2>Movie Detail</h2>
 			<div class="movie-meta-container">
-				{{ $allTaxos := slice "genres" "plottags"}}
+				<div style="text-indent: 5%;" class="mb-3">{{ $metaParams.storyline }}</div>
+				{{ $allTaxos := .Site.Params.Meta.MovieDetailList }}
 				{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
+				<div class="movie-meta-row">
+					<div class="movie-meta-label">Certificate:</div>
+					<div class="movie-meta-data">{{ $metaParams.certificate }}</div>
+				</div>
+				<div class="movie-meta-row">
+					<div class="movie-meta-label">Released On:</div>
+					<div class="movie-meta-data">{{ $metaParams.released_on | dateFormat "02 Jan 2006" }}</div>
+				</div>
+				<div class="movie-meta-row">
+					<div class="movie-meta-label">Running Time:</div>
+					<div class="movie-meta-data">{{ $metaParams.running_time }} minutes</div>
+				</div>
+
+				{{ if eq .Type "tvshows"}}
+					<div class="movie-meta-row">
+						<div class="movie-meta-label">Series Run: </div>
+						<div class="movie-meta-data">{{ $metaParams.series_start_year }} - {{ $metaParams.series_end_year }}</div>
+					</div>
+					<div class="movie-meta-row">
+						<div class="movie-meta-label">Total Episodes:</div>
+						<div class="movie-meta-data">{{ $metaParams.episodes_count }}</div>
+					</div>
+				{{ end }}
 			</div>
 		</div>
 
 		<div class="col-md-12 col-xs-12 movie-external">
-			<h2>External Links</h2>
-			<div class="movie-meta-container">
-				<div class="movie-meta-row">
-					<div class="movie-meta-data">
-						<ul>
-						<li><a target="_blank" href="{{ $metaParams.links.imdb }}">IMDb</a></li>
-						<li><a target="_blank" href="{{ $metaParams.links.rotten_tomatoes }}">RottenTomatoes</a></li>
-						<li><a target="_blank" href="{{ $metaParams.links.meta_critic }}">MetaCritic</a></li>
-						<li><a target="_blank" href="{{ $metaParams.links.wikipedia }}">Wikipedia</a></li>
-						</ul>
+			{{ if $metaParams.external_links }}
+				<h2>External Links</h2>
+				<div class="movie-meta-container">
+					<div class="movie-meta-row">
+						<div class="movie-meta-data">
+							<ul>
+							{{ if $metaParams.external_links.imdb }}
+							<li><a target="_blank" href="{{ $metaParams.external_links.imdb }}">IMDb</a></li>
+							{{ end }}
+
+							{{ if $metaParams.external_links.rotten_tomatoes }}
+							<li><a target="_blank" href="{{ $metaParams.external_links.rotten_tomatoes }}">RottenTomatoes</a></li>
+							{{ end }}
+							{{ if $metaParams.external_links.meta_critic }}
+							<li><a target="_blank" href="{{ $metaParams.external_links.meta_critic }}">MetaCritic</a></li>
+							{{ end }}
+
+							{{ if $metaParams.external_links.wikipedia }}
+							<li><a target="_blank" href="{{ $metaParams.external_links.wikipedia }}">Wikipedia</a></li>
+							{{ end }}
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
+			{{ end }}
 		</div>
 	</div>
 </div>

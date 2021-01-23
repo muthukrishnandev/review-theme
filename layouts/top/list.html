@@ -1,30 +1,24 @@
 {{ define "main" }}
 <div class="page-container {{ .Type }}">
-	<h1 class="page-heading {{ .Type }}">{{ .Title }}</h1>
-	<div class="page-description {{ .Type }}">
-      {{ .Content }}
-    </div>
+    {{ $metaTypes := .Site.Params.TopList }}
     {{ $limit := .Site.Params.Meta.TopListCount }}
-	{{ $reviews := ((where .Site.RegularPages "Type" "in" "reviews").ByParam "score").Reverse }}
-	{{ $reviews = first $limit $reviews }}
-	{{ if $reviews }}
-		<div class="page-content-wrapper {{ .Type }}">
-			<div class="post-list {{ .Type }}">
-				<table>
-				  <thead>
-				    <th>Movie</th>
-				    <th>{{ .Site.Params.Meta.MainScore }}</th>
-				  </thead>
-				  <tbody>
-					{{ range $reviews }}
-						<div class="top-item">
-							{{ partial "item-top.html" . }}
-						</div>
-					{{ end }}
-				  </tbody>
-				</table>
-			</div>
-		</div>
-	{{ end }}
+
+    <div class="container">
+    	<div class="row">
+		    {{ range $index, $metaType := $metaTypes }}
+		    	{{ $metaPage := $.Site.GetPage (printf "%s" $metaType)}}
+		    	{{ if not $metaPage }}
+		    		{{ errorf "review meta type %s is unknown"}}
+		    	{{ end }}
+		    	<div class="col-md">
+				<h3 class="page-heading">Top {{ $limit }} {{ $metaPage.Title }}</h3>
+		    	{{ $reviews := (where $.Site.RegularPages "Type" "in" "reviews") }}
+				{{ $reviews = (where $reviews ".Params.meta_type" "==" $metaType) }}
+				{{ $reviews = ($reviews.ByParam "score").Reverse }}
+				{{ partial "top-table.html" (dict "context" $ "arr" $reviews) }}
+		    	</div>
+		    {{ end }}
+        </div>
+    </div>
 </div>
 {{ end }}

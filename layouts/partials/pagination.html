@@ -11,10 +11,10 @@
 {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
 	<div class="post-pagination">
 	  {{ if $paginator.HasPrev }}
-	  	<a class="btn previous" href="{{ $paginator.Prev.URL }}">Newer {{ $typeName }}</a>
+	  	<a class="btn previous" href="{{ $paginator.Prev.URL }}">&larr; Previous {{ $typeName }}</a>
 	  {{ end }}
 	  {{ if $paginator.HasNext }}
-	  	<a class="btn next" href="{{ $paginator.Next.URL }}">Older {{ $typeName }}</a>
+	  	<a class="btn next" href="{{ $paginator.Next.URL }}">Next {{ $typeName }} &rarr;</a>
 	  {{ end }}
 	</div>
 {{ end }}

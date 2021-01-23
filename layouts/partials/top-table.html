@@ -1,0 +1,26 @@
+{{ $reviews := .arr }}
+{{ $context := .context }}
+
+{{ $limit := $context.Site.Params.Meta.TopListCount }}
+{{ $mainScoreName := $context.Site.Params.Meta.MainScore }}
+{{ $reviews = first $limit $reviews }}
+
+{{ if $reviews }}
+	<div class="page-content-wrapper {{ $context.Type }}">
+		<div class="post-list {{ $context.Type }}">
+			<table>
+			  <thead>
+			    <th>Movie</th>
+			    <th>{{ $mainScoreName }}</th>
+			  </thead>
+			  <tbody>
+				{{ range $reviews }}
+					<div class="top-item">
+						{{ partial "item-top.html" . }}
+					</div>
+				{{ end }}
+			  </tbody>
+			</table>
+		</div>
+	</div>
+{{ end }}

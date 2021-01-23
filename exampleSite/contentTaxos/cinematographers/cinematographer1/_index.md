@@ -1,5 +1,5 @@
 ---
-title: "Cine1"
+title: "Cine1                                                                     "
 date: 2020-05-17T19:13:38+05:30
 
 meta:

@@ -23,10 +23,20 @@ meta:
    meta_critic: "https://www.metacritic.com/movie/{ insert metacritic id here }"
    wikipedia: "https://en.wikipedia.org/wiki/{ insert wiki id here }"
 
+genres:
+  - genre1
+  - genre2
+  - genre3
+
 actors:
   - actor1
   - actor2
   - actor3
+
+writers:
+  - writer1
+  - writer2
+  - writer3
 
 directors:
   - director1
@@ -39,11 +49,6 @@ cinematographers:
 musicdirectors:
   - musicdirector1
   - musicdirector2
-
-genres:
-  - genre1
-  - genre2
-  - genre3
 
 plottags:
   - plottag1
