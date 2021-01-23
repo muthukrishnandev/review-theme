@@ -1,0 +1,20 @@
+# DO NOT EDIT BELOW!
+ 
+# default taxonomies are disabled
+# category = "categories"
+
+tag = "tags"
+
+# movie cast
+actor = "actors"
+director = "directors"
+cinematographer = "cinematographers"
+musicdirector = "musicdirectors"
+writer = "writers"
+
+# movie/tvshow
+genre = "genres"
+plottag = "plottags"
+
+# reviews
+reviewtag = "reviewtags"

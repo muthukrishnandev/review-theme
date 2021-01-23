@@ -1,0 +1,64 @@
+
+[[header]]
+    name = "Home"
+    identifier = "home"
+    title = "home"
+    url = "/"
+    weight = 1
+
+[[header]]
+    name = "Top"
+    identifier = "top"
+    title = "top"
+    url = "/top"
+    weight = 2
+
+[[header]]
+    name = "Discover"
+    identifier = "discover"
+    title = "discover"
+    url = "/discover"
+    weight = 3
+
+[[header]]
+    name = "Movies"
+    identifier = "Movies"
+    title = "Movies"
+    url = "/Movies"
+    weight = 4
+
+[[header]]
+    name = "TV Shows"
+    identifier = "TV Shows"
+    title = "TV Shows"
+    url = "/tvshows"
+    weight = 5
+
+[[header]]
+    name = "Editorials"
+    identifier = "editorials"
+    title = "editorials"
+    url = "/editorials"
+    weight = 6
+
+[[header]]
+    name = "About"
+    identifier = "about"
+    title = "about"
+    url = "/about"
+    weight = 7
+
+[[footer]]
+    name = "Home"
+    identifier = "home"
+    title = "home"
+    url = "/"
+    weight = 1
+
+[[footer]]
+    name = "About"
+    identifier = "about"
+    title = "about"
+    url = "/about"
+    weight = 2
+    

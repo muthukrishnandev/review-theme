@@ -1,0 +1,15 @@
+[[mounts]]
+  source = "content"
+  target = "content"
+[[mounts]]
+  source = "contentMeta"
+  target = "content"
+[[mounts]]
+  source = "contentAuto"
+  target = "content"
+[[mounts]]
+  source = "contentMisc"
+  target = "content"
+[[mounts]]
+  source = "contentTaxos"
+  target = "content"

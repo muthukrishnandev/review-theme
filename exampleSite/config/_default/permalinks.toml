@@ -1,0 +1,16 @@
+# DO NOT EDIT BELOW!
+
+movies = "/movie/:slug/"
+reviews = "/review/:slug/"
+tvshows = "/tv/:slug/"
+
+actors = "/actor/:slug/"
+writers = '/writer/:slug/'
+directors = '/director/:slug/'
+musicdirectors = '/musicdirector/:slug/'
+cinematographers = '/cinematographer/:slug/'
+
+tags = "/tag/:slug/"
+genres = '/genre/:slug/'
+plottags = "/plottag/:slug/"
+reviewtags = "/reviewtag/:slug/"
