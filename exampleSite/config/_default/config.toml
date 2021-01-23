@@ -5,7 +5,7 @@ title = "movie review"
 languageCode = "en-us"
 summaryLength = 10
 enableEmoji = true
-Paginate = 5
+paginate = 5
 copyright = "&copy; {year} {name}. All rights reserved." # {year}, {name} supported
 
 theme = "movie-hugo-theme"
