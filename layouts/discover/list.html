@@ -23,6 +23,7 @@
                     <div class="col-md">
                 {{ end }}
 
+                {{/* $taxonomyTerm from range of system data, so use of with is okay here */}}
                 {{ with $.Site.GetPage (printf "/%s" $taxonomyTerm) }}
                 	{{ if $taxonomy }}
     	            	<h3><a class="dark-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>

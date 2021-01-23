@@ -11,9 +11,12 @@
     {{ if .Params.tags }}
       <span class="post-taxonomies tags">
       {{ range $index, $tag := .Params.tags }}
-        {{ $tagURL := (delimit (slice "tags" $tag) "/") }}
-        {{ with $.Site.GetPage (printf "%s" $tagURL) }}
-            <a class="post-taxonomy tag" href="{{ .Permalink }}">{{ $tag }}</a>
+        {{ $tagURL := (delimit (slice "tags" $tag) "/") | urlize }}
+        {{ $tagPage := $.Site.GetPage (printf "%s" $tagURL)}}
+        {{ if $tagPage }}
+            <a class="post-taxonomy tag" href="{{ $tagPage.Permalink }}">{{ $tagPage.Title }}</a>
+        {{ else }}
+            {{ errorf "%v tags page is not found" $tag }}
         {{ end }}
       {{ end }}
       </span>

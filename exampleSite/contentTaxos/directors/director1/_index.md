@@ -1,7 +1,6 @@
 ---
 title: "Director1"
 date: 2020-05-17T19:10:37+05:30
-draft: true
 
 meta:
   name: "director name"
