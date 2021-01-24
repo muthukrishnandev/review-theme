@@ -2,14 +2,12 @@
   source = "content"
   target = "content"
 [[mounts]]
-  source = "contentMeta"
+  source = "metacontent/meta"
   target = "content"
 [[mounts]]
-  source = "contentAuto"
+  source = "metacontent/special"
   target = "content"
 [[mounts]]
-  source = "contentMisc"
+  source = "metacontent/taxonomies"
   target = "content"
-[[mounts]]
-  source = "contentTaxos"
-  target = "content"
+  

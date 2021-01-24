@@ -1,0 +1,10 @@
+{{ $title := .Get 0 }}
+
+{{ $moviePage := $.Site.GetPage ($title | urlize) }}
+
+{{ if $moviePage }}
+	{{ $metaParams := $moviePage.Params.meta }}
+	<a href="{{ $moviePage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
+{{ else }}
+	{{ errorf "%v moviePage not found for %v" $title $title }}
+{{ end }}
