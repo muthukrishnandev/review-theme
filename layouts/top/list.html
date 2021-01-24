@@ -10,13 +10,16 @@
 		    	{{ if not $metaPage }}
 		    		{{ errorf "review meta type %s is unknown"}}
 		    	{{ end }}
-		    	<div class="col-md">
-				<h3 class="page-heading">Top {{ $limit }} {{ $metaPage.Title }}</h3>
 		    	{{ $reviews := (where $.Site.RegularPages "Type" "in" "reviews") }}
 				{{ $reviews = (where $reviews ".Params.meta_type" "==" $metaType) }}
 				{{ $reviews = ($reviews.ByParam "score").Reverse }}
-				{{ partial "top-table.html" (dict "context" $ "arr" $reviews) }}
-		    	</div>
+
+				{{ if $reviews }}
+			    	<div class="col-md">
+					<h3 class="page-heading">Top {{ $limit }} {{ $metaPage.Title }}</h3>
+					{{ partial "top-table.html" (dict "context" $ "arr" $reviews) }}
+			    	</div>
+				{{ end }}
 		    {{ end }}
         </div>
     </div>
