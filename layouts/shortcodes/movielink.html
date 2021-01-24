@@ -1,10 +1,31 @@
 {{ $title := .Get 0 }}
+{{ $year := .Get 1 }}
 
-{{ $moviePage := $.Site.GetPage ($title | urlize) }}
+{{ $titles := (where $.Site.RegularPages "Type" "in" (slice "movies" "tvshows")) }}
 
-{{ if $moviePage }}
-	{{ $metaParams := $moviePage.Params.meta }}
-	<a href="{{ $moviePage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
+{{ $titlesOne := (where $titles "title" "==" $title) }}
+{{ $titlesTwo := (where $titles "Params.meta.title" "==" $title) }}
+
+{{ $titles = union $titlesOne $titlesTwo }}
+
+{{ $matchCount := 0 }}
+{{ if $year }}
+	{{ $titleYear := dateFormat "2006" (index $titles 0).Params.meta.released_on }}
+	{{ if eq $titleYear $year }}
+		{{ $matchCount = add $matchCount 1 }}
+	{{ end }}
 {{ else }}
-	{{ errorf "%v moviePage not found for %v" $title $title }}
+	{{ $matchCount = 1 }}
+{{ end }}
+
+{{ if and $titles (eq $matchCount 1) }}
+	{{ $moviePage := index $titles 0 }}
+	{{ if $moviePage }}
+		{{ $metaParams := $moviePage.Params.meta }}
+		<a href="{{ $moviePage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
+	{{ else }}
+		{{ errorf "'%v' post not found for '%v'" $title $.Page.File }}
+	{{ end }}
+{{ else }}
+	{{ errorf "'%v' post not found for '%v'" $title $.Page.File }}
 {{ end }}
