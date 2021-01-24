@@ -1,52 +1,45 @@
 
 [[header]]
-    name = "Home"
-    identifier = "home"
-    title = "home"
-    url = "/"
-    weight = 1
-
-[[header]]
     name = "Top"
     identifier = "top"
     title = "top"
     url = "/top"
-    weight = 2
+    weight = 1
 
 [[header]]
     name = "Discover"
     identifier = "discover"
     title = "discover"
     url = "/discover"
-    weight = 3
+    weight = 2
 
 [[header]]
     name = "Movies"
     identifier = "Movies"
     title = "Movies"
     url = "/Movies"
-    weight = 4
+    weight = 3
 
 [[header]]
     name = "TV Shows"
     identifier = "TV Shows"
     title = "TV Shows"
     url = "/tvshows"
-    weight = 5
+    weight = 4
 
 [[header]]
     name = "Editorials"
     identifier = "editorials"
     title = "editorials"
     url = "/editorials"
-    weight = 6
+    weight = 5
 
 [[header]]
     name = "About"
     identifier = "about"
     title = "about"
     url = "/about"
-    weight = 7
+    weight = 6
 
 [[footer]]
     name = "Home"
@@ -61,4 +54,3 @@
     title = "about"
     url = "/about"
     weight = 2
-    
