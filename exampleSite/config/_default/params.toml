@@ -1,6 +1,6 @@
 [Info]
-  ShortTitle = "blog"
-  Subtitle = "my blog"
+  ShortTitle = "moviereview"
+  Subtitle = "my reviews"
   Description = "long description about site"
   Logo = "logo.png" # store in static/images
 
