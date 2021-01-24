@@ -41,14 +41,6 @@
     display: block;
     margin: 0 auto;
   }
-}
-
-.site-name {
-  margin: 0;
-  color: $grey-color-darker;
-  cursor: pointer;
-  letter-spacing: 1px;
-  // @include relative-font-size(4);
 
   a {
     color: $grey-color-darker;
@@ -57,16 +49,27 @@
       text-decoration: none;
     }
   }
-}
 
-.site-description {
-  margin: -5px 0 0 0;
-  color: $grey-color;
+  .site-name {
+    margin: 0;
+    color: $grey-color-darker;
+    cursor: pointer;
+    letter-spacing: 1px;
+    // @include relative-font-size(4);
+  }
 
-  @include mobile {
-    margin: 3px 0;
+  .site-description {
+    margin: -5px 0 0 0;
+    color: $grey-color;
+
+    @include mobile {
+      margin: 3px 0;
+    }
   }
 }
+
+
+
 
 @include desktop {
   .page-header {

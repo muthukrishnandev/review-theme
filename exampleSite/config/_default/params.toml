@@ -57,7 +57,7 @@
   # header
   ShowSiteLogo = false
   ShowSiteTitle = true # if site logo is not present, title is displayed by default
-  ShowSiteSubtitle = false # available only if ShowSiteTitle is enabled
+  ShowSiteSubtitle = true # available only if ShowSiteTitle is enabled
  
   # navigation
   ShowHeaderNav = true

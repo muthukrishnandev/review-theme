@@ -1,8 +1,7 @@
 # DO NOT EDIT BELOW!
  
-# default taxonomies are disabled
-# category = "categories"
-
+# only for editorials post
+category = "categories"
 tag = "tags"
 
 # movie cast

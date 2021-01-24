@@ -15,12 +15,14 @@
 
     {{ if or (.Site.Params.Config.ShowSiteTitle) (not $isSiteLogoExists) }}
       <div class="site-info">
-        <h1 class="site-name">
-          <a href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }}</a>
-        </h1>
-        {{ if .Site.Params.Config.ShowSiteSubtitle }}
-          <p class="site-description">{{ .Site.Params.Info.Subtitle }}</p>
-        {{ end }}
+          <a href="{{ .Site.BaseURL | absURL }}">
+            <h1 class="site-name">
+              {{ .Site.Title }}
+            </h1>
+            {{ if .Site.Params.Config.ShowSiteSubtitle }}
+              <p class="site-description">{{ .Site.Params.Info.Subtitle }}</p>
+            {{ end }}
+          </a>
       </div>
     {{ end }}
 
