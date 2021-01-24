@@ -1,7 +1,13 @@
 {{ define "main" }}
 <div class="page-container {{ .Type }}">
   <div class="page-content-wrapper {{ .Type }}">
+  	{{ if not (isset .Params "meta_name") }}
+  		{{ errorf "meta_name not found for %v" .File }}
+  	{{ end }}
   	{{ $moviePage := .Site.GetPage (.Params.meta_name) }}
+  	 {{ if not $moviePage }}
+  		{{ errorf "%v moviePage not found for %v" .Params.meta_name .File }}
+  	{{ end }}
 	<a href="{{ $moviePage.Permalink }}">&larr; {{ $moviePage.Params.meta.title }}</a>
 	<div class="post-single {{ .Type }}">
   		{{ .Content }}
