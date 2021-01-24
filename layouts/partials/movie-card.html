@@ -15,7 +15,7 @@
 				{{ if $posterRes }}
 					<img class="movie-poster" src="{{ $posterRes.Permalink }}">
 				{{ else }}
-					{{ errorf "'%s' file not found for '%s'" .Params.poster .File }}
+					{{ errorf "'%s' poster media not found for '%s'" $posterLocal .File }}
 				{{ end }}
 			{{ else if $posterRemote }}
 				<img class="movie-poster" src="{{ $posterRemote }}">
