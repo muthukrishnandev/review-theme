@@ -3,9 +3,11 @@
     {{ errorf "%s movie/tvshow post is not found" .Params.movie }}
 {{ end }}
 
+
+{{ $metaParams := $metaTitle.Params.meta }}
 <tr class="post-list-item {{ .Type }}">
   <td class="post-title {{ .Type }}">
-    <a href="{{ $metaTitle.Permalink }}">{{ $metaTitle.Title }}</a>
+    <a href="{{ $metaTitle.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
   </td>
   <td class="top-score">{{ .Params.score }}</td>
 </tr>
