@@ -7,9 +7,7 @@ meta:
   dob: "1900-01-01"
   gender: "male"
  
-  image: 
-    remote: "https://example.com/person.jpg"
-    local: "person.png" # place it in assets/images/people
+  image: "https://example.com/person.jpg" # or "person.png" and place it in assets/images/people
 
   links:
     imdb: "https://www.imdb.com/name/INSERT_IMDB_ID_HERE"

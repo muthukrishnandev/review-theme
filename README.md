@@ -1,10 +1,10 @@
-# movie-hugo-theme
+# movie-theme
 
-movie-hugo-theme is a minimal and clean blog theme for [Hugo](http://gohugo.io/). 
+movie-theme is a minimal and clean blog theme for [Hugo](http://gohugo.io/). 
 
-### [Demo](https://muthukrishnandev.github.io/movie-hugo-theme/)
+### [Demo](https://muthukrishnandev.github.io/movie-theme/)
 
-Working demo is available [here](https://muthukrishnandev.github.io/movie-hugo-theme/).
+Working demo is available [here](https://muthukrishnandev.github.io/movie-theme/).
 
 ### Screenshot
 
@@ -14,8 +14,8 @@ Working demo is available [here](https://muthukrishnandev.github.io/movie-hugo-t
 
 #### Using git sub-modules
 ```
-git submodule add https://github.com/muthukrishnandev/movie-hugo-theme themes/movie-hugo-theme
-cp themes/movie-hugo-theme/config.toml .
+git submodule add https://github.com/muthukrishnandev/movie-theme themes/movie-theme
+cp themes/movie-theme/config.toml .
 ```
 
 refer [hugo docs](http://gohugo.io/themes/installing) for more information.
@@ -23,12 +23,12 @@ refer [hugo docs](http://gohugo.io/themes/installing) for more information.
 ### Build your site
 
 ```
-hugo server -t movie-hugo-theme
+hugo server -t movie-theme
 ```
 
 ### Configuration
 
-For full configuration of theme refer [config.toml](https://github.com/muthukrishnandev/movie-hugo-theme/blob/master/exampleSite/config.toml)
+For full configuration of theme refer [config.toml](https://github.com/muthukrishnandev/movie-theme/blob/master/exampleSite/config.toml)
 
 ### Attribution
 	- [Picons Social](https://www.iconfinder.com/iconsets/picons-social) by Picons.me
@@ -41,4 +41,4 @@ For full configuration of theme refer [config.toml](https://github.com/muthukris
 
 ### License
 
-This theme is open sourced under [MIT license](https://github.com/muthukrishnandev/movie-hugo-theme/blob/master/LICENSE.md).
+This theme is open sourced under [MIT license](https://github.com/muthukrishnandev/movie-theme/blob/master/LICENSE.md).

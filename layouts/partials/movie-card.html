@@ -6,21 +6,18 @@
 				{{ errorf "poster param not found for %s" .File }}
 			{{ end }}
 
-			{{ $posterLocal := $metaParams.poster.local }}
-			{{ $posterRemote := $metaParams.poster.remote }}
+			{{ $posterParam := $metaParams.poster }}
 
-			{{ if $posterLocal }}
-				{{ $filePath := path.Join "images" "posters" $posterLocal }}
+			{{ if eq (slicestr $posterParam 0 4) "http" }}
+				<img class="movie-poster" src="{{ $posterParam }}">
+			{{ else }}
+				{{ $filePath := path.Join "images" "posters" $posterParam }}
 				{{ $posterRes := resources.GetMatch $filePath }}
 				{{ if $posterRes }}
 					<img class="movie-poster" src="{{ $posterRes.Permalink }}">
 				{{ else }}
-					{{ errorf "'%s' poster media not found for '%s'" $posterLocal .File }}
+					{{ errorf "'%s' poster media not found for '%s'" $posterParam .File }}
 				{{ end }}
-			{{ else if $posterRemote }}
-				<img class="movie-poster" src="{{ $posterRemote }}">
-			{{ else }}
-				{{ errorf "poster param not found for %s" .File }}
 			{{ end }}
 		</div>
 		<div class="col-md-8 col-xs-12 movie-meta">

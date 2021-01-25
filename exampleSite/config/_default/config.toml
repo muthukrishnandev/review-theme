@@ -1,4 +1,4 @@
-baseURL = "https://muthukrishnan.dev/movie-hugo-theme"
+baseURL = "https://movietheme.muthukrishnan.dev/"
 
 title = "movie review"
 
@@ -8,4 +8,4 @@ enableEmoji = true
 paginate = 5
 copyright = "&copy; {year} {name}. All rights reserved." # {year}, {name} supported
 
-theme = "movie-hugo-theme"
+theme = "movie-theme"

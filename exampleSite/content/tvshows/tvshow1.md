@@ -17,9 +17,7 @@ meta:
   series_end_year: 2020
 
   trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE"
-  poster:  
-    # remote: "https://example.com/sample.png" 
-    local: "poster.png" # place it in assets/images/posters
+  poster: "poster.png" # place it in assets/images/posters
 
   links:
    imdb: "https://www.imdb.com/title/{ insert imdb_id here }"
