@@ -1,10 +1,10 @@
 ---
-title: "Tv Series 3"
+title: "Tv Series 2"
 date: 2020-05-17T18:27:41+05:30
 
 meta:
-  title: "tv series 3"
-  tagline: "tv series tag 3"
+  title: "tv series 2"
+  tagline: "tv series tag 2"
 
   storyline: "story line1"
 
@@ -19,7 +19,7 @@ meta:
   trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE"
   poster: "poster.png" # place it in assets/images/posters
 
-  links:
+  external_links:
    imdb: "https://www.imdb.com/title/{ insert imdb_id here }"
    rotten_tomatoes: "https://www.rottentomatoes.com/m/{ insert rt id here }"
    meta_critic: "https://www.metacritic.com/movie/{ insert metacritic id here }"
@@ -43,7 +43,7 @@ writers:
   - writer1
   - writer2
   - writer3
-
+  
 cinematographers:
   - cinematographer1
   - cinematographer2

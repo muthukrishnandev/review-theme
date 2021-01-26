@@ -10,4 +10,7 @@
 [[mounts]]
   source = "metacontent/taxonomies"
   target = "content"
+[[mounts]]
+  source = "metacontent/titles"
+  target = "content"
   

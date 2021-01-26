@@ -1,21 +1,25 @@
 ---
-title: "Movie 3"
+title: "Tv Series 1"
 date: 2020-05-17T18:27:41+05:30
 
 meta:
-  title: "movie title 3"
-  tagline: "movie tagline 3"
+  title: "tv series 1"
+  tagline: "tv series tag 1"
 
-  storyline: "story line 3"
+  storyline: "story line1"
 
   released_on: "2001-01-01"
-  running_time: 100 # in minutes
+  running_time: 30 # in minutes
   certificate: "U"
 
-  trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE" 
+  episodes_count: 10
+  series_start_year: 2010
+  series_end_year: 2020
+
+  trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE"
   poster: "poster.png" # place it in assets/images/posters
 
-  links:
+  external_links:
    imdb: "https://www.imdb.com/title/{ insert imdb_id here }"
    rotten_tomatoes: "https://www.rottentomatoes.com/m/{ insert rt id here }"
    meta_critic: "https://www.metacritic.com/movie/{ insert metacritic id here }"
