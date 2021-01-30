@@ -1,5 +1,9 @@
 <!-- theme js -->
+
 {{ $jsFiles := slice }}
+
+{{ $mainJS := resources.Get "sass/third_party/youtube-lite.js" }}
+{{ $jsFiles = $jsFiles | append $mainJS}}
 
 <!-- custom js -->
 {{- range $scriptPath := .Site.Params.Style.JS -}}

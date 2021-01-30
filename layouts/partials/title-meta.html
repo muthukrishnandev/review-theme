@@ -12,7 +12,6 @@
 			{{ else }}
 				{{ errorf .Scratch.Get "findposterlink_error" }}
 			{{ end }}
-
 		</div>
 		<div class="col-md-8 col-xs-12 titlemeta-meta">
 			<h2 class="titlemeta-title">{{ $metaParams.title }}</h2>
@@ -58,6 +57,14 @@
 					</div>
 				{{ end }}
 			</div>
+		</div>
+
+		<div class="col-md-12 col-xs-12 titlemeta-trailer-container">
+			{{ if $metaParams.trailer }}
+				<h2>Trailer</h2>
+				{{ $dataID := strings.TrimPrefix "https://youtube.com/watch?v=" $metaParams.trailer }}
+				<div class="youtube-player titlemeta-trailer" data-id="{{ $dataID }}"></div>
+			{{ end }}
 		</div>
 
 		<div class="col-md-12 col-xs-12 titlemeta-external">

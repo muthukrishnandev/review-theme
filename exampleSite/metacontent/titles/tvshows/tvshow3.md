@@ -19,10 +19,10 @@ meta:
   poster: "poster.png" # place it in assets/images/posters
 
   external_links:
-   imdb: "https://www.imdb.com/title/{ insert imdb_id here }"
-   rotten_tomatoes: "https://www.rottentomatoes.com/m/{ insert rt id here }"
-   meta_critic: "https://www.metacritic.com/movie/{ insert metacritic id here }"
-   wikipedia: "https://en.wikipedia.org/wiki/{ insert wiki id here }"
+   imdb: "https://www.imdb.com/title/INSERT_IMDB_ID_HERE"
+   rotten_tomatoes: "https://www.rottentomatoes.com/m/INSERT_RT_ID_HERE"
+   meta_critic: "https://www.metacritic.com/movie/INSERT_MC_ID_HERE"
+   wikipedia: "https://en.wikipedia.org/wiki/INSERT_WIKI_ID_HERE"
 
 genres:
   - genre1

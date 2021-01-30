@@ -36,6 +36,7 @@
 			}
 		}
 	}
+
 	.titlemeta-detail, .titlemeta-crew {
 		margin-top: 12px;
 		margin-left: 6px;
@@ -80,5 +81,20 @@
 			display:block;
     		margin:auto;
 		}
-	}	
+	}
+
+	.titlemeta-trailer-container{
+		.titlemeta-trailer{
+			margin: 10px auto;
+			padding-bottom: 38%;
+			max-width: 70%;
+
+			border: 1px solid $grey-color-lighter;
+
+			@include mobile {
+				padding-bottom: 55%;
+				max-width: 100%;
+			}
+		}
+	}
 }

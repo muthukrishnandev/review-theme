@@ -12,10 +12,15 @@
 <meta property="og:site_name" content="{{ .Site.Title }}">
 
 <title>
-	{{ if .Title -}}
-		{{ .Title }} | 
-	{{ end -}}
-	{{- .Site.Title -}}
+	{{ if .IsHome }}
+		{{ .Title }}
+	{{ else if .IsSection }}
+		{{ $sectionPage := .Site.GetPage .Section }}
+		{{ printf "%v | %v" (title $sectionPage.Title) .Site.Title }}
+	{{ else }}
+		{{ $sectionPage := .Site.GetPage .Section }}
+		{{ printf "%v | %v | %v" .Title (title $sectionPage.Title) .Site.Title }}
+	{{ end }}
 </title>
 
 <!-- theme css -->
