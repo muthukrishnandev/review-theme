@@ -68,8 +68,10 @@
     .title-item-poster {
       min-width: 210px;
       max-width: 210px;
+      min-height: 300px;
       max-height: 300px;
-
+      justify-content: center;
+      display: flex;
       overflow: hidden;
 
       img {
