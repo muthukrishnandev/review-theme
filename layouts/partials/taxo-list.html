@@ -1,34 +1,21 @@
 {{ $allTaxos := .arr }}
 {{ $context := .context }}
 {{ range $index1, $taxoName := $allTaxos }}
-	<div class="movie-meta-row movie-taxonomies {{ $taxoName }}">
+	<div class="titlemeta-info-row titlemeta-taxonomies {{ $taxoName }}">
 		{{ $termPage := $context.Site.GetPage (printf "/%s" $taxoName) }}
 		{{ if $termPage }}
-			<div class="movie-meta-label clearfix">{{ $termPage.Title }}:</div>
+			<div class="titlemeta-info-label clearfix">{{ $termPage.Title }}:</div>
 		{{ else }}
 			{{ errorf "%v taxonomy term page is not valid" $taxoName}}
 		{{ end }}
-		<div class="movie-meta-data clearfix">
+		<div class="titlemeta-info-data clearfix">
 			{{ $allTerms := $context.Param $taxoName}}
 			{{ if $allTerms }}
 				{{ $termSize := len $allTerms }}
 				{{ $limitSize := ((index $context.Site.Params.Meta.DetailListLimit $taxoName) | default $termSize) }}
-				{{ range $index, $tag := (first $limitSize $allTerms) }}
-				  {{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
-				  {{ $taxoPage := $context.Site.GetPage (printf "%s" $tagURL) }}
-				  
-				  {{ if not $taxoPage }}
-				  	{{ $tagURL = (delimit (slice $taxoName ($tag | urlize)) "/") }}
-				  	{{ $taxoPage = $context.Site.GetPage (printf "%s" $tagURL) }}
-				  {{ end }}
+				{{ $allTerms = first $limitSize $allTerms }}
 
-				  {{ if $taxoPage  }}
-				    	<a class="movie-taxonomy-link" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Title }}</a>
-				    	{{- if lt $index (sub $limitSize 1) -}}, {{ end }}
-				  {{ else }}
-				  		{{ errorf "%v taxonomy is not valid" $tagURL}}
-				  {{ end }}
-				{{ end }}
+				{{ partial "taxo-links.html" (dict "allterms" $allTerms "context" $context "taxoname" $taxoName) }}
 			{{ else }}
 				{{ if (in $context.Site.Params.Meta.OptionalList $taxoName) }}
 					Information Not Available

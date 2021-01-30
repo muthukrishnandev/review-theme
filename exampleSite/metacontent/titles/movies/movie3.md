@@ -5,8 +5,7 @@ date: 2020-05-17T18:27:41+05:30
 meta:
   title: "movie title 3"
   tagline: "movie tagline 3"
-
-  storyline: "story line 3"
+  storyline: "Facilisi etiam dignissim diam quis enim lobortis scelerisque. Tristique senectus et netus et malesuada"
 
   released_on: "2001-01-01"
   running_time: 100 # in minutes

@@ -1,0 +1,42 @@
+
+.titlecard-list {
+	.titlecard {
+		&:not(:last-child){
+			border-bottom: 1px solid $grey-color-lighter;
+		}
+	}
+}
+
+.titlecard {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	.titlecard-title{
+		margin-top: 2px;
+
+		@include mobile {
+			margin-top: 12px;
+			text-align: center;
+			a {
+				margin: 0px;
+			}
+		}
+	}
+	
+	@include mobile {
+		.titlecard-poster {
+			max-height: 150px;
+			display:block;
+    		margin:auto;
+		}
+	}
+
+	.titlecard-info {
+		margin-top: 6px;
+		margin-bottom: 6px;
+		
+		.titlecard-info-label {
+			font-weight: 700;
+		}
+	}
+}

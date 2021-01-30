@@ -2,10 +2,10 @@
   source = "content"
   target = "content"
 [[mounts]]
-  source = "metacontent/meta"
+  source = "indexcontent/special"
   target = "content"
 [[mounts]]
-  source = "metacontent/special"
+  source = "indexcontent/meta"
   target = "content"
 [[mounts]]
   source = "metacontent/taxonomies"
@@ -13,4 +13,3 @@
 [[mounts]]
   source = "metacontent/titles"
   target = "content"
-  

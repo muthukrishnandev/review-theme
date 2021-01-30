@@ -1,0 +1,18 @@
+{{ $context := . }}
+{{ $metaParams := $context.Params.meta }}
+{{ $posterParam := $metaParams.poster }}
+{{ if eq (slicestr $posterParam 0 4) "http" }}
+	{{ $context.Scratch.Set "findposterlink_result" $posterParam }}
+	{{ $context.Scratch.Set "findposterlink_isfound" true }}
+{{ else }}
+	{{ $filePath := path.Join "images" "posters" $posterParam }}
+	{{ $posterRes := resources.GetMatch $filePath }}
+	{{ if $posterRes }}
+		{{ $context.Scratch.Set "findposterlink_result" $posterRes.Permalink }}
+		{{ $context.Scratch.Set "findposterlink_isfound" true }}
+	{{ else }}
+		{{ $errorMsg := printf "'%s' poster media not found for '%s'" $posterParam $context.File }}
+		{{ $context.Scratch.Set "findposterlink_error" $errorMsg }}
+		{{ $context.Scratch.Set "findposterlink_isfound" false }}
+	{{ end }}
+{{ end }}

@@ -30,7 +30,7 @@ $content-width: 1000px !default;
 $site-avatar-width-max: 125px !default;
 $site-avatar-height: 70px !default;
 $header-height: 50px !default;
-$footer-height: 250px !default;
+$footer-height: 150px !default;
 
 // Colors
 $black: #000 !default;
@@ -60,6 +60,6 @@ $header-width-max: $content-width - $spacing-unit;
 @import "utils";
 @import "base", "layout", "icons";
 @import "header", "footer", "navigation";
-@import "movie_card", "pagination";
+@import "title_meta", "titlecard", "pagination";
 @import "page_base", "page_specific";
 @import "post_list", "post_single";

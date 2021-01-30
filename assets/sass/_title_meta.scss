@@ -1,26 +1,26 @@
 
-.movie-card{
+.titlemeta {
 	h2{
 		margin-top: 6px;
 		margin-bottom: 4px;
 	}
 
-	.movie-meta{
-		.movie-title {
+	.titlemeta-meta{
+		.titlemeta-title {
 			margin: 0px !important;
 			padding: 0px !important;
 		}
 		
-		.movie-title {
+		.titlemeta-title {
 			@extend .center-xs!optional;
 		}
 
-		.movie-tagline {
+		.titlemeta-tagline {
 			margin-bottom: 8px; 
 		}
 
 		@include mobile {
-			.movie-title, .movie-tagline {
+			.titlemeta-title, .titlemeta-tagline {
 				text-align: center;
 			}
 		}
@@ -36,32 +36,32 @@
 			}
 		}
 	}
-	.movie-detail, .movie-crew {
+	.titlemeta-detail, .titlemeta-crew {
 		margin-top: 12px;
 		margin-left: 6px;
 		margin-right: 6px;
 	}
 
-	.movie-meta-container {
+	.titlemeta-info-container {
 
 		@include mobile {
 			margin-top: 8px;
 			margin-bottom: 8px;
 		}
 
-		.movie-meta-row {
+		.titlemeta-info-row {
 			display: table-row;
 			min-width: 100%;
 		}
 
-		.movie-meta-data,
-		.movie-meta-label {
+		.titlemeta-info-data,
+		.titlemeta-info-label {
 			display: table-cell;
 			margin: 0px;
 			padding: 0px;
 		}
 
-		.movie-meta-label {
+		.titlemeta-info-label {
 			text-align: right;
 
 			@include desktop {
@@ -69,13 +69,13 @@
 			}
 		}
 
-		.movie-meta-data {
+		.titlemeta-info-data {
 			padding: 0px 10px; 
 		}
 	}
 
-	.movie-poster-container {
-		.movie-poster {
+	.titlemeta-poster-container {
+		.titlemeta-poster {
 			max-height: 300px;
 			display:block;
     		margin:auto;

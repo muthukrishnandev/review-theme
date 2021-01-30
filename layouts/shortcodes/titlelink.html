@@ -1,0 +1,14 @@
+{{ $title := .Get 0 }}
+{{ $year := .Get 1 }}
+
+{{ partial "findtitlemeta.html" (dict "title" $title "year" $year "context" .) }}
+
+{{ $titlePage := .Scratch.Get "findtitlemeta_result" }}
+{{ $isFound := .Scratch.Get "findtitlemeta_isfound" }}
+
+{{ if $isFound }}
+	{{ $metaParams := $titlePage.Params.meta }}
+	<a href="{{ $titlePage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
+{{ else }}
+	{{ errorf "'%v' post not found for '%v'" $title $.Page.File }}
+{{ end }}

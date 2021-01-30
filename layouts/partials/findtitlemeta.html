@@ -1,9 +1,11 @@
-{{ $title := .Get 0 }}
-{{ $year := .Get 1 }}
 
-{{ $titles := (where $.Site.RegularPages "Type" "in" (slice "movies" "tvshows")) }}
+{{ $title := .title }}
+{{ $year := .year }}
+{{ $context := .context }}
 
-{{ $titlesOne := (where $titles "title" "==" $title) }}
+{{ $titles := (where $context.Site.RegularPages "Type" "in" (slice "movies" "tvshows")) }}
+
+{{ $titlesOne := (where $titles "Title" "==" $title) }}
 {{ $titlesTwo := (where $titles "Params.meta.title" "==" $title) }}
 
 {{ $titles = union $titlesOne $titlesTwo }}
@@ -21,11 +23,11 @@
 {{ if and $titles (eq $matchCount 1) }}
 	{{ $moviePage := index $titles 0 }}
 	{{ if $moviePage }}
-		{{ $metaParams := $moviePage.Params.meta }}
-		<a href="{{ $moviePage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
+		{{ $context.Scratch.Set "findtitlemeta_result" $moviePage }}
+		{{ $context.Scratch.Set "findtitlemeta_isfound" true }}
 	{{ else }}
-		{{ errorf "'%v' post not found for '%v'" $title $.Page.File }}
+		{{ $context.Scratch.Set "findtitlemeta_isfound" false }}
 	{{ end }}
 {{ else }}
-	{{ errorf "'%v' post not found for '%v'" $title $.Page.File }}
+	{{ $context.Scratch.Set "findtitlemeta_isfound" false }}
 {{ end }}

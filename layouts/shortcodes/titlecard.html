@@ -1,0 +1,55 @@
+{{ $title := .Get 0 }}
+{{ $year := .Get 1 }}
+
+{{ partial "findtitlemeta.html" (dict "title" $title "year" $year "context" .) }}
+
+{{ $titlePage := .Scratch.Get "findtitlemeta_result" }}
+{{ $isFound := .Scratch.Get "findtitlemeta_isfound" }}
+
+{{ if $isFound }}
+	{{ $metaParams := $titlePage.Params.meta }}
+	<div class="row titlecard">
+		<div class="col-md-3 col-xs-12 d-flex justify-content-center align-items-center">
+			{{ partial "findposterlink.html" $titlePage }}
+			{{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
+				<img loading="lazy" class="title-poster titlecard-poster" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
+			{{ else }}
+				{{ errorf $titlePage.Scratch.Get "findposterlink_error" }}
+			{{ end }}
+		</div>
+		<div class="col-md-9 col-xs-12">
+			<h1 class="titlecard-title">
+				<a href="{{ $titlePage.Permalink }}">{{ $metaParams.title }}</a> ({{ $metaParams.released_on | dateFormat "2006" }})
+			</h1>
+			<div class="titlecard-info titlecard-review">
+				<span class="titlecard-info-label">Bottomline:</span>
+				{{ partial "findreviews.html" $titlePage }}
+				{{ $reviews := $titlePage.Scratch.Get "findreviews_result" }}
+				{{ if $titlePage.Scratch.Get "findreviews_isfound" }}
+					{{ $review := index $reviews 0 }}
+					<span class="titlecard-info-data">{{ $review.Params.consensus }}</span>
+				{{ else }}
+					<span class="titlecard-info-data">No review yet</span>
+				{{ end }}
+			</div>
+			<div class="titlecard-info titlecard-plot">
+				<span class="titlecard-info-label">Plot</span>
+				<span class="titlecard-info-data">{{ $metaParams.storyline }}</span>
+			</div>
+			<div class="titlecard-info titlecard-plot">
+				<span class="titlecard-info-label">Starring:&nbsp;</span>
+				<span class="titlecard-info-data d-flex d-inline-flex">
+					{{ partial "taxo-links.html" (dict "allterms" (first 5 $titlePage.Params.actors) "context" $titlePage "taxoname" "actors") }}
+				</span>
+			</div>
+			<div class="titlecard-info titlecard-plot">
+				<span class="titlecard-info-label">Directed by:&nbsp;</span>
+				<span class="titlecard-info-data d-flex d-inline-flex">
+					{{ partial "taxo-links.html" (dict "allterms" (first 5 $titlePage.Params.directors) "context" $titlePage "taxoname" "directors") }}
+				</span>
+			</div>
+		</div>
+	</div>
+{{ else }}
+	{{ errorf "'%v' post not found for '%v'" $title $.Page.File }}
+{{ end }}

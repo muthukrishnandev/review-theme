@@ -178,7 +178,7 @@ a {
 
   @include mobile {
     color: $link-color-dark;
-    margin: 0 5px;
+    // margin: 0 5px;
 
     &:hover {
       color: $link-color-darker;

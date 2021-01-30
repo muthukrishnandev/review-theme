@@ -47,3 +47,8 @@ tradita erit, vitamque. Umerumque caelo terribili sequitur terras artificum
 praepes fronte? Aer capi praestantia miliaque tamen, suis aequoreae ut Helicona
 medios, virgo illi contiguas tollit albentes ad terras formae. Medendi nequeunt
 et quoniam vocavit vimque quoque.
+
+{{< titlecardlist >}}
+	{{< titlecard "Movie 2" >}}
+	{{< titlecard "Movie 3" >}}
+{{< /titlecardlist >}}

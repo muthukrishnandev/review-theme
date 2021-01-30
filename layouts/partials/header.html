@@ -6,7 +6,7 @@
       {{ if fileExists $logoFilePath }}
         {{ $isSiteLogoExists = true }}
         <a href="{{ .Site.BaseURL }}" class="site-avatar">
-          <img src="{{ (path.Join `images` .Site.Params.Info.Logo) | absURL }}" />
+          <img loading="lazy" src="{{ (path.Join `images` .Site.Params.Info.Logo) | absURL }}" />
         </a>
       {{ else }}
         {{ errorf "%s logo file not found" $logoFilePath }}

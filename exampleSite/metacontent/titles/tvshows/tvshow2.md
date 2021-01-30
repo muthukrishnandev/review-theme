@@ -5,8 +5,7 @@ date: 2020-05-17T18:27:41+05:30
 meta:
   title: "tv series 2"
   tagline: "tv series tag 2"
-
-  storyline: "story line1"
+  storyline: "Facilisi etiam dignissim diam quis enim lobortis scelerisque. Tristique senectus et netus et malesuada"
 
   released_on: "2001-01-01"
   running_time: 30 # in minutes

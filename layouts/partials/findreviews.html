@@ -1,0 +1,19 @@
+{{ $titlePage := . }}
+{{ $context := . }}
+
+{{ $reviews := (where $context.Site.RegularPages "Type" "in" "reviews") }}
+
+{{ $toFindSlice := (slice $titlePage.File.BaseFileName $titlePage.Title $titlePage.Params.meta.title $titlePage.File.LogicalName) }}
+{{ if $titlePage.Slug }}
+	{{ $toFindSlice = $toFindSlice | append $titlePage.Slug }}
+{{ end }}
+
+{{ $reviews := (where $reviews ".Params.meta_name" "in" $toFindSlice) }}
+
+{{ if $reviews }}
+	{{ $context.Scratch.Set "findreviews_result" $reviews }}
+	{{ $context.Scratch.Set "findreviews_isfound" true }}
+{{ else }}
+	{{ $context.Scratch.Set "findreviews_result" $reviews }}
+	{{ $context.Scratch.Set "findreviews_isfound" false }}
+{{ end }}

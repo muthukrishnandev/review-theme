@@ -58,3 +58,49 @@
     }
   }
 }
+
+
+.title-list-row {
+  margin-top: 10px!important;
+  margin-bottom: 10px!important;
+
+  .title-list-item {
+    .title-item-poster {
+      min-width: 210px;
+      max-width: 210px;
+      max-height: 300px;
+
+      overflow: hidden;
+
+      img {
+        max-height: 100%;
+        width: auto;
+      }
+
+      @include mobile {
+        margin: 0 auto;
+        img {
+          display: block;
+        }
+      }
+    }
+
+    .title-item-meta {
+      text-align: center;
+    }
+
+    .title-item-link {
+      text-decoration: none;
+      color: $text-color;
+    }
+
+    .title-item-title{
+      @include relative-font-size(0);
+      margin-bottom: 0px;
+    }
+
+    .title-item-date{
+      @include relative-font-size(0);
+    }
+  }
+}

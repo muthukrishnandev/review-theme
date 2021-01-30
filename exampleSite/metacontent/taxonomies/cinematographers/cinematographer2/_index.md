@@ -3,13 +3,7 @@ title: "Cine2"
 date: 2020-05-17T19:13:40+05:30
 
 meta:
-  name: "cinematographer name"
+  name: "cinematographer 2"
   dob: "1900-01-01"
-  gender: "male"
-
   image: "person.jpg" # place it in assets/images/people
-
-  external_links:
-   imdb: "https://www.imdb.com/name/{ insert imdb_id here }"
-   wikipedia: "https://en.wikipedia.org/wiki/{ insert wiki id here }"
 ---

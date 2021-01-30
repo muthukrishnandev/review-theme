@@ -1,9 +1,6 @@
-{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
-{{ $reviews = (where $reviews ".Params.movie" .File.LogicalName )}}
+{{ partial "findreviews.html" . }}
 
-{{ if gt (len $reviews) 1 }}
-	errorf "more than one review?"
-{{ end }}
+{{ $reviews := .Scratch.Get "findreviews_result" }}
 
 {{ $review := index $reviews 0 }}
 
@@ -19,7 +16,6 @@
 					<div class="score-rating-data">{{ $mainScore }}%</div>
 					<div class="score-rating-label">{{ $.Site.Params.Meta.MainScore }}</div>
 				</div>
-
 				{{ $customScoreNames := $.Site.Params.Meta.CustomScores }}
 				{{ range $index, $score := $review.Params.custom_scores }}
 					<div class="col score-rating custom-score text-center">
@@ -45,4 +41,3 @@
 		</div>
 	</div>
 {{ end }}
- 
