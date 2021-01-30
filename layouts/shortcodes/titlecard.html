@@ -1,5 +1,16 @@
-{{ $title := .Get 0 }}
-{{ $year := .Get 1 }}
+{{ $title := "" }}
+{{ $year := "" }}
+{{ $shortreview := "" }}
+
+{{ if .IsNamedParams }}
+	{{ $title = .Get "title" }}
+	{{ $year = .Get "year" }}
+	{{ $shortreview = .Get "review" }}
+{{ else }}
+	{{ $title = .Get 0 }}
+	{{ $year = .Get 1 }}
+	{{ $shortreview = .Get 2 }}
+{{ end }}
 
 {{ partial "findtitlemeta.html" (dict "title" $title "year" $year "context" .) }}
 
@@ -22,18 +33,22 @@
 				<a href="{{ $titlePage.Permalink }}">{{ $metaParams.title }}</a> ({{ $metaParams.released_on | dateFormat "2006" }})
 			</h1>
 			<div class="titlecard-info titlecard-review">
-				<span class="titlecard-info-label">Bottomline:</span>
 				{{ partial "findreviews.html" $titlePage }}
 				{{ $reviews := $titlePage.Scratch.Get "findreviews_result" }}
 				{{ if $titlePage.Scratch.Get "findreviews_isfound" }}
 					{{ $review := index $reviews 0 }}
+					<span class="titlecard-info-label">Bottomline:&nbsp;</span>
 					<span class="titlecard-info-data">{{ $review.Params.consensus }}</span>
+				{{ else if $shortreview }}
+					<span class="titlecard-info-label">ShortReview:&nbsp;</span>
+					<span class="titlecard-info-data">{{ $shortreview }}</span>
 				{{ else }}
+					<span class="titlecard-info-label">Bottomline:&nbsp;</span>
 					<span class="titlecard-info-data">No review yet</span>
 				{{ end }}
 			</div>
 			<div class="titlecard-info titlecard-plot">
-				<span class="titlecard-info-label">Plot</span>
+				<span class="titlecard-info-label">Plot:&nbsp;</span>
 				<span class="titlecard-info-data">{{ $metaParams.storyline }}</span>
 			</div>
 			<div class="titlecard-info titlecard-plot">

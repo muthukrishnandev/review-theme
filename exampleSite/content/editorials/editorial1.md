@@ -50,5 +50,5 @@ et quoniam vocavit vimque quoque.
 
 {{< titlecardlist >}}
 	{{< titlecard "Movie 2" >}}
-	{{< titlecard "Movie 3" >}}
+	{{< titlecard title="Movie 3" review="this is a short review">}}
 {{< /titlecardlist >}}
