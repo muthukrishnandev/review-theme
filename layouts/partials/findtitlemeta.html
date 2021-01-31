@@ -21,9 +21,9 @@
 {{ end }}
 
 {{ if and $titles (eq $matchCount 1) }}
-	{{ $moviePage := index $titles 0 }}
-	{{ if $moviePage }}
-		{{ $context.Scratch.Set "findtitlemeta_result" $moviePage }}
+	{{ $titlePage := index $titles 0 }}
+	{{ if $titlePage }}
+		{{ $context.Scratch.Set "findtitlemeta_result" $titlePage }}
 		{{ $context.Scratch.Set "findtitlemeta_isfound" true }}
 	{{ else }}
 		{{ $context.Scratch.Set "findtitlemeta_isfound" false }}

@@ -3,12 +3,19 @@
 
 {{ $reviews := (where $context.Site.RegularPages "Type" "in" "reviews") }}
 
-{{ $toFindSlice := (slice $titlePage.File.BaseFileName $titlePage.Title $titlePage.Params.meta.title $titlePage.File.LogicalName) }}
+{{ $toFindSlice := (slice $titlePage.Title) }}
+{{ $toFindSlice = $toFindSlice | append $titlePage.File.BaseFileName }}
+{{ $toFindSlice = $toFindSlice | append $titlePage.File.LogicalName }}
+
+{{ if $titlePage.Params.meta.title }}
+	{{ $toFindSlice = $toFindSlice | append $titlePage.Params.meta.title }}
+{{ end }}
+
 {{ if $titlePage.Slug }}
 	{{ $toFindSlice = $toFindSlice | append $titlePage.Slug }}
 {{ end }}
 
-{{ $reviews := (where $reviews ".Params.meta_name" "in" $toFindSlice) }}
+{{ $reviews = (where $reviews ".Params.meta_name" "in" $toFindSlice) }}
 
 {{ if $reviews }}
 	{{ $context.Scratch.Set "findreviews_result" $reviews }}

@@ -1,0 +1,25 @@
+
+{{ $context := . }}
+{{ $metaName := .Params.meta_name }}
+
+{{ $titles := (where $context.Site.RegularPages "Type" "in" (slice "movies" "tvshows")) }}
+
+{{ $titles1 := (where $titles "Title" "==" $metaName) }}
+{{ $titles2 := (where $titles "Slug" "==" $metaName) }}
+{{ $titles3 := (where $titles "File.BaseFileName" "==" $metaName) }}
+{{ $titles4 := (where $titles "File.LogicalFileName" "==" $metaName) }}
+{{ $titles5 := (where $titles "Params.meta.title" "==" $metaName) }}
+
+{{ $titlesSet1 := union $titles1 $titles2 }}
+{{ $titlesSet2 := union $titles3 $titles4 }}
+{{ $titlesSetFinal := union (union $titlesSet1 $titlesSet2) $titles5 }}
+
+{{ $titles = union $titles $titlesSetFinal }}
+
+{{ if $titles }}
+	{{ $titlePage := index $titles 0 }}
+	{{ $context.Scratch.Set "findtitle_result" $titlePage }}
+	{{ $context.Scratch.Set "findtitle_isfound" true }}
+{{ else }}
+	{{ $context.Scratch.Set "findtitle_isfound" false }}
+{{ end }}
