@@ -14,7 +14,7 @@
 
 {{ if $taxoPage  }}
 	<a class="titlemeta-taxonomy-link" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.name | default $taxoPage.Title }}</a>
-	{{ if lt $index (sub $limitSize 1) }},&nbsp; {{ end }}
+	{{- if lt $index (sub $limitSize 1) }},&nbsp;{{ end }}
 {{ else }}
 	{{ errorf "%v taxonomy is not valid" $tagURL}}
 {{ end }}
