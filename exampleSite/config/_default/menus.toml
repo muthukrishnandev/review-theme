@@ -1,16 +1,31 @@
+[[header]]
+    name = "Discover"
+    identifier = "discover"
+    title = "discover"
+    url = "discover"
+    weight = 1
+
+[[header]]
+    name = "Home"
+    identifier = "d_home"
+    title = "discover"
+    url = "/discover"
+    weight = 1
+    parent = "discover"
+
+[[header]]
+    name = "By Actors"
+    identifier = "d_actors"
+    title = "actors"
+    url = "/actors"
+    weight = 2
+    parent = "discover"
 
 [[header]]
     name = "Top"
     identifier = "top"
     title = "top"
     url = "/top"
-    weight = 1
-
-[[header]]
-    name = "Discover"
-    identifier = "discover"
-    title = "discover"
-    url = "/discover"
     weight = 2
 
 [[header]]
@@ -35,12 +50,12 @@
     weight = 5
 
 [[header]]
-    name = "About"
+    name = "Why?"
     identifier = "about"
     title = "about"
     url = "/about"
     weight = 6
-
+    
 [[footer]]
     name = "Home"
     identifier = "home"

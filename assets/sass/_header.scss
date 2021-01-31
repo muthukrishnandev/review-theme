@@ -3,116 +3,103 @@
  */
 
 .page-header {
-  padding: $spacing-unit / 2 0;
   margin-bottom: $spacing-unit / 2;
   border-bottom: 1px solid $grey-color-lighter;
-
   @include container-width;
 
   @include mobile {
-    text-align: center;
-  }
-}
-
-.site-avatar {
-  float: left;
-  height: $site-avatar-height;
-  max-width: $site-avatar-width-max;
-  margin-right: $spacing-unit / 2;
-
-  @include mobile {
-    float: none;
-    display: block;    
-    margin: 0 auto;
-  }
-
-  img {
-    width: auto;
-    max-height: 100%;
-    border-radius: 5px;
-  }
-}
-
-.site-info {
-  float: left;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  a {
-    color: $grey-color-darker;
-    // font-weight: 700;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .site-name {
-    margin: 0;
-    color: $grey-color-darker;
-    cursor: pointer;
-    letter-spacing: 1px;
-    // @include relative-font-size(4);
-  }
-
-  .site-description {
-    margin: -5px 0 0 0;
-    color: $grey-color;
-
-    @include mobile {
-      margin: 3px 0;
-    }
-  }
-}
-
-
-
-
-@include desktop {
-  .page-header {
-    position: relative;
+    padding: $spacing-unit / 2 0;
   }
 
   .header-nav {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-.header-nav {
-  font-family: $base-font-family;
-
-  @include mobile {
-    float: none;
-    margin-top: $header-height / 3;
-    display: block;
-    font-size: 16px;
-  }
-
-  .nav-link {
-    margin-right: 10px;
-    margin-left: 10px;
-    color: $grey-color-darker;
-    text-align: right;
-    letter-spacing: 1px;
-    text-decoration: none;
+    font-family: $base-font-family;
 
     @include mobile {
-      margin: 0 5px;
+      float: none;
+      // margin-top: $header-height / 3;
+      // display: block;
+      font-size: 16px;
     }
 
-    &.active{
-      // font-weight: 500;
-      text-decoration: underline;
+    ul, li {
+      padding: 0px;
+      margin: 0px;
     }
 
-    &:last-child{
-      margin-right: 0px;
+    .navbar-collapse {
+      margin-top: 10px;
     }
+
+    .site-logo-container {
+      float: left;
+      height: $site-logo-container-height;
+      max-width: $site-logo-container-width-max;
+      margin-right: $spacing-unit / 2;
+
+      img {
+        width: auto;
+        max-height: 100%;
+        border-radius: 5px;
+      }
+    }
+
+    .site-info {
+      float: left;
+
+      @include mobile {
+        float: none;
+        display: block;
+      }
+
+      a {
+        color: $grey-color-darker;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .site-name {
+        margin: 0;
+        color: $grey-color-darker;
+        cursor: pointer;
+        letter-spacing: 1px;
+        @include relative-font-size(4);
+      }
+
+      .site-description {
+        margin: -5px 0 0 0;
+        color: $grey-color;
+        @include relative-font-size(0);
+
+        @include mobile {
+          margin: 3px 0;
+        }
+      }
+    }
+
+    .nav-item {
+      &.active{
+        color: $text-color;
+        font-weight: 700;
+        // text-decoration: underline;
+      }
+
+      &:last-child{
+        margin-right: 0px;
+      }
+  
+      .nav-link {
+        // margin-right: 10px;
+        // margin-left: 10px;
+        color: $grey-color-darker;
+        // text-align: right;
+        letter-spacing: 1px;
+        text-decoration: none;
+        @include mobile {
+          margin: 0 5px;
+        }
+      }
+    }
+
   }
 }

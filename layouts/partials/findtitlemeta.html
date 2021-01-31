@@ -21,10 +21,14 @@
 {{ end }}
 
 {{ if and $titles (eq $matchCount 1) }}
-	{{ $titlePage := index $titles 0 }}
-	{{ if $titlePage }}
-		{{ $context.Scratch.Set "findtitlemeta_result" $titlePage }}
-		{{ $context.Scratch.Set "findtitlemeta_isfound" true }}
+	{{ if eq (len $titles) 1 }}
+		{{ $titlePage := index $titles 0 }}
+		{{ if $titlePage }}
+			{{ $context.Scratch.Set "findtitlemeta_result" $titlePage }}
+			{{ $context.Scratch.Set "findtitlemeta_isfound" true }}
+		{{ else }}
+			{{ $context.Scratch.Set "findtitlemeta_isfound" false }}
+		{{ end }}
 	{{ else }}
 		{{ $context.Scratch.Set "findtitlemeta_isfound" false }}
 	{{ end }}

@@ -14,9 +14,19 @@
 			    <th>{{ $mainScoreName }}</th>
 			  </thead>
 			  <tbody>
-				{{ range $reviews }}
+				{{ range $index, $reviewPage := $reviews }}
 					<div class="top-item">
-						{{ partial "item-top.html" . }}
+						{{ partial "findtitle.html" $reviewPage }}
+						{{ if $reviewPage.Scratch.Get "findtitle_isfound" }}
+							{{ $metaPage := $reviewPage.Scratch.Get "findtitle_result" }}
+							{{ $metaParams := $metaPage.Params.meta }}
+							<tr class="post-list-item {{ $reviewPage.Type }}">
+							  <td class="post-title {{ $reviewPage.Type }}">
+							    <a href="{{ $metaPage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
+							  </td>
+							  <td class="top-score">{{ $reviewPage.Params.score }}</td>
+							</tr>
+						{{ end }}
 					</div>
 				{{ end }}
 			  </tbody>

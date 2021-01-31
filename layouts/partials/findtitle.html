@@ -1,25 +1,24 @@
 
 {{ $context := . }}
-{{ $metaName := .Params.meta_name }}
+{{ $metaName := $context.Params.meta_name }}
+{{ $metaType := $context.Params.meta_type }}
 
-{{ $titles := (where $context.Site.RegularPages "Type" "in" (slice "movies" "tvshows")) }}
+{{ $titlesSet := (where $context.Site.RegularPages "Type" "in" (slice "movies" "tvshows")) }}
 
-{{ $titles1 := (where $titles "Title" "==" $metaName) }}
-{{ $titles2 := (where $titles "Slug" "==" $metaName) }}
-{{ $titles3 := (where $titles "File.BaseFileName" "==" $metaName) }}
-{{ $titles4 := (where $titles "File.LogicalFileName" "==" $metaName) }}
-{{ $titles5 := (where $titles "Params.meta.title" "==" $metaName) }}
+{{ $titlesRes := (where $titlesSet "File.LogicalName" "==" $metaName) }}
+{{ $titlesRes = $titlesRes | union (where $titlesSet "Slug" "==" $metaName) }}
+{{ $titlesRes = $titlesRes | union (where $titlesSet "Title" "==" $metaName) }}
+{{ $titlesRes = $titlesRes | union (where $titlesSet "File.BaseFileName" "==" $metaName) }}
+{{ $titlesRes = $titlesRes | union (where $titlesSet "Params.meta.title" "==" $metaName) }}
 
-{{ $titlesSet1 := union $titles1 $titles2 }}
-{{ $titlesSet2 := union $titles3 $titles4 }}
-{{ $titlesSetFinal := union (union $titlesSet1 $titlesSet2) $titles5 }}
-
-{{ $titles = union $titles $titlesSetFinal }}
-
-{{ if $titles }}
-	{{ $titlePage := index $titles 0 }}
-	{{ $context.Scratch.Set "findtitle_result" $titlePage }}
-	{{ $context.Scratch.Set "findtitle_isfound" true }}
+{{ if $titlesRes }}
+	{{ if eq (len $titlesRes) 1 }}
+		{{ $titlePage := index $titlesRes 0 }}
+		{{ $context.Scratch.Set "findtitle_result" $titlePage }}
+		{{ $context.Scratch.Set "findtitle_isfound" true }}
+	{{ else }}
+		{{ $context.Scratch.Set "findtitle_isfound" false }}
+	{{ end }}
 {{ else }}
 	{{ $context.Scratch.Set "findtitle_isfound" false }}
 {{ end }}
