@@ -14,12 +14,11 @@
 <title>
 	{{ if .IsHome }}
 		{{ .Title }}
-	{{ else if .IsSection }}
-		{{ $sectionPage := .Site.GetPage .Section }}
-		{{ printf "%v | %v" (title $sectionPage.Title) .Site.Title }}
+	{{ else if or (eq .Kind "taxonomy") (eq .Kind "section") }}
+		{{ printf "%v | %v" .Title .Site.Title }}
 	{{ else }}
 		{{ $sectionPage := .Site.GetPage .Section }}
-		{{ printf "%v | %v | %v" .Title (title $sectionPage.Title) .Site.Title }}
+		{{ printf "%v | %v | %v" .Title $sectionPage.Title .Site.Title }}
 	{{ end }}
 </title>
 
