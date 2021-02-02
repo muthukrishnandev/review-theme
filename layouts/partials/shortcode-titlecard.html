@@ -4,7 +4,7 @@
 
 {{ $metaParams := $titlePage.Params.meta }}
 <div class="row titlecard">
-	<div class="col-md-3 col-xs-12 d-flex justify-content-center align-items-center">
+	<div class="col-md-3 titlecard-poster-container">
 		{{ partial "findposterlink.html" $titlePage }}
 		{{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
 			<img loading="lazy" class="title-poster titlecard-poster" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
@@ -12,7 +12,7 @@
 			{{ errorf $titlePage.Scratch.Get "findposterlink_error" }}
 		{{ end }}
 	</div>
-	<div class="col-md-9 col-xs-12">
+	<div class="col-md-9 col-12">
 		<h1 class="titlecard-title">
 			<a href="{{ $titlePage.Permalink }}">{{ $metaParams.title }}</a> ({{ $metaParams.released_on | dateFormat "2006" }})
 		</h1>

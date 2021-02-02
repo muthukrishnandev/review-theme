@@ -1,5 +1,5 @@
 .post-list {
-  .post-list-item{
+  .post-list-item {
     padding-top: $spacing-unit / 2;
     padding-bottom: $spacing-unit / 2;
     
@@ -34,7 +34,6 @@
       @include mobile {
         text-align: left;
         margin-top: 0px;
-        // margin-left: 10px;
       }
     }
 
@@ -62,12 +61,13 @@
   }
 }
 
-
 .title-list-row {
   margin-top: 10px!important;
   margin-bottom: 10px!important;
 
   .title-list-item {
+    border-bottom: none!important;
+
     .title-item-poster {
       min-width: 210px;
       max-width: 210px;
@@ -83,10 +83,11 @@
       }
 
       @include mobile {
+        min-width: 150px;
+        max-width: 150px;
+        min-height: 210px;
+        max-height: 210px;
         margin: 0 auto;
-        img {
-          display: block;
-        }
       }
     }
 

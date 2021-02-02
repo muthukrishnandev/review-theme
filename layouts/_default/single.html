@@ -1,8 +1,10 @@
 {{ define "main" }}
 <h2 class="page-heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+{{ if .Content }}
 <div class="page-description">
   {{ .Content }}
 </div>
+{{ end }}
 <div class="page-content-wrapper">
 	<div class="post-single">
       {{ .Content }}

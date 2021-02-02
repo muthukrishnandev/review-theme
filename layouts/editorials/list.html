@@ -1,8 +1,10 @@
 {{ define "main" }}
 	<h1 class="page-heading">{{ .Title }}</h1>
+    {{ if .Content }}
 	<div class="page-description">
       {{ .Content }}
     </div>
+     {{ end }}
 	{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
 	<div class="page-content-wrapper">
 		<div class="post-list">
