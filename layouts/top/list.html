@@ -1,27 +1,25 @@
 {{ define "main" }}
-<div class="page-container {{ .Type }}">
-    {{ $metaTypes := .Site.Params.Meta.TopList }}
-    {{ $limit := .Site.Params.Meta.TopListCount }}
-    {{ $context := . }}
-    <div class="container">
-    	<div class="row">
-		    {{ range $index, $metaType := $metaTypes }}
-		    	{{ $metaPage := $.Site.GetPage (printf "%s" $metaType)}}
-		    	{{ if not $metaPage }}
-		    		{{ errorf "review meta type %s is unknown"}}
-		    	{{ end }}
-		    	{{ $reviews := (where $.Site.RegularPages "Type" "in" "reviews") }}
-				{{ $reviews = (where $reviews ".Params.meta_type" "==" $metaType) }}
-				{{ $reviews = ($reviews.ByParam "score").Reverse }}
+{{ $metaTypes := .Site.Params.Meta.TopList }}
+{{ $limit := .Site.Params.Meta.TopListCount }}
+{{ $context := . }}
+<div class="row">
+    {{ range $index, $metaType := $metaTypes }}
+    	{{ $metaPage := $.Site.GetPage (printf "%s" $metaType)}}
+    	{{ if not $metaPage }}
+    		{{ errorf "review meta type %s is unknown"}}
+    	{{ end }}
+    	{{ $reviews := (where $.Site.RegularPages "Type" "in" "reviews") }}
+		{{ $reviews = (where $reviews ".Params.meta_type" "==" $metaType) }}
+		{{ $reviews = ($reviews.ByParam "score").Reverse }}
 
-				{{ if $reviews }}
-			    	<div class="col-md">
-					<h3 class="page-heading">Top {{ $limit }} {{ $metaPage.Title }}</h3>
-						{{ partial "top-table.html" (dict "context" $context "arr" $reviews) }}
-			    	</div>
-				{{ end }}
-		    {{ end }}
-        </div>
-    </div>
+		{{ if $reviews }}
+	    	<div class="col-md">
+				<h3 class="page-heading">Top {{ $limit }} {{ $metaPage.Title }}</h3>
+				<div class="page-content-wrapper">
+					{{ partial "page-list-top.html" (dict "context" $context "arr" $reviews) }}
+				</div>
+	    	</div>
+		{{ end }}
+    {{ end }}
 </div>
 {{ end }}

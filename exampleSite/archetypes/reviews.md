@@ -1,7 +1,7 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-subtitle: "review subtitle"
 date: {{ .Date }}
+title: "{{ replace .Name "-" " " | title }}"
+description: "review subtitle"
 draft: true
 
 meta_name: "movie1.md" # must be name of movie or post 

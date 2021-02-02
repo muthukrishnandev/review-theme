@@ -1,13 +1,11 @@
 {{ define "main" }}
-<div class="page-container {{ .Type }}">
-    <h2 class="page-title {{ .Type }}"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <div class="page-description {{ .Type }}">
+<h2 class="page-heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+<div class="page-description">
+  {{ .Content }}
+</div>
+<div class="page-content-wrapper">
+	<div class="post-single">
       {{ .Content }}
-    </div>
-    <div class="page-content-wrapper {{ .Type }}">
-    	<div class="post-single">
-	      {{ .Content }}
-    	</div>
-    </div>
+	</div>
 </div>
 {{ end }}

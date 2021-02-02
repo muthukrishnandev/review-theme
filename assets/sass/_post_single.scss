@@ -4,11 +4,6 @@
       margin-bottom: $spacing-unit / 2;
     }
 
-    .post-title {
-      font-weight: 900;
-      line-height: $very-small-line-height;
-    }
-
     .post-content {
       margin-bottom: $spacing-unit;
     }
@@ -25,10 +20,7 @@
       .post-taxonomies {
         color: $grey-color;
         margin: 10px 0px;
-
-          float: right;
-        @include desktop {
-        }
+        float: right;
 
         @include mobile {
           margin: 5px 0px;

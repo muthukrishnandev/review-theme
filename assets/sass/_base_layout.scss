@@ -1,0 +1,82 @@
+/**
+ * Page content
+ */
+html,
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+}
+
+.page-wrapper { // wraps page header, body, footer
+  position:relative;
+
+  margin: 0 auto;
+  padding: 0 ($spacing-unit / 3);
+
+  max-width: $content-width;
+  min-height: 100%;
+  width: 100%;
+
+  .page-body {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    padding-bottom: $footer-height; // Important!
+
+    @include mobile {
+      max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+      max-width: calc(#{$content-width} - (#{$spacing-unit}));
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: $spacing-unit / 2;
+      padding-left: $spacing-unit / 2;   
+    }
+
+    .page-container {
+      .page-heading {
+        color: $grey-color-darker;
+      }
+
+      .page-description {
+        @include mobile {
+          padding: ($spacing-unit / 2) 5px;
+        }
+      }
+
+      .post-content {
+        h1 {
+          @include relative-font-size(5);
+        }
+
+        h2 {
+          @include relative-font-size(4);
+        }
+
+        h3, h4 {
+          @include relative-font-size(3);
+        }
+
+        h5, h6, p {
+          @include relative-font-size(2);
+        }
+      }
+
+      @include mobile {
+        h1 {
+            @include relative-font-size-mobile(4);
+        }
+        h2 {
+            @include relative-font-size-mobile(3);
+        }
+        h3, h4 {
+          @include relative-font-size-mobile(2);
+        }
+        h5, h6, p {
+            @include relative-font-size-mobile(1);
+        }
+      }
+    }
+  }
+}

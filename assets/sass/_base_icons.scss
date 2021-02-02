@@ -9,13 +9,6 @@
   background-repeat: no-repeat;
   background-size: contain;
 
-  // border: 1px solid $grey-color-lighter;
-  // border-radius: 50%;
-
-  // filter: gray; /* IE6-9 */
-  // filter: grayscale(1);  Microsoft Edge and Firefox 35+ 
-  // -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-
   &.email.social-greyscale{
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1Ni42OTM0cHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1Ni42OTM0IDU2LjY5MzQ7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTM0IDU2LjY5MzQiIHdpZHRoPSI1Ni42OTM0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwb2x5Z29uIHBvaW50cz0iMjkuMzkzOCwzMS42NjYgMzkuMzA5LDM4LjU2MDQgMzkuMzA5LDI0LjgzNjIgMzQuOTIzNSwyNy44NTY5ICIvPjxwYXRoIGQ9Ik0yOC4zNDcyLDMuOTIyOWMtMTMuNTk5NiwwLTI0LjYyNSwxMS4wMjM0LTI0LjYyNSwyNC42MjNjMCwxMy41OTk3LDExLjAyNTQsMjQuNjI1LDI0LjYyNSwyNC42MjUgIGMxMy41OTg2LDAsMjQuNjI0LTExLjAyNTMsMjQuNjI0LTI0LjYyNUM1Mi45NzEyLDE0Ljk0NjMsNDEuOTQ1OCwzLjkyMjksMjguMzQ3MiwzLjkyMjl6IE0zOS45MTQxLDM5LjcwOTR2MC4wMDA3SDE2Ljc3NzRoLTAuODcwNCAgYy0xLjM0NDcsMC0yLjQ0NTEtMS4xMDAzLTIuNDQ1MS0yLjQ0NTFWMjAuNTYyN2MwLTEuMzQ0OCwxLjEwMDMtMi40NDUxLDIuNDQ1MS0yLjQ0NTFsMC4wMDk2LDAuMDA3MmwtMC4wMDk2LTAuMDA3OGgyNC45NTE4ICBjMS4zNDQ3LDAsMi40NDUsMS4xMDAyLDIuNDQ1LDIuNDQ0OXYwLjcwODdsMC4wMDA3LTAuMDAwNWwtMC4wMDA3LDAuMDAwN2wwLjAwNCwxNS45OTYzICBDNDMuMjQ5NCwzOS4wNDUxLDQyLjQ3OSwzOS42Nzk3LDM5LjkxNDEsMzkuNzA5NHoiLz48cGF0aCBkPSJNMjguMzQyMSwzMi4yNjIyYy0wLjExOTYsMC0wLjIzOTEtMC4wMzU5LTAuMzQxOS0wLjEwNzNsLTAuMTc4Ni0wLjEyNDRsLTEwLjE4MzUsNy4wODExaDIxLjQxNTNsLTEwLjE4NjMtNy4wODI5ICBDMjguODY3MSwzMi4wMjg3LDI4LjQ2MDcsMzIuMjYyMiwyOC4zNDIxLDMyLjI2MjJ6Ii8+PHBvbHlnb24gcG9pbnRzPSI0MC44NTgsMTguMTE3NiA0MC44NTg3LDE4LjExNyA0MC44NTY1LDE4LjExODcgIi8+PHBvbHlnb24gcG9pbnRzPSIzOS4wMzcsMTguNzE1NCAxNy43MTkxLDE4LjcxNTQgMjguMzQzMiwyNi41OTI0ICIvPjxwb2x5Z29uIHBvaW50cz0iMjcuMjg3NywzMS42NTkgMTcuMzgyLDI0LjgzNTkgMTcuMzc2NCwzOC41NjQ3IDI3LjI5NzYsMzEuNjY2ICIvPjwvc3ZnPg==);
   } 
@@ -61,7 +54,7 @@
 }
 
 .footer-list {
-  padding: 10px 0px;
+  padding: ($spacing-unit / 3) 0px;
   list-style: none;
 
   li {
@@ -74,12 +67,6 @@
     }
     &:last-child:after{
       content: ""
-    }
-  }
-
-  @include desktop{
-    .social-icon{
-      padding: 0px 2px;
     }
   }
 }

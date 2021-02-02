@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="page-container home">
+<div class="page-content-wrapper">
 	{{ $editorials := (where .Site.RegularPages "Type" "in" "editorials") }}
    	{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
    	{{ $posts := union ($editorials) ($reviews) }}
@@ -11,7 +11,7 @@
 	{{ $paginator := .Paginate $sorted }}
 
     {{ if $posts }}
-		<div class="post-list home">
+		<div class="post-list">
 		{{ range $paginator.Pages }}
 		    {{ partial "item-post.html" . }}
 		{{ end }}

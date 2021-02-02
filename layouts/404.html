@@ -1,15 +1,13 @@
 {{ define "main" }}
 
-<div class="page-container error">
-	<div class="page-content-wrapper ">
-		<div class="error-msg">
-			<p>Sorry, we can't find that page that you're looking for.</p>
-			<p>You can try again by going</p>
-			<a class="dark-button" href="{{ .Site.BaseURL }}">back to the homepage</a>	
-		</div>
-		<div class="error-image">
-			<img loading="lazy" src="{{ path.Join `images` `404.jpg` | absURL }}" alt="Constructocat by https://github.com/jasoncostello" />
-		</div>
+<div class="page-content-wrapper errors">
+	<div class="error-msg">
+		<p>Sorry, we can't find that page that you're looking for.</p>
+		<p>You can try again by going</p>
+		<a class="dark-button" href="{{ .Site.BaseURL }}">back to the homepage</a>	
+	</div>
+	<div class="error-image">
+		<img loading="lazy" src="{{ path.Join `images` `404.jpg` | absURL }}" alt="Constructocat by https://github.com/jasoncostello" />
 	</div>
 </div>
 

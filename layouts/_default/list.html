@@ -1,17 +1,15 @@
 {{ define "main" }}
-  <div class="page-container {{ .Type }}">
-    <h1 class="page-heading {{ .Type }}">{{ .Title }}</h1>
-    <div class="page-description {{ .Type }}">
+    <h1 class="page-heading">{{ .Title }}</h1>
+    <div class="page-description">
       {{ .Content }}
     </div>
     {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
-    <div class="page-content-wrapper {{ .Type }}">
-      <div class="post-list {{ .Type }}">
+    <div class="page-content-wrapper">
+      <div class="post-list">
         {{ range $paginator.Pages }}
           {{ partial "item-post.html" . }}
         {{ end }}
       </div>
     </div>
     {{ partial "pagination.html" . }}
-  </div>
 {{ end }}

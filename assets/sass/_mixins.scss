@@ -24,13 +24,13 @@
 
 // Mobile breakpoints
 @mixin mobile {
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 575.98px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 992px) {
     @content;
   }
 }

@@ -1,6 +1,6 @@
 ---
 title: "Review3"
-subtitle: "review subtitle"
+description: "review subtitle 3"
 date: 2020-05-17T19:33:08+05:30
 
 meta_name: "tvshow1.md" # must be name of movie or post 
@@ -17,8 +17,6 @@ reviewtags:
     - reviewtag4
     - reviewtag3
 ---
-
-# Review Title
 
 Lorem markdownum viro convicia nox dixit, lacertis regem **dumque** quid mella
 petit ullam; nihil ter; Diti et. Habebat curru, gradus Stygiae animi credita.

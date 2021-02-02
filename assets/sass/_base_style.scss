@@ -84,8 +84,8 @@ main {
   * Divider
   */
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: $spacing-unit / 2;
+  margin-bottom: $spacing-unit / 2;
   border: 0;
   height: 1px;
   background: -webkit-linear-gradient(
@@ -369,56 +369,4 @@ table {
   content: "";
   display: table;
   clear: both;
-}
-
-
-/******
-  Misc
-*****/
-
-.date {
-  font-style: italic;
-  color: $grey-color;
-}
-
-.dark-link {
-  color: $text-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $text-color;
-    text-decoration: underline;
-  }
-}
-
-.dark-button { 
-    color: $black;
-    border: 1px solid $grey-color-darker;
-    margin: 2px 2px;
-    padding: 5px 10px;
-    border-radius: 5px; 
-
-    &:hover {
-      text-decoration: none;
-      color: $white;
-      background-color: $grey-color-darker;
-    }
-}
-
-.hash-tag {
-    @include mobile {
-      margin-left: 0px;
-    }
-
-    &:before {
-      content: "\0023"
-    }
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-strong {
-  font-weight: 700;
 }

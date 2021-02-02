@@ -27,21 +27,23 @@ $table-text-align: left !default;
 
 // Width of the content area
 $content-width: 1000px !default;
-$site-logo-container-width-max: 125px !default;
-$site-logo-container-height: 70px !default;
+$header-logo-container-width-max: 125px !default;
+$header-logo-container-height: 70px !default;
 $header-height: 50px !default;
 $footer-height: 150px !default;
 
 // Colors
 $black: #000 !default;
 $white: #fff !default;
+
 $grey-color: #828282 !default;
 $grey-color-lightest: lighten($grey-color, 60%) !default;
 $grey-color-lighter: lighten($grey-color, 40%) !default;
-$grey-color-light: lighten($grey-color, 20%) !default;
-$grey-color-dark: darken($grey-color, 20%) !default;
+$grey-color-light: lighten($grey-color, 10%) !default;
+$grey-color-dark: darken($grey-color, 10%) !default;
 $grey-color-darker: darken($grey-color, 40%) !default;
 $grey-color-darkest: darken($grey-color, 60%) !default;
+
 $link-color: #4472ca !default;
 $link-color-dark: darken($link-color, 40%) !default;
 $link-color-darker: darken($link-color, 60%) !default;
@@ -57,10 +59,12 @@ $header-width-max: $content-width - $spacing-unit;
 @import "./third_party/youtube-lite";
 
 // Import partials.
-@import "reset";
-@import "utils";
-@import "base", "layout", "icons";
+@import "reset", "mixins";
+@import "base_icons";
+@import "base_style", "base_layout";
+@import "base_global";
 @import "header", "footer";
-@import "title_meta", "titlecard", "pagination";
-@import "page_base", "page_specific";
+@import "title_meta";
+@import "page_specific";
 @import "post_list", "post_single";
+@import "shortcode", "pagination";

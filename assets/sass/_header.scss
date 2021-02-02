@@ -8,10 +8,15 @@
   @include container-width;
 
   @include mobile {
-    padding: $spacing-unit / 2 0;
+    padding-top: $spacing-unit / 2;
   }
 
-  .header-nav {
+  @include desktop {
+    padding-top: $spacing-unit / 5;
+    padding-bottom: $spacing-unit / 5;
+  }
+
+  .header-navigation {
     font-family: $base-font-family;
 
     @include mobile {
@@ -30,10 +35,10 @@
       margin-top: 10px;
     }
 
-    .site-logo-container {
+    .header-logo-container {
       float: left;
-      height: $site-logo-container-height;
-      max-width: $site-logo-container-width-max;
+      height: $header-logo-container-height;
+      max-width: $header-logo-container-width-max;
       margin-right: $spacing-unit / 2;
 
       img {
@@ -43,7 +48,7 @@
       }
     }
 
-    .site-info {
+    .header-info {
       float: left;
 
       @include mobile {
@@ -58,18 +63,18 @@
         }
       }
 
-      .site-name {
+      .header-sitename {
         margin: 0;
         color: $grey-color-darker;
         cursor: pointer;
         letter-spacing: 1px;
-        @include relative-font-size(4);
+        @include relative-font-size(5);
       }
 
-      .site-description {
+      .header-sitedesc {
         margin: -5px 0 0 0;
         color: $grey-color;
-        @include relative-font-size(0);
+        @include relative-font-size(1);
 
         @include mobile {
           margin: 3px 0;
@@ -98,6 +103,7 @@
         @include mobile {
           margin: 0 5px;
         }
+        @include relative-font-size(2);
       }
     }
 

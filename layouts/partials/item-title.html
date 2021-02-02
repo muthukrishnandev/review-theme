@@ -1,4 +1,4 @@
-<div class="post-list-item title-list-item {{ .Type }} col-md-3 col-xs-6">
+<div class="post-list-item title-list-item col-md-3 col-xs-6">
     <a class="title-item-link" href="{{ .Permalink }}">
     {{ $titlePage := . }}
       {{ partial "findposterlink.html" $titlePage }}
@@ -6,8 +6,8 @@
         <div class="title-item-poster">
           <img loading="lazy" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
         </div>
-        <div class="title-item-meta {{ .Type }}">
-          <h2 class="title-item-title {{ .Type }}">{{ .Title }}</h2>
+        <div class="title-item-meta">
+          <h2 class="title-item-title">{{ .Title }}</h2>
           <span class="title-item-date">{{ .Params.meta.released_on | dateFormat "2006" }}</span>
         </div>
       {{ else }}

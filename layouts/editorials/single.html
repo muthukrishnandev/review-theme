@@ -1,33 +1,28 @@
 {{ define "main" }}
-<div class="page-container {{ .Type }}">
-  <div class="page-content-wrapper">
-      <article class="post-single" itemscope itemtype="http://schema.org/BlogPosting">
-        <head><title>{{ .Title }}</title></head>
-        <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
-          <div class="post-meta">
-            <time class="dt-published" datetime="{{ .Date.Format `2006-01-02T15:04:05Z07:00` }}" itemprop="datePublished">{{ .Date.Format "Jan 2, 2006" }}</time>
-          </div>
-          {{ if .Params.tags }}
-            <div class="post-tags">
-            {{ range .Params.tags }}
-              <a class="hash-tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
-            {{ end }}
-            </div>
+<div class="page-content-wrapper">
+    <article class="post-single" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
+        <time class="post-date dt-published" datetime="{{ .Date.Format `2006-01-02T15:04:05Z07:00` }}" itemprop="datePublished">{{ .Date.Format "Jan 2, 2006" }}</time>
+        {{ if .Params.tags }}
+          <div class="post-tags">
+          {{ range .Params.tags }}
+            <a class="hash-tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
           {{ end }}
-        </header>
-        <div class="post-content inner-content" itemprop="articleBody">
-          {{ .Content }}
-        </div>
-      </article>
-      <div class="post-pagination">
-        {{ if .PrevInSection }}
-          <a class="btn previous " href="{{ .PrevInSection.Permalink }}">&larr; {{ .PrevInSection.Title }}</a>
+          </div>
         {{ end }}
-        {{ if .NextInSection }}
-          <a class="btn next " href="{{ .NextInSection.Permalink}} ">{{ .NextInSection.Title }} &rarr;</a>
-        {{ end }}
+      </header>
+      <div class="post-content" itemprop="articleBody">
+        {{ .Content }}
       </div>
-  </div>
+    </article>
+    <div class="post-pagination">
+      {{ if .PrevInSection }}
+        <a class="btn previous " href="{{ .PrevInSection.Permalink }}">&larr; {{ .PrevInSection.Title }}</a>
+      {{ end }}
+      {{ if .NextInSection }}
+        <a class="btn next " href="{{ .NextInSection.Permalink}} ">{{ .NextInSection.Title }} &rarr;</a>
+      {{ end }}
+    </div>
 </div>
 {{ end }}

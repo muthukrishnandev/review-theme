@@ -6,8 +6,8 @@
 {{ $reviews = first $limit $reviews }}
 
 {{ if $reviews }}
-	<div class="page-content-wrapper {{ $context.Type }}">
-		<div class="post-list {{ $context.Type }}">
+	<div class="page-content-wrapper">
+		<div class="post-list">
 			<table>
 			  <thead>
 			    <th>Movie</th>
@@ -20,8 +20,8 @@
 						{{ if $reviewPage.Scratch.Get "findtitle_isfound" }}
 							{{ $metaPage := $reviewPage.Scratch.Get "findtitle_result" }}
 							{{ $metaParams := $metaPage.Params.meta }}
-							<tr class="post-list-item {{ $reviewPage.Type }}">
-							  <td class="post-title {{ $reviewPage.Type }}">
+							<tr class="post-list-item">
+							  <td class="post-title">
 							    <a href="{{ $metaPage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
 							  </td>
 							  <td class="top-score">{{ $reviewPage.Params.score }}</td>

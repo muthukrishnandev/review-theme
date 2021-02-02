@@ -50,11 +50,18 @@
     weight = 5
 
 [[header]]
+    name = "Reviews"
+    identifier = "reviews"
+    title = "reviews"
+    url = "/reviews"
+    weight = 6
+
+[[header]]
     name = "Why?"
     identifier = "about"
     title = "about"
     url = "/about"
-    weight = 6
+    weight = 7
     
 [[footer]]
     name = "Home"

@@ -1,7 +1,7 @@
 
-<div class="page-container {{ .Type }}">
-	<h1 class="page-heading {{ .Type }}">{{ .Title }}</h1>
-	<div class="page-content-wrapper {{ .Type }}">
+<div class="page-container">
+	<h1 class="page-heading">{{ .Title }}</h1>
+	<div class="page-content-wrapper">
 		{{ $paginatedPages := (.Paginator 8).Pages.ByDate.Reverse }}
         {{ $totalCount := len $paginatedPages }}
         {{ $splitCount := 4 }}
@@ -9,12 +9,12 @@
         {{ $index := 0 }}
         {{ range $taxonomyTerm, $taxonomy := $paginatedPages }}
             {{ if eq $index 0}}
-    			<div class="post-list {{ .Type }} row title-list-row">
+    			<div class="post-list row title-list-row">
             {{ else if (eq $index $totalCount) }}
                 </div>
             {{ else if (eq (mod $index $splitCount) 0) }}
                 </div>
-    			<div class="post-list {{ .Type }} row title-list-row">
+    			<div class="post-list row title-list-row">
             {{ end }}
 			{{ partial "item-title.html" . }}
             {{ $index = add $index 1 }}
@@ -22,4 +22,3 @@
 	</div>
 	{{ partial "pagination.html" . }}
 </div>
-

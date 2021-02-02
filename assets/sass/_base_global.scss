@@ -1,0 +1,78 @@
+@media all and (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu{ display: none; }
+  .navbar .nav-item:hover .nav-link{ color: inherit;  }
+  .navbar .nav-item:hover .dropdown-menu{ display: block; }
+  .navbar .nav-item .dropdown-menu{ margin-top:0; }
+} 
+
+.dark-link {
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+.dark-button { 
+    color: $black;
+    border: 1px solid $grey-color-darker;
+    margin: 2px 2px;
+    padding: 10px 10px;
+    border-radius: 5px; 
+
+    &:hover {
+      text-decoration: none;
+      color: $white;
+      background-color: $grey-color-darker;
+    }
+}
+
+.hash-tag {
+    @include mobile {
+      margin-left: 0px;
+    }
+    &:before {
+      content: "\0023"
+    }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-strong {
+  font-weight: 700;
+}
+
+/*
+
+  Global Styles
+
+*/
+
+.post-title, .titlecard-title {
+  color: $text-color;
+  margin-bottom: 0px;
+  font-weight: 900;
+  // line-height: 1.5;
+  @include relative-font-size(4);
+
+  a {
+    @extend .dark-link;
+  }
+}
+
+.post-description {
+  color: $grey-color-dark;
+  font-style: italic;
+  padding: 3px 0;
+  @include relative-font-size(2);
+  // margin: 10px 0;
+}
+
+.post-date {
+  color: $grey-color;
+  // font-style: italic;
+}

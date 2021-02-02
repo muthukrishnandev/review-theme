@@ -1,10 +1,4 @@
-/***************
-  404 Page
-***************/
-
-.page-container.error {
-  margin-top: $spacing-unit * 1.5;
-
+.errors {
   .error-msg {
       text-align: center;
   }
@@ -23,31 +17,8 @@
   }
 }
 
-
-// .social-media-list {
-//   margin-top: -1rem;
-//   display: flex;
-//   @include relative-font-size(2);
-
-//   @include mobile {
-//     @include relative-font-size-mobile(2);
-//   }
-
-//   li {
-//     float: left;
-//     a {
-//       padding-right: $spacing-unit / 5;
-//     }
-//   }
-// }
-
-// .social-media-list {
-//   display: inline;
-//   list-style: none;
-//   margin-left: 0;
-
-//   @include mobile {
-//     text-align: center;
-//     display: block;
-//   }
-// }
+.tags {
+  .page-heading {
+    @extend .hash-tag;
+  }
+}

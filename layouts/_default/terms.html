@@ -1,11 +1,10 @@
 {{ define "main" }}
-<div class="page-container {{ .Type }}">
-	<h1 class="page-heading {{ .Type }}">{{ .Title }}</h1>
-	<div class="page-description {{ .Type }}">
+	<h1 class="page-heading">{{ .Title }}</h1>
+	<div class="page-description">
 		{{ .Content }}
 	</div>
 	<div class="page-content-wrapper">
-		<ul class="post-list {{ .Type }}">
+		<ul class="post-list">
 		{{ $data := .Data.Terms.Alphabetical }}
 		{{ if $data }}
 			{{ range $key, $taxon := $data }}
@@ -17,5 +16,4 @@
 		{{ end }}
 		</ul>
 	</div>
-</div>
 {{ end }}
