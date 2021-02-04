@@ -143,6 +143,12 @@ h1, .h1 {
 //   }
 // }
 
+table {
+  @extend .table;
+  @extend .table-bordered;
+  @extend .table-hover;
+}
+
 // // Specify the color of the selection
 // ::-moz-selection {
 //   color: $black;
