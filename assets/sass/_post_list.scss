@@ -1,7 +1,7 @@
 .post-list {
   .post-list-item {
     padding-top: $spacing-unit / 2;
-    padding-bottom: $spacing-unit / 2;
+    padding-bottom: $spacing-unit / 6;
     
     &:not(:last-child){
       border-bottom: 1px solid $grey-color-lighter;
@@ -68,45 +68,45 @@
   .title-list-item {
     border-bottom: none!important;
 
-    .title-item-poster {
-      min-width: 210px;
-      max-width: 210px;
-      min-height: 300px;
-      max-height: 300px;
-      justify-content: center;
-      display: flex;
-      overflow: hidden;
+    // .title-item-poster {
+    //   min-width: 210px;
+    //   max-width: 210px;
+    //   min-height: 300px;
+    //   max-height: 300px;
+    //   justify-content: center;
+    //   display: flex;
+    //   overflow: hidden;
 
-      img {
-        max-height: 100%;
-        width: auto;
-      }
+    //   img {
+    //     max-height: 100%;
+    //     width: auto;
+    //   }
 
-      @include mobile {
-        min-width: 150px;
-        max-width: 150px;
-        min-height: 210px;
-        max-height: 210px;
-        margin: 0 auto;
-      }
-    }
-
-    .title-item-meta {
-      text-align: center;
-    }
-
+    //   @include mobile {
+    //     min-width: 150px;
+    //     max-width: 150px;
+    //     min-height: 210px;
+    //     max-height: 210px;
+    //     margin: 0 auto;
+    //   }
+    // }
+ 
     .title-item-link {
       text-decoration: none;
       color: $text-color;
+
+      .title-item-meta {
+        text-align: center;
+      }
+
+      .title-item-title{
+        // margin-bottom: 0px;
+        font-size: 16px;
+      }
+      .title-item-date{
+        font-size: 12px;
+      }
     }
 
-    .title-item-title{
-      @include relative-font-size(2);
-      margin-bottom: 0px;
-    }
-
-    .title-item-date{
-      @include relative-font-size(1);
-    }
   }
 }

@@ -3,53 +3,61 @@
 {{ $hidereview := .hidereview | default false }}
 
 {{ $metaParams := $titlePage.Params.meta }}
-<div class="row titlecard">
-	<div class="col-md-3 titlecard-poster-container">
-		{{ partial "findposterlink.html" $titlePage }}
+<div class="card mb-3 titlecard">
+  <div class="row no-gutters">
+    <div class="col-md-4 titlecard-poster-container text-center">
+      {{ partial "findposterlink.html" $titlePage }}
 		{{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
 			<img loading="lazy" class="title-poster titlecard-poster" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
 		{{ else }}
 			{{ errorf $titlePage.Scratch.Get "findposterlink_error" }}
 		{{ end }}
-	</div>
-	<div class="col-md-9 col-12">
-		<h1 class="titlecard-title">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="titlecard-title card-title text-center">
 			<a href="{{ $titlePage.Permalink }}">{{ $metaParams.title }}</a> ({{ $metaParams.released_on | dateFormat "2006" }})
-		</h1>
+		</h3>
+
 		{{ if not $hidereview }}
-		<div class="titlecard-info titlecard-review">
+		<div class="titlecard-info titlecard-review card-text mt-2">
 			{{ partial "findreviews.html" $titlePage }}
 			{{ $reviews := $titlePage.Scratch.Get "findreviews_result" }}
 			{{ if $titlePage.Scratch.Get "findreviews_isfound" }}
 				{{ $review := index $reviews 0 }}
-				<span class="titlecard-info-label">Bottomline:&nbsp;</span>
+				<span class="titlecard-info-label font-weight-bold">Bottomline:&nbsp;</span>
 				<span class="titlecard-info-data text-wrap">{{ $review.Params.consensus }}</span>
 			{{ else if $shortreview }}
-				<span class="titlecard-info-label">Short Review:&nbsp;</span>
+				<span class="titlecard-info-label font-weight-bold">Short Review:&nbsp;</span>
 				<span class="titlecard-info-data text-wrap">{{ $shortreview }}</span>
 			{{ else }}
-				<span class="titlecard-info-label">Bottomline:&nbsp;</span>
+				<span class="titlecard-info-label font-weight-bold">Bottomline:&nbsp;</span>
 				<span class="titlecard-info-data text-wrap">No review yet</span>
 			{{ end }}
 		</div>
 		{{ end }}
-		<div class="titlecard-info titlecard-plot">
-			<span class="titlecard-info-label">Storyline:&nbsp;</span>
+
+		<div class="titlecard-info titlecard-plot card-text mt-2">
+			<span class="titlecard-info-label font-weight-bold">Storyline:&nbsp;</span>
 			<span class="titlecard-info-data text-wrap">{{ $metaParams.storyline }}</span>
 		</div>
+
 		{{ $actorLimit := (index $titlePage.Site.Params.Meta.DetailListLimit "actors") | default 5 }}
-		{{ $directorLimit := (index $titlePage.Site.Params.Meta.DetailListLimit "directors") | default 5 }}
-		<div class="titlecard-info titlecard-plot">
-			<span class="titlecard-info-label">Starring:&nbsp;</span>
+		<div class="titlecard-info titlecard-plot card-text mt-2">
+			<span class="titlecard-info-label font-weight-bold">Starring:&nbsp;</span>
 			<span class="titlecard-info-data text-wrap">
 				{{ partial "taxo-links.html" (dict "allterms" (first $actorLimit $titlePage.Params.actors) "context" $titlePage "taxoname" "actors") }}
 			</span>
 		</div>
-		<div class="titlecard-info titlecard-plot">
-			<span class="titlecard-info-label">Directed by:&nbsp;</span>
+		
+		{{ $directorLimit := (index $titlePage.Site.Params.Meta.DetailListLimit "directors") | default 5 }}
+		<div class="titlecard-info titlecard-plot card-text mt-2">
+			<span class="titlecard-info-label font-weight-bold">Directed by:&nbsp;</span>
 			<span class="titlecard-info-data text-wrap">
 				{{ partial "taxo-links.html" (dict "allterms" (first $directorLimit $titlePage.Params.directors) "context" $titlePage "taxoname" "directors") }}
 			</span>
 		</div>
-	</div>
+      </div>
+    </div>
+  </div>
 </div>

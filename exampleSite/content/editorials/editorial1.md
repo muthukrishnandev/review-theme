@@ -1,13 +1,12 @@
 ---
 title: "Editorial1"
+description: "Lorem markdownum cursus"
 date: 2020-05-17T19:09:46+05:30
 starred: true
 tags:
     - tag1
     - tag2
 ---
-
-## Oscula ante
 
 Lorem markdownum cursus, criminis an funera est minus, ait. Parvum inter dant
 relictus est pectora innixus pertulit, ambo sororem nomine?

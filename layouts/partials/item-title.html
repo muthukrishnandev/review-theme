@@ -3,12 +3,18 @@
     {{ $titlePage := . }}
       {{ partial "findposterlink.html" $titlePage }}
       {{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
-        <div class="title-item-poster">
+<!--         <div class="">
           <img loading="lazy" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
         </div>
-        <div class="title-item-meta">
-          <h2 class="title-item-title">{{ .Title }}</h2>
-          <span class="title-item-date">{{ .Params.meta.released_on | dateFormat "2006" }}</span>
+ -->
+        <div class="card">
+          <!-- <div class="title-item-poster"> -->
+          <!-- </div> -->
+            <img loading="lazy" class="card-img-top" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
+          <div class="card-body title-item-meta">
+            <h3 class="card-text text-center title-item-title">{{ .Title }}</h3>
+            <p class="card-text text-center title-item-date">{{ .Params.meta.released_on | dateFormat "2006" }}</p>
+          </div>
         </div>
       {{ else }}
         {{ errorf $titlePage.Scratch.Get "findposterlink_error" }}

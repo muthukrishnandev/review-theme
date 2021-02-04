@@ -1,5 +1,5 @@
 .post-pagination {
-  margin-top: em;
+  margin-top: 1rem;
 
   &:before, &:after {
     content: '';
@@ -11,7 +11,17 @@
   }
 
   .previous, .next {
-    @extend .dark-button;
+    color: $black;
+    border: 1px solid $grey-color-darker;
+    margin: 2px 2px;
+    padding: 5px 10px;
+    border-radius: 4px; 
+
+    &:hover {
+      text-decoration: none;
+      color: $white;
+      background-color: $grey-color-darker;
+    }
   }
 
   .previous {

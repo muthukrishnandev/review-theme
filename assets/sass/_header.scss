@@ -5,7 +5,6 @@
 .page-header {
   margin-bottom: $spacing-unit / 2;
   border-bottom: 1px solid $grey-color-lighter;
-  @include container-width;
 
   @include mobile {
     padding-top: $spacing-unit / 2;
@@ -18,18 +17,6 @@
 
   .header-navigation {
     font-family: $base-font-family;
-
-    @include mobile {
-      float: none;
-      // margin-top: $header-height / 3;
-      // display: block;
-      font-size: 16px;
-    }
-
-    ul, li {
-      padding: 0px;
-      margin: 0px;
-    }
 
     .navbar-collapse {
       margin-top: 10px;
@@ -64,17 +51,17 @@
       }
 
       .header-sitename {
-        margin: 0;
+        margin: 0px;
         color: $grey-color-darker;
         cursor: pointer;
         letter-spacing: 1px;
-        @include relative-font-size(5);
+        font-size: 28px;
       }
 
       .header-sitedesc {
-        margin: -5px 0 0 0;
+        margin: 0px;
         color: $grey-color;
-        @include relative-font-size(1);
+        font-size: 14px;
 
         @include mobile {
           margin: 3px 0;
@@ -103,7 +90,7 @@
         @include mobile {
           margin: 0 5px;
         }
-        @include relative-font-size(2);
+        // @include relative-font-size(2);
       }
     }
 

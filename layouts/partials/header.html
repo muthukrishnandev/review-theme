@@ -17,7 +17,7 @@
           {{ if .Site.Params.Config.ShowSiteTitle }}
             <div class="navbar-brand-text">
                 <a href="{{ .Site.BaseURL | absURL }}" class="d-inline">
-                  <h1 class="header-sitename">{{ .Site.Title }}</h1>
+                  <h2 class="header-sitename">{{ .Site.Title }}</h2>
                   {{ if .Site.Params.Config.ShowSiteSubtitle }}
                     <p class="header-sitedesc">{{ .Site.Params.Info.Subtitle }}</p>
                   {{ end }}

@@ -7,11 +7,11 @@
 
 {{ if $reviews }}
 	<div class="page-content-wrapper">
-		<div class="post-list">
-			<table>
+		<div class="top-list">
+			<table class="table table-bordered table-hover">
 			  <thead>
 			    <th>Movie</th>
-			    <th>{{ $mainScoreName }}</th>
+			    <th class="text-center">{{ $mainScoreName }}</th>
 			  </thead>
 			  <tbody>
 				{{ range $index, $reviewPage := $reviews }}
@@ -20,11 +20,11 @@
 						{{ if $reviewPage.Scratch.Get "findtitle_isfound" }}
 							{{ $metaPage := $reviewPage.Scratch.Get "findtitle_result" }}
 							{{ $metaParams := $metaPage.Params.meta }}
-							<tr class="post-list-item">
-							  <td class="post-title">
+							<tr class="top-list-item">
+							  <td class="top-title">
 							    <a href="{{ $metaPage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
 							  </td>
-							  <td class="top-score">{{ $reviewPage.Params.score }}</td>
+							  <td class="top-score text-center">{{ $reviewPage.Params.score }}</td>
 							</tr>
 						{{ end }}
 					</div>
