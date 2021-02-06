@@ -1,0 +1,54 @@
+
+<!-- Inspired from https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/pagination.html -->
+
+{{ $paginator := $.Paginator }}
+{{ if gt $paginator.TotalPages 1 -}}
+<ul class="post-pagination-number pagination justify-content-center">
+  {{ with $paginator.First -}}
+    <li class="page-item {{ if not ($paginator.HasPrev) }}disabled{{ end }}">
+      <a class="page-link" href="{{ .URL }}" aria-disabled="true">First</a>
+    </li>
+  {{ end -}}
+
+  <li class="page-item {{ if not ($paginator.HasPrev) }}disabled{{ end }}">
+    <a class="page-link" href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" tabindex="-1" aria-disabled="true">Previous</a>
+  </li>
+
+  {{- $ellipsed := false -}}
+  {{- $shouldEllipse := false -}}
+  {{- range $paginator.Pagers -}}
+    {{- $right := sub .TotalPages .PageNumber -}}
+    {{- $showNumber := or (le .PageNumber 3) (eq $right 0) -}}
+    {{- $showNumber := or $showNumber (le .TotalPages 5) -}}
+    {{- $showNumber := or $showNumber (and (gt .PageNumber (sub $paginator.PageNumber 2)) (lt .PageNumber (add $paginator.PageNumber 2))) -}}
+
+    {{- if $showNumber -}}
+      {{- $ellipsed = false -}}
+      {{- $shouldEllipse = false -}}
+    {{- else -}}
+      {{- $shouldEllipse = not $ellipsed -}}
+      {{- $ellipsed = true -}}
+    {{- end -}}
+
+    {{- if $showNumber }}
+      <li class="page-item{{ if eq . $paginator }} active{{ end }}">
+        <a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a>
+      </li>
+    {{- else if $shouldEllipse }}
+      <li class="page-item disabled d-flex justify-content-center flex-column">
+        <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
+      </li>
+    {{- end -}}
+  {{- end }}
+
+  <li class="page-item {{ if not ($paginator.HasNext) }}disabled{{ end }}">
+    <a class="page-link" href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ end }}">Next</a>
+  </li>
+
+  {{- with $paginator.Last }}
+    <li class="page-item {{ if not ($paginator.HasNext) }}disabled{{ end }}">
+      <a class="page-link" href="{{ .URL }}">Last</a>
+    </li>
+  {{- end }}
+</ul>
+{{ end }}

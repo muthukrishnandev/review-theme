@@ -1,17 +1,18 @@
 {{ define "main" }}
 	<h1 class="page-heading">{{ .Title }}</h1>
-	{{ if .Content }}
+    {{ if .Content }}
 	<div class="page-description">
       {{ .Content }}
     </div>
-	{{ end }}
-	{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+     {{ end }}
+	{{ $pageLimit := (index .Site.Params.Meta.Pagination .Type) | default 5 }}
+	{{ $paginator := .Paginate (.Pages.ByDate.Reverse) $pageLimit }}
 	<div class="page-content-wrapper">
 		<div class="post-list">
 			{{ range $paginator.Pages }}
 				{{ partial "item-post.html" . }}
 			{{ end }}
 		</div>
+		{{ partial "pagination-number.html" . }}
 	</div>
-	{{ partial "pagination.html" . }}
 {{ end }}

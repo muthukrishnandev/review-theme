@@ -1,10 +1,12 @@
 
 <div class="page-container">
-	<h1 class="page-heading">{{ .Title }}</h1>
+	<h1 class="page-heading">{{ .Title }}{{ if eq .Kind "term" }}'s Filmography{{ end }}</h1>
 	<div class="page-content-wrapper">
-		{{ $paginatedPages := (.Paginator 8).Pages.ByDate.Reverse }}
+        {{ $pageCount := 8 }}
+        {{ $rowCount := 4 }}
+		{{ $paginatedPages := (.Paginator $pageCount).Pages.ByDate.Reverse }}
         {{ $totalCount := len $paginatedPages }}
-        {{ $splitCount := 4 }}
+        {{ $splitCount := $rowCount }}
 
         {{ $index := 0 }}
         {{ range $taxonomyTerm, $taxonomy := $paginatedPages }}
@@ -20,5 +22,5 @@
             {{ $index = add $index 1 }}
         {{ end }}
 	</div>
-	{{ partial "pagination.html" . }}
+    {{ partial "pagination-number.html" . }}
 </div>

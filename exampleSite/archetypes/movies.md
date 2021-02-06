@@ -8,6 +8,7 @@ meta:
   tagline: "movie tagline"
   storyline: "story line"
 
+  year: "2001"
   released_on: "2001-01-01"
   running_time: 50 # in minutes
   certificate: "U"

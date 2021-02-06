@@ -57,7 +57,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ (path.Join `favicons` .Site.Params.Favicon.AppleTouch) | absURL }}">
 
 {{- $manifestTemplate := resources.Get "manifest-template.json" -}}
-{{- $json := $manifestTemplate | resources.ExecuteAsTemplate "manifest.json" . | }}
+{{- $json := $manifestTemplate | resources.ExecuteAsTemplate "manifest.json" . }}
 <link rel="manifest" href="{{ $json.Permalink }}" />
 
 <!-- RSS -->

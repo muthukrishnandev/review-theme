@@ -1,0 +1,17 @@
+
+<div class="shortcode-spoiler">
+	<div class="accordion" id="spoiler-accordian-{{ .Ordinal }}">
+	  <div class="card border-0 p-0 m-0">
+	    <div class="card-header spoiler-warning" id="spoiler-head-{{ .Ordinal }}">
+	      <h4 class="text-center spoiler-text">
+	          <a data-toggle="collapse" href="#spoiler-collapse-{{ .Ordinal }}" role="button" aria-expanded="false" aria-controls="spoiler-collapse-{{ .Ordinal }}" class="spoiler-link"><span class="">Spoilers!</span> Click To Reveal</a>
+	      </h4>
+	    </div>
+	    <div id="spoiler-collapse-{{ .Ordinal }}" class="collapse" aria-labelledby="spoiler-head-{{ .Ordinal }}" data-parent="#spoiler-accordian-{{ .Ordinal }}">
+	      <div class="card-body spoiler-content">
+	       	{{ .Inner | markdownify | safeHTML }}
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>

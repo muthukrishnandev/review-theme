@@ -6,7 +6,7 @@ date: 2020-05-17T19:33:05+05:30
 meta_name: "movie2.md" # must be name of movie or post 
 meta_type: "movies" # or "tvshows"
 
-consensus: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+bottomline: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 score: 60
 custom_scores:
    - 45

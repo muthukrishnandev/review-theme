@@ -32,6 +32,9 @@ $footer-height: 150px !default;
 $black: #000 !default;
 $white: #fff !default;
 
+$background-color: #fdfdfd !default;
+$text-color: #111 !default;
+
 $grey-color: #828282 !default;
 $grey-color-lightest: lighten($grey-color, 60%) !default;
 $grey-color-lighter: lighten($grey-color, 40%) !default;
@@ -40,12 +43,10 @@ $grey-color-dark: darken($grey-color, 10%) !default;
 $grey-color-darker: darken($grey-color, 40%) !default;
 $grey-color-darkest: darken($grey-color, 60%) !default;
 
+// #4472ca
 $link-color: #4472ca !default;
-$link-color-dark: darken($link-color, 40%) !default;
-$link-color-darker: darken($link-color, 60%) !default;
-
-$background-color: #fdfdfd !default;
-$text-color: #111 !default;
+$link-color-dark: darken($link-color, 20%) !default;
+$link-color-darker: darken($link-color, 40%) !default;
 
 // Import third party
 @import "./third_party/bootstrap";

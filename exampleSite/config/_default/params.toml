@@ -22,6 +22,23 @@
 [Meta.DetailListLimit]
   actors = 4 # no of actors to display in Cast & Crew
 
+[Meta.Pagination]
+  # default will be 8
+  actors = 8
+  writers = 8
+  directors = 8
+  musicdirectors = 8
+  cinematographers = 8
+  movies = 8
+  tvshows = 8
+
+  editorials = 10
+  reviews = 10
+  
+  genres = 100
+  plottags = 8
+  tags = 10
+
 [Social]
   Email = "Your_Email_ID"
   Facebook = "Your_Facebook_ID"

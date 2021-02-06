@@ -6,6 +6,8 @@
     <div class="page-content-wrapper">
         {{ $totalLimit := .Site.Params.Meta.DiscoverListCount }}
 
+        {{ $totalLimit := (index .Site.Params.Meta.Pagination .Type) | default 10 }}
+
         {{ $siteTaxos := .Site.Taxonomies }}
         {{ $totalCount := len $siteTaxos }}
         {{ $halfCount := div $totalCount 2 }}
@@ -25,7 +27,7 @@
                 {{/* $taxonomyTerm from range of system data, so use of with is okay here */}}
                 {{ with $.Site.GetPage (printf "/%s" $taxonomyTerm) }}
                 	{{ if $taxonomy }}
-    	            	<h3><a class="dark-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    	            	<h3 class="discover-title font-weight-bold"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
         				<div class="post-list">
     		                <ul>
                                 {{ $count := 0 }}

@@ -7,15 +7,14 @@
 	{{ end }}
 	<div class="page-content-wrapper">
 		<ul class="post-list">
-		{{ $data := .Data.Terms.Alphabetical }}
-		{{ if $data }}
-			{{ range $key, $taxon := $data }}
-				<li>
-					<a href="{{ $taxon.Page.Permalink }}">{{ $taxon.Page.Title }}</a> ({{ $taxon.Count }})
-					<p>{{ .Page.Params.Description }}</p>
+			{{ $pageLimit := (index .Site.Params.Meta.Pagination .Data.Plural) | default 10 }}
+			{{ range $index, $termPage := (.Paginator $pageLimit).Pages }}
+			  	<li>
+					<a href="{{ .Permalink }}">{{ $termPage.Title }}</a> 
+					<p>{{ $termPage.Params.Description }}</p>
 				</li>
 			{{ end }}
-		{{ end }}
 		</ul>
+		{{ partial "pagination-number.html" . }}
 	</div>
 {{ end }}

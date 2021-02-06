@@ -1,99 +1,105 @@
 
 .titlemeta {
-	h2{
-		margin-top: 6px;
-		margin-bottom: 4px;
+	.titlemeta-container{
+		padding-top: 6px;
+		padding-bottom: 12px;
 	}
 
-	.titlemeta-meta{
-		.titlemeta-title {
-			margin: 0px !important;
-			padding: 0px !important;
-		}
-		
-		.titlemeta-title {
-			@extend .center-xs!optional;
-		}
+	.titlemeta-head-container{
+		padding-bottom: 12px;
+		border-bottom: 1px solid $grey-color-lighter;
 
-		.titlemeta-tagline {
-			margin-bottom: 8px; 
-		}
-
-		@include mobile {
-			.titlemeta-title, .titlemeta-tagline {
-				text-align: center;
+		.titlemeta-poster-container{
+			.titlemeta-poster {
+				max-height: 300px;
+				display:block;
+	    		margin:auto;
 			}
 		}
+		.titlemeta-data-container{
+			.titlemeta-title-container{
+				.titlemeta-title {
+					font-weight: 700;
+					font-size: 26px;
+				}
+			}
+			.titlemeta-review-container{
+				.review-summary {
+					.review-score {
+						margin-top: 10px;
+						margin-bottom: 10px;
+						padding-bottom: 10px;
 
-		.review-summary {
-			.rating-panel {
-				margin-top: 10px;
-				margin-bottom: 10px;
+						.score-rating-data {
+							font-size: 26px;
+						}
 
-				.score-rating-data {
-					// @include relative-font-size(6);
+						@include mobile {
+							margin-top: 5px;
+							margin-bottom: 5px;
+							padding-bottom: 5px;
+
+							.score-rating-label {
+								font-size: 12px;
+							}
+							.score-rating-data {
+								font-size: 20px;
+							}
+						}
+					}
 				}
 			}
 		}
 	}
 
-	.titlemeta-detail, .titlemeta-crew {
-		margin-top: 12px;
-		margin-left: 6px;
-		margin-right: 6px;
-	}
-
-	.titlemeta-info-container {
-
-		@include mobile {
-			margin-top: 8px;
-			margin-bottom: 8px;
+	.titlemeta-body-container{
+		.titlemeta-info-container{
+			margin-top: 12px;
 		}
 
-		.titlemeta-info-row {
-			display: table-row;
-			min-width: 100%;
+		.titlemeta-info-head{
+			font-weight: 700;
+			font-size: 20px;
 		}
 
-		.titlemeta-info-data,
-		.titlemeta-info-label {
-			display: table-cell;
-			margin: 0px;
-			padding: 0px;
-		}
+		.titlemeta-info-body{
+			.titlemeta-info-row {
+				display: table-row;
+				min-width: 100%;
+		
+				.titlemeta-info-data,
+				.titlemeta-info-label {
+					display: table-cell;
+					margin: 0px;
+					padding: 0px;
+				}
 
-		.titlemeta-info-label {
-			text-align: right;
+				.titlemeta-info-label {
+					text-align: right;
 
-			@include desktop {
-				min-width: 250px;
+					@include desktop {
+						min-width: 250px;
+					}
+				}
+
+				.titlemeta-info-data {
+					padding: 0px 10px; 
+				}
 			}
 		}
 
-		.titlemeta-info-data {
-			padding: 0px 10px; 
-		}
-	}
-
-	.titlemeta-poster-container {
-		.titlemeta-poster {
-			max-height: 300px;
-			display:block;
-    		margin:auto;
-		}
-	}
-
-	.titlemeta-trailer-container{
 		.titlemeta-trailer{
-			margin: 10px auto;
-			padding-bottom: 38%;
-			max-width: 70%;
+			.youtube-player {
+				margin: 10px auto;
+				padding-bottom: 38%;
+				max-width: 70%;
 
-			border: 1px solid $grey-color-lighter;
+				border: 1px solid $grey-color-lighter;
 
-			@include mobile {
-				padding-bottom: 55%;
-				max-width: 100%;
+				@include mobile {
+					padding-bottom: 55%;
+					max-width: 100%;
+				}
 			}
 		}
 	}

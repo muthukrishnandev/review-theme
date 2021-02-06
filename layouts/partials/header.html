@@ -6,7 +6,7 @@
                   {{ $logoFilePath := (path.Join `static` `images` .Site.Params.Info.Logo) }}
                   {{ if fileExists $logoFilePath }}
                     <a href="{{ .Site.BaseURL }}">
-                      <img src="{{ (path.Join `images` .Site.Params.Info.Logo) | absURL }}" />
+                      <img class="unselectable" src="{{ (path.Join `images` .Site.Params.Info.Logo) | absURL }}" />
                     </a>
                   {{ else }}
                     {{ errorf "%s logo file not found" $logoFilePath }}
@@ -44,7 +44,7 @@
                   <a class="nav-link dropdown-toggle" href="{{ .URL | absURL }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ .Name }}{{ if $isActive }} <span class="sr-only">(current)</span>{{end}}
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                    {{ range .Children }}
                           {{ $isInCurrentMenu := or ($currentPage.IsMenuCurrent "header" .) ($currentPage.HasMenuCurrent "header" .) }}
                           {{ $isURLMatch := and (eq (trim (path.Base .URL) "/") $currentPage.Section) (ne $currentPage.Section "") }}

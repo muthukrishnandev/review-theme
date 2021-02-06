@@ -1,0 +1,97 @@
+
+{{ $metaParams := .Params.meta }}
+
+<div class="page-content-wrapper">
+	<div class="titlemeta">
+		<div class="row titlemeta-head-container">
+			{{ partial "title-meta.html" . }}
+		</div>
+		<div class="row titlemeta-body-container">
+			<div class="col-md-12 col-xs-12 titlemeta-info-container">
+				<h2 class="titlemeta-info-head">Cast &amp; Crew</h2>
+				<div class="titlemeta-info-body">
+					{{ $allTaxos := .Site.Params.Meta.CastCrewList }}
+					{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
+				</div>
+			</div>
+			<div class="col-md-12 col-xs-12 titlemeta-info-container titlemeta-detail mb-2">
+				<h2 class="titlemeta-info-head">Movie Detail</h2>
+				<div class="titlemeta-info-body">
+					<div style="text-indent: 5%;" class="mb-3">{{ $metaParams.storyline }}</div>
+					
+					{{ $allTaxos := .Site.Params.Meta.MovieDetailList }}
+					{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
+
+					<div class="titlemeta-info-row">
+						<div class="titlemeta-info-label">Certificate:</div>
+						<div class="titlemeta-info-data">{{ $metaParams.certificate }}</div>
+					</div>
+					<div class="titlemeta-info-row">
+						<div class="titlemeta-info-label">Released On:</div>
+						<div class="titlemeta-info-data">{{ $metaParams.released_on | dateFormat "02 January 2006" }}</div>
+					</div>
+					<div class="titlemeta-info-row">
+						<div class="titlemeta-info-label">Running Time:</div>
+						<div class="titlemeta-info-data">{{ $metaParams.running_time }} minutes</div>
+					</div>
+
+					{{ if eq .Type "tvshows"}}
+						<div class="titlemeta-info-row">
+							<div class="titlemeta-info-label">Series Run: </div>
+							<div class="titlemeta-info-data">{{ $metaParams.series_start_year }} - {{ $metaParams.series_end_year }}</div>
+						</div>
+						<div class="titlemeta-info-row">
+							<div class="titlemeta-info-label">Total Episodes:</div>
+							<div class="titlemeta-info-data">{{ $metaParams.episodes_count }}</div>
+						</div>
+					{{ end }}
+				</div>
+			</div>
+
+			<div class="col-md-12 col-xs-12 titlemeta-info-container titlemeta-trailer">
+				{{ if $metaParams.trailer }}
+					<h2 class="titlemeta-info-head">Trailer</h2>
+					<div class="titlemeta-info-body">
+						{{ $dataID := strings.TrimPrefix "https://youtube.com/watch?v=" $metaParams.trailer }}
+						{{ $dataID = strings.TrimPrefix "https://www.youtube.com/watch?v=" $dataID }}
+						{{ $dataID = strings.TrimPrefix "https://www.youtube.com/v/" $dataID }}
+						{{ $dataID = strings.TrimPrefix "https://youtube.com/v/" $dataID }}
+						<div class="youtube-player" data-id="{{ $dataID }}"></div>
+					</div>
+				{{ end }}
+			</div>
+
+			<div class="col-md-12 col-xs-12 titlemeta-info-container titlemeta-external">
+				{{ if $metaParams.external_links }}
+					<h2 class="titlemeta-info-head">External Links</h2>
+					<div class="titlemeta-info-body">
+						<div class="titlemeta-info-row">
+							<div class="titlemeta-info-data">
+								<ul>
+								{{ if $metaParams.external_links.imdb }}
+								<li><a target="_blank" href="{{ $metaParams.external_links.imdb }}">IMDb</a></li>
+								{{ end }}
+
+								{{ if $metaParams.external_links.rotten_tomatoes }}
+								<li><a target="_blank" href="{{ $metaParams.external_links.rotten_tomatoes }}">RottenTomatoes</a></li>
+								{{ end }}
+								{{ if $metaParams.external_links.meta_critic }}
+								<li><a target="_blank" href="{{ $metaParams.external_links.meta_critic }}">metacritic</a></li>
+								{{ end }}
+
+								{{ if $metaParams.external_links.wikipedia }}
+								<li><a target="_blank" href="{{ $metaParams.external_links.wikipedia }}">Wikipedia</a></li>
+								{{ end }}
+								</ul>
+							</div>
+						</div>
+					</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+
+	<div class="post-single">
+		{{ .Content }}
+	</div>
+</div>

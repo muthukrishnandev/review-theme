@@ -11,19 +11,9 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 
-// 	.titlecard-title{
-// 		margin-top: 2px;
-
-// 		@include mobile {
-// 			margin-top: 12px;
-// 			text-align: center;
-// 			a {
-// 				margin: 0px;
-// 			}
-// 		}
-// 	}
-
-	// min-height: 260px;
+	&.card {
+		border: none;
+	}
 	
 	.titlecard-poster-container {
 		min-width: 180px;
@@ -46,17 +36,31 @@
 	@include mobile {
 		.titlecard-poster-container {
 			max-height: 150px;
-			// display:block;
-    		// margin:auto;
+		}
+	}
+}
+
+.shortcode-spoiler {
+	position: relative;
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+	.spoiler-link {
+		text-decoration: none;
+		color: #FF3333;
+
+		&:hover{
+			color: #FF0000;
 		}
 	}
 
-// 	.titlecard-info {
-// 		margin-top: 6px;
-// 		margin-bottom: 6px;
-		
-// 		.titlecard-info-label {
-// 			font-weight: 700;
-// 		}
-// 	}
+	.spoiler-warning.card-header {
+		border-bottom: none;
+	}
+
+	.spoiler-content {
+		padding: inherit;
+		padding-top: 12px;
+	}
 }
+

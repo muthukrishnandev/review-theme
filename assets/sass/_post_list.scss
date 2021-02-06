@@ -24,17 +24,8 @@
       margin-bottom: $spacing-unit / 4;
     }
 
-    .post-date {
-      color: $grey-color;
-      display:block;
-      position: relative; 
-      margin-top: -15px;
-      margin-left: 0px;
-
-      @include mobile {
-        text-align: left;
-        margin-top: 0px;
-      }
+    .post-meta {
+      margin-bottom: 8px;
     }
 
     .post-taxonomies {
@@ -42,14 +33,10 @@
       display: block;
       position: relative;
       text-align: right;
-      margin-top: -30px;
-      margin-left: 125px;
 
       @include mobile {
         display: block;
         text-align: left;
-        margin-top: 0px;
-        margin-left: 0px;
       }
 
       a.post-taxonomy {
@@ -68,7 +55,19 @@
   .title-list-item {
     border-bottom: none!important;
 
-    .title-item-poster-container {
+    .card {
+      min-width: 210px;
+      max-width: 210px;
+
+      border: none;
+
+      @include mobile {
+        min-width: 150px;
+        max-width: 150px;
+      }
+    }
+
+    .title-item-poster-container{
       min-width: 210px;
       max-width: 210px;
       min-height: 300px;
@@ -94,13 +93,11 @@
       }
 
       .title-item-title{
-        // margin-bottom: 0px;
         font-size: 16px;
       }
       .title-item-date{
         font-size: 12px;
       }
     }
-
   }
 }

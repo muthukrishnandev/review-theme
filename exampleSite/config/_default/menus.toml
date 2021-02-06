@@ -2,14 +2,14 @@
     name = "Discover"
     identifier = "discover"
     title = "discover"
-    url = "discover"
+    url = "/discover/"
     weight = 1
 
 [[header]]
     name = "Home"
     identifier = "d_home"
     title = "discover"
-    url = "/discover"
+    url = "/discover/"
     weight = 1
     parent = "discover"
 
@@ -17,50 +17,98 @@
     name = "By Actors"
     identifier = "d_actors"
     title = "actors"
-    url = "/actors"
+    url = "/actors/"
     weight = 2
+    parent = "discover"
+
+[[header]]
+    name = "By Music Directors"
+    identifier = "d_musicdirectors"
+    title = "musicdirectors"
+    url = "/musicdirectors/"
+    weight = 3
+    parent = "discover"
+
+[[header]]
+    name = "By Directors"
+    identifier = "d_directors"
+    title = "directors"
+    url = "/directors/"
+    weight = 4
+    parent = "discover"
+
+[[header]]
+    name = "By Writers"
+    identifier = "d_writers"
+    title = "writers"
+    url = "/writers/"
+    weight = 5
+    parent = "discover"
+
+[[header]]
+    name = "By Cinematographers"
+    identifier = "d_cines"
+    title = "cinematographers"
+    url = "/cinematographers/"
+    weight = 6
+    parent = "discover"
+
+[[header]]
+    name = "By Genres"
+    identifier = "d_genres"
+    title = "genres"
+    url = "/genres/"
+    weight = 7
+    parent = "discover"
+
+[[header]]
+    name = "By Plot Tags"
+    identifier = "d_plottags"
+    title = "plottags"
+    url = "/plottags/"
+    weight = 8
     parent = "discover"
 
 [[header]]
     name = "Top"
     identifier = "top"
     title = "top"
-    url = "/top"
+    url = "/top/"
     weight = 2
 
 [[header]]
     name = "Movies"
     identifier = "Movies"
     title = "Movies"
-    url = "/Movies"
+    url = "/Movies/"
     weight = 3
 
 [[header]]
     name = "TV Shows"
     identifier = "TV Shows"
     title = "TV Shows"
-    url = "/tvshows"
+    url = "/tvshows/"
     weight = 4
 
 [[header]]
     name = "Editorials"
     identifier = "editorials"
     title = "editorials"
-    url = "/editorials"
+    url = "/editorials/"
     weight = 5
 
 [[header]]
     name = "Reviews"
     identifier = "reviews"
     title = "reviews"
-    url = "/reviews"
+    url = "/reviews/"
     weight = 6
 
 [[header]]
     name = "Why?"
     identifier = "about"
     title = "about"
-    url = "/about"
+    url = "/about/"
     weight = 7
     
 [[footer]]
@@ -74,5 +122,5 @@
     name = "About"
     identifier = "about"
     title = "about"
-    url = "/about"
+    url = "/about/"
     weight = 2

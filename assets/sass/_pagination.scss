@@ -1,6 +1,5 @@
 .post-pagination {
   margin-top: 1rem;
-
   &:before, &:after {
     content: '';
     display: table;
@@ -30,5 +29,12 @@
 
   .next {
     float: right;
+  }
+}
+
+.post-pagination-number {
+  padding-top: 18px;
+  @include mobile {
+    padding-top: 12px;
   }
 }

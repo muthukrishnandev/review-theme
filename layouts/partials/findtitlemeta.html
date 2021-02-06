@@ -3,37 +3,20 @@
 {{ $year := .year }}
 {{ $context := .context }}
 
-{{ $titles := (where $context.Site.RegularPages "Type" "in" (slice "movies" "tvshows")) }}
+{{ $titlesSet := (where $context.Site.RegularPages "Type" "in" (slice "movies" "tvshows")) }}
 
-{{ $titlesOne := (where $titles "Title" "==" $title) }}
-{{ $titlesTwo := (where $titles "Params.meta.title" "==" $title) }}
+{{ $titlesRes := (where $titlesSet "Title" "==" $title) }}
+{{ $titlesRes = $titlesRes | union (where $titlesSet "Params.meta.title" "==" $title) }}
 
-{{ $titles = union $titlesOne $titlesTwo }}
-
-{{ $matchCount := 0 }}
 {{ if $year }}
-	{{ $titleOne := index $titles 0}}
-	{{ if $titleOne }}
-		{{ $titleYear := dateFormat "2006" $titleOne.Params.meta.released_on }}
-		{{ if eq $titleYear $year }}
-			{{ $matchCount = add $matchCount 1 }}
-		{{ end }}
-	{{ else }}
-		{{ $context.Scratch.Set "findtitlemeta_isfound" false }}
-	{{ end }}
-{{ else }}
-	{{ $matchCount = 1 }}
+	{{ $titlesRes = $titlesRes | union (where $titlesSet "Params.meta.year" "==" $year) }}
 {{ end }}
 
-{{ if and $titles (eq $matchCount 1) }}
-	{{ if eq (len $titles) 1 }}
-		{{ $titlePage := index $titles 0 }}
-		{{ if $titlePage }}
-			{{ $context.Scratch.Set "findtitlemeta_result" $titlePage }}
-			{{ $context.Scratch.Set "findtitlemeta_isfound" true }}
-		{{ else }}
-			{{ $context.Scratch.Set "findtitlemeta_isfound" false }}
-		{{ end }}
+{{ if eq (len $titlesRes) 1 }}
+	{{ $titlePage := index $titlesRes 0 }}
+	{{ if $titlePage }}
+		{{ $context.Scratch.Set "findtitlemeta_result" $titlePage }}
+		{{ $context.Scratch.Set "findtitlemeta_isfound" true }}
 	{{ else }}
 		{{ $context.Scratch.Set "findtitlemeta_isfound" false }}
 	{{ end }}

@@ -5,23 +5,39 @@
     <span class="starred"></span>
     {{ end }}
   </h2>
-  <p class="post-description">{{ .Description }}</p>
   <div class="post-meta">
-    <!-- <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span> -->
+    <div class="row">
+      
+        <div class="col-md col-12">
+          <span class="post-description">{{ .Description }}</span>
+        </div>
+        <div class="col-md col-12 justify-content-end">
+            {{ if or (.Params.tags) (.Params.reviewtags) }}
+              <span class="post-taxonomies">
+              {{ range $index, $tag := .Params.reviewtags }}
+                {{ $tagURL := (delimit (slice "reviewtags" $tag) "/") | urlize }}
+                {{ $tagPage := $.Site.GetPage (printf "%s" $tagURL)}}
+                {{ if $tagPage }}
+                    <a class="post-taxonomy tag" href="{{ $tagPage.Permalink }}">{{ $tagPage.Title }}</a>
+                {{ else }}
+                    {{ errorf "%v reviewtags page is not found" $tag }}
+                {{ end }}
+              {{ end }}
 
-    {{ if .Params.tags }}
-      <span class="post-taxonomies tags">
-      {{ range $index, $tag := .Params.tags }}
-        {{ $tagURL := (delimit (slice "tags" $tag) "/") | urlize }}
-        {{ $tagPage := $.Site.GetPage (printf "%s" $tagURL)}}
-        {{ if $tagPage }}
-            <a class="post-taxonomy tag" href="{{ $tagPage.Permalink }}">{{ $tagPage.Title }}</a>
-        {{ else }}
-            {{ errorf "%v tags page is not found" $tag }}
-        {{ end }}
-      {{ end }}
-      </span>
-    {{ end }}
+              {{ range $index, $tag := .Params.tags }}
+                {{ $tagURL := (delimit (slice "tags" $tag) "/") | urlize }}
+                {{ $tagPage := $.Site.GetPage (printf "%s" $tagURL)}}
+                {{ if $tagPage }}
+                    <a class="post-taxonomy tag" href="{{ $tagPage.Permalink }}">{{ $tagPage.Title }}</a>
+                {{ else }}
+                    {{ errorf "%v tags page is not found" $tag }}
+                {{ end }}
+              {{ end }}
+              </span>
+            {{ end }}
+        </div>
+
+    </div>
   </div>
 
   {{ if .Site.Params.Config.ShowSummaryInPostList }}

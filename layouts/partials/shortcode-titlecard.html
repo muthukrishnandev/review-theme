@@ -8,7 +8,7 @@
     <div class="col-md-4 titlecard-poster-container text-center">
       {{ partial "findposterlink.html" $titlePage }}
 		{{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
-			<img loading="lazy" class="title-poster titlecard-poster" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
+			<img loading="lazy" class="title-poster titlecard-poster unselectable" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
 		{{ else }}
 			{{ errorf $titlePage.Scratch.Get "findposterlink_error" }}
 		{{ end }}
@@ -26,7 +26,7 @@
 			{{ if $titlePage.Scratch.Get "findreviews_isfound" }}
 				{{ $review := index $reviews 0 }}
 				<span class="titlecard-info-label font-weight-bold">Bottomline:&nbsp;</span>
-				<span class="titlecard-info-data text-wrap">{{ $review.Params.consensus }}</span>
+				<span class="titlecard-info-data text-wrap">{{ $review.Params.bottomline }}</span>
 			{{ else if $shortreview }}
 				<span class="titlecard-info-label font-weight-bold">Short Review:&nbsp;</span>
 				<span class="titlecard-info-data text-wrap">{{ $shortreview }}</span>

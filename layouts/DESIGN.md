@@ -41,3 +41,18 @@ post-content
 ```html
 post-list-item
 ```
+
+##### titlemeta
+
+```html
+titlemeta-head-container
+	titlemeta-poster-container
+	titlemeta-data-container
+		titlemeta-title-container
+		titlemeta-review-container
+titlemeta-body-container
+	titlemeta-info-container
+		titlemeta-info-head
+		titlemeta-info-body
+```
+
