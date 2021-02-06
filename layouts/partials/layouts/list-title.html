@@ -1,6 +1,13 @@
 
 <div class="page-container">
-	<h1 class="page-heading">{{ .Title }}{{ if eq .Kind "term" }}'s Filmography{{ end }}</h1>
+	<h1 class="page-heading">
+        {{ $toCheckSlice := .Site.Params.Meta.FilmographyList }}
+        {{ if in $toCheckSlice .Type }}
+            {{ .Params.meta.name | default .Title }}'s Filmography
+        {{ else }}
+            {{ .Params.meta.name | default .Title }}
+        {{ end }}
+    </h1>
 	<div class="page-content-wrapper">
         {{ $pageCount := 8 }}
         {{ $rowCount := 4 }}
