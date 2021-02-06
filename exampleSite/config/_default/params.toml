@@ -1,7 +1,7 @@
 [Info]
   ShortTitle = "moviereview"
   Subtitle = "my reviews"
-  Description = "long description about site"
+  Description = "long description of the site"
   Logo = "logo.png" # store in static/images
 
 [Meta]

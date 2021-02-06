@@ -10,7 +10,9 @@
 		<div class="top-list">
 			<table>
 			  <thead>
-			    <th>Movie</th>
+			  	{{ $metaType := (index $reviews 0).Params.meta_type }}
+			  	{{ $metaPage := $context.Site.GetPage (printf "/%s" $metaType) }}
+			    <th>{{ $metaPage.Title | default "Title" }}</th>
 			    <th class="text-center">{{ $mainScoreName }}</th>
 			  </thead>
 			  <tbody>

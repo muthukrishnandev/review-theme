@@ -2,6 +2,7 @@
 title: "Editorial1"
 description: "Lorem markdownum cursus"
 date: 2020-05-17T19:09:46+05:30
+lastmod: 2021-01-17T19:09:46+05:30
 starred: true
 tags:
     - tag1

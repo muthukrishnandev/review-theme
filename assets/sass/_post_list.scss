@@ -37,6 +37,7 @@
       @include mobile {
         display: block;
         text-align: left;
+        margin-top: 6px;
       }
 
       a.post-taxonomy {
@@ -49,8 +50,13 @@
 }
 
 .title-list-row {
-  margin-top: 10px!important;
-  margin-bottom: 10px!important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  @include mobile {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   .title-list-item {
     border-bottom: none!important;
