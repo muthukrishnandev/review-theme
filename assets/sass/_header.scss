@@ -66,6 +66,7 @@
     }
 
     .nav-item {
+      
       &.active{
         color: $text-color;
         font-weight: 700;
@@ -74,7 +75,7 @@
       &:last-child{
         margin-right: 0px;
       }
-  
+
       .nav-link {
         color: $grey-color-darker;
         letter-spacing: 1px;

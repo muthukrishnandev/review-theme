@@ -37,6 +37,11 @@
         flex-flow: row wrap;
       }
 
+      .social-icon {
+        padding-left: 1px;
+        padding-right: 1px;
+      }
+
       li.nav-text {
         display: inline;
         &:after {
