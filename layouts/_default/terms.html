@@ -7,7 +7,11 @@
 	{{ end }}
 	<div class="page-content-wrapper">
 		<ul class="post-list">
-			{{ $pageLimit := (index .Site.Params.Meta.Pagination .Data.Plural) | default 10 }}
+	        {{ $pageLimit := 10 }}
+	        {{ if .Site.Params.Meta.Pagination }}
+	            {{ $pageLimit = (index .Site.Params.Meta.Pagination .Data.Plural) | default 10 }}
+	        {{ end }}
+
 			{{ range $index, $termPage := (.Paginator $pageLimit).Pages }}
 			  	<li>
 					<a href="{{ .Permalink }}">{{ $termPage.Title }}</a> 

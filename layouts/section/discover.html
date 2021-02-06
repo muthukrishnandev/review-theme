@@ -4,9 +4,10 @@
       {{ .Content }}
     </div>
     <div class="page-content-wrapper">
-        {{ $totalLimit := .Site.Params.Meta.DiscoverListCount }}
-
-        {{ $totalLimit := (index .Site.Params.Meta.Pagination .Type) | default 10 }}
+        {{ $totalLimit := 5 }}
+        {{ if .Site.Params.Meta.Pagination }}
+            {{ $totalLimit = (index .Site.Params.Meta.Pagination .Type) | default 5 }}
+        {{ end }}
 
         {{ $siteTaxos := .Site.Taxonomies }}
         {{ $totalCount := len $siteTaxos }}

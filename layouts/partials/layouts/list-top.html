@@ -1,7 +1,7 @@
 {{ $reviews := .arr }}
 {{ $context := .context }}
+{{ $limit := .limit }}
 
-{{ $limit := $context.Site.Params.Meta.TopListCount }}
 {{ $mainScoreName := $context.Site.Params.Meta.MainScore }}
 {{ $reviews = first $limit $reviews }}
 

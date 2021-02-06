@@ -7,8 +7,6 @@
 [Meta]
   MainScore = "Main Score"
   CustomScores = ["Custom1", "Custom2"]
-  TopListCount = 10
-  DiscoverListCount = 10
 
   # advanced configs
   CastCrewList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]
@@ -38,6 +36,9 @@
   genres = 100
   plottags = 8
   tags = 10
+  
+  top = 10
+  discover = 10
 
 [Social]
   Email = "Your_Email_ID"

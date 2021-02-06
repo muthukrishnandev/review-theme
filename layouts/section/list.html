@@ -5,7 +5,10 @@
       {{ .Content }}
     </div>
      {{ end }}
-	{{ $pageLimit := (index .Site.Params.Meta.Pagination .Type) | default 5 }}
+	{{ $pageLimit := 5 }}
+	{{ if .Site.Params.Meta.Pagination }}
+		{{ $pageLimit = (index .Site.Params.Meta.Pagination .Type) | default 5 }}
+	{{ end }}
 	{{ $paginator := .Paginate (.Pages.ByDate.Reverse) $pageLimit }}
 	<div class="page-content-wrapper">
 		<div class="post-list">

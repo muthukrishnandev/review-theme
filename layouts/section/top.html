@@ -1,6 +1,11 @@
 {{ define "main" }}
 {{ $metaTypes := .Site.Params.Meta.TopList }}
-{{ $limit := .Site.Params.Meta.TopListCount }}
+
+{{ $limit := 10 }}
+{{ if .Site.Params.Meta.Pagination }}
+    {{ $limit = (index .Site.Params.Meta.Pagination .Type) | default 10 }}
+{{ end }}
+
 {{ $context := . }}
 <div class="row">
     {{ range $index, $metaType := $metaTypes }}
@@ -16,7 +21,7 @@
 	    	<div class="col-md">
 				<h3 class="page-heading">Top {{ $limit }} {{ $metaPage.Title }}</h3>
 				<div class="page-content-wrapper">
-					{{ partial "layouts/list-top.html" (dict "context" $context "arr" $reviews) }}
+					{{ partial "layouts/list-top.html" (dict "context" $context "arr" $reviews "limit" $limit) }}
 				</div>
 	    	</div>
 		{{ end }}
