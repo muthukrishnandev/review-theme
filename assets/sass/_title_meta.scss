@@ -31,7 +31,7 @@
 						padding-bottom: 10px;
 
 						.score-rating-data {
-							font-size: 26px;
+							
 						}
 
 						@include mobile {
@@ -42,9 +42,9 @@
 							.score-rating-label {
 								font-size: 12px;
 							}
-							.score-rating-data {
-								font-size: 20px;
-							}
+							// .score-rating-data {
+							// 	font-size: 20px;
+							// }
 						}
 					}
 				}
