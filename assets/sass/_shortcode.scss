@@ -62,5 +62,15 @@
 		padding: inherit;
 		padding-top: 12px;
 	}
+
+	.spoiler-end-note {
+		color: #FF3333;
+		text-align: center;
+		text-decoration: line-through;
+
+		h5 {
+			text-decoration: none;
+		}
+	}
 }
 

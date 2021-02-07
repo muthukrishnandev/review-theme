@@ -9,44 +9,49 @@
             {{ $totalLimit = (index .Site.Params.Meta.Pagination .Type) | default 5 }}
         {{ end }}
 
+        {{ $discoverList := .Site.Params.Meta.DiscoverList }}
         {{ $siteTaxos := .Site.Taxonomies }}
-        {{ $totalCount := len $siteTaxos }}
+        {{ $totalCount := len $discoverList | default (len $siteTaxos) }}
         {{ $halfCount := div $totalCount 2 }}
 
         <div class="row">
             {{ $index := 0 }}
             {{ range $taxonomyTerm, $taxonomy := $siteTaxos }}
-                {{ if eq $index 0}}
-                    <div class="col-md">
-                {{ else if (eq $index $totalCount) }}
-                    </div>
-                {{ else if (eq $index $halfCount) }}
-                    </div>
-                    <div class="col-md">
+
+                {{ if in $discoverList $taxonomyTerm }}
+                        {{ if eq $index 0}}
+                            <div class="col-md">
+                        {{ else if (eq $index $totalCount) }}
+                            </div>
+                        {{ else if (eq $index $halfCount) }}
+                            </div>
+                            <div class="col-md">
+                        {{ end }}
+
+                        {{/* $taxonomyTerm from range of system data, so use of with is okay here */}}
+                        {{ with $.Site.GetPage (printf "/%s" $taxonomyTerm) }}
+                        	{{ if $taxonomy }}
+            	            	<h3 class="discover-title font-weight-bold"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                				<div class="post-list">
+            		                <ul>
+                                        {{ $count := 0 }}
+                                        {{ $isNeedLink := gt (len $taxonomy) $totalLimit }}
+            		                    {{ range $key, $value := $taxonomy.ByCount }}
+                                            {{ $count = add $count 1 }}
+                                            {{ if le $count $totalLimit }}
+            		                          <li><a href="{{ $value.Page.Permalink }}">{{ $value.Page.Params.meta.name | default $value.Page.Title }}</a></li>
+                                            {{ end}}
+            		                    {{ end }}
+                                    </ul>
+                                    {{ if $isNeedLink }}
+                                        <a class="ml-4 my-4" href="{{ .Permalink }}"> See All {{ .Title }}</a>
+                                    {{ end }}
+                				</div>
+                            {{ end }}
+                        {{ end }}
+                        {{ $index = add $index 1 }}
                 {{ end }}
 
-                {{/* $taxonomyTerm from range of system data, so use of with is okay here */}}
-                {{ with $.Site.GetPage (printf "/%s" $taxonomyTerm) }}
-                	{{ if $taxonomy }}
-    	            	<h3 class="discover-title font-weight-bold"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        				<div class="post-list">
-    		                <ul>
-                                {{ $count := 0 }}
-                                {{ $isNeedLink := gt (len $taxonomy) $totalLimit }}
-    		                    {{ range $key, $value := $taxonomy.ByCount }}
-                                    {{ $count = add $count 1 }}
-                                    {{ if le $count $totalLimit }}
-    		                          <li><a href="{{ $value.Page.Permalink }}">{{ $value.Page.Params.meta.name | default $value.Page.Title }}</a></li>
-                                    {{ end}}
-    		                    {{ end }}
-                            </ul>
-                            {{ if $isNeedLink }}
-                                <a class="ml-4 my-4" href="{{ .Permalink }}"> See All {{ .Title }}</a>
-                            {{ end }}
-        				</div>
-                    {{ end }}
-                {{ end }}
-                {{ $index = add $index 1 }}
             {{ end }}
         </div>
     </div>

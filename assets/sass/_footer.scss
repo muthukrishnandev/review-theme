@@ -11,6 +11,7 @@
     
     .footer-copyright {
       color: $grey-color-darker;
+      font-size: 18px;
       
       @include mobile {
         display: block;

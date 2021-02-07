@@ -8,18 +8,40 @@
       {{ partial "findtitle.html" . }}
       {{ if .Scratch.Get "findtitle_isfound" }}
         {{ $titlePage := .Scratch.Get "findtitle_result" }}
-        <h2 class="post-title">
-          <a class="dark-link" href="{{ .Permalink }}">{{ .Title }}</a>
-          {{ if and (.Params.Starred) (.Site.Params.Config.ShowStarredIcon) }}
-          <span class="starred"></span>
-          {{ end }}
-        </h2>
-        <p class="post-description" style="font-style: italic;">{{ .Description }}</p>
+        <header class="post-header mb-3">
+            <h2 class="post-title">
+              <a class="dark-link" href="{{ .Permalink }}">{{ .Title }}</a>
+              {{ if and (.Params.Starred) (.Site.Params.Config.ShowStarredIcon) }}
+              <span class="starred"></span>
+              {{ end }}
+            </h2>
+            <div class="post-description" style="font-style: italic;">{{ .Description }}</div>
+            <time class="post-date dt-published" datetime="{{ .PublishDate.Format `2006-01-02T15:04:05Z07:00` }}" itemprop="datePublished">
+              {{ .PublishDate.Format "Jan 2, 2006" }}
+              {{ if ne .Lastmod .PublishDate }}
+                &bull; modified on {{ .Lastmod.Format "Jan 2, 2006" }}
+              {{ end }}
+            </time>
+        </header>
+
 
         <!-- {{ partial "shortcode-titlecard.html" (dict "titlepage" $titlePage "hidereview" true) }} -->
 
         <div class="post-content">
             {{ .Content }}
+
+           
+           <div class="review-score-card">
+            <h3 class="review-title">Ratings</h3>
+            {{ partial "review-score.html" . }}
+           </div>
+
+            {{ if .Params.bottomline }}
+            <div class="review-bottomline">
+              <h3 class="review-title">Bottomline</h3>
+              <p class="review-content">{{ .Params.bottomline }}</p>
+            </div>
+            {{ end }}
         </div>
       {{ else }}
           {{ errorf "%v movie/tvshow page not found for %v reviews page" .Params.meta_name .File }}

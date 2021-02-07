@@ -19,7 +19,7 @@
 				<div class="titlemeta-info-body">
 					<div style="text-indent: 5%;" class="mb-3">{{ $metaParams.storyline }}</div>
 					
-					{{ $allTaxos := .Site.Params.Meta.MovieDetailList }}
+					{{ $allTaxos := .Site.Params.Meta.TitleDetailList }}
 					{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
 
 					<div class="titlemeta-info-row">

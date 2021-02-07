@@ -26,30 +26,7 @@
 				{{ $reviews := .Scratch.Get "findreviews_result" }}
 				{{ $review := index $reviews 0 }}
 				<div class="review-summary">
-				  	<div class="container review-score">
-				  		<div class="row">
-				  			<div class="col score-rating main-score text-center">
-								{{ if $review }}
-									<div class="score-rating-data big-text">{{ $review.Params.score }}%</div>
-								{{ else }}
-									<div class="score-rating-data grey-text">No Score Yet</div>
-								{{ end }}
-								<div class="score-rating-label">{{ $.Site.Params.Meta.MainScore }}</div>
-							</div>
-							{{ $customScoreNames := $.Site.Params.Meta.CustomScores }}
-							{{ $customScores := $review.Params.custom_scores }}
-							{{ range $index, $scoreName := $customScoreNames }}
-								<div class="col score-rating custom-score text-center">
-									{{ if $review }}
-										<div class="score-rating-data big-text">{{ index $customScores $index }}%</div>
-									{{ else }}
-										<div class="score-rating-data grey-text">No Score Yet</div>
-									{{ end }}
-									<div class="score-rating-label">{{ $scoreName }}</div>
-								</div>
-							{{ end }}
-				  		</div>
-					</div>
+				  	{{ partial "review-score.html" $review }}
 					<hr />
 				    <div class="card-text">
 				    	<div class="font-weight-bold text-center">Bottomline</div>

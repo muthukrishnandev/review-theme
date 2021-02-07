@@ -10,14 +10,16 @@
 
   # advanced configs
   CastCrewList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]
-  MovieDetailList = ["genres", "plottags"]
+  TitleDetailList = ["genres", "plottags"]
   # if any meta above is not defined for movies or tvshows
   # meta in below list will be considered optional and will not throw error
-  OptionalList = ["cinematographers", "musicdirectors", "plottags"]
+  OptionalDetailList = ["cinematographers", "musicdirectors", "plottags"]
   
-  FilmographyList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]
-
+  DiscoverList = ["actors", "writers", "directors", "musicdirectors", "cinematographers", "genres"]
   TopList = ["movies", "tvshows"]
+
+  # adds text 's Filmography to all these
+  FilmographyList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]
 
 [Meta.DetailListLimit]
   actors = 4 # no of actors to display in Cast & Crew

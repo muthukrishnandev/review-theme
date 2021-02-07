@@ -8,7 +8,7 @@
             <img loading="lazy" class="card-img-top title-item-poster unselectable" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
           </div>
           <div class="card-body title-item-meta">
-            <h3 class="card-text text-center title-item-title">{{ .Title }}</h3>
+            <h3 class="card-text text-center title-item-title">{{ .Params.meta.title | default .Title }}</h3>
             <p class="card-text text-center title-item-date">{{ .Params.meta.year | default (.Params.meta.released_on | dateFormat "2006") }}</p>
           </div>
         </div>

@@ -4,39 +4,54 @@
       margin-bottom: $spacing-unit / 2;
     }
 
-    .post-content {
-      margin-bottom: $spacing-unit;
-
-      p {
-        font-size: 16px;
+    .post-header {
+      .post-title {
+        font-weight: 700;
+        font-size: 26px;
+      }
+      
+      .post-date {
+        color: $grey-color-darkest;
       }
     }
 
-    .post-header {
-      
-      .post-date {
-        color: $grey-color-darker;
+    .post-content {
+      margin-bottom: $spacing-unit;
+
+      h1, h2, h3, h4, h5 {
+        font-weight: 700;
       }
 
-      // color: $grey-color-darker;
-      // // margin: 10px 0px;
+      p, h5, h6, li {
+        font-size: 16px;
+      }
 
-      // @include mobile {
-      //   text-align: left;
-      // }
-      
-      // .post-taxonomies {
-      //   color: $grey-color;
-      //   margin: 10px 0px;
-      //   float: right;
+      p {
+        text-indent: 5%;
+        text-align: justify;
+      }
 
-      //   @include mobile {
-      //     margin: 5px 0px;
-      //   }
+      h1 {
+        font-size: 24px;
+      }
 
-      //   a.tags {
-      //     margin-right: 5px;
-      //   }
-      // }
+      h2 {
+        font-size: 22px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+
+      .review-score-card {
+        .review-score{
+          padding-top: 16px; 
+          padding-bottom: 16px; 
+        }
+      }
     }
 }

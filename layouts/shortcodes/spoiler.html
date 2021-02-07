@@ -10,6 +10,7 @@
 	    <div id="spoiler-collapse-{{ .Ordinal }}" class="collapse" aria-labelledby="spoiler-head-{{ .Ordinal }}" data-parent="#spoiler-accordian-{{ .Ordinal }}">
 	      <div class="card-body spoiler-content">
 	       	{{ .Inner | markdownify | safeHTML }}
+	      <!-- <div class="spoiler-end-note"><h5>Spoiler Ends Here</h5></div> -->
 	      </div>
 	    </div>
 	  </div>

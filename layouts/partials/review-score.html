@@ -1,0 +1,30 @@
+{{ $review := . }}
+
+<div class="container review-score">
+	<div class="row">
+		<div class="col score-rating main-score text-center">
+		{{ if $review }}
+			<div class="score-rating-data big-text">{{ $review.Params.score }}%</div>
+		{{ else }}
+			<div class="score-rating-data grey-text">No Score Yet</div>
+		{{ end }}
+		<div class="score-rating-label">{{ site.Params.Meta.MainScore }}</div>
+	</div>
+	{{ $customScoreNames := site.Params.Meta.CustomScores }}
+	{{ $customScores := $review.Params.custom_scores }}
+	{{ range $index, $scoreName := $customScoreNames }}
+		<div class="col score-rating custom-score text-center">
+			{{ if $review }}
+				{{ if index $customScores $index }}
+					<div class="score-rating-data big-text">{{ index $customScores $index }}%</div>
+				{{ else }}
+					<div class="score-rating-data big-text">None</div>
+				{{ end }}
+			{{ else }}
+				<div class="score-rating-data grey-text">No Score Yet</div>
+			{{ end }}
+			<div class="score-rating-label">{{ $scoreName }}</div>
+		</div>
+	{{ end }}
+	</div>
+</div>

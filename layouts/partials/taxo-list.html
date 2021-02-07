@@ -17,7 +17,7 @@
 
 				{{ partial "taxo-links.html" (dict "allterms" $allTerms "context" $context "taxoname" $taxoName) }}
 			{{ else }}
-				{{ if (in $context.Site.Params.Meta.OptionalList $taxoName) }}
+				{{ if (in $context.Site.Params.Meta.OptionalDetailList $taxoName) }}
 					Information Not Available
 				{{ else }}
 					{{ errorf "no terms for %v in %v" $taxoName $context.File }}
