@@ -9,7 +9,7 @@
 {{ $titlesRes = $titlesRes | union (where $titlesSet "Params.meta.title" "==" $title) }}
 
 {{ if $year }}
-	{{ $titlesRes = $titlesRes | union (where $titlesSet "Params.meta.year" "==" $year) }}
+	{{ $titlesRes = $titlesRes | union (where $titlesRes "Params.meta.year" "==" $year) }}
 {{ end }}
 
 {{ if eq (len $titlesRes) 1 }}
