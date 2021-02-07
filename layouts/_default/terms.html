@@ -14,7 +14,13 @@
 
 			{{ range $index, $termPage := (.Paginator $pageLimit).Pages }}
 			  	<li>
-					<a href="{{ .Permalink }}">{{ $termPage.Title }}</a> 
+					<a href="{{ .Permalink }}">
+						{{ if $termPage.Params.meta }}
+							{{ $termPage.Params.meta.name | default $termPage.Title }}
+						{{ else }}
+							{{ $termPage.Title }}
+						{{ end }}
+					</a> 
 					<p>{{ $termPage.Params.Description }}</p>
 				</li>
 			{{ end }}

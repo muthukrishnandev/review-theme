@@ -4,19 +4,18 @@
 {{ $limitSize := len $allTerms }}
 
 {{ range $index, $tag := $allTerms }}
-{{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
-{{ $taxoPage := $context.Site.GetPage (printf "%s" $tagURL) }}
+	{{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
+	{{ $taxoPage := $context.Site.GetPage (printf "%s" $tagURL) }}
 
-{{ if not $taxoPage }}
-	{{ $tagURL = (delimit (slice $taxoName ($tag | urlize)) "/") }}
-	{{ $taxoPage = $context.Site.GetPage (printf "%s" $tagURL) }}
-{{ end }}
+	{{ if not $taxoPage }}
+		{{ $tagURL = (delimit (slice $taxoName ($tag | urlize)) "/") }}
+		{{ $taxoPage = $context.Site.GetPage (printf "%s" $tagURL) }}
+	{{ end }}
 
-{{ if $taxoPage  }}
-	<a class="titlemeta-taxonomy-link" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.name | default $taxoPage.Title }}</a>
-	{{- if lt $index (sub $limitSize 1) }},&nbsp;{{ end }}
-{{ else }}
-	{{ errorf "%v taxonomy is not valid" $tagURL}}
+	{{ if $taxoPage  }}
+		<a class="titlemeta-taxonomy-link" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.name | default $taxoPage.Title }}</a>
+		{{- if lt $index (sub $limitSize 1) }},&nbsp;{{ end }}
+	{{ else }}
+		{{ errorf "%v taxonomy is not valid for file %v" $tagURL $context.File }}
+	{{ end }}
 {{ end }}
-{{ end }}
-
