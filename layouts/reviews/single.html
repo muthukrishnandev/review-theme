@@ -4,6 +4,8 @@
 		{{ errorf "meta_name not found for %v" .File }}
 	{{ end }}
 
+  {{ partial "breadcrumb.html" . }}
+
   <div class="post-single">
       {{ partial "findtitle.html" . }}
       {{ if .Scratch.Get "findtitle_isfound" }}
@@ -15,7 +17,7 @@
               <span class="starred"></span>
               {{ end }}
             </h2>
-            <div class="post-description" style="font-style: italic;">{{ .Description }}</div>
+            <div class="post-description">{{ .Description }}</div>
             <time class="post-date dt-published" datetime="{{ .PublishDate.Format `2006-01-02T15:04:05Z07:00` }}" itemprop="datePublished">
               {{ .PublishDate.Format "Jan 2, 2006" }}
               {{ if ne .Lastmod .PublishDate }}

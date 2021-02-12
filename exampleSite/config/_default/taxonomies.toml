@@ -10,6 +10,7 @@ director = "directors"
 cinematographer = "cinematographers"
 musicdirector = "musicdirectors"
 writer = "writers"
+creator = "creators"
 
 # movie/tvshow
 genre = "genres"

@@ -8,9 +8,10 @@
     <div class="col-md-4 titlecard-poster-container text-center">
       {{ partial "findposterlink.html" $titlePage }}
 		{{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
-			<img loading="lazy" class="title-poster titlecard-poster unselectable" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
+			{{ $posterRes := $titlePage.Scratch.Get "findposterlink_result" }}
+			<img loading="lazy" class="title-poster titlecard-poster unselectable" src="$posterRes">
 		{{ else }}
-			{{ errorf $titlePage.Scratch.Get "findposterlink_error" }}
+			{{ errorf ($titlePage.Scratch.Get "findposterlink_error") }}
 		{{ end }}
     </div>
     <div class="col-md-8">

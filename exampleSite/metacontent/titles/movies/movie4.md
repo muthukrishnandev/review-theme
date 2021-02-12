@@ -12,7 +12,7 @@ meta:
   certificate: "U"
 
   trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE" 
-  poster: "poster.png" # place it in assets/images/posters
+  poster: "/posters/poster-sample.png" # place it in static/images
 
   external_links:
    imdb: "https://www.imdb.com/title/INSERT_IMDB_ID_HERE"
@@ -48,7 +48,4 @@ musicdirectors:
   - musicdirector2
 
 plottags:
-  - plottag1
-  - plottag2
-  - plottag3
 ---

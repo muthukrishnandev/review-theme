@@ -1,10 +1,8 @@
 .post-single {
     .post-header {
-      margin-top: $spacing-unit * 1;
+      // margin-top: $spacing-unit * 1;
       margin-bottom: $spacing-unit / 2;
-    }
 
-    .post-header {
       .post-title {
         font-weight: 700;
         font-size: 26px;
@@ -15,11 +13,17 @@
       }
     }
 
+    .post-description {
+      font-size: 16px;
+    }
+
     .post-content {
       margin-bottom: $spacing-unit;
 
       h1, h2, h3, h4, h5 {
         font-weight: 700;
+        padding-top: 3px;
+        padding-bottom: 3px;
       }
 
       p, h5, h6, li {

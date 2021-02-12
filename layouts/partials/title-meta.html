@@ -8,9 +8,10 @@
 
 	{{ partial "findposterlink.html" . }}
 	{{ if .Scratch.Get "findposterlink_isfound" }}
-		<img loading="lazy" class="titlemeta-poster unselectable" src="{{ .Scratch.Get "findposterlink_result" }}">
+		{{ $imgLink := .Scratch.Get "findposterlink_result" }}
+		<img loading="lazy" class="titlemeta-poster unselectable" src="{{ $imgLink }}">
 	{{ else }}
-		{{ errorf .Scratch.Get "findposterlink_error" }}
+		{{ errorf (.Scratch.Get "findposterlink_error") }}
 	{{ end }}
 </div>
 

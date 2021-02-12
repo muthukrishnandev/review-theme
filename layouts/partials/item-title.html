@@ -1,19 +1,20 @@
+{{ $titlePage := . }}
 <div class="post-list-item title-list-item col-md-3 col-6">
     <a class="title-item-link" href="{{ .Permalink }}">
-    {{ $titlePage := . }}
-      {{ partial "findposterlink.html" $titlePage }}
-      {{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
         <div class="card">
           <div class="title-item-poster-container">
-            <img loading="lazy" class="card-img-top title-item-poster unselectable" src="{{ $titlePage.Scratch.Get "findposterlink_result" }}">
+            {{ partial "findposterlink.html" $titlePage }}
+            {{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
+              {{ $imgLink := $titlePage.Scratch.Get "findposterlink_result" }}
+                <img loading="lazy" class="card-img-top title-item-poster unselectable" src="{{ $imgLink }}">
+            {{ else }}
+              {{ errorf ($titlePage.Scratch.Get "findposterlink_error") }}
+            {{ end }}
           </div>
           <div class="card-body title-item-meta">
             <h3 class="card-text text-center title-item-title">{{ .Params.meta.title | default .Title }}</h3>
             <p class="card-text text-center title-item-date">{{ .Params.meta.year | default (.Params.meta.released_on | dateFormat "2006") }}</p>
           </div>
         </div>
-      {{ else }}
-        {{ errorf $titlePage.Scratch.Get "findposterlink_error" }}
-      {{ end }}
     </a>
 </div>

@@ -4,25 +4,41 @@
   Description = "long description of the site"
   Logo = "logo.png" # store in static/images
 
+  BaseImageURL = "" #https://example.com
+
+[Controls]
+  # option to ignore the poster params in posts and use NoPoster for all cases
+  # this overrides all other poster configs
+  DoNotShowPoster = false
+
+
 [Meta]
   MainScore = "Main Score"
   CustomScores = ["Custom1", "Custom2"]
 
   # advanced configs
-  CastCrewList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]
-  TitleDetailList = ["genres", "plottags"]
-  # if any meta above is not defined for movies or tvshows
-  # meta in below list will be considered optional and will not throw error
-  OptionalDetailList = ["cinematographers", "musicdirectors", "plottags"]
-  
-  DiscoverList = ["actors", "writers", "directors", "musicdirectors", "cinematographers", "genres"]
+  DiscoverList = ["actors", "creators", "directors", "writers", "musicdirectors", "cinematographers", "genres"]
   TopList = ["movies", "tvshows"]
 
   # adds text 's Filmography to all these
   FilmographyList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]
 
+# advanced configs
+[Meta.TitleCrewList]
+  movies = ["actors", "directors", "writers", "musicdirectors", "cinematographers"]
+  tvshows = ["actors", "creators"]
+
+[Meta.TitleMetaList]
+  movies = ["genres", "plottags"]
+  tvshows = ["genres", "plottags"]
+
 [Meta.DetailListLimit]
   actors = 4 # no of actors to display in Cast & Crew
+
+[Meta.ErrorCheck]
+  # in case no poster exist in local directory case (if BaseImageURL is empty string)
+  # use display noposter.png instead of throwing error
+  UseNoPoster = true
 
 [Meta.Pagination]
   # default will be 8
@@ -84,12 +100,13 @@
   # navigation
   ShowHeaderNav = true
   ShowFooterNav = true # disables the footer, both social and navigation
+  ShowSocialFooterNav = true # enable this to show social nav instead of navigations
+
+  # social icons
+  ShowSocialIcons = true # enable this to show social icons instead of text
+  ShowColorIcons = true # enable this to colorful social icons
   
   # home page
   ShowSummaryInPostList = false
   ShowStarredIcon = true
   
-  # social icons
-  ShowSocialFooterNav = true # enable this to show social nav instead of navigations
-  ShowSocialIcons = true # enable this to show social icons instead of text
-  ShowColorIcons = true # enable this to colorful social icons

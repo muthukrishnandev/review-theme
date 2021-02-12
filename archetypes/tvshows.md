@@ -13,12 +13,12 @@ meta:
   running_time: 50 # in minutes
   certificate: "U"
 
-  episodes_count: 20
-  series_start_year:  2019
-  series_end_year:  2020
+  total_episodes: 20
+  total_seasons: 20
+  year_end:  2020
 
   trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE"
-  poster: "https://example.com/poster.jpg" # or "poster.png" and place it in assets/images/posters
+  poster: "https://example.com/poster.jpg" # or "/posters/poster.png" and place it in static/images directory
 
   external_links:
     imdb: "https://www.imdb.com/title/INSERT_IMDB_ID_HERE"
@@ -36,21 +36,10 @@ actors:
   - actor2
   - actor3
 
-directors:
-  - director1
-  - director2
-
-writers:
-  - writer1
-  - writer2
-
-cinematographers:
-  - cinematographer1
-  - cinematographer2
-
-musicdirectors:
-  - music_director1
-  - music_director2
+creators:
+  - creator1
+  - creator2
+  - creator3
 
 plottags:
   - plottag1

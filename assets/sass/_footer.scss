@@ -6,13 +6,75 @@
   width: 100%;
   border-top: 1px solid $grey-color-lighter;
 
+  .footer-social-media-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    .social-text-item, .social-icon-item {
+      display: inline;
+    }
+
+    .social-text-item {
+      color: $grey-color-darker; 
+      &:after {
+        content: " " "|"
+      }
+      &:last-child:after{
+        content: ""
+      }
+    }
+
+    .social-icon-item {
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+  }
+
+  .footer-navigation {
+      .footer-nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        text-align: center;
+
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        font-size: 16px;
+
+        @include mobile {
+          display: flex;
+          width: 80%;
+          margin: 5px auto;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          flex-flow: row wrap;
+        }
+
+      .footer-nav-item {
+        display: inline;
+        &:after {
+          content: "\00a0|\00a0"
+        }
+        &:last-child:after {
+          content: ""
+        }
+      }
+    }
+  }
+
   .footer-notice {
     text-align: center;
-    
     .footer-copyright {
       color: $grey-color-darker;
       font-size: 18px;
-      
       @include mobile {
         display: block;
         text-align: center;
@@ -20,41 +82,8 @@
     }
   }
 
-  .footer-navigation {
-    .footer-list {
-      list-style: none;
-      margin-left: 0;
-      margin-bottom: 0;
-
-      text-align: center;
-
-      @include mobile {
-        display: flex;
-        width: 80%;
-        margin: 5px auto;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        flex-flow: row wrap;
-      }
-
-      .social-icon {
-        padding-left: 1px;
-        padding-right: 1px;
-      }
-
-      li.nav-text {
-        display: inline;
-        &:after {
-          content: " " "|"
-        }
-        &:last-child:after {
-          content: ""
-        }
-        .nav-link {
-          color: $grey-color-darker;  
-        }
-      }
-    }
+  .footer-nav-link {
+    display: inline;
+    color: $grey-color-darker;  
   }
 }

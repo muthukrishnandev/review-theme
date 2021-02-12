@@ -51,21 +51,3 @@
   }
 
 }
-
-.footer-list {
-  padding: ($spacing-unit / 3) 0px;
-  list-style: none;
-
-  li {
-    display: inline;
-  }
-
-  li.social-text {
-    &:after {
-      content: " " "|"
-    }
-    &:last-child:after{
-      content: ""
-    }
-  }
-}

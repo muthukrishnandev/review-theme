@@ -14,7 +14,7 @@ meta:
   certificate: "U"
 
   trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE"
-  poster: "https://example.com/poster.jpg" # or "poster.png" and place it in assets/images/posters
+  poster: "https://example.com/poster.jpg" # or "/posters/poster.png" and place it in static/images directory
 
   external_links:
     imdb: "https://www.imdb.com/title/INSERT_IMDB_ID_HERE"

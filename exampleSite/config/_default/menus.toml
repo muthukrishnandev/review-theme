@@ -46,11 +46,19 @@
     parent = "discover"
 
 [[header]]
+    name = "By Creators"
+    identifier = "d_creators"
+    title = "creators"
+    url = "/creators/"
+    weight = 6
+    parent = "discover"
+
+[[header]]
     name = "By Cinematographers"
     identifier = "d_cines"
     title = "cinematographers"
     url = "/cinematographers/"
-    weight = 6
+    weight = 7
     parent = "discover"
 
 [[header]]
@@ -58,7 +66,7 @@
     identifier = "d_genres"
     title = "genres"
     url = "/genres/"
-    weight = 7
+    weight = 8
     parent = "discover"
 
 [[header]]
@@ -66,7 +74,7 @@
     identifier = "d_plottags"
     title = "plottags"
     url = "/plottags/"
-    weight = 8
+    weight = 9
     parent = "discover"
 
 [[header]]
@@ -112,15 +120,29 @@
     weight = 7
     
 [[footer]]
-    name = "Home"
-    identifier = "home"
-    title = "home"
-    url = "/"
+    name = "Privacy Policy"
+    identifier = "privacy-policy"
+    title = "privacy-policy"
+    url = "/privacy-policy/"
     weight = 1
+
+[[footer]]
+    name = "Terms of Service"
+    identifier = "terms-of-service"
+    title = "terms-of-service"
+    url = "/terms-of-service/"
+    weight = 2
+
+[[footer]]
+    name = "Disclaimer"
+    identifier = "disclaimer"
+    title = "disclaimer"
+    url = "/disclaimer/"
+    weight = 3
 
 [[footer]]
     name = "About"
     identifier = "about"
     title = "about"
     url = "/about/"
-    weight = 2
+    weight = 4

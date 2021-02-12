@@ -1,18 +1,22 @@
 <footer class="page-footer">
-    {{ if .Site.Params.Config.ShowFooterNav }}
-    <div class="footer-navigation">
-        <ul class="footer-list">
-            {{ if .Site.Params.Config.ShowSocialFooterNav }}
+    {{ if .Site.Params.Config.ShowSocialFooterNav }}
+    <div class="footer-social-media">
+        <ul class="footer-social-media-list footer-list">
                 {{ partial "social-icons.html" . }}
-            {{ else }}
-                {{ $current := . }}
-                {{ range .Site.Menus.footer }}
-                    <li class="nav-text"><a class="nav-link" href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
-                {{ end }}
-            {{ end }}
         </ul>
     </div>
     {{ end }}
+
+    {{ if .Site.Params.Config.ShowFooterNav }}
+        <div class="footer-navigation">
+            <ul class="footer-nav-list">
+                {{ range .Site.Menus.footer }}
+                    <li class="footer-nav-item"><a class="footer-nav-link" href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+
     <div class="footer-notice">
         <div class="footer-copyright">
             {{ $copyText := replace .Site.Copyright "{year}" now.Year }}

@@ -115,6 +115,11 @@ table {
   font-size: 14px;
   font-style: italic;
   color: $grey-color-dark;
+
+  @include mobile {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 .post-date {
@@ -207,4 +212,12 @@ table {
 
 .big-text {
   font-size: 26px;
+}
+
+
+// breadcrumbs
+
+.breadcrumb {
+  background: none;
+  padding: 0px;
 }

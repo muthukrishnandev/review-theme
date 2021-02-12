@@ -3,9 +3,11 @@
 movies = "/movie/:slug/"
 reviews = "/review/:slug/"
 tvshows = "/tv/:slug/"
+docs = "/:title"
 
 actors = "/actor/:slug/"
 writers = '/writer/:slug/'
+creators = '/creator/:slug/'
 directors = '/director/:slug/'
 musicdirectors = '/musicdirector/:slug/'
 cinematographers = '/cinematographer/:slug/'

@@ -5,48 +5,48 @@
 
 {{ if .Site.Params.Social.Email }}
 	{{ if and (.Site.Params.Config.ShowSocialIcons) }}
-		<li class="social-icon"><a target="_blank" href="mailto:{{ .Site.Params.Social.Email }}"><i class="{{ $socialColor }} svg-icon email"></i></a></li>
+		<li class="social-icon-item"><a class="footer-nav-link" target="_blank" href="mailto:{{ .Site.Params.Social.Email }}"><i class="{{ $socialColor }} svg-icon email"></i></a></li>
 	{{ else }}
-		<li class="social-text"><a target="_blank" href="mailto:{{ .Site.Params.Social.Email }}">email</i></a></li>
+		<li class="social-text-item"><a class="footer-nav-link" target="_blank" href="mailto:{{ .Site.Params.Social.Email }}">email</i></a></li>
 	{{ end }}
 {{ end }}
 
 {{ if .Site.Params.Social.Facebook }}
 	{{ if and (.Site.Params.Config.ShowSocialIcons) }}
-		<li class="social-icon"><a target="_blank" href="https://www.facebook.com/{{ .Site.Params.Social.Facebook }}"><i class="{{ $socialColor }} svg-icon facebook"></i></a></li>
+		<li class="social-icon-item"><a class="footer-nav-link" target="_blank" href="https://www.facebook.com/{{ .Site.Params.Social.Facebook }}"><i class="{{ $socialColor }} svg-icon facebook"></i></a></li>
 	{{ else }}
-		<li class="social-text"><a target="_blank" href="https://www.facebook.com/{{ .Site.Params.Social.Facebook }}">facebook</i></a></li>
+		<li class="social-text-item"><a class="footer-nav-link" target="_blank" href="https://www.facebook.com/{{ .Site.Params.Social.Facebook }}">facebook</i></a></li>
 	{{ end }}
 {{ end }}
 
 {{ if .Site.Params.Social.Twitter }}
 	{{ if and (.Site.Params.Config.ShowSocialIcons) }}
-		<li class="social-icon"><a target="_blank" href="https://www.twitter.com/{{ .Site.Params.Social.Twitter }}"><i class="{{ $socialColor }} svg-icon twitter"></i></a></li>
+		<li class="social-icon-item"><a class="footer-nav-link" target="_blank" href="https://www.twitter.com/{{ .Site.Params.Social.Twitter }}"><i class="{{ $socialColor }} svg-icon twitter"></i></a></li>
 	{{ else }}
-		<li class="social-text"><a target="_blank" href="https://www.twitter.com/{{ .Site.Params.Social.Twitter }}">twitter</a></li>
+		<li class="social-text-item"><a class="footer-nav-link" target="_blank" href="https://www.twitter.com/{{ .Site.Params.Social.Twitter }}">twitter</a></li>
 	{{ end }}
 {{ end }}
 
 {{ if .Site.Params.Social.Instagram }}
 	{{ if and (.Site.Params.Config.ShowSocialIcons) }}
-		<li class="social-icon"><a target="_blank" href="https://instagram.com/{{ .Site.Params.Social.Instagram }}"><i class="{{ $socialColor }} svg-icon instagram"></i></a></li>
+		<li class="social-icon-item"><a class="footer-nav-link" target="_blank" href="https://instagram.com/{{ .Site.Params.Social.Instagram }}"><i class="{{ $socialColor }} svg-icon instagram"></i></a></li>
 	{{ else }}
-		<li class="social-text"><a target="_blank" href="https://instagram.com/{{ .Site.Params.Social.Instagram }}">instagram</a></li>
+		<li class="social-text-item"><a class="footer-nav-link" target="_blank" href="https://instagram.com/{{ .Site.Params.Social.Instagram }}">instagram</a></li>
 	{{ end }}
 {{ end }}
 
 {{ if .Site.Params.Social.Youtube }}
 	{{ if and (.Site.Params.Config.ShowSocialIcons) }}
-		<li class="social-icon"><a target="_blank" href="https://youtube.com/{{ .Site.Params.Social.Youtube }}"><i class="{{ $socialColor }} svg-icon youtube"></i></a></li>
+		<li class="social-icon-item"><a class="footer-nav-link" target="_blank" href="https://youtube.com/{{ .Site.Params.Social.Youtube }}"><i class="{{ $socialColor }} svg-icon youtube"></i></a></li>
 	{{ else }}
-		<li class="social-text"><a target="_blank" href="https://youtube.com/{{ .Site.Params.Social.Youtube }}">youtube</a></li>
+		<li class="social-text-item"><a class="footer-nav-link" target="_blank" href="https://youtube.com/{{ .Site.Params.Social.Youtube }}">youtube</a></li>
 	{{ end }}
 {{ end }}
 
 {{ if .Site.Params.Social.Reddit }}
 	{{ if and (.Site.Params.Config.ShowSocialIcons) }}
-		<li class="social-icon"><a target="_blank" href="https://reddit.com/{{ .Site.Params.Social.Reddit }}"><i class="{{ $socialColor }} svg-icon reddit"></i></a></li>
+		<li class="social-icon-item"><a class="footer-nav-link" target="_blank" href="https://reddit.com/{{ .Site.Params.Social.Reddit }}"><i class="{{ $socialColor }} svg-icon reddit"></i></a></li>
 	{{ else }}
-		<li class="social-text"><a target="_blank" href="https://reddit.com/{{ .Site.Params.Social.Reddit }}">reddit</a></li>
+		<li class="social-text-item"><a class="footer-nav-link" target="_blank" href="https://reddit.com/{{ .Site.Params.Social.Reddit }}">reddit</a></li>
 	{{ end }}
 {{ end }}

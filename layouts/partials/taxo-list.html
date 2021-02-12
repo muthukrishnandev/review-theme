@@ -4,25 +4,21 @@
 	<div class="titlemeta-info-row titlemeta-taxonomies {{ $taxoName }}">
 		{{ $termPage := $context.Site.GetPage (printf "/%s" $taxoName) }}
 		{{ if $termPage }}
-			<div class="titlemeta-info-label clearfix">{{ $termPage.Title }}:</div>
-		{{ else }}
-			{{ errorf "%v taxonomy term page is not valid" $taxoName}}
-		{{ end }}
-		<div class="titlemeta-info-data clearfix">
 			{{ $allTerms := $context.Param $taxoName}}
 			{{ if $allTerms }}
 				{{ $termSize := len $allTerms }}
 				{{ $limitSize := ((index $context.Site.Params.Meta.DetailListLimit $taxoName) | default $termSize) }}
 				{{ $allTerms = first $limitSize $allTerms }}
-
-				{{ partial "taxo-links.html" (dict "allterms" $allTerms "context" $context "taxoname" $taxoName) }}
+				<div class="titlemeta-info-label clearfix">{{ $termPage.Title }}:</div>
+				<div class="titlemeta-info-data clearfix">
+					{{ partial "taxo-links.html" (dict "allterms" $allTerms "context" $context "taxoname" $taxoName) }}
+				</div>
 			{{ else }}
-				{{ if (in $context.Site.Params.Meta.OptionalDetailList $taxoName) }}
-					Information Not Available
-				{{ else }}
-					{{ errorf "no terms for %v in %v" $taxoName $context.File }}
-				{{ end }}
+				<div class="titlemeta-info-label clearfix">{{ $termPage.Title }}:</div>
+				<div class="titlemeta-info-data clearfix">Information Not Available</div>
 			{{ end }}
-		</div>
+		{{ else }}
+			{{ errorf "%v taxonomy term page is not valid" $taxoName}}
+		{{ end }}
 	</div>
 {{ end }}
