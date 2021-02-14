@@ -1,12 +1,12 @@
 {{ define "main" }}
 <div class="page-content-wrapper">
-    <div class="row">
-    	<!-- Starred Posts -->
-		{{ $editorials := (where .Site.RegularPages "Type" "in" "editorials") }}
-	   	{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
-	   	{{ $posts := union ($editorials) ($reviews) }}
-		{{ $starred := where $posts "Params.starred" true }}
-		{{ if $starred }}
+	<!-- Starred Posts -->
+	{{ $editorials := (where .Site.RegularPages "Type" "in" "editorials") }}
+   	{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
+   	{{ $posts := union ($editorials) ($reviews) }}
+	{{ $starred := where $posts "Params.starred" true }}
+	{{ if $starred }}
+		<div class="row">
 	    	<div class="col">
 	    		<h1 class="page-heading">Starred Posts</h1>
 				<div class="post-list">
@@ -15,10 +15,9 @@
 				{{ end }}
 				</div>
 	    	</div>
-		{{ end }}
-    </div>
-
-    <hr />
+		</div>
+		<hr />
+	{{ end }}
 
     <div class="row">
 		{{ $editorialPage := .Site.GetPage "editorials" }}
