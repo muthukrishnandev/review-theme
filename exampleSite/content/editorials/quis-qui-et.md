@@ -3,7 +3,7 @@ title: "Quis qui et"
 description: "Quia esse et accusamus explicabo"
 date: "2021-02-13T12:19:55Z"
 lastmod: "2021-02-13T12:19:55Z"
-
+starred: true
 
 tags:
   - display

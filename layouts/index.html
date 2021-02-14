@@ -1,22 +1,45 @@
 {{ define "main" }}
 <div class="page-content-wrapper">
-	{{ $editorials := (where .Site.RegularPages "Type" "in" "editorials") }}
-   	{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
-   	{{ $posts := union ($editorials) ($reviews) }}
-
-	{{ $starred := where $posts "Params.starred" true }}
-	{{ $sorted := $posts.ByDate.Reverse }}
-  	{{ $sorted = union ($starred) ($sorted) }}
-
-	{{ $paginator := .Paginate $sorted }}
-
-    {{ if $posts }}
-		<div class="post-list">
-		{{ range $paginator.Pages }}
-		    {{ partial "item-post.html" . }}
+    <div class="row">
+    	<!-- Starred Posts -->
+		{{ $editorials := (where .Site.RegularPages "Type" "in" "editorials") }}
+	   	{{ $reviews := (where .Site.RegularPages "Type" "in" "reviews") }}
+	   	{{ $posts := union ($editorials) ($reviews) }}
+		{{ $starred := where $posts "Params.starred" true }}
+		{{ if $starred }}
+	    	<div class="col">
+	    		<h1 class="page-heading">Starred Posts</h1>
+				<div class="post-list">
+				{{ range first 5 $starred.ByDate.Reverse }}
+				    {{ partial "item-post.html" . }}
+				{{ end }}
+				</div>
+	    	</div>
 		{{ end }}
-		</div>
-		{{ partial "pagination.html" . }}
-    {{ end }}
+    </div>
+
+    <hr />
+
+    <div class="row">
+		{{ $editorialPage := .Site.GetPage "editorials" }}
+		{{ $reviewPage := .Site.GetPage "reviews" }}
+
+		{{ $recents := slice $editorialPage $reviewPage }}
+
+	   	{{ range $index, $sectionPage := $recents }}
+		   	{{ $recentPosts := (where .Site.RegularPages "Type" "in" $sectionPage.Type) }}
+			{{ if $recentPosts }}
+		    	<div class="col-12 col-md-6">
+		    		<h1 class="page-heading">Recent {{ $sectionPage.Title }}</h1>
+					<div class="post-list">
+					{{ range first 4 $recentPosts.ByDate.Reverse }}
+					    {{ partial "item-post.html" . }}
+					{{ end }}
+					</div>
+		    		<a href="{{ $sectionPage.Permalink }}" class="more-link">See More {{ $sectionPage.Title }}</a>
+		    	</div>
+			{{ end }}
+	   	{{ end }}
+    </div>
 </div>
 {{ end }}

@@ -3,7 +3,7 @@ title: "Itaque architecto ea"
 description: "Rerum qui suscipit sint aut"
 date: "2021-02-13T12:19:55Z"
 lastmod: "2021-02-13T12:19:55Z"
-
+starred: true
 
 tags:
   - wind

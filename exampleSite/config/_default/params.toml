@@ -108,5 +108,5 @@
   
   # home page
   ShowSummaryInPostList = false
-  ShowStarredIcon = true
+  # ShowStarredIcon = true
   
