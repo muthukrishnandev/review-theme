@@ -27,7 +27,7 @@
 		{{ $recents := slice $editorialPage $reviewPage }}
 
 	   	{{ range $index, $sectionPage := $recents }}
-		   	{{ $recentPosts := (where .Site.RegularPages "Type" "in" $sectionPage.Type) }}
+		   	{{ $recentPosts := (where $.Site.RegularPages "Type" "in" $sectionPage.Type) }}
 			{{ if $recentPosts }}
 		    	<div class="col-12 col-md-6">
 		    		<h1 class="page-heading">Recent {{ $sectionPage.Title }}</h1>
