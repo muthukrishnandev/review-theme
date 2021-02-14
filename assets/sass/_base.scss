@@ -193,12 +193,12 @@ table {
 }
 
 .unselectable {
+  pointer-events: none;
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
-
 
 .grey-text {
   font-size: 16px;
@@ -221,3 +221,25 @@ table {
   background: none;
   padding: 0px;
 }
+
+.taxo-collapse {
+  .card {
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  
+  .card-body {
+    ul {
+      display: inline;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      a {
+        display: inline;
+      }
+    }
+  }
+}
+

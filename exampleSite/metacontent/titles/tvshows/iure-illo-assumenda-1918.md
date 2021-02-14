@@ -18,7 +18,7 @@ meta:
   total_seasons: 16
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1918/iure-illo-assumenda-1918.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

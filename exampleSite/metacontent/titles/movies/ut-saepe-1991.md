@@ -14,7 +14,7 @@ meta:
   certificate: "U/A"
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1991/ut-saepe-1991.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

@@ -4,12 +4,12 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  <div class="page-wrapper">
+  <div class="page-wrapper container">
     {{ partial "header.html" . }}
     <main class="page-body" aria-label="Content">
-		<div class="page-container container {{ if .IsHome }}home{{ else }}{{ .Type }}{{ end }}">
+		<div class="page-container {{ if .IsHome }}home{{ else }}{{ .Type }}{{ end }}">
         {{ block "main" . }}{{ end }}
-    	</div>
+    </div>
     </main>
     {{ partial "footer.html" . }}
   </div>

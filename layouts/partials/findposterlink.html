@@ -13,44 +13,46 @@
 		{{ $context.Scratch.Set "findposterlink_isnoposter" true }}
 	{{ end }}
 {{ else }}
-	{{ if eq (slicestr $posterParam 0 4) "http" }}
-			<!-- complete image link -->
-			{{ $context.Scratch.Set "findposterlink_result" $posterParam }}
+	{{ if hasPrefix $posterParam "http" }}
+		<!-- complete image link -->
+		{{ $context.Scratch.Set "findposterlink_result" $posterParam }}
+		{{ $context.Scratch.Set "findposterlink_isfound" true }}
+	{{ else if hasPrefix $posterParam "baseimageurl:" }}
+		<!-- baseimageurl prefix -->
+		{{ $posterParam = strings.Replace $posterParam "baseimageurl:" "" }}
+		{{ $baseImageURL := $context.Site.Params.Info.BaseImageURL }}
+
+		{{ $imgLink := printf "%s%s" $baseImageURL $posterParam }}
+		
+		{{ $context.Scratch.Set "findposterlink_result" $imgLink }}
+		{{ $context.Scratch.Set "findposterlink_isfound" true }}
+	{{ else }}
+		<!-- local poster -->
+		{{ $actualPath := path.Join "images" $posterParam }}
+		{{ $filePath := path.Join "static" $actualPath }}
+		{{ if fileExists $filePath }}
+			{{ $posLocalLink := $actualPath | absURL }}
+			{{ $context.Scratch.Set "findposterlink_result" $posLocalLink }}
 			{{ $context.Scratch.Set "findposterlink_isfound" true }}
+		<!-- file does not exist -->
 		{{ else }}
-			{{ $baseImageURL := $context.Site.Params.Info.BaseImageURL }}
-			{{ if ne $baseImageURL "" }}
-				{{ $imgLink := printf "%s%s" $baseImageURL $posterParam }}
-				{{ $context.Scratch.Set "findposterlink_result" $imgLink }}
-				{{ $context.Scratch.Set "findposterlink_isfound" true }}
-			{{ else }}
-				<!-- base url is not present -->
-				{{ $actualPath := path.Join "images" $posterParam }}
-				{{ $filePath := path.Join "static" $actualPath }}
-				{{ if fileExists $filePath }}
-					{{ $posLocalLink := $actualPath | absURL }}
-					{{ $context.Scratch.Set "findposterlink_result" $posLocalLink }}
+			{{ $isFound := false }}
+			{{ $useNoPoster := $context.Site.Params.Controls.UseNoPoster }}
+			{{ if eq $useNoPoster true }}
+				{{ $posterRes := resources.GetMatch "images/noposter.png" }}
+				{{ if $posterRes }}
+					{{ $context.Scratch.Set "findposterlink_result" $posterRes.Permalink }}
 					{{ $context.Scratch.Set "findposterlink_isfound" true }}
-				<!-- file does not exist -->
-				{{ else }}
-					{{ $isFound := false }}
-					{{ $useNoPoster := $context.Site.Params.Meta.ErrorCheck.UseNoPoster }}
-					{{ if eq $useNoPoster true }}
-						{{ $posterRes := resources.GetMatch "images/noposter.png" }}
-						{{ if $posterRes }}
-							{{ $context.Scratch.Set "findposterlink_result" $posterRes.Permalink }}
-							{{ $context.Scratch.Set "findposterlink_isfound" true }}
-							
-							{{ $context.Scratch.Set "findposterlink_isnoposter" true }}
-							{{ $isFound = true }}
-						{{ end }}
-					{{ end }}
-					{{ if not $isFound }}
-						{{ $errorMsg := printf "'%s' poster media not found for '%s'" $posterParam $context.File }}
-						{{ $context.Scratch.Set "findposterlink_error" $errorMsg }}
-						{{ $context.Scratch.Set "findposterlink_isfound" false }}
-					{{ end }}
+					
+					{{ $context.Scratch.Set "findposterlink_isnoposter" true }}
+					{{ $isFound = true }}
 				{{ end }}
 			{{ end }}
+			{{ if not $isFound }}
+				{{ $errorMsg := printf "'%s' poster media not found for '%s'" $posterParam $context.File }}
+				{{ $context.Scratch.Set "findposterlink_error" $errorMsg }}
+				{{ $context.Scratch.Set "findposterlink_isfound" false }}
+			{{ end }}
 		{{ end }}
+	{{ end }}
 {{ end}}

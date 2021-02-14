@@ -14,7 +14,7 @@ meta:
   certificate: "R"
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1931/magni-deleniti-eos-1931.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

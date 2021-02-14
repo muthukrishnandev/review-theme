@@ -1,0 +1,14 @@
+
+{{ $currentPage := . }}
+{{ $currentSet := (where .Site.RegularPages "Type" "in" (slice .Section)) }}
+{{ if $currentSet }}
+	{{ $related := $currentSet.Related $currentPage }}
+	{{ if $related }}
+		<h3 class="font-weight-bold">You May Also Like</h3>
+		<div class="post-list">
+		  {{ range (first 10 $related) }}
+			{{ partial "item-post.html" . }}
+		  {{ end }}
+		</div>
+	{{ end }}
+{{ end }}

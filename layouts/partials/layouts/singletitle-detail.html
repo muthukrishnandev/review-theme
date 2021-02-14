@@ -1,0 +1,42 @@
+{{ $metaParams := .Params.meta }}
+<div class="col-md-12 col-xs-12 titlemeta-info-container titlemeta-detail mb-2">
+	<h2 class="titlemeta-info-head">{{ (.Site.GetPage .Section).Title }} Detail</h2>
+	<div class="titlemeta-info-body">
+		<div style="text-indent: 5%;" class="mb-3">{{ $metaParams.storyline }}</div>
+		
+		{{ $allTaxos := index .Site.Params.Meta.TitleMetaList .Type }}
+		{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
+
+		{{ if eq .Type "tvshows"}}
+			<div class="titlemeta-info-row">
+				<div class="titlemeta-info-label">Series Run:</div>
+				<div class="titlemeta-info-data">{{ $metaParams.year }} - {{ $metaParams.year_end }}</div>
+			</div>
+		{{ end }}
+
+		<div class="titlemeta-info-row">
+			<div class="titlemeta-info-label">Certificate:</div>
+			<div class="titlemeta-info-data">{{ $metaParams.certificate }}</div>
+		</div>
+		<div class="titlemeta-info-row">
+			<div class="titlemeta-info-label">Released On:</div>
+			<div class="titlemeta-info-data">{{ $metaParams.released_on | dateFormat "02 January 2006" }}</div>
+		</div>
+
+		{{ if eq .Type "tvshows"}}
+			<div class="titlemeta-info-row">
+				<div class="titlemeta-info-label">Total Seasons:</div>
+				<div class="titlemeta-info-data">{{ $metaParams.total_seasons }} seasons</div>
+			</div>
+			<div class="titlemeta-info-row">
+				<div class="titlemeta-info-label">Total Episodes:</div>
+				<div class="titlemeta-info-data">{{ $metaParams.total_episodes }} episodes</div>
+			</div>
+		{{ end }}
+
+		<div class="titlemeta-info-row">
+			<div class="titlemeta-info-label">Running Time:</div>
+			<div class="titlemeta-info-data">{{ $metaParams.running_time }} minutes</div>
+		</div>
+	</div>
+</div>

@@ -14,7 +14,7 @@ meta:
   certificate: "U/A"
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/2013/facere-dolorem-2013.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

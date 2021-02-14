@@ -18,7 +18,7 @@ meta:
   total_seasons: 11
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1985/illo-ipsam-ratione-1985.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

@@ -14,24 +14,15 @@ html {
 
 .page-wrapper { // wraps page header, body, footer
   position:relative;
-
-  margin: 0 auto;
-  padding: 0 ($spacing-unit / 3);
-
-  max-width: $content-width;
   min-height: 100%;
   width: 100%;
 
   .page-body {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
     padding-bottom: $footer-height; // Important!
 
     @include mobile {
-      max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-      max-width: calc(#{$content-width} - (#{$spacing-unit}));
       margin-right: auto;
       margin-left: auto;
       padding-right: $spacing-unit / 2;

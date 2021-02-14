@@ -18,7 +18,7 @@ meta:
   total_seasons: 17
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1907/fugit-fugiat-sed-1907.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

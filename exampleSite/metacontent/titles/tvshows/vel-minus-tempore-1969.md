@@ -18,7 +18,7 @@ meta:
   total_seasons: 14
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1969/vel-minus-tempore-1969.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

@@ -60,6 +60,7 @@
 		.titlemeta-info-head{
 			font-weight: 700;
 			font-size: 20px;
+			padding-bottom: 10px;
 		}
 
 		.titlemeta-info-body{
@@ -101,6 +102,11 @@
 					max-width: 100%;
 				}
 			}
+		}
+
+		.titlemeta-related {
+			padding-left: 2%;
+			padding-right: 2%;
 		}
 	}
 }

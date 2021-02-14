@@ -1,0 +1,28 @@
+{{ $metaParams := .Params.meta }}
+<div class="col-md-12 col-xs-12 titlemeta-info-container titlemeta-external">
+	{{ if $metaParams.external_links }}
+		<h2 class="titlemeta-info-head">External Links</h2>
+		<div class="titlemeta-info-body">
+			<div class="titlemeta-info-row">
+				<div class="titlemeta-info-data">
+					<ul>
+					{{ if $metaParams.external_links.imdb }}
+					<li><a target="_blank" href="{{ $metaParams.external_links.imdb }}">IMDb</a></li>
+					{{ end }}
+
+					{{ if $metaParams.external_links.rotten_tomatoes }}
+					<li><a target="_blank" href="{{ $metaParams.external_links.rotten_tomatoes }}">RottenTomatoes</a></li>
+					{{ end }}
+					{{ if $metaParams.external_links.meta_critic }}
+					<li><a target="_blank" href="{{ $metaParams.external_links.meta_critic }}">metacritic</a></li>
+					{{ end }}
+
+					{{ if $metaParams.external_links.wikipedia }}
+					<li><a target="_blank" href="{{ $metaParams.external_links.wikipedia }}">Wikipedia</a></li>
+					{{ end }}
+					</ul>
+				</div>
+			</div>
+		</div>
+	{{ end }}
+</div>

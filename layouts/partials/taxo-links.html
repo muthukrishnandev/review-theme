@@ -1,21 +1,39 @@
 {{ $allTerms := .allterms }}
 {{ $context := .context }}
 {{ $taxoName := .taxoname }}
-{{ $limitSize := len $allTerms }}
+{{ $limitSize := .limit | default (len $allTerms) }}
+{{ $showAll := .showall | default false }}
 
-{{ range $index, $tag := $allTerms }}
-	{{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
-	{{ $taxoPage := $context.Site.GetPage (printf "%s" $tagURL) }}
+{{ $totalSize := len $allTerms }}
 
-	{{ if not $taxoPage }}
-		{{ $tagURL = (delimit (slice $taxoName ($tag | urlize)) "/") }}
-		{{ $taxoPage = $context.Site.GetPage (printf "%s" $tagURL) }}
-	{{ end }}
+{{ if lt $totalSize $limitSize }}
+	{{ $limitSize = $totalSize }}
+{{ end }}
 
-	{{ if $taxoPage  }}
-		<a class="titlemeta-taxonomy-link" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.name | default $taxoPage.Title }}</a>
-		{{- if lt $index (sub $limitSize 1) }},&nbsp;{{ end }}
-	{{ else }}
-		{{ errorf "%v taxonomy is not valid for file %v" $tagURL $context.File }}
+{{ range $val := seq $limitSize }}
+	{{ $index := sub $val 1 }}
+	{{ $tag := index $allTerms $index }}
+
+	{{ partial "taxo-link.html" (dict "context" $context "tag" $tag "taxoname" $taxoName) }}
+	{{- if lt $index (sub $limitSize 1) }},&nbsp;{{ end }}
+{{ end }}
+
+{{ if eq $showAll true }}
+	{{ if lt $limitSize $totalSize}}
+		<a class="taxo-collapse-link" data-toggle="collapse" href="#collapse-{{ $taxoName }}" role="button" aria-expanded="false" aria-controls="collapse-{{ $taxoName }}">(Show All)</a>
+		<div class="collapse taxo-collapse" id="collapse-{{ $taxoName }}">
+		  <div class="card card-body">
+		  	<ul>
+			  	{{ $startIndex := add $limitSize 1 }}
+			    {{ range $val := seq $startIndex $totalSize }}
+					{{ $index := sub $val 1 }}
+					{{ $tag := index $allTerms $index }}
+
+					{{ partial "taxo-link.html" (dict "context" $context "tag" $tag "taxoname" $taxoName) }}
+					{{- if lt $index (sub $totalSize 1) }},&nbsp;{{ end }}
+				{{ end }}
+		  	</ul>
+		  </div>
+		</div>
 	{{ end }}
 {{ end }}

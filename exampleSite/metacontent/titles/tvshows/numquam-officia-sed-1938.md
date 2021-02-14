@@ -18,7 +18,7 @@ meta:
   total_seasons: 7
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1938/numquam-officia-sed-1938.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

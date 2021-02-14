@@ -18,7 +18,63 @@
 {{ $isFound := .Scratch.Get "findtitlemeta_isfound" }}
 
 {{ if $isFound }}
-	{{ partial "shortcode-titlecard.html" (dict "titlepage" $titlePage "shortreview" $shortreview) }}
+	{{ $metaParams := $titlePage.Params.meta }}
+	
+	<!-- The New Version is inspired from https://codepen.io/simoberny/pen/qxxOqj -->
+	
+	<div class="titlecard">
+	  <div class="titlecard-info">
+	    <div class="titlecard-header">
+		<h1 class="titlecard-title">
+			<a href="{{ $titlePage.Permalink }}">{{ $metaParams.title }}</a>
+		</h1>
+	      <h4 class="titlecard-year">{{ $titlePage.Params.meta.Year }}</h4>
+	    </div>
+	    <div class="titlecard-meta">
+	    	<div class="titlecard-plot">{{ $titlePage.Params.meta.Storyline }}</div>
+	    	
+	    	<div class="titlecard-review">
+				{{ partial "findreviews.html" $titlePage }}
+				{{ $reviews := $titlePage.Scratch.Get "findreviews_result" }}
+				{{ if $titlePage.Scratch.Get "findreviews_isfound" }}
+					{{ $review := index $reviews 0 }}
+					<span class="font-weight-bold">Bottomline:&nbsp;</span>
+					<span class="text-wrap">{{ $review.Params.bottomline }}</span>
+				{{ else if $shortreview }}
+					<span class="font-weight-bold">Short Review:&nbsp;</span>
+					<span class="text-wrap">{{ $shortreview }}</span>
+				{{ else }}
+					<span class="font-weight-bold">Bottomline:&nbsp;</span>
+					<span class="text-wrap">No review yet</span>
+				{{ end }}
+	    	</div>
+	    	<div class="titlecard-actors">
+      			{{ $actorLimit := (index $titlePage.Site.Params.Meta.DetailListLimit "actors") | default 5 }}
+	    		<span class="font-weight-bold">Starring:&nbsp;</span>
+				<span class="text-wrap">
+					{{ partial "taxo-links.html" (dict "allterms" $titlePage.Params.actors "context" $titlePage "taxoname" "actors" "limit" $actorLimit) }}
+				</span>
+	    	</div>
+	    	<div class="titlecard-directors">
+	      		{{ $directorLimit := (index $titlePage.Site.Params.Meta.DetailListLimit "directors") | default 5 }}
+				<span class="font-weight-bold">Directed by:&nbsp;</span>
+				<span class="text-wrap">
+					{{ partial "taxo-links.html" (dict "allterms" $titlePage.Params.directors "context" $titlePage "taxoname" "directors" "limit" $directorLimit) }}
+				</span>
+	    	</div>
+	    </div>
+	  </div>
+
+		{{ partial "findposterlink.html" $titlePage }}
+		{{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
+			{{ $posterRes := $titlePage.Scratch.Get "findposterlink_result" }}
+				<div class="titlecard-poster" style="background-image: url('{{ $posterRes }}');"></div>
+		{{ else }}
+			{{ errorf ($titlePage.Scratch.Get "findposterlink_error") }}
+		{{ end }}
+	</div>
+
 {{ else }}
 	{{ errorf "'%v' post not found for '%v'" $title $.Page.File }}
 {{ end }}
+

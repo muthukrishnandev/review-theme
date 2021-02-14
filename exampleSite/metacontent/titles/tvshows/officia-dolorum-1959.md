@@ -18,7 +18,7 @@ meta:
   total_seasons: 12
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1959/officia-dolorum-1959.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

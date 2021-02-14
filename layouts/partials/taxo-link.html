@@ -1,0 +1,18 @@
+
+{{ $tag := .tag }}
+{{ $context := .context }}
+{{ $taxoName := .taxoname }}
+
+{{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
+{{ $taxoPage := $context.Site.GetPage (printf "%s" $tagURL) }}
+
+{{ if not $taxoPage }}
+	{{ $tagURL = (delimit (slice $taxoName ($tag | urlize)) "/") }}
+	{{ $taxoPage = $context.Site.GetPage (printf "%s" $tagURL) }}
+{{ end }}
+
+{{ if $taxoPage  }}
+	<a class="titlemeta-taxonomy-link" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.name | default $taxoPage.Title }}</a>
+{{ else }}
+	{{ errorf "%v taxonomy is not valid for file %v" $tagURL $context.File }}
+{{ end }}

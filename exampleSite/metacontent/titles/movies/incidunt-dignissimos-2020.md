@@ -14,7 +14,7 @@ meta:
   certificate: "PG-13"
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/2020/incidunt-dignissimos-2020.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

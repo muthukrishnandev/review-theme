@@ -18,7 +18,7 @@ meta:
   total_seasons: 6
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/2021/et-delectus-quos-2021.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

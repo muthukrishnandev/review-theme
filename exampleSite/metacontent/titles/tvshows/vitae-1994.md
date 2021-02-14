@@ -18,7 +18,7 @@ meta:
   total_seasons: 4
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1994/vitae-1994.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

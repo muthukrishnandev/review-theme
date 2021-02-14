@@ -10,24 +10,21 @@
     </h1>
 	<div class="page-content-wrapper">
         {{ $pageCount := 8 }}
-        {{ $rowCount := 4 }}
-		{{ $paginatedPages := (.Paginator $pageCount).Pages.ByDate.Reverse }}
+        {{ $paginatedPages := (.Paginator $pageCount).Pages.ByDate.Reverse }}
         {{ $totalCount := len $paginatedPages }}
-        {{ $splitCount := $rowCount }}
 
-        {{ $index := 0 }}
-        {{ range $taxonomyTerm, $taxonomy := $paginatedPages }}
-            {{ if eq $index 0}}
-    			<div class="post-list row title-list-row">
-            {{ else if (eq $index $totalCount) }}
+        <div class="post-list title-list-row row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-4">
+        {{ range $val := seq $pageCount }}
+            {{ $index := sub $val 1}}
+            {{ $currentPage := index $paginatedPages $index }}
+
+            {{ if $currentPage }}
+                <div class="col">
+                    {{ partial "item-title.html" $currentPage }}
                 </div>
-            {{ else if (eq (mod $index $splitCount) 0) }}
-                </div>
-    			<div class="post-list row title-list-row">
             {{ end }}
-			{{ partial "item-title.html" . }}
-            {{ $index = add $index 1 }}
         {{ end }}
+        </div>
 	</div>
     {{ partial "pagination-number.html" . }}
 </div>

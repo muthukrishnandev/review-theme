@@ -14,7 +14,7 @@ meta:
   certificate: "R"
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1972/rerum-1972.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

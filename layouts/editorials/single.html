@@ -24,13 +24,7 @@
         {{ .Content }}
       </div>
     </article>
-    <div class="post-pagination">
-      {{ if .PrevInSection }}
-        <a class="btn previous " href="{{ .PrevInSection.Permalink }}">&larr; {{ .PrevInSection.Title }}</a>
-      {{ end }}
-      {{ if .NextInSection }}
-        <a class="btn next " href="{{ .NextInSection.Permalink}} ">{{ .NextInSection.Title }} &rarr;</a>
-      {{ end }}
-    </div>
+
+    {{ partial "related-pages.html" . }}
 </div>
 {{ end }}

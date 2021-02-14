@@ -4,12 +4,17 @@
   Description = "long description of the site"
   Logo = "logo.png" # store in static/images
 
+  # used as substitute for baseimageurl: in poster param in movies, tvshows
   BaseImageURL = "" #https://example.com
 
 [Controls]
   # option to ignore the poster params in posts and use NoPoster for all cases
   # this overrides all other poster configs
   DoNotShowPoster = false
+
+  # in case no poster exist in local directory case (if BaseImageURL is empty string)
+  # use display noposter.png instead of throwing error
+  UseNoPoster = true
 
 
 [Meta]
@@ -21,7 +26,7 @@
   TopList = ["movies", "tvshows"]
 
   # adds text 's Filmography to all these
-  FilmographyList = ["actors", "writers", "directors", "musicdirectors", "cinematographers"]
+  FilmographyList = ["actors", "writers", "creators", "directors", "musicdirectors", "cinematographers"]
 
 # advanced configs
 [Meta.TitleCrewList]
@@ -34,11 +39,6 @@
 
 [Meta.DetailListLimit]
   actors = 4 # no of actors to display in Cast & Crew
-
-[Meta.ErrorCheck]
-  # in case no poster exist in local directory case (if BaseImageURL is empty string)
-  # use display noposter.png instead of throwing error
-  UseNoPoster = true
 
 [Meta.Pagination]
   # default will be 8

@@ -18,7 +18,7 @@ meta:
   total_seasons: 19
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1949/dolorem-at-1949.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

@@ -18,7 +18,7 @@ meta:
   total_seasons: 5
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1911/ipsum-a-1911.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

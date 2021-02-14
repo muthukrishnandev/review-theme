@@ -14,7 +14,7 @@ meta:
   certificate: "U/A"
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/1912/ipsum-1912.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

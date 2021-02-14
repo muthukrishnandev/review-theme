@@ -1,5 +1,6 @@
 {{ $allTaxos := .arr }}
 {{ $context := .context }}
+
 {{ range $index1, $taxoName := $allTaxos }}
 	<div class="titlemeta-info-row titlemeta-taxonomies {{ $taxoName }}">
 		{{ $termPage := $context.Site.GetPage (printf "/%s" $taxoName) }}
@@ -8,10 +9,10 @@
 			{{ if $allTerms }}
 				{{ $termSize := len $allTerms }}
 				{{ $limitSize := ((index $context.Site.Params.Meta.DetailListLimit $taxoName) | default $termSize) }}
-				{{ $allTerms = first $limitSize $allTerms }}
+				{{ $dictData := (dict "allterms" $allTerms "context" $context "taxoname" $taxoName "limit" $limitSize "showall" true) }}
 				<div class="titlemeta-info-label clearfix">{{ $termPage.Title }}:</div>
 				<div class="titlemeta-info-data clearfix">
-					{{ partial "taxo-links.html" (dict "allterms" $allTerms "context" $context "taxoname" $taxoName) }}
+					{{ partial "taxo-links.html" $dictData }}
 				</div>
 			{{ else }}
 				<div class="titlemeta-info-label clearfix">{{ $termPage.Title }}:</div>

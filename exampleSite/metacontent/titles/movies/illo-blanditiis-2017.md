@@ -14,7 +14,7 @@ meta:
   certificate: "Not Rated"
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/2017/illo-blanditiis-2017.jpg"
+  poster: "/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"

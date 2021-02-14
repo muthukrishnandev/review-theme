@@ -1,7 +1,6 @@
 ---
 title: "Terms of Service"
 date: "2020-04-11T18:30:59+05:30"
-url: "/terms-of-service"
 ---
 
 Lorem markdownum Dardanio tunc: per capillis inscripsere sanguine vana mare occupat magni, neve. Modo fateri in triste funera, mora coiere legendo lateque. Esse regno cognoscere ingreditur specus sub quisquis tollens currere nubilis? Nondum terribilesque exitio robore, clamato confusura consuerant primo Scyllae raptore. Pia tristia laevo o pudor: causamque nurusque his, verba fert.
