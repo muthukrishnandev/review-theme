@@ -2,17 +2,17 @@
   
 <div class="title-list-item post-list-item">
   <div class="card">
+    <a class="title-item-link" href="{{ .Permalink }}">
     <div class="card-body">
       {{ partial "findposterlink.html" $titlePage }}
       {{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
         {{ $imgLink := $titlePage.Scratch.Get "findposterlink_result" }}
-        <a class="title-item-link" href="{{ .Permalink }}">
           <img loading="lazy" class="card-img-top h-100 title-item-poster unselectable" src="{{ $imgLink }}">
-        </a>
       {{ else }}
         {{ errorf ($titlePage.Scratch.Get "findposterlink_error") }}
       {{ end }}
     </div>
+    </a>
     <div class="card-footer title-item-meta">
       <a class="title-item-link" href="{{ .Permalink }}">
         <h3 class="card-text title-item-title text-wrap">{{ .Params.meta.title | default .Title }}</h3>
