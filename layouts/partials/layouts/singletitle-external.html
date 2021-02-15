@@ -3,6 +3,12 @@
 	{{ if $metaParams.external_links }}
 		<h2 class="titlemeta-info-head">External Links</h2>
 		<div class="titlemeta-info-body">
+			{{ if .Site.Params.Disclaimer.ShowExternal }}
+			<div class="disclaimer external-disclaimer" style="text-indent: 5%;">
+				<span>{{ .Site.Params.Disclaimer.ExternalText }}</span> 
+				<a href="{{ .Site.Params.Disclaimer.ExternalLink }}">(Read Full Disclaimer)</a>
+			</div>
+			{{ end }}
 			<div class="titlemeta-info-row">
 				<div class="titlemeta-info-data">
 					<ul>

@@ -1,16 +1,18 @@
 # DO NOT EDIT BELOW!
  
+# movie cast
+actor = "actors"
+writer = "writers"
+creator = "creators"
+director = "directors"
+musicdirector = "musicdirectors"
+cinematographer = "cinematographers"
+production = "productions"
+language = "languages"
+
 # only for editorials post
 category = "categories"
 tag = "tags"
-
-# movie cast
-actor = "actors"
-director = "directors"
-cinematographer = "cinematographers"
-musicdirector = "musicdirectors"
-writer = "writers"
-creator = "creators"
 
 # movie/tvshow
 genre = "genres"

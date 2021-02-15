@@ -26,6 +26,14 @@ meta:
     meta_critic: "https://www.metacritic.com/movie/INSERT_METACRITIC_ID_HERE"
     wikipedia: "https://en.wikipedia.org/wiki/INSERT_WIKI_ID_HERE"
 
+languages:
+  - English
+  - Korean
+
+productions:
+  - company1
+  - company2
+
 genres:
   - genre1
   - genre2

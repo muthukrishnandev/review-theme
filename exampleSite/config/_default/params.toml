@@ -18,6 +18,19 @@
   # use display noposter.png instead of throwing error
   UseNoPoster = true
 
+[Disclaimer]
+  # default text which is shown when productions is not present in movies, tvshows meta post
+  ShowPoster = true
+  PosterLink = "/disclaimer#copyrights"
+  PosterText = "Respective Studio or Artist."
+
+  ShowTrailer = true
+  TrailerLink = "/disclaimer#trailer"
+  TrailerText = """We do not own this video."""
+
+  ShowExternal = true
+  ExternalLink = "/disclaimer#external-links"
+  ExternalText = """These links are being provided as a convenience and for informational purposes only."""
 
 [Meta]
   MainScore = "Main Score"

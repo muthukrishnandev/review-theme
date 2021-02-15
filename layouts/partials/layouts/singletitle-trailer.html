@@ -1,13 +1,18 @@
 {{ $metaParams := .Params.meta }}
 {{ if $metaParams.trailer }}
 <div class="col-md-12 col-xs-12 titlemeta-info-container titlemeta-trailer">
-		<h2 class="titlemeta-info-head">Trailer</h2>
-		<div class="titlemeta-info-body">
-			{{ $dataID := strings.TrimPrefix "https://youtube.com/watch?v=" $metaParams.trailer }}
-			{{ $dataID = strings.TrimPrefix "https://www.youtube.com/watch?v=" $dataID }}
-			{{ $dataID = strings.TrimPrefix "https://www.youtube.com/v/" $dataID }}
-			{{ $dataID = strings.TrimPrefix "https://youtube.com/v/" $dataID }}
-			<div class="youtube-player" data-id="{{ $dataID }}"></div>
+	<h2 class="titlemeta-info-head">Trailer</h2>
+	<div class="titlemeta-info-body">
+		{{ if .Site.Params.Disclaimer.ShowTrailer }}
+		<div class="disclaimer trailer-disclaimer">
+			{{ .Site.Params.Disclaimer.TrailerText }} <a href="{{ .Site.Params.Disclaimer.TrailerLink }}">Read Full Disclaimer</a>
 		</div>
+		{{ end }}
+		{{ $dataID := strings.TrimPrefix "https://youtube.com/watch?v=" $metaParams.trailer }}
+		{{ $dataID = strings.TrimPrefix "https://www.youtube.com/watch?v=" $dataID }}
+		{{ $dataID = strings.TrimPrefix "https://www.youtube.com/v/" $dataID }}
+		{{ $dataID = strings.TrimPrefix "https://youtube.com/v/" $dataID }}
+		<div class="youtube-player" data-id="{{ $dataID }}"></div>
+	</div>
 </div>
 {{ end }}

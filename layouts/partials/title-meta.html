@@ -1,7 +1,7 @@
 
 {{ $metaParams := .Params.meta }}
 
-<div class="col-md-4 col-xs-12 titlemeta-poster-container">
+<div class="col-md-4 col-xs-12 titlemeta-poster-container text-center">
 	{{ if not (isset $metaParams "poster") }}
 		{{ errorf "poster param not found for %s" .File }}
 	{{ end }}
@@ -9,7 +9,27 @@
 	{{ partial "findposterlink.html" . }}
 	{{ if .Scratch.Get "findposterlink_isfound" }}
 		{{ $imgLink := .Scratch.Get "findposterlink_result" }}
-		<img loading="lazy" class="titlemeta-poster unselectable" src="{{ $imgLink }}">
+		<figure class="figure">
+		  <img loading="lazy" class="figure-img titlemeta-poster unselectable" src="{{ $imgLink }}" alt="">
+			{{ if .Site.Params.Disclaimer.ShowPoster }}
+				{{ $copyString := "" }}
+				{{ $isNoPoster := .Scratch.Get "findposterlink_isnoposter" }}
+					{{ if not $isNoPoster }}
+					{{ if .Params.Productions }}
+						{{ $copyString = delimit (.Params.Productions | default slice) ",&nbsp;" }}
+					{{ end }}
+				{{ end }}
+
+			  	<figcaption class="figure-caption titlemeta-poster-notice text-center text-wrap">
+			  		{{ if $copyString }}
+				  		<span>&copy; {{ $copyString }}</span>
+				  	{{ else }}
+				  		<span>&copy; {{ .Site.Params.Disclaimer.PosterText }}</span>
+				  		<a href="{{ .Site.Params.Disclaimer.PosterLink | relURL }}">(Copyrights)</a>
+			  		{{ end }}
+			  	</figcaption>
+			{{ end }}
+		</figure>
 	{{ else }}
 		{{ errorf (.Scratch.Get "findposterlink_error") }}
 	{{ end }}

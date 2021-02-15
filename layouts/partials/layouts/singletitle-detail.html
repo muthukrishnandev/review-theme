@@ -14,13 +14,28 @@
 			</div>
 		{{ end }}
 
+		<!-- Content Rating -->
 		<div class="titlemeta-info-row">
-			<div class="titlemeta-info-label">Certificate:</div>
+			<div class="titlemeta-info-label">Content Rating:</div>
 			<div class="titlemeta-info-data">{{ $metaParams.certificate }}</div>
 		</div>
+
+		<!-- Release Date -->
 		<div class="titlemeta-info-row">
 			<div class="titlemeta-info-label">Released On:</div>
 			<div class="titlemeta-info-data">{{ $metaParams.released_on | dateFormat (site.Params.Info.DateFormat | default "January 2, 2006") }}</div>
+		</div>
+
+		<!-- Language -->
+		<div class="titlemeta-info-row">
+			<div class="titlemeta-info-label">Language:</div>
+			<div class="titlemeta-info-data">
+				{{ if .Params.Languages }}
+					{{ delimit (.Params.Languages) ", " }}
+				{{ else }}
+					{{ "Information Not Available" }}
+				{{ end }}
+			</div>
 		</div>
 
 		{{ if eq .Type "tvshows"}}
@@ -34,9 +49,22 @@
 			</div>
 		{{ end }}
 
+		<!-- Running Time -->
 		<div class="titlemeta-info-row">
 			<div class="titlemeta-info-label">Running Time:</div>
 			<div class="titlemeta-info-data">{{ $metaParams.running_time }} minutes</div>
+		</div>
+
+		<!-- Production Company -->
+		<div class="titlemeta-info-row">
+			<div class="titlemeta-info-label">Production Company:</div>
+			<div class="titlemeta-info-data">
+				{{ if .Params.Productions }}
+					{{ delimit (.Params.Productions) ", " }}
+				{{ else }}
+					{{ "Information Not Available" }}
+				{{ end }}
+			</div>
 		</div>
 	</div>
 </div>
