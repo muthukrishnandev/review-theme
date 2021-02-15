@@ -9,19 +9,19 @@
     {{ if .Site.Params.Social }}
 	    "sameAs": [
 	      {{ if .Site.Params.Social.Facebook }}
-	      	"https://facebook.com/{{ .Site.Params.Social.Facebook }}", 
+	      	"https:\/\/{{ path.Join "facebook.com/" .Site.Params.Social.Facebook | safeHTML }}",
 	      {{ end }}
 	      {{ if .Site.Params.Social.Twitter }}
-	      	"https://twitter.com/{{ .Site.Params.Social.Twitter }}"
+	      	"https:\/\/{{ path.Join "twitter.com/" .Site.Params.Social.Twitter | safeHTML }}",
 	      {{ end }}
 	      {{ if .Site.Params.Social.Instagram }}
-	      	"https://instagram.com/{{ .Site.Params.Social.Instagram }}"
+	      	"https:\/\/{{ path.Join "instagram.com/" .Site.Params.Social.Instagram | safeHTML }}",
 	      {{ end }}
 	      {{ if .Site.Params.Social.Youtube }}
-	      	"https://youtube.com/{{ .Site.Params.Social.Youtube }}"
+	      	"https:\/\/{{ path.Join "youtube.com/" .Site.Params.Social.Youtube | safeHTML }}",
 	      {{ end }}
 	      {{ if .Site.Params.Social.Reddit }}
-	      	"https://reddit.com/{{ .Site.Params.Social.Reddit }}"
+	      	"https:\/\/{{ path.Join "reddit.com/" .Site.Params.Social.Reddit | safeHTML }}",
 	      {{ end }}
 	    ], 
 	{{ end }}
