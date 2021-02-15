@@ -16,7 +16,7 @@
 			  	<li>
 					<a href="{{ .Permalink }}">
 						{{ if $termPage.Params.meta }}
-							{{ $termPage.Params.meta.name | default $termPage.Title }}
+							{{ $termPage.Params.meta.title | default $termPage.Title }}
 						{{ else }}
 							{{ $termPage.Title }}
 						{{ end }}

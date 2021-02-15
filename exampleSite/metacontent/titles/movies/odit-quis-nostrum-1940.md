@@ -1,7 +1,7 @@
 ---
 title: "Odit Quis Nostrum"
 slug: "odit-quis-nostrum-1940"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Odit quis nostrum"
@@ -26,31 +26,31 @@ genres:
   - Drama
 
 actors:
-  - Alberta Walsh
-  - Rowan Hudson
-  - Catharine McDermott
-  - Clifford Rogahn
-  - Bryon Collins
-  - Gilda Hessel
   - Freeda Reichert
-  - Loyal Baumbach
-  - Aryanna Mraz
+  - Alberta Walsh
   - Maximilian Stamm
   - Tiara Ledner
-  - Josianne Daugherty
+  - Catharine McDermott
+  - Clifford Rogahn
   - Maxime Walker
+  - Bryon Collins
+  - Gilda Hessel
+  - Loyal Baumbach
+  - Rowan Hudson
+  - Aryanna Mraz
+  - Josianne Daugherty
 
 directors:
-  - Felicity Abernathy
   - Alexandrea Flatley
   - Salma Grady
   - Duane Strosin
+  - Felicity Abernathy
 
 writers:
-  - Muriel Heaney
   - Karlie Durgan
   - Lura Cummerata
   - Duane Strosin
+  - Muriel Heaney
 
 cinematographers:
   - Domenick Brakus
@@ -62,22 +62,22 @@ musicdirectors:
   - Florence Mann
 
 languages:
-    - Pali
     - Quechua
     - Esperanto
     - Polish
     - Lao
+    - Pali
 
 productions:
     - Aut doloribus porro
 
 plottags:
+  - chance
   - sequence
   - proportion
   - permit
   - live
   - intend
-  - chance
 
 ---
 

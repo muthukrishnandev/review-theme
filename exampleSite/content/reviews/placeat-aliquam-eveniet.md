@@ -1,7 +1,7 @@
 ---
 title: "Placeat aliquam eveniet"
 description: "Asperiores voluptatem libero cupiditate cumque"
-date: "2021-02-15T15:52:48Z"
+date: "2021-02-15T16:24:01Z"
 
 starred: true
 
@@ -15,10 +15,10 @@ custom_scores:
   - 64
 
 reviewtags:
-  - this just in
-  - WWJD
   - shock
   - last
+  - this just in
+  - WWJD
 ---
 
 

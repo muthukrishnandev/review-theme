@@ -3,9 +3,9 @@
 	<h1 class="page-heading">
         {{ $toCheckSlice := .Site.Params.Meta.FilmographyList }}
         {{ if in $toCheckSlice .Type }}
-            {{ .Params.meta.name | default .Title }}'s Filmography
+            {{ .Params.meta.title | default .Title }}'s Filmography
         {{ else }}
-            {{ .Params.meta.name | default .Title }}
+            {{ .Params.meta.title | default .Title }}
         {{ end }}
     </h1>
 	<div class="page-content-wrapper">

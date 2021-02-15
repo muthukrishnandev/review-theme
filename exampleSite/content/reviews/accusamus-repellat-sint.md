@@ -1,8 +1,8 @@
 ---
 title: "Accusamus repellat sint"
 description: "Voluptatibus voluptatem ex asperiores molestiae"
-date: "2021-02-15T15:52:48Z"
-lastmod: "2021-02-15T15:52:48Z"
+date: "2021-02-15T16:24:01Z"
+lastmod: "2021-02-15T16:24:01Z"
 
 starred: false
 
@@ -16,11 +16,11 @@ custom_scores:
   - 42
 
 reviewtags:
+  - BEDMAS
   - alright me lover
   - paint
   - study
   - grant
-  - BEDMAS
 ---
 
 

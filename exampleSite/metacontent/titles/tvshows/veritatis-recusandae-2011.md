@@ -1,7 +1,7 @@
 ---
 title: "Veritatis Recusandae"
 slug: "veritatis-recusandae-2011"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Veritatis recusandae"
@@ -30,18 +30,18 @@ genres:
   - Western
 
 actors:
-  - Aurore Langosh
+  - Carissa Hand
+  - Terrill Lind
   - Leola Hackett
-  - Whitney Ortiz
   - Vada Kuvalis
   - Ana Kub
   - Annamarie Nienow
   - Aryanna Mraz
-  - Terrill Lind
-  - Ashlynn Kuhlman
-  - Lily Parisian
-  - Carissa Hand
   - Pink Windler
+  - Aurore Langosh
+  - Ashlynn Kuhlman
+  - Whitney Ortiz
+  - Lily Parisian
 
 directors:
   - Duane Strosin
@@ -59,22 +59,22 @@ creators:
   - Justyn Blick
 
 languages:
-    - Sundanese
-    - Malay
     - Inupiaq
     - Telugu
+    - Sundanese
+    - Malay
 
 productions:
-    - Aut porro
-    - Aut eligendi
     - Quidem rerum
     - Aliquam commodi
     - Amet odit
+    - Aut porro
+    - Aut eligendi
 
 plottags:
-  - method
   - say
   - manager
+  - method
 
 ---
 

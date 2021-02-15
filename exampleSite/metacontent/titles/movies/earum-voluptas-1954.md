@@ -1,7 +1,7 @@
 ---
 title: "Earum Voluptas"
 slug: "earum-voluptas-1954"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Earum voluptas"
@@ -23,24 +23,24 @@ meta:
     wikipedia: "https://wikipedia.org"
 
 genres:
-  - Comedy
-  - Horror
   - Fantasy
   - Action
   - Romance
+  - Comedy
+  - Horror
 
 actors:
-  - Ransom Prohaska
-  - Gilda Hessel
-  - Ezra Windler
   - Loraine Mohr
   - Jaunita Doyle
   - Yvonne Ernser
+  - Ransom Prohaska
+  - Gilda Hessel
+  - Ezra Windler
 
 directors:
-  - Tanya Towne
   - Bella Von
   - Damian Price
+  - Tanya Towne
 
 writers:
   - Carleton Lynch
@@ -60,10 +60,10 @@ productions:
     - Quam placeat repudiandae
 
 plottags:
-  - solution
-  - enterprise
   - measure
   - promote
+  - solution
+  - enterprise
 
 ---
 

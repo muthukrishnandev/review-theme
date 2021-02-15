@@ -1,7 +1,7 @@
 ---
 title: "Repellendus"
 slug: "repellendus-1982"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Repellendus"
@@ -27,28 +27,28 @@ meta:
     wikipedia: "https://wikipedia.org"
 
 genres:
-  - Horror
   - Drama
+  - Horror
 
 actors:
-  - Zack Kutch
-  - Kirsten Wiegand
   - Carmella Buckridge
-  - Casimir Rodriguez
-  - Eldred Hartmann
-  - Ashlynn Kuhlman
   - Pink Windler
-  - Marquis Damore
   - Leola Hackett
-  - Tevin Kerluke
+  - Marquis Damore
   - Sasha Kunze
-  - Isai Dicki
   - Theodore Lind
+  - Zack Kutch
+  - Casimir Rodriguez
   - Anya Bashirian
+  - Kirsten Wiegand
+  - Tevin Kerluke
+  - Isai Dicki
+  - Ashlynn Kuhlman
+  - Eldred Hartmann
 
 directors:
-  - Myron VonRueden
   - Assunta Kerluke
+  - Myron VonRueden
 
 writers:
 
@@ -74,10 +74,10 @@ productions:
     - Aut doloribus porro
 
 plottags:
-  - reduce
-  - differ
   - sequence
   - cut
+  - reduce
+  - differ
 
 ---
 

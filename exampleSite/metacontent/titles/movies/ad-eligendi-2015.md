@@ -1,7 +1,7 @@
 ---
 title: "Ad Eligendi"
 slug: "ad-eligendi-2015"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Ad eligendi"
@@ -27,48 +27,48 @@ genres:
   - Romance
 
 actors:
-  - Brooke Mayert
+  - Henri Kreiger
   - Carmella Buckridge
+  - Kennith Kerluke
+  - Isai Dicki
+  - Darlene Kshlerin
+  - Ransom Prohaska
+  - Aurore Langosh
   - Webster Parisian
   - Josianne Daugherty
-  - Darlene Kshlerin
-  - Carissa Hand
-  - Henri Kreiger
-  - Aurore Langosh
-  - Magnolia Schowalter
-  - Isai Dicki
+  - Maia White
+  - Brooke Mayert
   - Bennett Schneider
   - Catharine McDermott
-  - Ransom Prohaska
   - Tevin Kerluke
-  - Maia White
-  - Kennith Kerluke
+  - Magnolia Schowalter
   - Ida Schumm
+  - Carissa Hand
 
 directors:
   - Kiel Kohler
 
 writers:
-  - Berneice Kris
   - Stephan Gusikowski
   - Savannah Medhurst
   - Asa Bradtke
+  - Berneice Kris
 
 cinematographers:
-  - Stanley Will
   - Citlalli Smitham
   - Toby Emard
+  - Stanley Will
 
 musicdirectors:
   - Florence Oberbrunner
   - Jayce Hettinger
 
 languages:
-    - Ido
-    - Tatar
     - Hausa
     - Esperanto
     - Luxembourgish
+    - Ido
+    - Tatar
 
 productions:
     - Unde mollitia ut
@@ -76,13 +76,13 @@ productions:
     - Aliquam commodi
 
 plottags:
+  - defend
+  - slip
+  - knowledge
   - strike
   - fuel
   - count
   - character
-  - defend
-  - slip
-  - knowledge
 
 ---
 

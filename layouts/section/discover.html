@@ -39,7 +39,7 @@
             		                    {{ range $key, $value := $taxonomy.ByCount }}
                                             {{ $count = add $count 1 }}
                                             {{ if le $count $totalLimit }}
-            		                          <li><a href="{{ $value.Page.Permalink }}">{{ $value.Page.Params.meta.name | default $value.Page.Title }}</a></li>
+            		                          <li><a href="{{ $value.Page.Permalink }}">{{ $value.Page.Params.meta.title | default $value.Page.Title }}</a></li>
                                             {{ end}}
             		                    {{ end }}
                                     </ul>

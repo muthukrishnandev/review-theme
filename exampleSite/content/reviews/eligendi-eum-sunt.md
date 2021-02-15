@@ -1,8 +1,8 @@
 ---
 title: "Eligendi eum sunt"
 description: "Sunt nemo assumenda dolore possimus"
-date: "2021-02-15T15:52:48Z"
-lastmod: "2021-02-15T15:52:48Z"
+date: "2021-02-15T16:24:01Z"
+lastmod: "2021-02-15T16:24:01Z"
 
 starred: true
 
@@ -16,10 +16,10 @@ custom_scores:
   - 11
 
 reviewtags:
-  - purchase
-  - do you have Wi-Fi
   - I'm scared
   - TIMTOWTDI
+  - purchase
+  - do you have Wi-Fi
 ---
 
 

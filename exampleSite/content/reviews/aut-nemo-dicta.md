@@ -1,7 +1,7 @@
 ---
 title: "Aut nemo dicta"
 description: "Est eaque voluptatem error eum"
-date: "2021-02-15T15:52:48Z"
+date: "2021-02-15T16:24:01Z"
 
 starred: true
 
@@ -15,12 +15,12 @@ custom_scores:
   - 29
 
 reviewtags:
+  - contribution
+  - BEDMAS
   - I've burned myself
   - Lord love you
   - do you have Wi-Fi
   - skin
-  - contribution
-  - BEDMAS
 ---
 
 

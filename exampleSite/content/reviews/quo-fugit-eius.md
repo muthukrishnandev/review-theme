@@ -1,8 +1,8 @@
 ---
 title: "Quo fugit eius"
 description: "Facilis et beatae accusantium ducimus"
-date: "2021-02-15T15:52:48Z"
-lastmod: "2021-02-15T15:52:48Z"
+date: "2021-02-15T16:24:01Z"
+lastmod: "2021-02-15T16:24:01Z"
 
 starred: false
 

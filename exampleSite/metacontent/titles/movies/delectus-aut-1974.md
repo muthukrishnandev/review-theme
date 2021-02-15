@@ -1,7 +1,7 @@
 ---
 title: "Delectus Aut"
 slug: "delectus-aut-1974"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Delectus aut"
@@ -23,22 +23,22 @@ meta:
     wikipedia: "https://wikipedia.org"
 
 genres:
-  - Western
   - Comedy
   - Thriller
   - Fantasy
+  - Western
 
 actors:
   - Tevin Kerluke
   - Tiara Ledner
-  - Clifford Rogahn
-  - Shad Franecki
+  - Ana Kub
   - Nya Reichert
-  - Winfield Jacobi
   - Madelyn Mosciski
+  - Winfield Jacobi
   - Hortense Lueilwitz
   - Ida Schumm
-  - Ana Kub
+  - Clifford Rogahn
+  - Shad Franecki
 
 directors:
   - Lura Cummerata
@@ -59,19 +59,19 @@ musicdirectors:
   - Lora Walter
 
 languages:
-    - Luba-Katanga
     - Romansh
+    - Luba-Katanga
 
 productions:
     - Eveniet eveniet
     - Est impedit
 
 plottags:
-  - community
   - travel
   - expansion
   - expand
   - appreciate
+  - community
 
 ---
 

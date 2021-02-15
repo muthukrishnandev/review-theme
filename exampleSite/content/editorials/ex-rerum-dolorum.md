@@ -1,21 +1,21 @@
 ---
 title: "Ex rerum dolorum"
 description: "Velit praesentium nisi rerum et"
-date: "2021-02-15T15:52:48Z"
+date: "2021-02-15T16:24:01Z"
 starred: true
 
 
 categories:
-  - let
   - admit
   - chairman
+  - let
 
 tags:
+  - control
+  - christ
   - team
   - celebrate
   - send
-  - control
-  - christ
 ---
 
 

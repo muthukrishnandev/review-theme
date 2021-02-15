@@ -1,7 +1,7 @@
 ---
 title: "Vero Sed Et"
 slug: "vero-sed-et-1926"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Vero sed et"
@@ -44,11 +44,11 @@ directors:
   - Pattie Wuckert
 
 writers:
+  - Lenora McKenzie
+  - Dulce Nikolaus
   - Sean McKenzie
   - Lillian Kuvalis
   - Johnny Gislason
-  - Lenora McKenzie
-  - Dulce Nikolaus
 
 cinematographers:
   - Lillian Nitzsche
@@ -64,20 +64,20 @@ languages:
     - Swahili
 
 productions:
-    - Autem ullam
-    - Consequatur pariatur atque
     - Adipisci sunt
     - Amet odit
     - Repellendus neque
+    - Autem ullam
+    - Consequatur pariatur atque
 
 plottags:
-  - expand
   - promote
   - defend
   - strengthen
   - enter
   - hold
   - solution
+  - expand
 
 ---
 

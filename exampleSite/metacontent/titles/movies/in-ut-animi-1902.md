@@ -1,7 +1,7 @@
 ---
 title: "In Ut Animi"
 slug: "in-ut-animi-1902"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "In ut animi"
@@ -55,9 +55,9 @@ musicdirectors:
   - Orie Beatty
 
 languages:
-    - Korean
     - Sanskrit
     - Telugu
+    - Korean
 
 productions:
     - Eveniet eveniet

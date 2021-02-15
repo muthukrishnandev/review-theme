@@ -1,9 +1,9 @@
 ---
 title: "Jacinthe Sawayn"
 slug: "jacinthe-sawayn"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
-  name: "Jacinthe Sawayn"
+  title: "Jacinthe Sawayn"
 ---
 

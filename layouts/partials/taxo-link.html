@@ -17,7 +17,7 @@
 {{ end }}
 
 {{ if $taxoPage  }}
-	<a class="titlemeta-taxonomy-link {{ if $isTagPage }}hash-tag{{ end }}" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.name | default $taxoPage.Title }}</a>
+	<a class="titlemeta-taxonomy-link {{ if $isTagPage }}hash-tag{{ end }}" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.title | default $taxoPage.Title }}</a>
 {{ else }}
 	{{ errorf "%v taxonomy is not valid for file %v" $tagURL $context.File }}
 {{ end }}

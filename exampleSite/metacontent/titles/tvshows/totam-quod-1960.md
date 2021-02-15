@@ -1,7 +1,7 @@
 ---
 title: "Totam Quod"
 slug: "totam-quod-1960"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Totam quod"
@@ -33,32 +33,32 @@ genres:
   - Horror
 
 actors:
-  - Aiden Langosh
-  - Alberta Walsh
-  - Terrill Lind
-  - Ned Leffler
-  - Whitney Ortiz
-  - Anya Bashirian
   - Darlene Kshlerin
   - Sasha Kunze
-  - Maximilian Stamm
+  - Aiden Langosh
+  - Alberta Walsh
+  - Dallas Pacocha
   - Ashlynn Kuhlman
-  - Jimmy Hoeger
-  - Buck Sipes
-  - Bryon Collins
-  - Eda Lowe
+  - Bennett Schneider
+  - Whitney Ortiz
   - Graham Schowalter
   - Maia White
-  - Jaiden Pfannerstill
+  - Maximilian Stamm
+  - Anya Bashirian
+  - Terrill Lind
+  - Ned Leffler
+  - Eda Lowe
   - Maxime Walker
-  - Dallas Pacocha
-  - Bennett Schneider
+  - Jimmy Hoeger
+  - Jaiden Pfannerstill
+  - Bryon Collins
+  - Buck Sipes
 
 directors:
-  - Fred Runolfsdottir
   - Alexandrea Flatley
   - Nigel Zemlak
   - Vickie Klocko
+  - Fred Runolfsdottir
 
 writers:
 

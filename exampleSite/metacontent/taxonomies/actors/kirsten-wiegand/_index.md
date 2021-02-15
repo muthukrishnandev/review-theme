@@ -1,9 +1,9 @@
 ---
 title: "Kirsten Wiegand"
 slug: "kirsten-wiegand"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
-  name: "Kirsten Wiegand"
+  title: "Kirsten Wiegand"
 ---
 

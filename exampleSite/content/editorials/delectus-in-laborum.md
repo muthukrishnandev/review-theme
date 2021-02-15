@@ -1,10 +1,10 @@
 ---
 title: "Delectus in laborum"
 description: "Nulla tempora corrupti perferendis eius"
-date: "2021-02-15T15:52:48Z"
+date: "2021-02-15T16:24:01Z"
 starred: false
 
-lastmod: "2021-02-15T15:52:48Z"
+lastmod: "2021-02-15T16:24:01Z"
 
 categories:
   - insurance
@@ -12,12 +12,12 @@ categories:
   - army
 
 tags:
+  - withdraw
   - mill
   - do
   - doubt
   - lifespan
   - have
-  - withdraw
 ---
 
 

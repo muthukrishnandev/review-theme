@@ -1,7 +1,7 @@
 ---
 title: "Magni Vero Doloremque"
 slug: "magni-vero-doloremque-2009"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Magni vero doloremque"
@@ -27,33 +27,33 @@ meta:
     wikipedia: "https://wikipedia.org"
 
 genres:
+  - Western
+  - Fantasy
   - Horror
   - Drama
   - Comedy
-  - Western
-  - Fantasy
 
 actors:
-  - Clifford Rogahn
+  - Gilda Hessel
+  - Kennith Kerluke
+  - Ashlynn Kuhlman
+  - Catharine McDermott
+  - Lily Parisian
   - Brooke Mayert
   - Eda Lowe
-  - Loraine Mohr
+  - Clifford Rogahn
+  - Winfield Jacobi
+  - Bryon Collins
   - Rowan Hudson
   - Kim Cummerata
-  - Kennith Kerluke
   - Kirsten Wiegand
-  - Ashlynn Kuhlman
   - Dianna Cole
-  - Winfield Jacobi
+  - Loraine Mohr
   - Leola Hackett
-  - Bryon Collins
-  - Pearlie Roob
-  - Pink Windler
   - Jimmy Hoeger
-  - Gilda Hessel
-  - Catharine McDermott
+  - Pink Windler
+  - Pearlie Roob
   - Aurore Langosh
-  - Lily Parisian
 
 directors:
   - Turner Kassulke
@@ -69,23 +69,23 @@ creators:
   - Kiana Langworth
 
 languages:
-    - Komi
     - English
     - Hebrew
     - Hungarian
     - Luxembourgish
+    - Komi
 
 productions:
     - Aliquam commodi
 
 plottags:
-  - appear
-  - consumer
   - pay
   - differ
   - extent
   - enable
   - expansion
+  - appear
+  - consumer
 
 ---
 

@@ -4,6 +4,8 @@ description: "short description or subtitle"
 date: {{ .Date }}
 draft: true
 
+categories:
+
 tags:
 
 ---

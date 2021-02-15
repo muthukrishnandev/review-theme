@@ -1,7 +1,7 @@
 ---
 title: "Vero Quasi"
 slug: "vero-quasi-1971"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Vero quasi"
@@ -27,26 +27,26 @@ meta:
     wikipedia: "https://wikipedia.org"
 
 genres:
+  - Thriller
   - Drama
   - Western
-  - Thriller
 
 actors:
-  - Maxime Walker
-  - Keshaun Gaylord
   - Alicia Hand
   - Skye Fadel
-  - Henri Kreiger
-  - Nayeli Waelchi
   - Saige Lesch
-  - Casimir Rodriguez
-  - Ned Leffler
   - Lily Parisian
-  - Roselyn Weber
+  - Nayeli Waelchi
+  - Keshaun Gaylord
+  - Freeda Reichert
+  - Ned Leffler
+  - Henri Kreiger
+  - Casimir Rodriguez
   - Hortense Lueilwitz
   - Madelyn Mosciski
+  - Roselyn Weber
   - Carissa Hand
-  - Freeda Reichert
+  - Maxime Walker
 
 directors:
   - Daphnee Monahan
@@ -69,8 +69,8 @@ languages:
     - Abkhazian
 
 productions:
-    - Et et eos
     - Aliquam commodi
+    - Et et eos
 
 plottags:
   - relation

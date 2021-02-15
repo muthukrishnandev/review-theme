@@ -1,7 +1,7 @@
 ---
 title: "Veritatis Aspernatur Exercitationem"
 slug: "veritatis-aspernatur-exercitationem-1907"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Veritatis aspernatur exercitationem"
@@ -23,29 +23,29 @@ meta:
     wikipedia: "https://wikipedia.org"
 
 genres:
-  - Romance
   - Drama
+  - Romance
 
 actors:
-  - Saige Lesch
+  - Timmy Hayes
+  - Retta Moore
+  - Brooke Mayert
   - Clifford Rogahn
   - Eldred Hartmann
-  - Retta Moore
-  - Timmy Hayes
   - Bennett Schneider
   - Myrtice Gorczany
   - Keshawn Bashirian
-  - Brooke Mayert
+  - Saige Lesch
 
 directors:
   - Frederik Conroy
   - Percival Schuster
 
 writers:
-  - Mertie Walsh
-  - Elliott Quigley
   - Orville Mayer
   - Bonnie Ruecker
+  - Mertie Walsh
+  - Elliott Quigley
 
 cinematographers:
   - Shannon Koelpin
@@ -54,18 +54,18 @@ musicdirectors:
   - Salma Welch
 
 languages:
-    - Serbian
     - Rundi
+    - Serbian
 
 productions:
     - Repellendus neque
     - Ipsa itaque et
 
 plottags:
-  - differ
-  - strike
   - relation
   - passage
+  - differ
+  - strike
 
 ---
 

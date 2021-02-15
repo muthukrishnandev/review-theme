@@ -1,7 +1,7 @@
 ---
 title: "Vel Impedit"
 slug: "vel-impedit-1996"
-date: 2021-02-15T15:52:48Z
+date: 2021-02-15T16:24:01Z
 
 meta:
   title: "Vel impedit"
@@ -23,37 +23,37 @@ meta:
     wikipedia: "https://wikipedia.org"
 
 genres:
-  - Romance
-  - Action
   - Comedy
   - Horror
+  - Romance
+  - Action
 
 actors:
-  - Dianna Cole
-  - Keshaun Gaylord
-  - Ashlynn Kuhlman
-  - Aryanna Mraz
-  - Vada Kuvalis
-  - Rowan Hudson
-  - Buck Sipes
-  - Felicia Robel
-  - Tevin Kerluke
-  - Angelo Becker
   - Ida Schumm
-  - Nya Reichert
+  - Norwood Kihn
+  - Ashlynn Kuhlman
+  - Madilyn Little
   - Eda Lowe
   - Zack Kutch
-  - Norwood Kihn
+  - Vada Kuvalis
+  - Tevin Kerluke
+  - Rowan Hudson
   - Maximilian Stamm
-  - Madilyn Little
+  - Aryanna Mraz
+  - Felicia Robel
   - Ferne Marquardt
-  - Hortense Lueilwitz
+  - Dianna Cole
   - Isai Dicki
+  - Angelo Becker
+  - Keshaun Gaylord
+  - Buck Sipes
+  - Nya Reichert
+  - Hortense Lueilwitz
 
 directors:
+  - Rebekah Corwin
   - Javonte Gaylord
   - Patrick McClure
-  - Rebekah Corwin
 
 writers:
   - Bonita Waelchi
@@ -67,11 +67,11 @@ musicdirectors:
   - Paris Bradtke
 
 languages:
+    - Ido
+    - Catalan
     - Hindi
     - Kalaallisut
     - Igbo
-    - Ido
-    - Catalan
 
 productions:
     - Enim quis et
