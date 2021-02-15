@@ -1,0 +1,33 @@
+<!-- Meta Tag For Website -->
+<meta property="og:type" content="website" /> 
+<meta name="author" content="{{ .Site.Title }}" />
+<script defer type="application/ld+json">
+  { 
+    "@context": "http://schema.org", 
+    "@type": "WebSite", 
+    "url": "{{ .Site.BaseURL }}", 
+    {{ if .Site.Params.Social }}
+	    "sameAs": [
+	      {{ if .Site.Params.Social.Facebook }}
+	      	"https://facebook.com/{{ .Site.Params.Social.Facebook }}", 
+	      {{ end }}
+	      {{ if .Site.Params.Social.Twitter }}
+	      	"https://twitter.com/{{ .Site.Params.Social.Twitter }}"
+	      {{ end }}
+	      {{ if .Site.Params.Social.Instagram }}
+	      	"https://instagram.com/{{ .Site.Params.Social.Instagram }}"
+	      {{ end }}
+	      {{ if .Site.Params.Social.Youtube }}
+	      	"https://youtube.com/{{ .Site.Params.Social.Youtube }}"
+	      {{ end }}
+	      {{ if .Site.Params.Social.Reddit }}
+	      	"https://reddit.com/{{ .Site.Params.Social.Reddit }}"
+	      {{ end }}
+	    ], 
+	{{ end }}
+    "name": "{{ .Site.Title }}", 
+    {{ if fileExists (path.Join `static` `images` .Site.Params.Info.Logo) }}
+    	"logo": "{{ path.Join `images` .Site.Params.Info.Logo | absURL }}" 
+    {{ end }}
+  }
+</script>

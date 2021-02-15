@@ -30,18 +30,18 @@
 				  	{{ partial "review-score.html" $review }}
 					<hr />
 				    <div class="card-text">
-				    	<div class="font-weight-bold text-center">Bottomline</div>
+				    	<div class="font-weight-bold text-center bottomline-label">Bottomline</div>
 				    	{{ if $review }}
-				    		<div class="text-center">{{ $review.Params.bottomline }}</div>
+				    		<div class="text-center bottomline-data">{{ $review.Params.bottomline }}</div>
 						{{ else }}
-				    		<div class="text-center grey-text">No Review Yet</div>
+				    		<div class="text-center grey-text bottomline-data">No Review Yet</div>
 						{{ end }}
 				    </div>
 				    {{ if $review }}
 						<hr />
 					    <div class="text-center">
-					    	Read Full Review <br />
-					    	<h4><a class="card-link" href="{{ $review.Permalink }}">{{ $review.Title }}</a></h4>
+					    	<p class="full-review-label">Read Full Review</p>
+					    	<h4><a class="card-link full-review-link" href="{{ $review.Permalink }}">{{ $review.Title }}</a></h4>
 					    </div>
 				    {{ end }}
 				</div>

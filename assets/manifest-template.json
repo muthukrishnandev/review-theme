@@ -1,8 +1,8 @@
 {
     "name": "{{ .Site.Title }}",
 
-    {{- if .Site.Params.Info.ShortTitle }}
-    "short_name": "{{ .Site.Params.Info.ShortTitle }}",
+    {{- if .Site.Params.Manifest.ShortTitle }}
+    "short_name": "{{ .Site.Params.Manifest.ShortTitle }}",
     {{ else }}
     "short_name": "{{ .Site.Title }}",
     {{ end -}}

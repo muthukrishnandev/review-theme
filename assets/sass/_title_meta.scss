@@ -22,8 +22,12 @@
 					font-weight: 700;
 					font-size: 26px;
 				}
+				.titlemeta-tagline {
+					font-size: 16px;
+				}
 			}
 			.titlemeta-review-container{
+				padding-top: 10px;
 				.review-summary {
 					.review-score {
 						margin-top: 10px;
@@ -45,6 +49,30 @@
 							// .score-rating-data {
 							// 	font-size: 20px;
 							// }
+						}
+					}
+
+					.bottomline-label {
+						font-size: 14px;
+					}
+
+					.bottomline-data {
+						font-size: 18px;
+						@include mobile {
+							font-size: 16px;
+						}
+					}
+
+					.full-review-label {
+						font-size: 14px;
+						margin-top: 6px;
+						margin-bottom: 6px;
+					}
+
+					.full-review-link {
+						font-size: 18px;
+						@include mobile {
+							font-size: 16px;
 						}
 					}
 				}

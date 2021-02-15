@@ -1,8 +1,8 @@
 [Info]
-  ShortTitle = "moviereview"
-  Subtitle = "my reviews"
+  Tagline = "my reviews"
   Description = "long description of the site"
   Logo = "logo.png" # store in static/images
+  coverImage = "cover.png" # store in static/images
 
   # used as substitute for baseimageurl: in poster param in movies, tvshows
   BaseImageURL = "" #https://example.com
@@ -88,6 +88,7 @@
   appleTouch = "apple-touch-icon.png"
 
 [Manifest]
+  shortTitle = ""
   themeColor = "#ffffff"
   backgroundColor = "#ffffff"
   display = "standalone"
@@ -97,7 +98,7 @@
   # header
   ShowSiteLogo = false
   ShowSiteTitle = true # if site logo is not present, title is displayed by default
-  ShowSiteSubtitle = true # available only if ShowSiteTitle is enabled
+  ShowSiteTagline = true # available only if ShowSiteTitle is enabled
  
   # navigation
   ShowHeaderNav = true
@@ -112,3 +113,4 @@
   ShowSummaryInPostList = false
   # ShowStarredIcon = true
   
+  EnableRSS = true

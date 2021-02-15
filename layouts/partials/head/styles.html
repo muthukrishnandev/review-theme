@@ -1,0 +1,30 @@
+
+<!-- theme css -->
+{{- $sassTemplate := resources.Get "sass/main.scss" }}
+{{ $mainStyleFile := $sassTemplate | resources.ExecuteAsTemplate "main.scss" .  }}
+{{ $mainStyle := $mainStyleFile | resources.ToCSS }}
+{{ $cssFiles := slice $mainStyle -}}
+
+{{- range $stylePath := .Site.Params.Style.CSS -}}
+	{{ $customCss := resources.Get $stylePath }}
+	{{ $cssFiles = $cssFiles | append $customCss }}
+{{- end -}}
+
+{{- $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := $cssFiles | resources.Concat "temp.css" | resources.ToCSS $options }}
+{{ $secureStyle := $style | resources.Fingerprint "sha512" -}}
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{ $secureStyle.Permalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
+
+{{ range $fontLink := .Site.Params.Style.FontsPreconnect }}
+	<link rel="preconnect" href="{{ $fontLink }}" crossorigin />
+{{ end }}
+
+{{ $fontLinks := .Site.Params.Style.FontsLink }}
+{{ if $fontLinks }}
+	{{ range $font := $fontLinks }}
+		<link rel="preload" as="style" href="{{ $font }}&display=swap" />
+		<link rel="stylesheet" href="{{ $font }}&display=swap" media="print" onload="this.media='all'" />
+	{{- end -}}
+{{ end }}

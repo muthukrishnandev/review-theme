@@ -18,8 +18,8 @@
             <div class="navbar-brand-text">
                 <a href="{{ .Site.BaseURL | absURL }}" class="d-inline">
                   <h2 class="header-sitename">{{ .Site.Title }}</h2>
-                  {{ if .Site.Params.Config.ShowSiteSubtitle }}
-                    <p class="header-sitedesc">{{ .Site.Params.Info.Subtitle }}</p>
+                  {{ if .Site.Params.Config.ShowSiteTagline }}
+                    <p class="header-sitedesc">{{ .Site.Params.Info.Tagline }}</p>
                   {{ end }}
                 </a>
             </div>

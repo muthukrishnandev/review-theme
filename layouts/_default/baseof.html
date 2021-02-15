@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ if .Site.LanguageCode }}{{ .Site.LanguageCode }}{{ else }}en-us{{ end }}">
-<head>
+<head>  
   {{ partial "head.html" . }}
 </head>
 <body>
   <div class="page-wrapper container">
-    {{ partial "header.html" . }}
-    <main class="page-body" aria-label="Content">
-		<div class="page-container {{ if .IsHome }}home{{ else }}{{ .Type }}{{ end }}">
-        {{ block "main" . }}{{ end }}
+    <div class="page-wrapper-row">
+          {{ partial "header.html" . }}
+          <main class="page-body" aria-label="Content">
+          <div class="page-container {{ if .IsHome }}home{{ else }}{{ .Type }}{{ end }}">
+              {{ block "main" . }}{{ end }}
+          </div>
+          </main>
+          {{ partial "footer.html" . }}
     </div>
-    </main>
-    {{ partial "footer.html" . }}
   </div>
   {{ partial "tail.html" . }}
 </body>

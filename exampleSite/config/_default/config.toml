@@ -4,8 +4,11 @@ title = "movie review"
 
 languageCode = "en-us"
 summaryLength = 10
-enableEmoji = true
 paginate = 5
 copyright = "&copy; {year} {name}. All rights reserved." # {year}, {name} supported
+
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = false
 
 theme = "movie-theme"
