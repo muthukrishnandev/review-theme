@@ -19,11 +19,16 @@
             </h2>
             <div class="post-description">{{ .Description }}</div>
             <time class="post-date dt-published" datetime="{{ .PublishDate.Format `2006-01-02T15:04:05Z07:00` }}" itemprop="datePublished">
-              {{ .PublishDate.Format "Jan 2, 2006" }}
+              {{ .PublishDate.Format (site.Params.Info.DateFormat | default "January 2, 2006") }}
               {{ if ne .Lastmod .PublishDate }}
-                &bull; modified on {{ .Lastmod.Format "Jan 2, 2006" }}
+                &bull; modified on {{ .Lastmod.Format (site.Params.Info.DateFormat | default "January 2, 2006") }}
               {{ end }}
             </time>
+            <div class="post-tags">
+            {{ range .Params.reviewtags }}
+              {{ partial "taxo-link.html" (dict "tag" . "context" $ "taxoname" "reviewtags")}}
+            {{ end }}
+            </div>
         </header>
 
         <!-- {{ partial "shortcode-titlecard.html" (dict "titlepage" $titlePage "hidereview" true) }} -->

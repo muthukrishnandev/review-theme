@@ -7,6 +7,8 @@
   # used as substitute for baseimageurl: in poster param in movies, tvshows
   BaseImageURL = "" #https://example.com
 
+  DateFormat = "January 2, 2006"
+
 [Controls]
   # option to ignore the poster params in posts and use NoPoster for all cases
   # this overrides all other poster configs

@@ -89,6 +89,29 @@
 			}
 		}
 
+		.titlemeta-castcrew {
+			.titlemeta-info-body{
+				@include mobile {
+					.titlemeta-info-row {
+						display: block;
+						margin: 0;
+						padding-left: 10px;
+					}
+			
+					.titlemeta-info-data,
+					.titlemeta-info-label {
+						display: inline;
+					}
+
+					.titlemeta-info-label {
+						padding-top: 4px;
+						padding-bottom: 4px;
+						// text-align: left;
+					}
+				}
+			}	
+		}
+
 		.titlemeta-trailer{
 			.youtube-player {
 				margin: 10px auto;

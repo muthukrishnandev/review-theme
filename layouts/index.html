@@ -35,7 +35,9 @@
 					    {{ partial "item-post.html" . }}
 					{{ end }}
 					</div>
-		    		<a href="{{ $sectionPage.Permalink }}" class="more-link">See More {{ $sectionPage.Title }}</a>
+					<div class="more-link-container">
+			    		<a href="{{ $sectionPage.Permalink }}" class="more-link">See More {{ $sectionPage.Title }}</a>
+					</div>
 		    	</div>
 			{{ end }}
 	   	{{ end }}

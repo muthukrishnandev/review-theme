@@ -23,8 +23,12 @@
   }
 }
 
-.home {
-  .more-link{
-    font-size: 20px;
+.home {  
+  .more-link-container {
+    text-align: right;
+    padding-top: 18px;
+    .more-link{
+      font-size: 18px;
+    }
   }
 }

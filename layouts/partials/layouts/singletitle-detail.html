@@ -20,7 +20,7 @@
 		</div>
 		<div class="titlemeta-info-row">
 			<div class="titlemeta-info-label">Released On:</div>
-			<div class="titlemeta-info-data">{{ $metaParams.released_on | dateFormat "02 January 2006" }}</div>
+			<div class="titlemeta-info-data">{{ $metaParams.released_on | dateFormat (site.Params.Info.DateFormat | default "January 2, 2006") }}</div>
 		</div>
 
 		{{ if eq .Type "tvshows"}}
