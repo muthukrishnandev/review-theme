@@ -1,9 +1,0 @@
----
-title: "Juvenal Labadie"
-slug: "juvenal-labadie"
-date: 2021-02-15T16:24:01Z
-
-meta:
-  title: "Juvenal Labadie"
----
-

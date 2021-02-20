@@ -2,6 +2,7 @@
 {{ $tag := .tag }}
 {{ $context := .context }}
 {{ $taxoName := .taxoname }}
+{{ $addComma := .addcomma | default false }}
 
 {{ $tagURL := (delimit (slice $taxoName ($tag | anchorize)) "/") }}
 {{ $taxoPage := $context.Site.GetPage (printf "%s" $tagURL) }}
@@ -17,7 +18,7 @@
 {{ end }}
 
 {{ if $taxoPage  }}
-	<a class="titlemeta-taxonomy-link {{ if $isTagPage }}hash-tag{{ end }}" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.title | default $taxoPage.Title }}</a>
+	<a class="titlemeta-taxonomy-link {{ if $isTagPage }}price-tag{{ end }}" href="{{ $taxoPage.Permalink }}">{{ $taxoPage.Params.meta.title | default $taxoPage.Title }}</a>{{ if eq $addComma true }},&nbsp;{{ end }}
 {{ else }}
 	{{ errorf "%v taxonomy is not valid for file %v" $tagURL $context.File }}
 {{ end }}

@@ -14,8 +14,8 @@
 	{{ $index := sub $val 1 }}
 	{{ $tag := index $allTerms $index }}
 
-	{{ partial "taxo-link.html" (dict "context" $context "tag" $tag "taxoname" $taxoName) }}
-	{{- if lt $index (sub $limitSize 1) }},&nbsp;{{ end }}
+	{{ $addComma := lt $index (sub $limitSize 1) }}
+	{{ partial "taxo-link.html" (dict "context" $context "tag" $tag "taxoname" $taxoName "addcomma" $addComma) -}}
 {{ end }}
 
 {{ if eq $showAll true }}
@@ -28,9 +28,9 @@
 			    {{ range $val := seq $startIndex $totalSize }}
 					{{ $index := sub $val 1 }}
 					{{ $tag := index $allTerms $index }}
+					{{ $addComma := lt $index (sub $totalSize 1) }}
 
-					{{ partial "taxo-link.html" (dict "context" $context "tag" $tag "taxoname" $taxoName) }}
-					{{- if lt $index (sub $totalSize 1) }},&nbsp;{{ end }}
+					{{ partial "taxo-link.html" (dict "context" $context "tag" $tag "taxoname" $taxoName "addcomma" $addComma) -}}
 				{{ end }}
 		  	</ul>
 		  </div>

@@ -1,0 +1,6 @@
+<time class="post-date dt-published" datetime="{{ .PublishDate.Format `2006-01-02T15:04:05Z07:00` }}" itemprop="datePublished">
+  {{ .PublishDate.Format (site.Params.Info.DateFormat | default "January 2, 2006") }}
+  {{ if ne (.Lastmod | dateFormat `2006-01-02`) (.PublishDate | dateFormat `2006-01-02`) }}
+    &bull; modified on {{ .Lastmod.Format (site.Params.Info.DateFormat | default "January 2, 2006") }}
+  {{ end }}
+</time>

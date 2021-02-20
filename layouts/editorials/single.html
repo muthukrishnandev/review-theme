@@ -6,14 +6,9 @@
     <article class="post-single" itemscope itemtype="http://schema.org/BlogPosting">
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
-        <time class="post-date dt-published" datetime="{{ .PublishDate.Format `2006-01-02T15:04:05Z07:00` }}" itemprop="datePublished">
-          {{ .PublishDate.Format (site.Params.Info.DateFormat | default "January 2, 2006") }}
-          {{ if ne .Lastmod .PublishDate }}
-            &bull; modified on {{ .Lastmod.Format (site.Params.Info.DateFormat | default "January 2, 2006") }}
-          {{ end }}
-        </time>
+        {{ partial "publish-date" . }}
         {{ if .Params.tags }}
-          <div class="post-tags">
+          <div class="post-tags d-flex flex-row flex-nowrap overflow-auto">
           {{ range .Params.tags }}
             {{ partial "taxo-link.html" (dict "tag" . "context" $ "taxoname" "tags")}}
           {{ end }}

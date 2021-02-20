@@ -92,12 +92,86 @@ table {
 }
 
 .hash-tag {
-    @include mobile {
-      margin-left: 0px;
+  @include mobile {
+    margin-left: 0px;
+  }
+  &:before {
+    content: "\0023"
+  }
+}
+
+// Inspired from https://codepen.io/wbeeftink/pen/dIaDH
+.price-tag {
+  $tag-color: lighten($black, 20%);
+  $dot-color: $white;
+  $tag-text-color: $white;
+  $tag-hover-color: #DC143C;
+  $tag-back-color: $background-color;
+  
+  background: $tag-color;
+  border-radius: 3px 0 0 3px;
+  color: $tag-text-color;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  position: relative;
+  padding: 0 20px 0 23px;
+  margin: 0 8px 8px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+
+  // @include mobile {
+  //   height: 15px;
+  //   line-height: 15px;
+  //   margin: 0 5px 5px 0;
+  //   padding: 0 15px 0 15px;
+  // }
+
+  &:before {
+    background: $tag-back-color;
+    border-radius: 10px;
+    content: '';
+    height: 6px;
+    width: 6px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+    // @include mobile {
+    //   top: 7px;
+    //   left: 7px;
+    //   height: 3px;
+    //   width: 3px;
+    //   border-radius: 5px;
+    // }
+  }
+
+  &:after {
+    background: $tag-back-color;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid $tag-color;
+    border-top: 13px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    // @include mobile {
+    //   border-bottom: 8px solid transparent;
+    //   border-left: 5px solid $tag-color;
+    //   border-top: 7px solid transparent;
+    // }
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: $tag-hover-color;
+    color: $tag-text-color;
+
+    &:after {
+     border-left-color: $tag-hover-color; 
     }
-    &:before {
-      content: "\0023"
-    }
+  }
 }
 
 .post-title {

@@ -9,7 +9,7 @@
 	{{ if .Site.Params.Meta.Pagination }}
 		{{ $pageLimit = (index .Site.Params.Meta.Pagination .Type) | default 5 }}
 	{{ end }}
-	{{ $paginator := .Paginate (.Pages.ByDate.Reverse) $pageLimit }}
+	{{ $paginator := .Paginate (.Pages.ByLastmod.Reverse) $pageLimit }}
 	<div class="page-content-wrapper">
 		<div class="post-list">
 			{{ range $paginator.Pages }}
