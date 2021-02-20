@@ -48,7 +48,9 @@
 	margin: 20px auto;
 	overflow: hidden;
 	border-radius: 10px;
-	// box-shadow: 0px 0px 60px -25px rgba(0, 0, 0, 0.5);
+	// box-shadow: 0px 0px 60px -25px rgba(0,0,0,0.5);
+	// -webkit-box-shadow: 0px 0px 60px -25px rgba(0,0,0,0.5);
+	// -moz-box-shadow: 0px 0px 60px -25px rgba(0,0,0,0.5);
 
 	@include mobile {
 		width: 95%;
@@ -65,12 +67,12 @@
 		border-radius: 10px;
 
 		@include mobile {
-			background: linear-gradient(to top, lighten($grey-color-lighter, 6%) 50%, transparent 100%);
+			background: linear-gradient(to top, lighten($grey-color-lighter, 3%) 50%, transparent 100%);
 			display: inline-grid;
 		}
 
 		@include medium-device {
-			background: linear-gradient(to right, lighten($grey-color-lighter, 6%) 50%, transparent 90%);
+			background: linear-gradient(to right, lighten($grey-color-lighter, 3%) 50%, transparent 90%);
 		}
 
 		.titlecard-header {
