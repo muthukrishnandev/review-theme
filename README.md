@@ -1,10 +1,10 @@
 # movie-theme
 
-movie-theme is a minimal and clean blog theme for [Hugo](http://gohugo.io/). 
+movie-theme is a minimal and clean entertainment/review theme for [Hugo](http://gohugo.io/). 
 
-### [Demo](https://muthukrishnandev.github.io/movie-theme/)
+### [Demo](https://movietheme.muthukrishnan.dev/)
 
-Working demo is available [here](https://muthukrishnandev.github.io/movie-theme/).
+Working demo is available [here](https://movietheme.muthukrishnan.dev/).
 
 ### Screenshot
 
