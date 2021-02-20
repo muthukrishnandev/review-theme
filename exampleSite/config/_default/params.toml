@@ -22,14 +22,17 @@
   # default text which is shown when productions is not present in movies, tvshows meta post
   ShowPoster = true
   PosterLink = "/disclaimer#copyrights"
+  PosterLinkText = "Fair Use"
   PosterText = "Respective Studio or Artist."
 
   ShowTrailer = true
   TrailerLink = "/disclaimer#trailer"
+  TrailerLinkText = "Read Full Disclaimer"
   TrailerText = """We do not own this video."""
 
   ShowExternal = true
   ExternalLink = "/disclaimer#external-links"
+  ExternalLinkText = "Read Full Disclaimer"
   ExternalText = """These links are being provided as a convenience and for informational purposes only."""
 
 [Meta]
@@ -57,20 +60,22 @@
 
 [Meta.Pagination]
   # default will be 8
-  actors = 8
-  writers = 8
-  directors = 8
-  musicdirectors = 8
-  cinematographers = 8
+  actors = 10
+  writers = 10
+  directors = 10
+  musicdirectors = 10
+  cinematographers = 10
+
   movies = 8
   tvshows = 8
 
   editorials = 10
   reviews = 10
   
-  genres = 100
-  plottags = 8
-  tags = 10
+  genres = 25
+  reviewtags = 25
+  plottags = 25
+  tags = 25
   
   top = 10
   discover = 10

@@ -5,7 +5,10 @@
 	<div class="titlemeta-info-body">
 		{{ if .Site.Params.Disclaimer.ShowTrailer }}
 		<div class="disclaimer trailer-disclaimer">
-			{{ .Site.Params.Disclaimer.TrailerText }} <a href="{{ .Site.Params.Disclaimer.TrailerLink }}">Read Full Disclaimer</a>
+			<span>{{ .Site.Params.Disclaimer.TrailerText }}</span>
+			<a href="{{ .Site.Params.Disclaimer.TrailerLink | relURL }}">
+				({{ .Site.Params.Disclaimer.TrailerLinkText | default "Read Full Disclaimer" }})
+			</a>
 		</div>
 		{{ end }}
 		{{ $dataID := strings.TrimPrefix "https://youtube.com/watch?v=" $metaParams.trailer }}

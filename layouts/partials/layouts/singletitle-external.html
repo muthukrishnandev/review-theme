@@ -6,7 +6,9 @@
 			{{ if .Site.Params.Disclaimer.ShowExternal }}
 			<div class="disclaimer external-disclaimer" style="text-indent: 5%;">
 				<span>{{ .Site.Params.Disclaimer.ExternalText }}</span> 
-				<a href="{{ .Site.Params.Disclaimer.ExternalLink }}">(Read Full Disclaimer)</a>
+				<a href="{{ .Site.Params.Disclaimer.ExternalLink | relURL }}">
+					({{ .Site.Params.Disclaimer.ExternalLinkText | default "Read Full Disclaimer" }})
+				</a>
 			</div>
 			{{ end }}
 			<div class="titlemeta-info-row">

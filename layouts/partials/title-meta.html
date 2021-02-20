@@ -19,13 +19,14 @@
 						{{ $copyString = delimit (.Params.Productions | default slice) ",&nbsp;" }}
 					{{ end }}
 				{{ end }}
-
 			  	<figcaption class="figure-caption titlemeta-poster-notice text-center text-wrap">
 			  		{{ if $copyString }}
 				  		<span>&copy; {{ $copyString }}</span>
 				  	{{ else }}
 				  		<span>&copy; {{ .Site.Params.Disclaimer.PosterText }}</span>
-				  		<a href="{{ .Site.Params.Disclaimer.PosterLink | relURL }}">(Copyrights)</a>
+				  		<a href="{{ .Site.Params.Disclaimer.PosterLink | relURL }}">
+				  		({{ .Site.Params.Disclaimer.PosterLinkText | default "Fair Use" }})
+				  		</a>
 			  		{{ end }}
 			  	</figcaption>
 			{{ end }}
