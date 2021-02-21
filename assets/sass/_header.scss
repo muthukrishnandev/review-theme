@@ -20,9 +20,19 @@
 
     .header-logo-container {
       float: left;
-      height: $header-logo-container-height;
-      max-width: $header-logo-container-width-max;
+      height: 70px;
+      max-width: 125px;
       margin-right: $spacing-unit / 2;
+
+      @include mobile {
+        height: 40px;
+        max-width: 100px;
+        margin-right: $spacing-unit / 3;
+      }
+
+      @include small-device {
+        height: 50px;
+      }
 
       img {
         width: auto;
@@ -32,10 +42,10 @@
     }
 
     .header-info {
-      float: left;
+      // float: left;
 
       @include mobile {
-        float: none;
+        // float: none;
         display: block;
       }
 
@@ -52,6 +62,10 @@
         cursor: pointer;
         letter-spacing: 1px;
         font-size: 28px;
+
+        @include mobile {
+          font-size: 24px;
+        }
       }
 
       .header-sitedesc {
