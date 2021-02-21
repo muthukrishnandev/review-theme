@@ -113,6 +113,8 @@
   icon192 = "android-chrome-192x192.png"
   icon512 = "android-chrome-512x512.png"
   appleTouch = "apple-touch-icon.png"
+  safariPinned = "safari-pinned-tab.svg"
+  msTileImage = "mstile-144x144.png"
 
 [Manifest]
   shortTitle = ""
@@ -120,6 +122,7 @@
   backgroundColor = "#ffffff"
   display = "standalone"
   orientation = "portrait"
+  tileColor = "#ffffff"
 
 [Config]
   # header

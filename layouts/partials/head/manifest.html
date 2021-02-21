@@ -2,5 +2,3 @@
 {{- $manifestTemplate := resources.Get "manifest-template.json" -}}
 {{- $json := $manifestTemplate | resources.ExecuteAsTemplate "manifest.json" . }}
 <link rel="manifest" href="{{ $json.Permalink }}" />
-<meta name="theme-color" content="{{ .Site.Params.Manifest.ThemeColor }}" /> 
-<meta name="msapplication-TileColor" content="{{ .Site.Params.Manifest.ThemeColor }}" />
