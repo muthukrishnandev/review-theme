@@ -3,6 +3,7 @@
 {{ $limit := .limit }}
 
 {{ $mainScoreName := $context.Site.Params.Meta.MainScore }}
+{{ $mainScoreSuffix := $context.Site.Params.Meta.MainScoreSuffix | default "%" }}
 {{ $reviews = first $limit $reviews }}
 
 {{ if $reviews }}
@@ -26,7 +27,7 @@
 							  <td class="top-title">
 							    <a href="{{ $metaPage.Permalink }}">{{ $metaParams.Title }} ({{ $metaParams.released_on | dateFormat "2006" }})</a>
 							  </td>
-							  <td class="top-score text-center">{{ $reviewPage.Params.score }}</td>
+							  <td class="top-score text-center">{{ $reviewPage.Params.score }}{{ $mainScoreSuffix }}</td>
 							</tr>
 						{{ end }}
 					</div>

@@ -127,24 +127,29 @@
 			}
 		}
 
-		.titlemeta-castcrew {
+		.titlemeta-castcrew, .titlemeta-detail {
 			.titlemeta-info-body{
 				@include mobile {
 					.titlemeta-info-row {
 						display: block;
 						margin: 0;
-						padding-left: 10px;
+						padding-top: 2px;
+						padding-bottom: 2px;
 					}
 			
 					.titlemeta-info-data,
 					.titlemeta-info-label {
 						display: inline;
+						padding-left: 0px;
 					}
 
 					.titlemeta-info-label {
-						padding-top: 3px;
-						padding-bottom: 3px;
-						// text-align: left;
+						padding-top: 2px;
+						padding-bottom: 2px;
+					}
+
+					.titlemeta-info-data{
+						padding-left: 4px;
 					}
 				}
 			}	

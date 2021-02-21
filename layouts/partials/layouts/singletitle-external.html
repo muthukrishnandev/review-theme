@@ -4,7 +4,7 @@
 		<h2 class="titlemeta-info-head">External Links</h2>
 		<div class="titlemeta-info-body">
 			{{ if .Site.Params.Disclaimer.ShowExternal }}
-			<div class="disclaimer external-disclaimer" style="text-indent: 5%;">
+			<div class="disclaimer external-disclaimer">
 				<span>{{ .Site.Params.Disclaimer.ExternalText }}</span> 
 				<a href="{{ .Site.Params.Disclaimer.ExternalLink | relURL }}">
 					({{ .Site.Params.Disclaimer.ExternalLinkText | default "Read Full Disclaimer" }})

@@ -10,13 +10,13 @@
 				{{ $termSize := len $allTerms }}
 				{{ $limitSize := ((index $context.Site.Params.Meta.DetailListLimit $taxoName) | default $termSize) }}
 				{{ $dictData := (dict "allterms" $allTerms "context" $context "taxoname" $taxoName "limit" $limitSize "showall" true) }}
-				<div class="titlemeta-info-label clearfix">{{ $termPage.Title }}:</div>
-				<div class="titlemeta-info-data clearfix">
+				<div class="titlemeta-info-label">{{ $termPage.Title }}:</div>
+				<div class="titlemeta-info-data">
 					{{ partial "taxo-links.html" $dictData }}
 				</div>
 			{{ else }}
-				<div class="titlemeta-info-label clearfix">{{ $termPage.Title }}:</div>
-				<div class="titlemeta-info-data clearfix">Information Not Available</div>
+				<div class="titlemeta-info-label">{{ $termPage.Title }}:</div>
+				<div class="titlemeta-info-data">Information Not Available</div>
 			{{ end }}
 		{{ else }}
 			{{ errorf "%v taxonomy term page is not valid" $taxoName}}

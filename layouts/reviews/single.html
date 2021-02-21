@@ -18,12 +18,8 @@
               {{ end }}
             </h2>
             <div class="post-description">{{ .Description }}</div>
-            {{ partial "publish-date" . }}
-            <div class="post-tags d-flex flex-row flex-nowrap overflow-auto">
-            {{ range .Params.reviewtags }}
-              {{ partial "taxo-link.html" (dict "tag" . "context" $ "taxoname" "reviewtags")}}
-            {{ end }}
-            </div>
+            {{ partial "single-publish-date" . }}
+            {{ partial "single-tags" . }}
         </header>
 
         <div class="post-content">
@@ -45,9 +41,6 @@
           {{ errorf "%v movie/tvshow page not found for %v reviews page" .Params.meta_name .File }}
       {{ end }}
   </div>
-
-  <hr />
-  <br />
 
   {{ partial "related-pages.html" . }}
 

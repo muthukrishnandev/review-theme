@@ -102,6 +102,8 @@ table {
 
 // Inspired from https://codepen.io/wbeeftink/pen/dIaDH
 .price-tag {
+  @extend .text-nowrap;
+
   $tag-color: lighten($black, 20%);
   $dot-color: $white;
   $tag-text-color: $white;

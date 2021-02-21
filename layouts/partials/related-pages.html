@@ -4,6 +4,8 @@
 {{ if $currentSet }}
 	{{ $related := $currentSet.Related $currentPage }}
 	{{ if $related }}
+		<hr />
+		<br />
 		<h3 class="font-weight-bold">You May Also Like</h3>
 		<div class="post-list">
 		  {{ range (first 10 $related) }}

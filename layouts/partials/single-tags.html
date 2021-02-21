@@ -1,0 +1,10 @@
+{{ if .Params.tags }}
+  <div class="post-tags d-flex flex-row flex-nowrap overflow-auto">
+	{{ range .Params.tags }}
+		{{ partial "taxo-link.html" (dict "tag" . "context" $ "taxoname" "tags")}}
+	{{ end }}
+	{{ range .Params.reviewtags }}
+	  {{ partial "taxo-link.html" (dict "tag" . "context" $ "taxoname" "reviewtags")}}
+	{{ end }}
+  </div>
+{{ end }}
