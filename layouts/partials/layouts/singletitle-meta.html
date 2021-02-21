@@ -1,7 +1,7 @@
 
 {{ $metaParams := .Params.meta }}
 
-<div class="col-md-4 col-xs-12 titlemeta-poster-container text-center">
+<div class="col-md-3 col-xs-12 titlemeta-poster-container text-center">
 	{{ if not (isset $metaParams "poster") }}
 		{{ errorf "poster param not found for %s" .File }}
 	{{ end }}
@@ -36,7 +36,7 @@
 	{{ end }}
 </div>
 
-<div class="col-md-8 col-xs-12 titlemeta-data-container">
+<div class="col-md-9 col-xs-12 titlemeta-data-container">
 	<div class="card border-0">
 		<div class="card-body">
 			<div class="titlemeta-title-container">

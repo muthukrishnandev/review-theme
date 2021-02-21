@@ -1,15 +1,16 @@
 [[mounts]]
-  source = "indexcontent/special"
+  source = "content_index"
   target = "content"
 [[mounts]]
-  source = "indexcontent/meta"
+  source = "content_meta"
   target = "content"
 [[mounts]]
-  source = "metacontent/taxonomies"
-  target = "content"
-[[mounts]]
-  source = "metacontent/titles"
+  source = "content_title"
   target = "content"
 [[mounts]]
   source = "content"
+  target = "content"
+
+[[mounts]]
+  source = "content_sample"
   target = "content"

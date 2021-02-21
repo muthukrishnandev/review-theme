@@ -34,29 +34,7 @@
 			.titlemeta-review-container{
 				padding-top: 10px;
 				.review-summary {
-					.review-score {
-						margin-top: 10px;
-						margin-bottom: 10px;
-						padding-bottom: 10px;
-
-						.score-rating-data {
-							
-						}
-
-						@include mobile {
-							margin-top: 5px;
-							margin-bottom: 5px;
-							padding-bottom: 5px;
-
-							.score-rating-label {
-								font-size: 12px;
-							}
-							// .score-rating-data {
-							// 	font-size: 20px;
-							// }
-						}
-					}
-
+					
 					.bottomline-label {
 						font-size: 14px;
 					}
@@ -174,5 +152,53 @@
 			padding-left: 2%;
 			padding-right: 2%;
 		}
+	}
+}
+
+.review-score-container {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+
+	.review-score {
+		display: flex;
+		justify-content: center;
+	}
+
+	.score-rating {
+		.card, .card-footer {
+			border: none;
+		}
+		.card-body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 0 12px;
+
+			@include mobile {
+				padding: 0 6px;
+			}
+		}
+		.card-footer {
+			text-align: center;
+		}
+	}
+
+	.score-rating-data {
+		
+	}
+
+	@include mobile {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		padding-bottom: 5px;
+
+		.score-rating-label {
+			font-size: 12px;
+		}
+		// .score-rating-data {
+		// 	font-size: 20px;
+		// }
 	}
 }

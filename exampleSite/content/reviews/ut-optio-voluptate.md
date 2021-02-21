@@ -12,7 +12,7 @@ bottomline: "Eos magnam pariatur ea pariatur eligendi earum possimus"
 score: 60
 custom_scores:
   - 84
-  - 73
+  - 5
 
 reviewtags:
   - TANSTAAFL

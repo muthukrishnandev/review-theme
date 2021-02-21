@@ -1,42 +1,79 @@
 {{ $review := . }}
 
-<div class="container review-score">
-	<div class="row">
-		<div class="col score-rating main-score text-center">
-			{{ if $review }}
-				<div class="score-rating-data big-text">{{ $review.Params.score }}{{ site.Params.Meta.MainScoreSuffix | default "%" }}</div>
-			{{ else }}
-				<div class="score-rating-data grey-text">No Score Yet</div>
-			{{ end }}
-			<div class="score-rating-label">{{ site.Params.Meta.MainScore }}</div>
-		</div>
-	{{ $customScoreNames := site.Params.Meta.CustomScores }}
+{{ $mainName := site.Params.Meta.MainScore }}
+{{ $mainValue := "" }}
+{{ $finalCustomValues := slice }}
+{{ $isReviewExists := ne $review nil }}
+
+{{ $customScoreNames := site.Params.Meta.CustomScores }}
+
+{{ if $review }}
+	{{ $mainValue = printf "%v%v" ($review.Params.score) (site.Params.Meta.MainScoreSuffix | default "%") }}
+
 	{{ $customSuffixes := site.Params.Meta.CustomScoresSuffix }}
 	{{ $customScores := $review.Params.custom_scores }}
-	{{ range $index, $scoreName := $customScoreNames }}
-		<div class="col score-rating custom-score text-center">
-			{{ if $review }}
-				{{ if index $customScores $index }}
-					<div class="score-rating-data big-text">
-					{{ index $customScores $index }}{{ index $customSuffixes $index | default "%" }}
-					</div>
-				{{ else }}
-					<div class="score-rating-data big-text">None</div>
-				{{ end }}
-			{{ else }}
-				<div class="score-rating-data grey-text">No Score Yet</div>
+	{{ range $custIndex, $scoreName := $customScoreNames }}
+		{{ $textToShow := "" }}
+
+		{{ $scoreVal := index $customScores $custIndex }}
+
+		{{ if $scoreVal }}
+			{{ $customNameData := index (site.Params.Meta.CustomRatingLookUp) $custIndex }}
+			{{ if $customNameData }}
+				{{ $textToShow = index $customNameData $scoreVal | default "" }}
 			{{ end }}
-			<div class="score-rating-label">{{ $scoreName }}</div>
-		</div>
+
+			{{ if not ($textToShow) }}
+				{{ $textToShow = $scoreVal }}
+				{{ $suffix := index $customSuffixes $custIndex | default "%" }}
+				{{ $textToShow = printf "%v%v" $textToShow $suffix }}
+			{{ end }}
+		{{ else }}
+			{{ $textToShow = "None" }}
+		{{ end }}
+		{{ $finalCustomValues = $finalCustomValues | append $textToShow }}
 	{{ end }}
+{{ else }}
+	{{ $mainValue = "No Score Yet" }}
+	{{ range $custIndex, $scoreName := $customScoreNames }}
+		{{ $finalCustomValues = $finalCustomValues | append "No Score Yet" }}
+	{{ end }}
+{{ end }}
+
+<div class="container-fluid review-score-container">
+	<div class="row review-score">
+		{{ define "partials/rating-card" }}
+			{{ $scoreVal := .value }}
+			{{ $scoreName := .name }}
+			{{ $isReview := .isreview | default false }}
+			<div class="col-auto score-rating">
+				<div class="card">
+					<div class="card-body score-rating-data {{ if $isReview }}big-text{{ else }}grey-text{{ end }}">
+						{{ $scoreVal }}
+					</div>
+					<div class="card-footer score-rating-label">
+						{{ $scoreName }}
+					</div>
+				</div>
+			</div>
+		{{ end }}
+
+		<div class="d-flex flex-row flex-nowrap overflow-auto">
+			<!-- Main Score -->
+			{{ partial "rating-card" (dict "name" $mainName "value" $mainValue "isreview" $isReviewExists) }}
+
+			<!-- Custom Score -->
+			{{ range $custIndex, $scoreName := $customScoreNames }}
+				{{ $value := index $finalCustomValues $custIndex }}
+				{{ partial "rating-card" (dict "name" $scoreName "value" $value "isreview" $isReviewExists) }}
+			{{ end }}
+		</div>
 	</div>
 	{{ if site.Params.Disclaimer.ShowRating }}
-	<div class="row mt-3">
-		<div class="col-12 justify-content-center d-flex">
+		<div class="text-center">
 			<a href="{{ site.Params.Disclaimer.RatingLink | relURL }}">
 	  		({{ site.Params.Disclaimer.RatingLinkText | default "more info on ratings" }})
 	  		</a>
 		</div>
-	</div>
 	{{ end }}
 </div>

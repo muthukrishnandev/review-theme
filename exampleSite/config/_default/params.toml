@@ -46,6 +46,8 @@
   CustomScores = ["Custom1", "Custom2"]
   CustomScoresSuffix = [" ", "%"]
 
+  CustomRatingLookUp = [ {}, { 0 = "Very Bad", 1 = "Bad", 2 = "Okay", 3 = "Good", 4 = "Very Good", 5 = "Best"}]
+
   # advanced configs
   DiscoverList = ["actors", "creators", "directors", "writers", "musicdirectors", "cinematographers", "genres"]
   TopList = ["movies", "tvshows"]
