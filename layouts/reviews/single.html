@@ -19,12 +19,11 @@
             </h2>
             <div class="post-description">{{ .Description }}</div>
             {{ partial "single-publish-date" . }}
-            {{ partial "single-tags" . }}
         </header>
 
         <div class="post-content">
             {{ .Content }}
-           
+
            <div class="review-score-card">
             <h3 class="review-title">Ratings</h3>
             {{ partial "review-score.html" . }}
@@ -37,6 +36,8 @@
             </div>
             {{ end }}
         </div>
+
+        {{ partial "single-tags" . }}
       {{ else }}
           {{ errorf "%v movie/tvshow page not found for %v reviews page" .Params.meta_name .File }}
       {{ end }}

@@ -66,6 +66,7 @@
 
 [Meta.DetailListLimit]
   actors = 4 # no of actors to display in Cast & Crew
+  plottags = 5
 
 [Meta.Pagination]
   # default will be 8
@@ -80,12 +81,12 @@
 
   editorials = 10
   reviews = 10
-  
+
   genres = 25
   reviewtags = 25
   plottags = 25
   tags = 25
-  
+
   top = 10
   discover = 10
 
@@ -129,7 +130,7 @@
   ShowSiteLogo = false
   ShowSiteTitle = true # if site logo is not present, title is displayed by default
   ShowSiteTagline = true # available only if ShowSiteTitle is enabled
- 
+
   # navigation
   ShowHeaderNav = true
   ShowFooterNav = true # disables the footer, both social and navigation
@@ -138,9 +139,9 @@
   # social icons
   ShowSocialIcons = true # enable this to show social icons instead of text
   ShowColorIcons = true # enable this to colorful social icons
-  
+
   # home page
   ShowSummaryInPostList = false
   # ShowStarredIcon = true
-  
-  EnableRSS = true
+
+  EnableRSS = false

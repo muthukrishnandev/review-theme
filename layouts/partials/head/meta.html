@@ -25,7 +25,7 @@
 		{{ $finalTitle = printf "%v | %v" .Title .Site.Title }}
 	{{ else }}
 		{{ $sectionPage := .Site.GetPage .Section }}
-		{{ $finalTitle = printf "%v | %v | %v" .Title $sectionPage.Title .Site.Title }}
+		{{ $finalTitle = printf "%v | %v | %v" (.Params.meta.title | default .Title) $sectionPage.Title .Site.Title }}
 	{{ end }}
 <!-- Default -->
 {{ else }}

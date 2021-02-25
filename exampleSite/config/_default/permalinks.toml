@@ -3,7 +3,7 @@
 movies = "/movie/:slug/"
 reviews = "/review/:slug/"
 tvshows = "/tv/:slug/"
-docs = "/:title"
+docs = "/:slug"
 
 actors = "/actor/:slug/"
 writers = '/writer/:slug/'

@@ -1,5 +1,7 @@
-{{ if .Params.tags }}
+{{ if or (.Params.tags) (.Params.reviewtags) }}
+<footer class="post-footer">
   <div class="post-tags d-flex flex-row flex-nowrap overflow-auto">
+	<span class="mr-3 font-weight-bold">{{ (site.GetPage "/tags").Title }}:</span>
 	{{ range .Params.tags }}
 		{{ partial "taxo-link.html" (dict "tag" . "context" $ "taxoname" "tags")}}
 	{{ end }}
@@ -7,4 +9,5 @@
 	  {{ partial "taxo-link.html" (dict "tag" . "context" $ "taxoname" "reviewtags")}}
 	{{ end }}
   </div>
+</footer>
 {{ end }}
