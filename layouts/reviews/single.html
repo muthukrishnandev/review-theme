@@ -13,7 +13,7 @@
         <header class="post-header mb-3">
             <h2 class="post-title">
               <a class="dark-link" href="{{ .Permalink }}">{{ .Title }}</a>
-              {{ if and (.Params.Starred) (.Site.Params.Config.ShowStarredIcon) }}
+              {{ if and (.Params.Starred) (.Site.Params.Controls.ShowStarredIcon) }}
               <span class="starred"></span>
               {{ end }}
             </h2>

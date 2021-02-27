@@ -2,8 +2,8 @@
 {{ $context := .context }}
 {{ $limit := .limit }}
 
-{{ $mainScoreName := $context.Site.Params.Meta.MainScore }}
-{{ $mainScoreSuffix := $context.Site.Params.Meta.MainScoreSuffix | default "%" }}
+{{ $mainScoreName := $context.Site.Params.Rating.MainScore }}
+{{ $mainScoreSuffix := $context.Site.Params.Rating.MainScoreSuffix | default "%" }}
 {{ $reviews = first $limit $reviews }}
 
 {{ if $reviews }}

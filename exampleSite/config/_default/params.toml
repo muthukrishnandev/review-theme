@@ -9,91 +9,10 @@
 
   DateFormat = "January 2, 2006"
 
-[Controls]
-  # option to ignore the poster params in posts and use NoPoster for all cases
-  # this overrides all other poster configs
-  DoNotShowPoster = false
-
-  # in case no poster exist in local directory case (if BaseImageURL is empty string)
-  # use display noposter.png instead of throwing error
-  UseNoPoster = true
-
-[Disclaimer]
-  # default text which is shown when productions is not present in movies, tvshows meta post
-  ShowPoster = true
-  PosterLink = "/disclaimer#copyrights"
-  PosterLinkText = "Fair Use"
-  PosterText = "Respective Studio or Artist."
-
-  ShowTrailer = true
-  TrailerLink = "/disclaimer#umbrae-velis-noctes-mutata"
-  TrailerLinkText = "Read Full Disclaimer"
-  TrailerText = """We do not own this video."""
-
-  ShowExternal = true
-  ExternalLink = "/disclaimer#external-links"
-  ExternalLinkText = "Read Full Disclaimer"
-  ExternalText = """These links are being provided as a convenience and for informational purposes only."""
-
-  # Link to detail post which explains your rating scores
-  ShowRating = true
-  RatingLink = "/about#ratings"
-  RatingLinkText = "more info on these scores"
-
-[Meta]
-  MainScore = "Main Score"
-  MainScoreSuffix = "%"
-  CustomScores = ["Custom1", "Custom2"]
-  CustomScoresSuffix = [" ", "%"]
-
-  CustomRatingLookUp = [ {}, { 0 = "Very Bad", 1 = "Bad", 2 = "Okay", 3 = "Good", 4 = "Very Good", 5 = "Best"}]
-
-  # advanced configs
-  DiscoverList = ["actors", "creators", "directors", "writers", "musicdirectors", "cinematographers", "genres"]
-  TopList = ["movies", "tvshows"]
-
-  # adds text 's Filmography to all these
-  FilmographyList = ["actors", "writers", "creators", "directors", "musicdirectors", "cinematographers"]
-
-# advanced configs
-[Meta.TitleCrewList]
-  movies = ["actors", "directors", "writers", "musicdirectors", "cinematographers"]
-  tvshows = ["actors", "creators"]
-
-[Meta.TitleMetaList]
-  movies = ["genres", "plottags"]
-  tvshows = ["genres", "plottags"]
-
-[Meta.DetailListLimit]
-  actors = 4 # no of actors to display in Cast & Crew
-  plottags = 5
-
-[Meta.Pagination]
-  # default will be 8
-  actors = 10
-  writers = 10
-  directors = 10
-  musicdirectors = 10
-  cinematographers = 10
-
-  movies = 8
-  tvshows = 8
-
-  editorials = 10
-  reviews = 10
-
-  genres = 25
-  reviewtags = 25
-  plottags = 25
-  tags = 25
-
-  top = 10
-  discover = 10
-
 [Social]
   Email = "Your_Email_ID"
   Facebook = "Your_Facebook_ID"
-  Twitter = "Your_Twitter_ID"
+  # Twitter = "Your_Twitter_ID"
   Instagram = "Your_Instagram_ID"
   Youtube = "Your_Youtube_ID"
   Reddit = "u/Your_Reddit_ID"
@@ -125,7 +44,7 @@
   orientation = "portrait"
   tileColor = "#ffffff"
 
-[Config]
+[Controls]
   # header
   ShowSiteLogo = false
   ShowSiteTitle = true # if site logo is not present, title is displayed by default
@@ -138,10 +57,114 @@
 
   # social icons
   ShowSocialIcons = true # enable this to show social icons instead of text
-  ShowColorIcons = true # enable this to colorful social icons
 
   # home page
   ShowSummaryInPostList = false
   # ShowStarredIcon = true
 
   EnableRSS = false
+
+  # option to ignore the poster params in posts and use NoPoster for all cases
+  # this overrides all other poster configs
+  DoNotShowPoster = false
+
+  # in case no poster exist in local directory case (if BaseImageURL is empty string)
+  # use display noposter.png instead of throwing error
+  UseNoPoster = true
+
+[ShareButton]
+  # disable all
+  Show = true
+
+  Email = true
+  Facebook = true
+  Twitter = true
+  Reddit = true
+  Whatsapp = true
+  Telegram = true
+  Signal = true
+
+[Rating]
+  MainScore = "Main Score"
+  MainScoreSuffix = "%"
+  CustomScores = ["Custom1", "Custom2"]
+  CustomScoresSuffix = [" ", "%"]
+  # Custom text look up for custom scores instead of suffix
+  CustomScoreLookUp = [ {}, { 0 = "Very Bad", 1 = "Bad", 2 = "Okay", 3 = "Good", 4 = "Very Good", 5 = "Best"}]
+
+[ReadMoreLinks]
+  # these are places where you may ask user to read more about like privacy policy, disclaimer etc.,
+  # All have three params Message, URL, LinkText and option to enable/disable them
+  # display format
+  # Message (LinkText)
+
+  # Trailer, External Links, Poster, Ratings are supported now
+
+[ReadMoreLinks.Poster]
+  # default text which is shown when productions is not present in movies, tvshows meta post
+  ShowInfo = true
+  URL = "/disclaimer#fair-use"
+  LinkText = "Fair Use"
+  Message = "Respective Studio or Artist."
+
+[ReadMoreLinks.Trailer]
+  ShowInfo = true
+  URL = "/disclaimer#trailer"
+  LinkText = "Read Full Disclaimer"
+  Message = """We do not own this video."""
+
+[ReadMoreLinks.ExternalLinks]
+  ShowInfo = true
+  URL = "/disclaimer#external-links"
+  LinkText = "Read Full Disclaimer"
+  Message = """These links are being provided as a convenience and for informational purposes only."""
+
+[ReadMoreLinks.Rating]
+  # Link to detail post which explains your rating scores
+  ShowInfo = true
+  URL = "/about#ratings"
+  LinkText = "more info on these scores"
+  Message = ""
+
+# advanced configs
+[MetaConfig]
+  DiscoverList = ["actors", "creators", "directors", "writers", "musicdirectors", "cinematographers", "genres"]
+  TopList = ["movies", "tvshows"]
+
+  # adds text 's Filmography to all these
+  FilmographyList = ["actors", "writers", "creators", "directors", "musicdirectors", "cinematographers"]
+
+# advanced configs
+[MetaConfig.TitleCrewList]
+  movies = ["actors", "directors", "writers", "musicdirectors", "cinematographers"]
+  tvshows = ["actors", "creators"]
+
+[MetaConfig.TitleMetaList]
+  movies = ["genres", "plottags"]
+  tvshows = ["genres", "plottags"]
+
+[MetaConfig.DetailListLimit]
+  actors = 4 # no of actors to display in Cast & Crew
+  plottags = 5
+
+[MetaConfig.Pagination]
+  # default will be 8
+  actors = 10
+  writers = 10
+  directors = 10
+  musicdirectors = 10
+  cinematographers = 10
+
+  movies = 8
+  tvshows = 8
+
+  editorials = 10
+  reviews = 10
+
+  genres = 25
+  reviewtags = 25
+  plottags = 25
+  tags = 25
+
+  top = 10
+  discover = 10

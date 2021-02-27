@@ -1,0 +1,97 @@
+{{ if eq .Site.Params.ShareButton.Show true }}
+	{{ $urlParam := .Permalink | safeURL }}
+	{{ $hashtagsParam := delimit .Keywords "," }}
+	{{ $titleParam := .Title |safeURL }}
+
+	{{ $isTwitterEnabled := eq .Site.Params.ShareButton.Twitter true }}
+	{{ $isEmailEnabled := eq .Site.Params.ShareButton.Email true }}
+	{{ $isRedditEnabled := eq .Site.Params.ShareButton.Reddit true }}
+	{{ $isInstagramEnabled := eq .Site.Params.ShareButton.Instagram true }}
+	{{ $isFacebookEnabled := eq .Site.Params.ShareButton.Facebook true }}
+	{{ $isWhatsappEnabled := eq .Site.Params.ShareButton.Whatsapp true }}
+	{{ $isTelegramEnabled := eq .Site.Params.ShareButton.Telegram true }}
+
+	{{ $boolSlice := slice $isTwitterEnabled $isEmailEnabled $isRedditEnabled $isInstagramEnabled $isFacebookEnabled $isWhatsappEnabled $isTelegramEnabled }}
+
+	{{ if in $boolSlice true }}
+		<div class="social-share-container">
+			<div class="row d-flex flex-row flex-nowrap overflow-auto list-container">
+				<div class="social-share-label col-auto">
+					<div class="d-flex justify-content-center align-self-center h-100">Share:</div>
+				</div>
+				<ul class="social-share-list col-auto">
+					<!-- Email -->
+					{{ if $isEmailEnabled }}
+						{{ $urlFormat := "mailto: ?subject=%v&body=%v\n%v" }}
+						{{ $finalLink := printf $urlFormat $titleParam $urlParam "" }}
+						<li class="social-share-item">
+							<a target="_blank" href="{{ $finalLink | safeURL }}">
+								<i class="svg-icon email"></i>
+							</a>
+						</li>
+					{{ end }}
+					<!-- Whatsapp -->
+					{{ if $isWhatsappEnabled }}
+						{{ $urlFormat := "https://api.whatsapp.com/send?text=%v\n%v" }}
+						{{ $finalLink := printf $urlFormat $titleParam $urlParam }}
+						<li class="social-share-item d-inline d-sm-none">
+							<a target="_blank" href="{{ $finalLink | safeURL }}">
+								<i class="svg-icon whatsapp"></i>
+							</a>
+						</li>
+						{{ $urlFormatWeb := "https://web.whatsapp.com/send?text=%v\n%v" }}
+						{{ $finalLinkWeb := printf $urlFormatWeb $titleParam $urlParam }}
+						<li class="social-share-item d-none d-sm-inline">
+							<a target="_blank" href="{{ $finalLinkWeb | safeURL }}">
+								<i class="svg-icon whatsapp"></i>
+							</a>
+						</li>
+					{{ end }}
+					<!-- Telegram -->
+					{{ if $isTelegramEnabled }}
+						{{ $urlFormat := "https://t.me/share/url?url=%v&text=%v" }}
+						{{ $finalLink := printf $urlFormat $urlParam $titleParam }}
+						<li class="social-share-item">
+							<a target="_blank" href="{{ $finalLink | safeURL }}">
+								<i class="svg-icon telegram"></i>
+							</a>
+						</li>
+					{{ end }}
+					<!-- Twitter -->
+					{{ if $isTwitterEnabled }}
+						{{ $urlFormat := "https://twitter.com/intent/tweet?url=%v&text=%v&hashtags=%v" }}
+						{{ $finalLink := printf $urlFormat $urlParam $titleParam $hashtagsParam }}
+						{{ if .Site.Params.Social.Twitter }}
+							{{ $finalLink = printf "%v&via=%v" $finalLink .Site.Params.Social.Twitter }}
+						{{ end }}
+						<li class="social-share-item">
+							<a target="_blank" href="{{ $finalLink | safeURL }}">
+								<i class="svg-icon twitter"></i>
+							</a>
+						</li>
+					{{ end }}
+					<!-- Facebook -->
+					{{ if $isFacebookEnabled }}
+						{{ $urlFormat := "https://www.facebook.com/sharer.php?u=%v" }}
+						{{ $finalLink := printf $urlFormat $urlParam }}
+						<li class="social-share-item">
+							<a target="_blank" href="{{ $finalLink | safeURL }}">
+								<i class="svg-icon facebook"></i>
+							</a>
+						</li>
+					{{ end }}
+					<!-- Reddit -->
+					{{ if $isRedditEnabled }}
+						{{ $urlFormat := "https://reddit.com/submit?url=%v&title=%v" }}
+						{{ $finalLink := printf $urlFormat $urlParam $titleParam }}
+						<li class="social-share-item">
+							<a target="_blank" href="{{ $finalLink | safeURL }}">
+								<i class="svg-icon reddit"></i>
+							</a>
+						</li>
+					{{ end }}
+				</ul>
+			</div>
+		</div>
+	{{ end }}
+{{ end }}

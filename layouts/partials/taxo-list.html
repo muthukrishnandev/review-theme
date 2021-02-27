@@ -8,7 +8,7 @@
 			{{ $allTerms := $context.Param $taxoName}}
 			{{ if $allTerms }}
 				{{ $termSize := len $allTerms }}
-				{{ $limitSize := ((index $context.Site.Params.Meta.DetailListLimit $taxoName) | default $termSize) }}
+				{{ $limitSize := ((index $context.Site.Params.MetaConfig.DetailListLimit $taxoName) | default $termSize) }}
 				{{ $dictData := (dict "allterms" $allTerms "context" $context "taxoname" $taxoName "limit" $limitSize "showall" true) }}
 				<div class="titlemeta-info-label">{{ $termPage.Title }}:</div>
 				<div class="titlemeta-info-data">

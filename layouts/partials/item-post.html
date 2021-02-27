@@ -2,7 +2,7 @@
   <h2 class="post-title">
     <a href="{{ .Permalink }}">{{ .Title }}</a>
     <!--
-      {{ if and (.Params.Starred) (.Site.Params.Config.ShowStarredIcon) }}
+      {{ if and (.Params.Starred) (.Site.Params.Controls.ShowStarredIcon) }}
       <span class="starred"></span>
       {{ end }}
     -->
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  {{ if .Site.Params.Config.ShowSummaryInPostList }}
+  {{ if .Site.Params.Controls.ShowSummaryInPostList }}
     <div class="post-summary">
       {{ .Summary }}
     </div>

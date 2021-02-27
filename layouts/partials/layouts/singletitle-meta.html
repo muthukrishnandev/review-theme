@@ -11,7 +11,7 @@
 		{{ $imgLink := .Scratch.Get "findposterlink_result" }}
 		<figure class="figure">
 		  <img loading="lazy" class="figure-img titlemeta-poster unselectable" src="{{ $imgLink }}" alt="">
-			{{ if .Site.Params.Disclaimer.ShowPoster }}
+			{{ if .Site.Params.ReadMoreLinks.Poster.ShowInfo }}
 				{{ $copyString := "" }}
 				{{ $isNoPoster := .Scratch.Get "findposterlink_isnoposter" }}
 					{{ if not $isNoPoster }}
@@ -23,10 +23,10 @@
 			  		{{ if $copyString }}
 				  		<span>&copy; {{ $copyString }}</span>
 				  	{{ else }}
-				  		<span>&copy; {{ .Site.Params.Disclaimer.PosterText }}</span>
+				  		<span>&copy; {{ .Site.Params.ReadMoreLinks.Poster.Message }}</span>
 			  		{{ end }}
-			  		<a href="{{ .Site.Params.Disclaimer.PosterLink | relURL }}">
-			  		({{ .Site.Params.Disclaimer.PosterLinkText | default "Fair Use" }})
+			  		<a href="{{ .Site.Params.ReadMoreLinks.Poster.URL | relURL }}">
+			  		({{ .Site.Params.ReadMoreLinks.LinkText | default "Fair Use" }})
 			  		</a>
 			  	</figcaption>
 			{{ end }}

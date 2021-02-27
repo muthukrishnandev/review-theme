@@ -5,11 +5,11 @@
     </div>
     <div class="page-content-wrapper">
         {{ $totalLimit := 5 }}
-        {{ if .Site.Params.Meta.Pagination }}
-            {{ $totalLimit = (index .Site.Params.Meta.Pagination .Type) | default 5 }}
+        {{ if .Site.Params.MetaConfig.Pagination }}
+            {{ $totalLimit = (index .Site.Params.MetaConfig.Pagination .Type) | default 5 }}
         {{ end }}
 
-        {{ $discoverList := .Site.Params.Meta.DiscoverList }}
+        {{ $discoverList := .Site.Params.MetaConfig.DiscoverList }}
         {{ $siteTaxos := .Site.Taxonomies }}
         {{ $totalCount := len $discoverList | default (len $siteTaxos) }}
         {{ $halfCount := div $totalCount 2 }}

@@ -3,7 +3,7 @@
       <div class="header-info">
           <a class="navbar-brand" href="{{ .Site.BaseURL }}">
             <div class="d-flex align-items-center">
-              {{ if .Site.Params.Config.ShowSiteLogo }}
+              {{ if .Site.Params.Controls.ShowSiteLogo }}
                 <div class="navbar-brand-icon header-logo-container">
                     {{ $logoFilePath := (path.Join `static` `images` .Site.Params.Info.Logo) }}
                     {{ if fileExists $logoFilePath }}
@@ -14,10 +14,10 @@
                 </div>
               {{ end }}
 
-              {{ if .Site.Params.Config.ShowSiteTitle }}
+              {{ if .Site.Params.Controls.ShowSiteTitle }}
               <div class="navbar-brand-text">
                   <h2 class="header-sitename">{{ .Site.Title }}</h2>
-                  {{ if .Site.Params.Config.ShowSiteTagline }}
+                  {{ if .Site.Params.Controls.ShowSiteTagline }}
                     <p class="header-sitedesc">{{ .Site.Params.Info.Tagline }}</p>
                   {{ end }}
               </div>
@@ -26,11 +26,11 @@
           </a>
       </div>
 
-    {{ if .Site.Params.Config.ShowHeaderNav }}
+    {{ if .Site.Params.Controls.ShowHeaderNav }}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
           {{ $currentPage := . }}

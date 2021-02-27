@@ -1,16 +1,16 @@
 {{ $review := . }}
 
-{{ $mainName := site.Params.Meta.MainScore }}
+{{ $mainName := site.Params.Rating.MainScore }}
 {{ $mainValue := "" }}
 {{ $finalCustomValues := slice }}
 {{ $isReviewExists := ne $review nil }}
 
-{{ $customScoreNames := site.Params.Meta.CustomScores }}
+{{ $customScoreNames := site.Params.Rating.CustomScores }}
 
 {{ if $review }}
-	{{ $mainValue = printf "%v%v" ($review.Params.score) (site.Params.Meta.MainScoreSuffix | default "%") }}
+	{{ $mainValue = printf "%v%v" ($review.Params.score) (site.Params.Rating.MainScoreSuffix | default "%") }}
 
-	{{ $customSuffixes := site.Params.Meta.CustomScoresSuffix }}
+	{{ $customSuffixes := site.Params.Rating.CustomScoresSuffix }}
 	{{ $customScores := $review.Params.custom_scores }}
 	{{ range $custIndex, $scoreName := $customScoreNames }}
 		{{ $textToShow := "" }}
@@ -18,7 +18,7 @@
 		{{ $scoreVal := index $customScores $custIndex }}
 
 		{{ if $scoreVal }}
-			{{ $customNameData := index (site.Params.Meta.CustomRatingLookUp) $custIndex }}
+			{{ $customNameData := index (site.Params.Rating.CustomScoreLookUp) $custIndex }}
 			{{ if $customNameData }}
 				{{ $textToShow = index $customNameData $scoreVal | default "" }}
 			{{ end }}
@@ -69,11 +69,8 @@
 			{{ end }}
 		</div>
 	</div>
-	{{ if site.Params.Disclaimer.ShowRating }}
-		<div class="text-center">
-			<a href="{{ site.Params.Disclaimer.RatingLink | relURL }}">
-	  		({{ site.Params.Disclaimer.RatingLinkText | default "more info on ratings" }})
-	  		</a>
-		</div>
-	{{ end }}
+
+	<div class="text-center">
+		{{ partial "readmore-link.html" site.Params.ReadMoreLinks.Rating }}
+	</div>
 </div>

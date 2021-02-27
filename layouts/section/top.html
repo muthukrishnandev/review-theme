@@ -1,9 +1,9 @@
 {{ define "main" }}
-{{ $metaTypes := .Site.Params.Meta.TopList }}
+{{ $metaTypes := .Site.Params.MetaConfig.TopList }}
 
 {{ $limit := 10 }}
-{{ if .Site.Params.Meta.Pagination }}
-    {{ $limit = (index .Site.Params.Meta.Pagination .Type) | default 10 }}
+{{ if .Site.Params.MetaConfig.Pagination }}
+    {{ $limit = (index .Site.Params.MetaConfig.Pagination .Type) | default 10 }}
 {{ end }}
 
 {{ $context := . }}

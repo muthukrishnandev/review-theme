@@ -1,19 +1,25 @@
-.errors {
+.error-404 {
   .error-msg {
       text-align: center;
+      margin-top: $spacing-unit;
   }
 
   .error-image {
     text-align: center;
-    margin-top: $spacing-unit * 1.25;
+    margin-top: $spacing-unit;
 
     @include mobile {
       margin-top: $spacing-unit / 2;
     }
 
-    // img {
-    //   width: $content-width / 2;
-    // }
+    img {
+      width: 30vw;
+      height: auto;
+
+      @include mobile {
+        width: 60vw;
+      }
+    }
   }
 }
 
@@ -23,7 +29,7 @@
   }
 }
 
-.home {  
+.home {
   .more-link-container {
     text-align: right;
     padding-top: 8px;

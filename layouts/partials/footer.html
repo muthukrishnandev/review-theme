@@ -1,5 +1,5 @@
 <footer class="page-footer">
-    {{ if .Site.Params.Config.ShowSocialFooterNav }}
+    {{ if .Site.Params.Controls.ShowSocialFooterNav }}
     <div class="footer-social-media">
         <ul class="footer-social-media-list footer-list">
                 {{ partial "social-icons.html" . }}
@@ -7,7 +7,7 @@
     </div>
     {{ end }}
 
-    {{ if .Site.Params.Config.ShowFooterNav }}
+    {{ if .Site.Params.Controls.ShowFooterNav }}
         <div class="footer-navigation">
             <ul class="footer-nav-list">
                 {{ range .Site.Menus.footer }}

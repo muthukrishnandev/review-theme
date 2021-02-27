@@ -43,10 +43,7 @@ For full configuration of theme refer [config/_default](https://github.com/muthu
 - [Movie Card](https://codepen.io/simoberny/pen/qxxOqj)
 
 ##### Icons
-- [Picons Social](https://www.iconfinder.com/iconsets/picons-social) by Picons.me
-- [Free Social Icons](https://www.iconfinder.com/iconsets/free-social-icons) by Neil Hainsworth
-- [MiU Flat Social](https://www.iconfinder.com/iconsets/miu-flat-social) by Xinh Studio
-- [Social Media](https://www.iconfinder.com/iconsets/social-media-2285) by Iconfinder
+- [Social Icons](https://uxwing.com/)
 
 ### License
 

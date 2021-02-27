@@ -23,7 +23,7 @@
 		{{ $baseImageURL := $context.Site.Params.Info.BaseImageURL }}
 
 		{{ $imgLink := printf "%s%s" $baseImageURL $posterParam }}
-		
+
 		{{ $context.Scratch.Set "findposterlink_result" $imgLink }}
 		{{ $context.Scratch.Set "findposterlink_isfound" true }}
 	{{ else }}
@@ -43,7 +43,7 @@
 				{{ if $posterRes }}
 					{{ $context.Scratch.Set "findposterlink_result" $posterRes.Permalink }}
 					{{ $context.Scratch.Set "findposterlink_isfound" true }}
-					
+
 					{{ $context.Scratch.Set "findposterlink_isnoposter" true }}
 					{{ $isFound = true }}
 				{{ end }}

@@ -6,8 +6,8 @@
     </div>
      {{ end }}
 	{{ $pageLimit := 5 }}
-	{{ if .Site.Params.Meta.Pagination }}
-		{{ $pageLimit = (index .Site.Params.Meta.Pagination .Type) | default 5 }}
+	{{ if .Site.Params.MetaConfig.Pagination }}
+		{{ $pageLimit = (index .Site.Params.MetaConfig.Pagination .Type) | default 5 }}
 	{{ end }}
 	{{ $paginator := .Paginate (.Pages.ByLastmod.Reverse) $pageLimit }}
 	<div class="page-content-wrapper">

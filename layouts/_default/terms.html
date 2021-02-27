@@ -8,8 +8,8 @@
 	<div class="page-content-wrapper">
 		<ul class="post-list">
 	        {{ $pageLimit := 10 }}
-	        {{ if .Site.Params.Meta.Pagination }}
-	            {{ $pageLimit = (index .Site.Params.Meta.Pagination .Data.Plural) | default 10 }}
+	        {{ if .Site.Params.MetaConfig.Pagination }}
+	            {{ $pageLimit = (index .Site.Params.MetaConfig.Pagination .Data.Plural) | default 10 }}
 	        {{ end }}
 
 			{{ range $index, $termPage := (.Paginator $pageLimit).Pages }}
@@ -20,7 +20,7 @@
 						{{ else }}
 							{{ $termPage.Title }}
 						{{ end }}
-					</a> 
+					</a>
 					<p>{{ $termPage.Params.Description }}</p>
 				</li>
 			{{ end }}

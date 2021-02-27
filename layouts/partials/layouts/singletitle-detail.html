@@ -3,8 +3,8 @@
 	<h2 class="titlemeta-info-head">{{ (.Site.GetPage .Section).Title }} Detail</h2>
 	<div class="titlemeta-info-body">
 		<div style="text-indent: 5%;" class="mb-3">{{ $metaParams.storyline }}</div>
-		
-		{{ $allTaxos := index .Site.Params.Meta.TitleMetaList .Type }}
+
+		{{ $allTaxos := index .Site.Params.MetaConfig.TitleMetaList .Type }}
 		{{ partial "taxo-list.html" (dict "context" . "arr" $allTaxos) }}
 
 		{{ if eq .Type "tvshows"}}

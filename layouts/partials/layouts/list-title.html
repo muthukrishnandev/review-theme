@@ -1,7 +1,7 @@
 
 <div class="page-container">
 	<h1 class="page-heading">
-        {{ $toCheckSlice := .Site.Params.Meta.FilmographyList }}
+        {{ $toCheckSlice := .Site.Params.MetaConfig.FilmographyList }}
         {{ if in $toCheckSlice .Type }}
             {{ .Params.meta.title | default .Title }}'s Filmography
         {{ else }}
