@@ -166,8 +166,8 @@
   musicdirectors = 10
   cinematographers = 10
 
-  movies = 8
-  tvshows = 8
+  movies = 12 # need to be multiple of 4
+  tvshows = 12 # need to be multiple of 4
 
   editorials = 10
   reviews = 10

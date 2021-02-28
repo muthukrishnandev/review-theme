@@ -10,10 +10,21 @@
 		border-bottom: 1px solid $grey-color-lighter;
 
 		.titlemeta-poster-container{
+			display: flex;
+			justify-content: center;
+
 			.titlemeta-poster {
-				max-height: 300px;
-				display:block;
-	    		margin:auto;
+				// min-height: 210px;
+				max-height: 350px;
+				max-width: 100%;
+				// height: auto;
+				width: auto;
+				display: block;
+
+				@include mobile {
+					width: 100%;
+					max-width: 100%;
+				}
 			}
 			.titlemeta-poster-notice {
 				padding-top: 10px;
@@ -34,7 +45,7 @@
 			.titlemeta-review-container{
 				padding-top: 10px;
 				.review-summary {
-					
+
 					.bottomline-label {
 						font-size: 14px;
 					}
@@ -83,7 +94,7 @@
 			.titlemeta-info-row {
 				display: table-row;
 				min-width: 100%;
-		
+
 				.titlemeta-info-data,
 				.titlemeta-info-label {
 					display: table-cell;
@@ -100,7 +111,7 @@
 				}
 
 				.titlemeta-info-data {
-					padding: 0px 10px; 
+					padding: 0px 10px;
 				}
 			}
 		}
@@ -129,7 +140,7 @@
 						padding-left: 4px;
 					}
 				}
-			}	
+			}
 		}
 
 		.titlemeta-trailer{

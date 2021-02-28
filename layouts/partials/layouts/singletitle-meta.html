@@ -9,9 +9,10 @@
 	{{ partial "findposterlink.html" . }}
 	{{ if .Scratch.Get "findposterlink_isfound" }}
 		{{ $imgLink := .Scratch.Get "findposterlink_result" }}
-		<figure class="figure">
-		  <img loading="lazy" class="figure-img titlemeta-poster unselectable" src="{{ $imgLink }}" alt="">
-			{{ if .Site.Params.ReadMoreLinks.Poster.ShowInfo }}
+		<div class="card border-0">
+			<img loading="lazy" class="titlemeta-poster card-img-top unselectable" src="{{ $imgLink }}" alt="" />
+			<div class="card-body p-0">
+				{{ if .Site.Params.ReadMoreLinks.Poster.ShowInfo }}
 				{{ $copyString := "" }}
 				{{ $isNoPoster := .Scratch.Get "findposterlink_isnoposter" }}
 					{{ if not $isNoPoster }}
@@ -19,18 +20,21 @@
 						{{ $copyString = delimit (.Params.Productions | default slice) ",&nbsp;" }}
 					{{ end }}
 				{{ end }}
-			  	<figcaption class="figure-caption titlemeta-poster-notice text-center text-wrap">
-			  		{{ if $copyString }}
-				  		<span>&copy; {{ $copyString }}</span>
+					<p class="titlemeta-poster-notice card-text">
+						<span>
+						{{ if $copyString }}
+				  		&copy; {{ $copyString }}
 				  	{{ else }}
-				  		<span>&copy; {{ .Site.Params.ReadMoreLinks.Poster.Message }}</span>
-			  		{{ end }}
-			  		<a href="{{ .Site.Params.ReadMoreLinks.Poster.URL | relURL }}">
-			  		({{ .Site.Params.ReadMoreLinks.LinkText | default "Fair Use" }})
-			  		</a>
-			  	</figcaption>
-			{{ end }}
-		</figure>
+				  		&copy; {{ .Site.Params.ReadMoreLinks.Poster.Message }}
+						{{ end }}
+						</span>
+						<a href="{{ .Site.Params.ReadMoreLinks.Poster.URL | relURL }}">
+						({{ .Site.Params.ReadMoreLinks.LinkText | default "Fair Use" }})
+						</a>
+					</p>
+				{{ end }}
+			</div>
+		</div>
 	{{ else }}
 		{{ errorf (.Scratch.Get "findposterlink_error") }}
 	{{ end }}

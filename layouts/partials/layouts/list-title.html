@@ -10,6 +10,14 @@
     </h1>
 	<div class="page-content-wrapper">
         {{ $pageCount := 8 }}
+        {{ $pageMulti := 4 }}
+        {{ if .Site.Params.MetaConfig.Pagination }}
+            {{ $pageCount = (index .Site.Params.MetaConfig.Pagination .Type) | default 8 }}
+            {{ if ne (mod $pageCount $pageMulti) 0 }}
+                {{ $pageCount = sub $pageCount (mod $pageCount $pageMulti) }}
+            {{ end }}
+        {{ end }}
+
         {{ $paginatedPages := (.Paginator $pageCount).Pages.ByDate.Reverse }}
         {{ $totalCount := len $paginatedPages }}
 
