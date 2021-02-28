@@ -18,7 +18,7 @@
 		<div class="titlemeta-info-row">
 			<div class="titlemeta-info-label">Content Rating:</div>
 			<div class="titlemeta-info-data">
-				<span>{{ $metaParams.certificate }}</span>
+				<span>{{ $metaParams.certificate | default "Information Not Available" }}</span>
 				{{ $readMore := site.Params.ReadMoreLinks.ContentRating }}
 				{{ if $readMore }}
 					{{ if $readMore.ShowInfo }}
@@ -33,7 +33,13 @@
 		<!-- Release Date -->
 		<div class="titlemeta-info-row">
 			<div class="titlemeta-info-label">Released On:</div>
-			<div class="titlemeta-info-data">{{ $metaParams.released_on | dateFormat (site.Params.Info.DateFormat | default "January 2, 2006") }}</div>
+			<div class="titlemeta-info-data">
+				{{ if $metaParams.released_on }}
+					{{ $metaParams.released_on | dateFormat (site.Params.Info.DateFormat | default "January 2, 2006") }}
+				{{ else }}
+					{{ "Information Not Available" }}
+				{{ end }}
+			</div>
 		</div>
 
 		<!-- Language -->
@@ -62,7 +68,13 @@
 		<!-- Running Time -->
 		<div class="titlemeta-info-row">
 			<div class="titlemeta-info-label">Running Time:</div>
-			<div class="titlemeta-info-data">{{ $metaParams.running_time }} minutes</div>
+			<div class="titlemeta-info-data">
+				{{ if $metaParams.running_time }}
+					{{ $metaParams.running_time }} minutes
+				{{ else }}
+					{{ "Information Not Available" }}
+				{{ end }}
+			</div>
 		</div>
 
 		<!-- Production Company -->
