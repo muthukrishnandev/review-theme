@@ -123,12 +123,19 @@
   LinkText = "Read Full Disclaimer"
   Message = """These links are being provided as a convenience and for informational purposes only."""
 
+# Rating and ContentRating are special cases Message param is not needed
+
 [ReadMoreLinks.Rating]
   # Link to detail post which explains your rating scores
   ShowInfo = true
   URL = "/about#ratings"
   LinkText = "more info on these scores"
-  Message = ""
+
+[ReadMoreLinks.ContentRating]
+  # Link to detail post which explains your rating scores
+  ShowInfo = true
+  URL = "/about#content-rating"
+  LinkText = "more info"
 
 # advanced configs
 [MetaConfig]

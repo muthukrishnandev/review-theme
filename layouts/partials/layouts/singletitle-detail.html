@@ -17,7 +17,17 @@
 		<!-- Content Rating -->
 		<div class="titlemeta-info-row">
 			<div class="titlemeta-info-label">Content Rating:</div>
-			<div class="titlemeta-info-data">{{ $metaParams.certificate }}</div>
+			<div class="titlemeta-info-data">
+				<span>{{ $metaParams.certificate }}</span>
+				{{ $readMore := site.Params.ReadMoreLinks.ContentRating }}
+				{{ if $readMore }}
+					{{ if $readMore.ShowInfo }}
+						<a href="{{ ($readMore.URL | safeURL) | relURL }}">
+							({{ $readMore.LinkText | default "For More Info" }})
+						</a>
+					{{ end }}
+				{{ end }}
+			</div>
 		</div>
 
 		<!-- Release Date -->

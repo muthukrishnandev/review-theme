@@ -4,7 +4,7 @@
 {{ if $param.ShowInfo }}
 <div class="readmore-link-container">
 	<span>{{ $param.Message }}</span>
-	<a href="{{ ($param.URL | safeURL) | absURL }}">
+	<a href="{{ ($param.URL | safeURL) | relURL }}">
 		({{ $param.LinkText | default "For More Info" }})
 	</a>
 </div>
