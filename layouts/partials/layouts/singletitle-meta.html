@@ -1,7 +1,7 @@
 
 {{ $metaParams := .Params.meta }}
 
-<div class="col-md-3 col-xs-12 titlemeta-poster-container text-center">
+<div class="col-md-3 col-xs-12 titlemeta-poster-wrapper mt-3">
 	{{ if not (isset $metaParams "poster") }}
 		{{ errorf "poster param not found for %s" .File }}
 	{{ end }}
@@ -10,7 +10,9 @@
 	{{ if .Scratch.Get "findposterlink_isfound" }}
 		{{ $imgLink := .Scratch.Get "findposterlink_result" }}
 		<div class="card border-0">
-			<img loading="lazy" class="titlemeta-poster card-img-top unselectable" src="{{ $imgLink }}" alt="" />
+			<div class="titlemeta-poster-container">
+				<img loading="lazy" class="titlemeta-poster card-img-top unselectable" src="{{ $imgLink }}" alt="" />
+			</div>
 			<div class="card-body p-0">
 				{{ if .Site.Params.ReadMoreLinks.Poster.ShowInfo }}
 				{{ $copyString := "" }}
@@ -20,7 +22,7 @@
 						{{ $copyString = delimit (.Params.Productions | default slice) ",&nbsp;" }}
 					{{ end }}
 				{{ end }}
-					<p class="titlemeta-poster-notice card-text">
+					<p class="titlemeta-poster-notice card-text text-center">
 						<span>
 						{{ if $copyString }}
 				  		&copy; {{ $copyString }}

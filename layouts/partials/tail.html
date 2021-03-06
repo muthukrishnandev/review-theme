@@ -5,9 +5,12 @@
 {{ $bootstrapJS := resources.Get "js/third_party/bootstrap.bundle.min.js" }}
 {{ $jqueryJS := resources.Get "js/third_party/jquery.slim.min.js" }}
 {{ $ytLiteJS := resources.Get "js/third_party/youtube-lite.js" }}
+{{ $mainJS := resources.Get "js/main.js" }}
+
 {{ $jsFiles = $jsFiles | append $jqueryJS }}
 {{ $jsFiles = $jsFiles | append $bootstrapJS }}
 {{ $jsFiles = $jsFiles | append $ytLiteJS }}
+{{ $jsFiles = $jsFiles | append $mainJS }}
 
 <!-- custom js -->
 {{- range $scriptPath := .Site.Params.Style.JS -}}

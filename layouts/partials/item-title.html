@@ -15,7 +15,10 @@
     </a>
     <div class="card-footer title-item-meta">
       <a class="title-item-link" href="{{ .Permalink }}">
-        <h3 class="card-text title-item-title text-wrap">{{ .Params.meta.title | default .Title }}</h3>
+        {{ $finalTitle := .Params.meta.title | default .Title }}
+        <h3 class="card-text title-item-title text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{ $finalTitle | safeHTML }}">
+            {{ $finalTitle | safeHTML }}
+        </h3>
         <p class="card-text title-item-date">{{ .Params.meta.year | default (.Params.meta.released_on | dateFormat "2006") }}</p>
       </a>
     </div>

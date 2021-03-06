@@ -9,23 +9,20 @@
 		padding-bottom: 12px;
 		border-bottom: 1px solid $grey-color-lighter;
 
-		.titlemeta-poster-container{
+		.titlemeta-poster-wrapper {
 			display: flex;
 			justify-content: center;
 
-			.titlemeta-poster {
-				// min-height: 210px;
-				max-height: 350px;
-				max-width: 100%;
-				// height: auto;
-				width: auto;
-				display: block;
+			.titlemeta-poster-container {
+				height: 350px;
 
-				@include mobile {
-					width: 100%;
+				img.titlemeta-poster {
 					max-width: 100%;
+   					max-height: 100%;
+					object-fit: contain;
 				}
 			}
+
 			.titlemeta-poster-notice {
 				padding-top: 10px;
 				font-size: 12px;
