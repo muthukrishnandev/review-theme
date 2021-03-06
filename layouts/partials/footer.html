@@ -1,27 +1,39 @@
-<footer class="page-footer">
+<footer class="page-footer w-md-100">
     {{ if .Site.Params.Controls.ShowSocialFooterNav }}
-    <div class="footer-social-media">
-        <ul class="footer-social-media-list footer-list">
-                {{ partial "social-icons.html" . }}
-        </ul>
+    <div class="d-flex justify-content-center">
+        <div class="col-12">
+            <div class="footer-social-media">
+                <ul class="footer-social-media-list footer-list">
+                    {{ partial "social-icons.html" . }}
+                </ul>
+            </div>
+        </div> 
     </div>
     {{ end }}
 
     {{ if .Site.Params.Controls.ShowFooterNav }}
-        <div class="footer-navigation">
-            <ul class="footer-nav-list">
-                {{ range .Site.Menus.footer }}
-                    <li class="footer-nav-item"><a class="footer-nav-link" href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
-                {{ end }}
-            </ul>
+    <div class="d-flex justify-content-center">
+        <div class="col-12">
+            <div class="footer-navigation">
+                <ul class="footer-nav-list">
+                    {{ range .Site.Menus.footer }}
+                        <li class="footer-nav-item"><a class="footer-nav-link" href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
         </div>
+    </div>
     {{ end }}
 
-    <div class="footer-notice">
-        <div class="footer-copyright">
-            {{ $copyText := replace .Site.Copyright "{year}" now.Year }}
-            {{ $copyText = replace $copyText "{name}" .Site.Title }}
-            {{ $copyText | markdownify }}
-         </div>
+    <div class="d-flex justify-content-center">
+        <div class="col-12">
+            <div class="footer-notice text-wrap">
+                <div class="footer-copyright">
+                    {{ $copyText := replace .Site.Copyright "{year}" now.Year }}
+                    {{ $copyText = replace $copyText "{name}" .Site.Title }}
+                    {{ $copyText | markdownify }}
+                 </div>
+            </div>
+        </div>
     </div>
 </footer>

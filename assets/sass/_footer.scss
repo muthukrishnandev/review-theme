@@ -3,8 +3,11 @@
   padding: ($spacing-unit / 3) 0 ($spacing-unit / 2);
   position: absolute;
   bottom: 0;
-  width: 100%;
   border-top: 1px solid $grey-color-lighter;
+
+  @include desktop {
+    width: 100%;
+  }
 
   .footer-social-media-list {
     padding: 0;
@@ -30,8 +33,8 @@
     }
 
     .social-icon-item {
-      padding-left: 1px;
-      padding-right: 1px;
+      padding-left: 3px;
+      padding-right: 3px;
     }
   }
 
@@ -48,15 +51,15 @@
 
         font-size: 16px;
 
-        @include mobile {
-          display: flex;
-          width: 80%;
-          margin: 5px auto;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          flex-flow: row wrap;
-        }
+        // @include mobile {
+        //   // display: flex;
+        //   // width: 80%;
+        //   // margin: 5px auto;
+        //   // align-items: center;
+        //   // justify-content: center;
+        //   // flex-direction: column;
+        //   // flex-flow: row wrap;
+        // }
 
       .footer-nav-item {
         display: inline;
