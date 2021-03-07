@@ -7,7 +7,7 @@
 		<h2 class="titlemeta-info-head">You may also like</h2>
 		<div class="titlemeta-info-body">
 		  {{ $related = first $relCount $related }}
-		  <div class="row d-flex flex-row flex-nowrap overflow-auto title-list-row singletitle-related">
+		  <div class="row no-gutters d-flex flex-row flex-nowrap overflow-auto title-list-row singletitle-related">
 		  	{{ range $val := seq $relCount }}
 		  		{{ $index := sub $val 1 }}
 		  		{{ $page := index $related $index }}
