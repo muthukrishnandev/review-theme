@@ -9,10 +9,30 @@
 	{{ if .Site.Params.MetaConfig.Pagination }}
 		{{ $pageLimit = (index .Site.Params.MetaConfig.Pagination .Type) | default 5 }}
 	{{ end }}
-	{{ $paginator := .Paginate (.Pages.ByLastmod.Reverse) $pageLimit }}
+
+	<!-- Default order -->
+    {{ $orderedPages := .Pages.ByLastmod.Reverse }}
+    {{ if .Site.Params.MetaConfig.Ordering }}
+        {{ $pageOrder := (index .Site.Params.MetaConfig.Ordering .Type) | default "date" }}
+        <!-- Date -->
+        {{ if eq $pageOrder "date" }}
+            {{ $orderedPages = $orderedPages.ByLastmod }}
+        <!-- Date Desc -->
+        {{ else if eq $pageOrder "dateDesc" }}
+            {{ $orderedPages = $orderedPages.ByLastmod.Reverse }}
+        <!-- Alphabetical -->
+        {{ else if eq $pageOrder "alpha" }}
+            {{ $orderedPages = $orderedPages.ByTitle }}
+        <!-- Alphabetical Reverse -->
+        {{ else if eq $pageOrder "alphaDesc" }}
+            {{ $orderedPages = $orderedPages.ByTitle.Reverse }}
+        {{ end }}
+    {{ end }}
+
+    {{ $customPaginate := .Paginate ($orderedPages) $pageLimit }}
 	<div class="page-content-wrapper">
 		<div class="post-list">
-			{{ range $paginator.Pages }}
+			{{ range $customPaginate.Pages }}
 				{{ partial "item-post.html" . }}
 			{{ end }}
 		</div>

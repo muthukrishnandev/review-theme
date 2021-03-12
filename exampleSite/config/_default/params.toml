@@ -123,6 +123,12 @@
   LinkText = "Read Full Disclaimer"
   Message = """These links are being provided as a convenience and for informational purposes only."""
 
+[ReadMoreLinks.TitleEndNote]
+  ShowInfo = false
+  URL = "/disclaimer#general"
+  LinkText = "Here"
+  Message = """All information provided are prone to error. If find any let us know"""
+
 # Rating and ContentRating are special cases Message param is not needed
 
 [ReadMoreLinks.Rating]
@@ -163,6 +169,7 @@
   actors = 10
   writers = 10
   directors = 10
+  creators = 10
   musicdirectors = 10
   cinematographers = 10
 
@@ -179,3 +186,22 @@
 
   top = 10
   discover = 10
+
+[MetaConfig.Ordering]
+  actors = "alpha"               # available options: alpha, alphaDesc, date, dateDesc
+  writers = "alpha"              # available options: alpha, alphaDesc, date, dateDesc
+  directors = "alpha"            # available options: alpha, alphaDesc, date, dateDesc
+  musicdirectors = "alpha"       # available options: alpha, alphaDesc, date, dateDesc
+  cinematographers = "alpha"     # available options: alpha, alphaDesc, date, dateDesc
+  creators = "alpha"             # available options: alpha, alphaDesc, date, dateDesc
+
+  genres = "alpha"                  # available options: alpha, alphaDesc, date, dateDesc
+  reviewtags = "alpha"              # available options: alpha, alphaDesc, date, dateDesc
+  plottags = "alpha"                # available options: alpha, alphaDesc, date, dateDesc
+  tags = "alpha"                    # available options: alpha, alphaDesc, date, dateDesc
+
+  editorials = "dateDesc"   # available options: alpha, alphaDesc, date, dateDesc
+  reviews = "dateDesc"      # available options: alpha, alphaDesc, date, dateDesc
+
+  movies = "dateDesc"       # available options: date, dateDesc, release, releaseDesc, releaseYear, releaseYearDesc
+  tvshows = "dateDesc"      # available options: date, dateDesc, release, releaseDesc, releaseYear, releaseYearDesc

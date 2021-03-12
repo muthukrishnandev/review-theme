@@ -12,7 +12,28 @@
 	            {{ $pageLimit = (index .Site.Params.MetaConfig.Pagination .Data.Plural) | default 10 }}
 	        {{ end }}
 
-			{{ range $index, $termPage := (.Paginator $pageLimit).Pages }}
+	        <!-- Ordering -->
+	        <!-- Default order -->
+		    {{ $orderedPages := .Pages.ByDate.Reverse }}
+		    {{ if .Site.Params.MetaConfig.Ordering }}
+		        {{ $pageOrder := (index .Site.Params.MetaConfig.Ordering .Type) | default "date" }}
+		        <!-- Date -->
+		        {{ if eq $pageOrder "date" }}
+		            {{ $orderedPages = $orderedPages.ByDate }}
+		        <!-- Date Desc -->
+		        {{ else if eq $pageOrder "dateDesc" }}
+		            {{ $orderedPages = $orderedPages.ByDate.Reverse }}
+		        <!-- Alphabetical -->
+		        {{ else if eq $pageOrder "alpha" }}
+		            {{ $orderedPages = $orderedPages.ByTitle }}
+		        <!-- Alphabetical Reverse -->
+		        {{ else if eq $pageOrder "alphaDesc" }}
+		            {{ $orderedPages = $orderedPages.ByTitle.Reverse }}
+		        {{ end }}
+		    {{ end }}
+
+		    {{ $customPaginate := .Paginate ($orderedPages) $pageLimit }}
+			{{ range $index, $termPage := $customPaginate.Pages }}
 			  	<li>
 					<a href="{{ .Permalink }}">
 						{{ if $termPage.Params.meta }}

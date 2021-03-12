@@ -18,9 +18,26 @@
             {{ end }}
         {{ end }}
 
-        {{ $paginatedPages := (.Paginator $pageCount).Pages.ByDate.Reverse }}
-        {{ $totalCount := len $paginatedPages }}
+        <!-- Ordering -->
+        {{ $orderedPages := .Pages.ByDate.Reverse }}
+        {{ if .Site.Params.MetaConfig.Ordering }}
+            {{ $pageOrder := (index .Site.Params.MetaConfig.Ordering .Type) | default "date" }}
+            {{ if eq $pageOrder "date" }}
+                {{ $orderedPages = .Pages.ByDate }}
+            {{ else if eq $pageOrder "dateDesc" }}
+                {{ $orderedPages = .Pages.ByDate.Reverse }}
+            {{ else if eq $pageOrder "release" }}
+                {{ $orderedPages = (.Pages.ByParam "meta.released_on") }}
+            {{ else if eq $pageOrder "releaseDesc" }}
+                {{ $orderedPages = (.Pages.ByParam "meta.released_on").Reverse }}
+            {{ else if eq $pageOrder "releaseYear" }}
+                {{ $orderedPages = (.Pages.ByParam "meta.year") }}
+            {{ else if eq $pageOrder "releaseYearDesc" }}
+                {{ $orderedPages = (.Pages.ByParam "meta.year").Reverse }}
+            {{ end }}
+        {{ end }}
 
+        {{ $paginatedPages := (.Paginate $orderedPages $pageCount).Pages }}
         <div class="post-list title-list-row row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-4">
         {{ range $val := seq $pageCount }}
             {{ $index := sub $val 1}}
