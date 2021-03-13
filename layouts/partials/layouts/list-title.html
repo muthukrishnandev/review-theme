@@ -34,6 +34,10 @@
                 {{ $orderedPages = (.Pages.ByParam "meta.year") }}
             {{ else if eq $pageOrder "releaseYearDesc" }}
                 {{ $orderedPages = (.Pages.ByParam "meta.year").Reverse }}
+            {{ else if eq $pageOrder "title" }}
+                {{ $orderedPages = (.Pages.ByParam "meta.title") }}
+            {{ else if eq $pageOrder "titleDesc" }}
+                {{ $orderedPages = (.Pages.ByParam "meta.title").Reverse }}
             {{ end }}
         {{ end }}
 
