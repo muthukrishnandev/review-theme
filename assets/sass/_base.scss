@@ -191,6 +191,7 @@ table {
   font-size: 14px;
   font-style: italic;
   color: $grey-color-dark;
+  margin-top: 12px;
 
   @include mobile {
     padding-top: 3px;
