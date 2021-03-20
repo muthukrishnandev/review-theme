@@ -10,6 +10,11 @@
 		 {{ if fileExists (path.Join `static` `images` .Site.Params.Info.image404) }}
     		{{ $finalImageURL := (path.Join `images` .Site.Params.Info.image404) | absURL }}
 			<img loading="lazy" src="{{ $finalImageURL }}" alt="{{ .Site.Params.Info.image404Alt }}" />
+			{{ if or (.Site.Params.Info.image404AttrText) (.Site.Params.Info.image404AttrLink) }}
+				<div class="image-attribution">
+					<a href="{{ .Site.Params.Info.image404AttrLink | safeHTML }}">{{ .Site.Params.Info.image404AttrText | safeHTML }}</a>
+				</div>
+			{{ end }}
 		{{ else }}
 			{{ warnf "404 Image is not found" }}
  		{{ end }}

@@ -6,7 +6,8 @@
 
   # optional image to show in 404 page, will not throw error, only shows a warning if image not found
   image404 = "404.jpg" # store in static/images
-  image404Alt = "Constructocat by https://github.com/jasoncostello" # optional image alt text
+  image404AttrText = "Constructocat by jasoncostello" # optional image alt text
+  image404AttrLink = "https://github.com/jasoncostello" # optional image alt link
 
   # used as substitute for baseimageurl: in poster param in movies, tvshows
   BaseImageURL = "" #https://example.com
