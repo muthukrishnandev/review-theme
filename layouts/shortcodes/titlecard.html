@@ -19,17 +19,20 @@
 
 {{ if $isFound }}
 	{{ $metaParams := $titlePage.Params.meta }}
-	
+
 	<!-- The New Version is inspired from https://codepen.io/simoberny/pen/qxxOqj -->
-	
+
 	<div class="titlecard-wrapper">
 		<div class="titlecard">
 		  <div class="titlecard-info">
 		    <div class="titlecard-header">
-			<h1 class="titlecard-title">
-				<a href="{{ $titlePage.Permalink }}">{{ $metaParams.title }}</a>
-			</h1>
-		      <h4 class="titlecard-year">{{ $titlePage.Params.meta.Year }}</h4>
+				<h1 class="titlecard-title text-wrap w-75">
+					<a href="{{ $titlePage.Permalink }}">{{ $metaParams.title }}</a>
+				</h1>
+				{{ if .Parent }}
+		    		<span class="titlecard-number">#{{ add .Ordinal 1 }}</span>
+				{{ end }}
+		     	<h4 class="titlecard-year">{{ $titlePage.Params.meta.Year }}</h4>
 		    </div>
 		    <div class="titlecard-meta">
 		    	<div class="titlecard-review">
