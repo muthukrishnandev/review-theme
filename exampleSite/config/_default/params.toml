@@ -87,7 +87,6 @@
   Reddit = true
   Whatsapp = true
   Telegram = true
-  Signal = true
 
 [Rating]
   MainScore = "Main Score"
