@@ -2,7 +2,7 @@
   source = "content_index"
   target = "content"
 [[mounts]]
-  source = "content_meta"
+  source = "content_taxo"
   target = "content"
 [[mounts]]
   source = "content_title"
