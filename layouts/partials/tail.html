@@ -66,7 +66,8 @@
                 templates: {
                   suggestion: function(suggestion) {
                     var val = suggestion._highlightResult.title.value;
-                    return `<span>${val}</span>`;
+                    var type = suggestion.type;
+                    return `<div>${val}<span class="float-right"><small>${type}</span></div></small>`;
                   }
                 }
             }
