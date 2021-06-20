@@ -13,7 +13,7 @@
 			<div class="titlemeta-poster-container">
 				<img loading="lazy" class="titlemeta-poster card-img-top unselectable" src="{{ $imgLink }}" alt="" />
 			</div>
-			<div class="card-body p-0">
+			<div class="card-body">
 				{{ if .Site.Params.ReadMoreLinks.Poster.ShowInfo }}
 				{{ $copyString := "" }}
 				{{ $isNoPoster := .Scratch.Get "findposterlink_isnoposter" }}
