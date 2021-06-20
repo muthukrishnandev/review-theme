@@ -1,0 +1,38 @@
+
+{{ if .Site.Params.Search.Enable }}
+
+    {{- $indexArr := slice -}}
+    
+    {{- $indexedList := .Site.Params.Search.IndexTypes -}}
+
+    {{- $finalIndexPages := (where $.Site.RegularPages "Type" "in" $indexedList) -}}
+
+    {{/* Taxonomy Term Pages */}}
+    {{- range $taxonomyTerm, $taxonomy := .Site.Taxonomies -}}
+        {{- if in $indexedList $taxonomyTerm -}}
+            {{- if $taxonomy -}}
+                {{- range $key, $value := $taxonomy.ByCount -}}
+                      {{- $finalIndexPages = $finalIndexPages | append $value.Page -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- range $page := $finalIndexPages -}}
+        {{- 
+            $indexData := dict  
+                "objectID" $page.File.UniqueID
+                "title" $page.Title
+                "date" $page.Date
+                "href" $page.Permalink
+                "summary" $page.Summary
+                "tags" $page.Params.tags
+                "type" $page.Type
+        -}}
+
+        {{- $indexArr = $indexArr | append $indexData -}}
+    {{- end -}}
+
+    {{- $indexArr | jsonify -}}
+
+{{ end }}

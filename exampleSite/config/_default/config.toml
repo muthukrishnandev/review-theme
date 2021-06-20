@@ -12,3 +12,12 @@ enableGitInfo = true
 enableRobotsTXT = false
 
 theme = "movie-theme"
+
+[outputFormats.SearchIndex]
+baseName = "searchindex"
+mediaType = "application/json"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = ["HTML", "RSS", "SearchIndex"]

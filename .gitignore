@@ -1,4 +1,6 @@
 /resources
 /exampleSite/resources/
 /exampleSite/public/
+/exampleSite/themes/*
+/exampleSite/node_modules/
 contentsample/

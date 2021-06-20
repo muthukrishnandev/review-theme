@@ -77,6 +77,14 @@
   # use display noposter.png instead of throwing error
   UseNoPoster = true
 
+[Search]
+  Enable = true # search index
+  AppID = "AppID"
+  SearchAPIKey = "SearchKey"
+  IndexName = "IndexName"
+  CountPerPage = 10
+  IndexTypes = ["movies", "tvshows", "actors", "creators", "directors", "writers", "musicdirectors", "cinematographers"]
+
 [ShareButton]
   # disable all
   Show = true

@@ -56,6 +56,7 @@ $link-color-darker: darken($link-color, 40%) !default;
 @import "layout";
 @import "social_icons";
 @import "header", "footer";
+@import "search";
 
 @import "title_meta";
 @import "page_specific";

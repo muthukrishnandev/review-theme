@@ -7,10 +7,18 @@
 {{ $ytLiteJS := resources.Get "js/third_party/youtube-lite.js" }}
 {{ $mainJS := resources.Get "js/main.js" }}
 
+{{ $algoLiteJS := resources.Get "js/third_party/algoliasearchLite.min.js" }}
+{{ $autoJS := resources.Get "js/third_party/autocomplete.min.js" }}
+
 {{ $jsFiles = $jsFiles | append $jqueryJS }}
 {{ $jsFiles = $jsFiles | append $bootstrapJS }}
 {{ $jsFiles = $jsFiles | append $ytLiteJS }}
 {{ $jsFiles = $jsFiles | append $mainJS }}
+
+{{ if .Site.Params.Search.Enable }}
+	{{ $jsFiles = $jsFiles | append $algoLiteJS }}
+	{{ $jsFiles = $jsFiles | append $autoJS }}
+{{ end }}
 
 <!-- custom js -->
 {{- range $scriptPath := .Site.Params.Style.JS -}}
@@ -22,4 +30,51 @@
 	{{ $secureScript := $jsFiles | resources.Concat "js/script.js" }}
 	{{ $secureScript = $secureScript | resources.Minify | resources.Fingerprint "sha512" }}
 	<script type="text/javascript" src="{{ $secureScript.Permalink }}" integrity="{{ $secureScript.Data.Integrity }}"></script>
+{{ end }}
+
+{{ if .Site.Params.Search.Enable }}
+    <script>
+      $(document).ready(function(){
+        var client = algoliasearch("{{ .Site.Params.Search.AppID }}", "{{ .Site.Params.Search.SearchAPIKey }}");
+        var index = client.initIndex("{{ .Site.Params.Search.IndexName }}");
+
+        var options = {
+            hint: false,
+            templates: {
+              dropdownMenu: `
+                  <div class="my-custom-menu">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="aa-dataset-d1"></div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="aa-dataset-d2"></div>
+                        <div class="aa-dataset-d3"></div>
+                      </div>
+                    </div>
+                  </div>`,
+              empty: `<div><p class="text-center">No Results</p></div>`
+          }
+        };
+
+        var countPerPage = {{ .Site.Params.Search.CountPerPage | default 10 }}
+
+        var datasets = [
+            {
+                source: autocomplete.sources.hits(index, { hitsPerPage: countPerPage }),
+                displayKey: 'SearchIndex',
+                templates: {
+                  suggestion: function(suggestion) {
+                    var val = suggestion._highlightResult.title.value;
+                    return `<span>${val}</span>`;
+                  }
+                }
+            }
+        ];
+
+        autocomplete('#search-input', options, datasets).on("autocomplete:selected",function(event, suggestion, dataset, context) {
+                window.location.href = suggestion.href;
+          });
+      });
+    </script>
 {{ end }}

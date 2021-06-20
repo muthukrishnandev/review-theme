@@ -112,12 +112,12 @@
     url = "/reviews/"
     weight = 6
 
-[[header]]
-    name = "About"
-    identifier = "about"
-    title = "about"
-    url = "/about/"
-    weight = 7
+# [[header]]
+#     name = "About"
+#     identifier = "about"
+#     title = "about"
+#     url = "/about/"
+#     weight = 7
     
 [[footer]]
     name = "Privacy Policy"
