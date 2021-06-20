@@ -12,7 +12,7 @@
 		  		{{ $index := sub $val 1 }}
 		  		{{ $page := index $related $index }}
 		  		{{ if $page }}
-			  		<div class="col">
+			  		<div class="col mx-1">
 						{{ partial "item-title.html" $page }}
 			  		</div>
 				{{ end }}
