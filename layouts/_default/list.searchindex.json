@@ -19,18 +19,19 @@
     {{- end -}}
 
     {{- range $page := $finalIndexPages -}}
-        {{- 
-            $indexData := dict  
-                "objectID" $page.File.UniqueID
-                "title" $page.Title
-                "date" $page.Date
-                "href" $page.Permalink
-                "summary" $page.Summary
-                "tags" $page.Params.tags
-                "type" $page.Type
-        -}}
-
-        {{- $indexArr = $indexArr | append $indexData -}}
+        {{ if $page.File }}
+            {{- 
+                $indexData := dict  
+                    "objectID" $page.File.UniqueID
+                    "title" $page.Title
+                    "date" $page.Date
+                    "href" $page.Permalink
+                    "summary" $page.Summary
+                    "tags" $page.Params.tags
+                    "type" $page.Type
+            -}}
+            {{- $indexArr = $indexArr | append $indexData -}}
+        {{ end }}
     {{- end -}}
 
     {{- $indexArr | jsonify -}}
