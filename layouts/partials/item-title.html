@@ -7,7 +7,8 @@
       {{ partial "findposterlink.html" $titlePage }}
       {{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
         {{ $imgLink := $titlePage.Scratch.Get "findposterlink_result" }}
-          <img loading="lazy" class="card-img-top h-100 title-item-poster unselectable" src="{{ $imgLink }}">
+        {{ $defaultImage := resources.GetMatch "images/noposter.png" }}
+          <img class="lazy card-img-top h-100 title-item-poster unselectable" src="{{ $defaultImage.Permalink }}" data-src="{{ $imgLink }}">
       {{ else }}
         {{ errorf ($titlePage.Scratch.Get "findposterlink_error") }}
       {{ end }}

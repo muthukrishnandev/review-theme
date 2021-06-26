@@ -11,7 +11,8 @@
 		{{ $imgLink := .Scratch.Get "findposterlink_result" }}
 		<div class="card border-0">
 			<div class="titlemeta-poster-container">
-				<img loading="lazy" class="titlemeta-poster card-img-top unselectable" src="{{ $imgLink }}" alt="" />
+				{{ $defaultImage := resources.GetMatch "images/noposter.png" }}
+				<img class="lazy titlemeta-poster card-img-top unselectable" src="{{ $defaultImage.Permalink }}" data-src="{{ $imgLink }}" alt="" />
 			</div>
 			<div class="card-body">
 				{{ if .Site.Params.ReadMoreLinks.Poster.ShowInfo }}

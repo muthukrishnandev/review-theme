@@ -7,18 +7,22 @@
 {{ $ytLiteJS := resources.Get "js/third_party/youtube-lite.js" }}
 {{ $mainJS := resources.Get "js/main.js" }}
 
+{{ $lazyJS := resources.Get "js/third_party/lazyload.min.js" }}
+
 {{ $algoLiteJS := resources.Get "js/third_party/algoliasearchLite.min.js" }}
 {{ $autoJS := resources.Get "js/third_party/autocomplete.min.js" }}
 
 {{ $jsFiles = $jsFiles | append $jqueryJS }}
 {{ $jsFiles = $jsFiles | append $bootstrapJS }}
-{{ $jsFiles = $jsFiles | append $ytLiteJS }}
-{{ $jsFiles = $jsFiles | append $mainJS }}
 
 {{ if .Site.Params.Search.Enable }}
 	{{ $jsFiles = $jsFiles | append $algoLiteJS }}
 	{{ $jsFiles = $jsFiles | append $autoJS }}
 {{ end }}
+
+{{ $jsFiles = $jsFiles | append $ytLiteJS }}
+{{ $jsFiles = $jsFiles | append $lazyJS }}
+{{ $jsFiles = $jsFiles | append $mainJS }}
 
 <!-- custom js -->
 {{- range $scriptPath := .Site.Params.Style.JS -}}
