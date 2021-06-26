@@ -83,15 +83,6 @@
       padding-left: 3px;
       padding-right: 3px;
 
-      &.active{
-        color: $text-color;
-        font-weight: 700;
-      }
-
-      &:last-child{
-        margin-right: 0px;
-      }
-
       .nav-link {
         color: $grey-color-darker;
         letter-spacing: 1px;
@@ -101,9 +92,45 @@
         }
       }
 
+      &.active{
+        background-color: $darkBlack;
+        border-radius: 5%;
+
+        .nav-link {
+          color: $background-color;
+        }
+      }
+
+      &:last-child{
+        margin-right: 0px;
+      }
+
       .dropdown-item {
         font-size: 14px;
+        &.active {
+          background-color: $darkBlack;
+        }
       }
+    }
+
+    .navbar-search {
+        padding: 0;
+        vertical-align: top;
+
+        input {
+          height: 40px;
+          max-width: 250px;
+        }
+
+        @include mobile {
+          padding-left: 8px;
+          padding-right: 8px;
+
+          input {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
     }
   }
 }
