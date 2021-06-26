@@ -2,6 +2,10 @@
   .post-list-item {
     padding-top: $spacing-unit / 2;
     padding-bottom: $spacing-unit / 6;
+
+    .card {
+      background-color: $background-color;
+    }
     
     &:not(:last-child){
       border-bottom: 1px solid $grey-color-lighter;
@@ -78,6 +82,7 @@
       height: 100%!important;
       // border: 1px solid $grey-color-lighter;
       border: none;
+      background-color: $background-color;
 
       .card-body {
         padding: 3px 0px;

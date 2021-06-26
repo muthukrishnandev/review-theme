@@ -9,13 +9,20 @@
 		padding-bottom: 12px;
 		border-bottom: 1px solid $grey-color-lighter;
 
+		.card {
+			background-color: $background-color;
+		}
+
 		.titlemeta-poster-wrapper {
 			display: flex;
 			justify-content: center;
 
 			.titlemeta-poster-container {
 				max-height: 350px;
-				height: 100%;
+
+				@include mobile {
+					height: 100%;
+				}
 
 				img.titlemeta-poster {
 					object-fit: contain;
@@ -185,6 +192,7 @@
 	.score-rating {
 		.card, .card-footer {
 			border: none;
+			background-color: $background-color;
 		}
 		.card-body {
 			display: flex;
