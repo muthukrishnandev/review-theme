@@ -76,7 +76,7 @@
 			{{ partial "findposterlink.html" $titlePage }}
 			{{ if $titlePage.Scratch.Get "findposterlink_isfound" }}
 				{{ $posterRes := $titlePage.Scratch.Get "findposterlink_result" }}
-					<div class="titlecard-poster" style="background-image: url('{{ $posterRes }}');"></div>
+					<div class="lazy titlecard-poster" data-bg="{{ $posterRes }}"></div>
 			{{ else }}
 				{{ errorf ($titlePage.Scratch.Get "findposterlink_error") }}
 			{{ end }}
