@@ -1,6 +1,6 @@
-# movie-theme
+# review-theme
 
-movie-theme is a minimal and clean entertainment/review theme for [Hugo](http://gohugo.io/). 
+review-theme is a minimal and clean entertainment/review theme for [Hugo](http://gohugo.io/). 
 
 ### [Demo](https://movietheme.muthukrishnan.dev/)
 
@@ -14,8 +14,8 @@ Working demo is available [here](https://movietheme.muthukrishnan.dev/).
 
 #### Using git sub-modules
 ```
-git submodule add https://github.com/muthukrishnandev/movie-theme themes/movie-theme
-cp themes/movie-theme/config.toml .
+git submodule add https://github.com/muthukrishnandev/review-theme themes/review-theme
+cp themes/review-theme/config.toml .
 ```
 
 refer [hugo docs](http://gohugo.io/themes/installing) for more information.
@@ -23,12 +23,12 @@ refer [hugo docs](http://gohugo.io/themes/installing) for more information.
 ### Build your site
 
 ```
-hugo server -t movie-theme
+hugo server -t review-theme
 ```
 
 ### Configuration
 
-For full configuration of theme refer [config/_default](https://github.com/muthukrishnandev/movie-theme/blob/master/exampleSite/config/_default) directory
+For full configuration of theme refer [config/_default](https://github.com/muthukrishnandev/review-theme/blob/master/exampleSite/config/_default) directory
 
 ### Attribution
 
@@ -47,4 +47,4 @@ For full configuration of theme refer [config/_default](https://github.com/muthu
 
 ### License
 
-This theme is open sourced under [MIT license](https://github.com/muthukrishnandev/movie-theme/blob/master/LICENSE.md).
+This theme is open sourced under [MIT license](https://github.com/muthukrishnandev/review-theme/blob/master/LICENSE.md).

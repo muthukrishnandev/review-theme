@@ -1,8 +1,8 @@
-name = "movie-theme"
+name = "review-theme"
 license = "MIT"
-licenselink = "https://github.com/muthukrishnandev/movie-theme/blob/master/LICENSE.md"
+licenselink = "https://github.com/muthukrishnandev/review-theme/blob/master/LICENSE.md"
 description = "A minimal movie review theme"
-homepage = "https://github.com/muthukrishnandev/movie-theme"
+homepage = "https://github.com/muthukrishnandev/review-theme"
 tags = ["minimal", "black white", "movie", "entertainment"]
 features = ["movie", "review"]
 min_version = "0.62.2"

@@ -11,7 +11,7 @@ enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = false
 
-theme = "movie-theme"
+theme = "review-theme"
 
 [outputFormats.SearchIndex]
 baseName = "searchindex"
