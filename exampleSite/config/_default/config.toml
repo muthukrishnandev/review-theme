@@ -1,6 +1,6 @@
-baseURL = "https://movietheme.muthukrishnan.dev/"
+baseURL = "https://reviewtheme.muthukrishnan.dev/"
 
-title = "movie review"
+title = "review theme"
 
 languageCode = "en-us"
 summaryLength = 10
