@@ -11,27 +11,27 @@
 
     "icons": [
         {
-          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon) | absURL }}",
+          "src": "{{ .Site.Params.Favicon.Icon | absURL }}",
           "sizes": "48x48",
           "type": "image/x-icon"
         },
         {
-          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon16) | absURL }}",
+          "src": "{{ .Site.Params.Favicon.Icon16 | absURL }}",
           "sizes": "16x16",
           "type": "image/png"
         },
         {
-          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon32) | absURL }}",
+          "src": "{{ .Site.Params.Favicon.Icon32 | absURL }}",
           "sizes": "32x32",
           "type": "image/png"
         },
         {
-          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon192) | absURL }}",
+          "src": "{{ .Site.Params.Favicon.Icon192 | absURL }}",
           "sizes": "192x192",
           "type": "image/png"
         },
         {
-          "src": "{{ (path.Join `favicons` .Site.Params.Favicon.Icon512) | absURL }}",
+          "src": "{{ .Site.Params.Favicon.Icon512 | absURL }}",
           "sizes": "512x512",
           "type": "image/png"
         }

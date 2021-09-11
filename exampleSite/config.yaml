@@ -163,15 +163,15 @@ Params:
     FontsName: ["Open Sans"]
 
   Favicon:
-    # store favicons in static/favicons folder
-    icon: "favicon.ico" # favicon
-    icon16: "favicon-16x16.png"
-    icon32: "favicon-32x32.png"
-    icon192: "android-chrome-192x192.png"
-    icon512: "android-chrome-512x512.png"
-    appleTouch: "apple-touch-icon.png"
-    safariPinned: "safari-pinned-tab.svg"
-    msTileImage: "mstile-144x144.png"
+    # path or link to favicons
+    icon: "/favicons/favicon.ico" # favicon
+    icon16: "/favicons/favicon-16x16.png"
+    icon32: "/favicons/favicon-32x32.png"
+    icon192: "/favicons/android-chrome-192x192.png"
+    icon512: "/favicons/android-chrome-512x512.png"
+    appleTouch: "/favicons/apple-touch-icon.png"
+    safariPinned: "/favicons/safari-pinned-tab.svg"
+    msTileImage: "/favicons/mstile-144x144.png"
 
   Manifest:
     shortTitle: ""

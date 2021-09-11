@@ -1,22 +1,15 @@
 <!-- Fav Icons -->
-<link rel="shortcut icon" href="{{ (path.Join `favicons` .Site.Params.Favicon.Icon) | absURL }}" />
-<link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="{{ (path.Join `favicons` .Site.Params.Favicon.Icon) | absURL }}" />
-<link rel="icon" sizes="16x16" href="{{ (path.Join `favicons` .Site.Params.Favicon.Icon16) | absURL }}" />
-<link rel="icon" sizes="32x32" href="{{ (path.Join `favicons` .Site.Params.Favicon.Icon32) | absURL }}" />
-<link rel="icon" sizes="192x192" href="{{ (path.Join `favicons` .Site.Params.Favicon.Icon192) | absURL }}" />
-<link rel="icon" sizes="512x512" href="{{ (path.Join `favicons` .Site.Params.Favicon.Icon512) | absURL }}" />
+<link rel="shortcut icon" href="{{ .Site.Params.Favicon.Icon | absURL }}" />
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="{{ .Site.Params.Favicon.Icon | absURL }}" />
+<link rel="icon" sizes="16x16" href="{{ .Site.Params.Favicon.Icon16 | absURL }}" />
+<link rel="icon" sizes="32x32" href="{{ .Site.Params.Favicon.Icon32 | absURL }}" />
+<link rel="icon" sizes="192x192" href="{{ .Site.Params.Favicon.Icon192 | absURL }}" />
+<link rel="icon" sizes="512x512" href="{{ .Site.Params.Favicon.Icon512 | absURL }}" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="{{ (path.Join `favicons` .Site.Params.Favicon.AppleTouch) | absURL }}" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ (path.Join `favicons` .Site.Params.Favicon.AppleTouch) | absURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.Favicon.AppleTouch | absURL }}" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ .Site.Params.Favicon.AppleTouch | absURL }}">
 
-<link rel="mask-icon" href="{{ (path.Join `favicons` .Site.Params.Favicon.SafariPinned) | absURL }}" color="{{ .Site.Params.Manifest.TileColor }}">
-<meta name="msapplication-TileImage" content="{{ (path.Join `favicons` .Site.Params.Favicon.MsTileImage) | absURL }}">
+<link rel="mask-icon" href="{{ .Site.Params.Favicon.SafariPinned | absURL }}" color="{{ .Site.Params.Manifest.TileColor }}">
+<meta name="msapplication-TileImage" content="{{ .Site.Params.Favicon.MsTileImage | absURL }}">
 <meta name="theme-color" content="{{ .Site.Params.Manifest.ThemeColor }}" /> 
 <meta name="msapplication-TileColor" content="{{ .Site.Params.Manifest.ThemeColor }}" />
-
-<!-- <link rel="apple-touch-icon" sizes="152x152" href="/favicons/favicon-152-precomposed.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/favicons/favicon-144-precomposed.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/favicons/favicon-120-precomposed.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/favicons/favicon-114-precomposed.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicons/favicon-180-precomposed.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/favicons/favicon-72-precomposed.png" /> -->
