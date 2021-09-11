@@ -1,0 +1,425 @@
+baseURL: https://reviewtheme.muthukrishnan.dev/
+title: review theme
+languageCode: en-us
+summaryLength: 10
+paginate: 5
+copyright: '&copy; {year} {name}. All rights reserved.'
+enableEmoji: true
+enableGitInfo: true
+enableRobotsTXT: false
+theme: review-theme
+outputFormats:
+  SearchIndex:
+    baseName: searchindex
+    mediaType: application/json
+    isPlainText: true
+    notAlternative: true
+outputs:
+  home:
+    - HTML
+    - RSS
+    - SearchIndex
+
+# Menus
+menus:
+  header:
+    - name: Discover
+      identifier: discover
+      title: discover
+      url: /discover/
+      weight: 1
+    - name: Home
+      identifier: d_home
+      title: discover
+      url: /discover/
+      weight: 1
+      parent: discover
+    - name: By Actors
+      identifier: d_actors
+      title: actors
+      url: /actors/
+      weight: 2
+      parent: discover
+    - name: By Music Directors
+      identifier: d_musicdirectors
+      title: musicdirectors
+      url: /musicdirectors/
+      weight: 3
+      parent: discover
+    - name: By Directors
+      identifier: d_directors
+      title: directors
+      url: /directors/
+      weight: 4
+      parent: discover
+    - name: By Writers
+      identifier: d_writers
+      title: writers
+      url: /writers/
+      weight: 5
+      parent: discover
+    - name: By Creators
+      identifier: d_creators
+      title: creators
+      url: /creators/
+      weight: 6
+      parent: discover
+    - name: By Cinematographers
+      identifier: d_cines
+      title: cinematographers
+      url: /cinematographers/
+      weight: 7
+      parent: discover
+    - name: By Genres
+      identifier: d_genres
+      title: genres
+      url: /genres/
+      weight: 8
+      parent: discover
+    - name: By Plot Tags
+      identifier: d_plottags
+      title: plottags
+      url: /plottags/
+      weight: 9
+      parent: discover
+    - name: Top
+      identifier: top
+      title: top
+      url: /top/
+      weight: 2
+    - name: Movies
+      identifier: Movies
+      title: Movies
+      url: /Movies/
+      weight: 3
+    - name: TV Shows
+      identifier: TV Shows
+      title: TV Shows
+      url: /tvshows/
+      weight: 4
+    - name: Editorials
+      identifier: editorials
+      title: editorials
+      url: /editorials/
+      weight: 5
+    - name: Reviews
+      identifier: reviews
+      title: reviews
+      url: /reviews/
+      weight: 6
+  footer:
+    - name: Privacy Policy
+      identifier: privacy-policy
+      title: privacy-policy
+      url: /privacy-policy/
+      weight: 1
+    - name: Terms of Service
+      identifier: terms-of-service
+      title: terms-of-service
+      url: /terms-of-service/
+      weight: 2
+    - name: Disclaimer
+      identifier: disclaimer
+      title: disclaimer
+      url: /disclaimer/
+      weight: 3
+    - name: About
+      identifier: about
+      title: about
+      url: /about/
+      weight: 4
+
+Params:
+  Info:
+    Tagline: "my reviews"
+    Description: "long description of the site"
+    Logo: "logo.png" # store in static/images
+    coverImage: "cover.png" # store in static/images
+
+    # optional image to show in 404 page, will not throw error, only shows a warning if image not found
+    image404: "404.jpg" # store in static/images
+    image404AttrText: "Constructocat by jasoncostello" # optional image alt text
+    image404AttrLink: "https://github.com/jasoncostello" # optional image alt link
+
+    # used as substitute for baseimageurl: in poster param in movies, tvshows
+    BaseImageURL: "" #https://example.com
+
+    DateFormat: "January 2, 2006"
+
+  Social:
+    Email: "Your_Email_ID"
+    Facebook: "Your_Facebook_ID"
+    # Twitter: "Your_Twitter_ID"
+    Instagram: "Your_Instagram_ID"
+    Youtube: "Your_Youtube_ID"
+    Reddit: "u/Your_Reddit_ID"
+
+  Style:
+    # Custom Css/Js/Fonts
+    # CSS: ["css/main.css"] # place custom .css files inside assets folder
+    # JS: ["js/main.js"] # place custom .js files inside assets folder
+    FontsLink: ["https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"] # only online fonts
+    FontsPreconnect: ["https://fonts.gstatic.com"]
+    FontsName: ["Open Sans"]
+
+  Favicon:
+    # store favicons in static/favicons folder
+    icon: "favicon.ico" # favicon
+    icon16: "favicon-16x16.png"
+    icon32: "favicon-32x32.png"
+    icon192: "android-chrome-192x192.png"
+    icon512: "android-chrome-512x512.png"
+    appleTouch: "apple-touch-icon.png"
+    safariPinned: "safari-pinned-tab.svg"
+    msTileImage: "mstile-144x144.png"
+
+  Manifest:
+    shortTitle: ""
+    themeColor: "#ffffff"
+    backgroundColor: "#ffffff"
+    display: "standalone"
+    orientation: "portrait"
+    tileColor: "#ffffff"
+
+  Controls:
+    # header
+    ShowSiteLogo: false
+    ShowSiteTitle: true # if site logo is not present, title is displayed by default
+    ShowSiteTagline: true # available only if ShowSiteTitle is enabled
+
+    # navigation
+    ShowHeaderNav: true
+    ShowFooterNav: true # disables the footer, both social and navigation
+    ShowSocialFooterNav: true # enable this to show social nav instead of navigations
+
+    # social icons
+    ShowSocialIcons: true # enable this to show social icons instead of text
+
+    # home page
+    ShowSummaryInPostList: false
+    # ShowStarredIcon: true
+
+    EnableRSS: false
+
+    # option to ignore the poster params in posts and use NoPoster for all cases
+    # this overrides all other poster configs
+    DoNotShowPoster: false
+
+    # in case no poster exist in local directory case (if BaseImageURL is empty string)
+    # use display noposter.png instead of throwing error
+    UseNoPoster: true
+
+  Search:
+    Enable: true # search index
+    AppID: "AppID"
+    SearchAPIKey: "SearchKey"
+    IndexName: "IndexName"
+    CountPerPage: 10
+    IndexTypes: ["movies", "tvshows", "actors", "creators", "directors", "writers", "musicdirectors", "cinematographers"]
+
+  ShareButton:
+    # disable all
+    Show: true
+
+    Email: true
+    Facebook: true
+    Twitter: true
+    Reddit: true
+    Whatsapp: true
+    Telegram: true
+
+  Rating:
+    MainScore: "Main Score"
+    MainScoreSuffix: "%"
+    CustomScores: ["Custom1", "Custom2"]
+    CustomScoresSuffix: [" ", "%"]
+    # Custom text look up for custom scores instead of suffix
+    CustomScoreLookUp: [ {}, { 0: "Very Bad", 1: "Bad", 2: "Okay", 3: "Good", 4: "Very Good", 5: "Best"}]
+
+  ReadMoreLinks:
+    # these are places where you may ask user to read more about like privacy policy, disclaimer etc.,
+    # All have three params Message, URL, LinkText and option to enable/disable them
+    # display format
+    # Message (LinkText)
+
+    # Trailer, External Links, Poster, Ratings are supported now
+
+    Poster:
+      # default text which is shown when productions is not present in movies, tvshows meta post
+      ShowInfo: true
+      URL: "/disclaimer#fair-use"
+      LinkText: "Fair Use"
+      Message: "Respective Studio or Artist."
+
+    Trailer:
+      ShowInfo: true
+      URL: "/disclaimer#trailer"
+      LinkText: "Read Full Disclaimer"
+      Message: "We do not own this video."
+
+    ExternalLinks:
+      ShowInfo: true
+      URL: "/disclaimer#external-links"
+      LinkText: "Read Full Disclaimer"
+      Message: "These links are being provided as a convenience and for informational purposes only."
+
+    TitleEndNote:
+      ShowInfo: false
+      URL: "/disclaimer#general"
+      LinkText: "Here"
+      Message: "All information provided are prone to error. If find any let us know"
+
+    # Rating and ContentRating are special cases Message param is not needed
+
+    Rating:
+      # Link to detail post which explains your rating scores
+      ShowInfo: true
+      URL: "/about#ratings"
+      LinkText: "more info on these scores"
+
+    ContentRating:
+      # Link to detail post which explains your rating scores
+      ShowInfo: true
+      URL: "/about#content-rating"
+      LinkText: "more info"
+
+  # advanced configs
+  MetaConfig:
+    DiscoverList: ["actors", "creators", "directors", "writers", "musicdirectors", "cinematographers", "genres"]
+    TopList: ["movies", "tvshows"]
+
+    # adds text 's Filmography to all these
+    FilmographyList: ["actors", "writers", "creators", "directors", "musicdirectors", "cinematographers"]
+
+    # advanced configs
+    TitleCrewList:
+      movies: ["actors", "directors", "writers", "musicdirectors", "cinematographers"]
+      tvshows: ["actors", "creators"]
+
+    TitleMetaList:
+      movies: ["genres", "plottags"]
+      tvshows: ["genres", "plottags"]
+
+    DetailListLimit:
+      actors: 4 # no of actors to display in Cast & Crew
+      plottags: 5
+
+    Pagination:
+      # default will be 8
+      actors: 10
+      writers: 10
+      directors: 10
+      creators: 10
+      musicdirectors: 10
+      cinematographers: 10
+
+      movies: 12 # need to be multiple of 4
+      tvshows: 12 # need to be multiple of 4
+
+      editorials: 10
+      reviews: 10
+
+      genres: 25
+      reviewtags: 25
+      plottags: 25
+      tags: 25
+
+      top: 10
+      discover: 10
+
+    Ordering:
+      actors: "alpha"               # available options: alpha, alphaDesc, date, dateDesc
+      writers: "alpha"              # available options: alpha, alphaDesc, date, dateDesc
+      directors: "alpha"            # available options: alpha, alphaDesc, date, dateDesc
+      musicdirectors: "alpha"       # available options: alpha, alphaDesc, date, dateDesc
+      cinematographers: "alpha"     # available options: alpha, alphaDesc, date, dateDesc
+      creators: "alpha"             # available options: alpha, alphaDesc, date, dateDesc
+
+      genres: "alpha"                  # available options: alpha, alphaDesc, date, dateDesc
+      reviewtags: "alpha"              # available options: alpha, alphaDesc, date, dateDesc
+      plottags: "alpha"                # available options: alpha, alphaDesc, date, dateDesc
+      tags: "alpha"                    # available options: alpha, alphaDesc, date, dateDesc
+
+      editorials: "dateDesc"   # available options: alpha, alphaDesc, date, dateDesc
+      reviews: "dateDesc"      # available options: alpha, alphaDesc, date, dateDesc
+
+      movies: "dateDesc"       # available options: date, dateDesc, release, releaseDesc, releaseYear, releaseYearDesc
+      tvshows: "dateDesc"      # available options: date, dateDesc, release, releaseDesc, releaseYear, releaseYearDesc
+
+
+# Taxnonomies
+taxonomies:
+  actor: actors
+  writer: writers
+  creator: creators
+  director: directors
+  musicdirector: musicdirectors
+  cinematographer: cinematographers
+  production: productions
+  language: languages
+  category: categories
+  tag: tags
+  genre: genres
+  plottag: plottags
+  reviewtag: reviewtags
+
+# Permalinks
+permalinks:
+  posts: /:slug
+  movies: /movie/:slug/
+  reviews: /review/:slug/
+  tvshows: /tv/:slug/
+  actors: /actor/:slug/
+  writers: /writer/:slug/
+  creators: /creator/:slug/
+  directors: /director/:slug/
+  musicdirectors: /musicdirector/:slug/
+  cinematographers: /cinematographer/:slug/
+  productions: /production/:slug/
+  languages: /language/:slug/
+  categories: /category/:slug/
+  tags: /tag/:slug/
+  genres: /genre/:slug/
+  plottags: /plottag/:slug/
+  reviewtags: /reviewtag/:slug/
+
+# Related
+related:
+  includeNewer: false
+  threshold: 90
+  toLower: false
+  indices:
+    - name: tags
+      weight: 80
+    - name: reviewtags
+      weight: 80
+    - name: plottags
+      weight: 80
+    - name: actors
+      weight: 70
+    - name: creators
+      weight: 70
+    - name: directors
+      weight: 70
+    - name: genres
+      weight: 50
+    - name: cinematographers
+      weight: 25
+    - name: musicdirectors
+      weight: 25
+    - name: writers
+      weight: 25
+    - name: date
+      weight: 10
+
+# Module
+module:
+  mounts:
+    - source: content_index
+      target: content
+
+    - source: content_meta
+      target: content
+
+    - source: content
+      target: content
