@@ -133,13 +133,13 @@ Params:
   Info:
     Tagline: "my reviews"
     Description: "long description of the site"
-    Logo: "logo.png" # store in static/images
-    coverImage: "cover.png" # store in static/images
+    Logo: "/images/logo.png" # store in static/images
+    CoverImage: "/images/cover.png" # store in static/images
 
     # optional image to show in 404 page, will not throw error, only shows a warning if image not found
-    image404: "404.jpg" # store in static/images
-    image404AttrText: "Constructocat by jasoncostello" # optional image alt text
-    image404AttrLink: "https://github.com/jasoncostello" # optional image alt link
+    Image404: "/images/404.jpg" # store in static/images
+    Image404AttrText: "Constructocat by jasoncostello" # optional image alt text
+    Image404AttrLink: "https://github.com/jasoncostello" # optional image alt link
 
     # used as substitute for baseimageurl: in poster param in movies, tvshows
     BaseImageURL: "" #https://example.com

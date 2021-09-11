@@ -18,7 +18,7 @@ meta:
   year_end:  2020
 
   trailer: "https://youtube.com/watch?v=INSERT_YOUTUBE_ID_HERE"
-  poster: "https://example.com/poster.jpg" # or "/posters/poster.png" and place it in static/images directory
+  poster: "https://example.com/poster.jpg" # or "/posters/poster.png" and place it in static directory
 
   external_links:
     imdb: "https://www.imdb.com/title/INSERT_IMDB_ID_HERE"

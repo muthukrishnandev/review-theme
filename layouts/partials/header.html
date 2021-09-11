@@ -5,12 +5,7 @@
             <div class="d-flex align-items-center">
               {{ if .Site.Params.Controls.ShowSiteLogo }}
                 <div class="navbar-brand-icon header-logo-container">
-                    {{ $logoFilePath := (path.Join `static` `images` .Site.Params.Info.Logo) }}
-                    {{ if fileExists $logoFilePath }}
-                        <img class="unselectable" src="{{ (path.Join `images` .Site.Params.Info.Logo) | absURL }}" />
-                    {{ else }}
-                      {{ errorf "%s logo file not found" $logoFilePath }}
-                    {{ end }}
+                    <img class="unselectable" src="{{ .Site.Params.Info.Logo | absURL }}" />
                 </div>
               {{ end }}
 

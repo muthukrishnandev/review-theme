@@ -7,17 +7,13 @@
 		<a class="dark-button" href="{{ .Site.BaseURL }}">back to the homepage</a>
 	</div>
 	<div class="error-image">
-		 {{ if fileExists (path.Join `static` `images` .Site.Params.Info.image404) }}
-    		{{ $finalImageURL := (path.Join `images` .Site.Params.Info.image404) | absURL }}
-			<img loading="lazy" src="{{ $finalImageURL }}" alt="{{ .Site.Params.Info.image404Alt }}" />
-			{{ if or (.Site.Params.Info.image404AttrText) (.Site.Params.Info.image404AttrLink) }}
-				<div class="image-attribution">
-					<a href="{{ .Site.Params.Info.image404AttrLink | safeHTML }}">{{ .Site.Params.Info.image404AttrText | safeHTML }}</a>
-				</div>
-			{{ end }}
-		{{ else }}
-			{{ warnf "404 Image is not found" }}
- 		{{ end }}
+		{{ $finalImageURL := .Site.Params.Info.Image404 | absURL }}
+		<img loading="lazy" src="{{ $finalImageURL }}" alt="{{ .Site.Params.Info.Image404Alt }}" />
+		{{ if or (.Site.Params.Info.Image404AttrText) (.Site.Params.Info.Image404AttrLink) }}
+			<div class="image-attribution">
+				<a href="{{ .Site.Params.Info.Image404AttrLink | safeHTML }}">{{ .Site.Params.Info.Image404AttrText | safeHTML }}</a>
+			</div>
+		{{ end }}
 	</div>
 </div>
 

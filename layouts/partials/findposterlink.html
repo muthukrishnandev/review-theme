@@ -28,13 +28,10 @@
 		{{ $context.Scratch.Set "findposterlink_isfound" true }}
 	{{ else }}
 		<!-- local poster -->
-		{{ $actualPath := path.Join "images" $posterParam }}
-		{{ $filePath := path.Join "static" $actualPath }}
-		{{ if fileExists $filePath }}
-			{{ $posLocalLink := $actualPath | absURL }}
+		{{ if ne $posterParam "" }}
+			{{ $posLocalLink := $posterParam | absURL }}
 			{{ $context.Scratch.Set "findposterlink_result" $posLocalLink }}
 			{{ $context.Scratch.Set "findposterlink_isfound" true }}
-		<!-- file does not exist -->
 		{{ else }}
 			{{ $isFound := false }}
 			{{ $useNoPoster := $context.Site.Params.Controls.UseNoPoster }}

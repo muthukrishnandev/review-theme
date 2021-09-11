@@ -26,8 +26,6 @@
 	    ], 
 	{{ end }}
     "name": "{{ .Site.Title }}", 
-    {{ if fileExists (path.Join `static` `images` .Site.Params.Info.Logo) }}
-    	"logo": "{{ path.Join `images` .Site.Params.Info.Logo | absURL }}" 
-    {{ end }}
+    "logo": "{{ .Site.Params.Info.Logo | absURL }}" 
   }
 </script>

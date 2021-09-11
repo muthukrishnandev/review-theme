@@ -43,17 +43,15 @@
   {{ $finalDescription = .Description }}
 {{ end }}
 
-<!-- Image -->
-{{ $defaultImageURL := (path.Join `images` .Site.Params.Info.CoverImage) | absURL }}
+{{ $finalImageURL := "" }}
+{{ $defaultImageURL := .Site.Params.Info.CoverImage | absURL }}
+
+<!-- Image Param -->
 {{ if .Params.image }}
   <!-- .Params.image Exists -->
-  {{ if fileExists (path.Join `static` `images` .Params.image) }}
-    {{ $finalImageURL = (path.Join `images` .Params.image) | absURL }}
-  {{ end }}
-{{ end }}
-
-<!-- Is TvShow or Movie -->
-{{ if eq $finalImageURL "" }}
+    {{ $finalImageURL = .Params.image | absURL }}
+{{ else }}
+  <!-- Is TvShow or Movie -->
   {{ if (in (slice "tvshows" "movies") .Type)}}
     {{ partial "findposterlink.html" . }}
     {{ if .Scratch.Get "findposterlink_isfound" }}
@@ -62,8 +60,9 @@
   {{ end }}
 {{ end }}
 
+<!-- Default -->
 {{ if eq $finalImageURL "" }}
-  {{ $finalImageURL = $defaultImageURL}}
+  {{ $finalImageURL = $defaultImageURL }}
 {{ end }}
 
 <!-- Title -->
