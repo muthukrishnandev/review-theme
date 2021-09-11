@@ -15,7 +15,7 @@ meta:
   certificate: "A"
 
   trailer: "https://youtube.com/watch?v="
-  poster: "/posters/poster-sample.png"
+  poster: "/images/posters/poster-sample.png"
 
   external_links:
     imdb: "https://imdb.com/"
